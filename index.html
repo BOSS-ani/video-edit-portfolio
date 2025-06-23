@@ -222,6 +222,8 @@
             flex-direction: column;
             align-items: center; /* 水平方向の中央寄せ */
             text-align: center; /* テキストも中央寄せ */
+            /* 読み込み失敗時の背景色を灰色ではなく、テーマカラーに近い色に */
+            background-color: #D2B48C; /* BurlyWood fallback */
         }
         .profile-section-content::before { /* 背景画像を暗くするオーバーレイ */
             content: '';
@@ -236,13 +238,6 @@
         .profile-section-content > * { /* オーバーレイの上にコンテンツを表示 */
             position: relative;
             z-index: 2;
-        }
-        .profile-section-branding { /* 自己紹介セクション内のロゴと画像ペアをまとめるコンテナ */
-            display: flex;
-            flex-direction: column; /* 縦に並べる */
-            align-items: center; /* 中央寄せ */
-            margin-bottom: 20px; /* 下部マージン */
-            width: 100%; /* 親要素の幅いっぱいに広げる */
         }
         .profile-image-group { /* 3つの画像をまとめてFlexboxで配置 */
             display: flex;
@@ -270,43 +265,44 @@
             }
         }
         .profile-section-logo-in-content { /* 自己紹介セクション内のBOSS兄ロゴ */
-            width: 150px; /* サイズを調整 */
-            height: 150px;
+            width: 180px; /* サイズをさらに大きく */
+            height: 180px;
             object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* 影を追加 */
-            margin-top: 0; /* 親要素がgroupなので負のマージンはここでリセット */
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.7)); /* 影を強調 */
+            margin-top: -80px; /* さらに上に移動して切れないように調整 */
+            margin-bottom: 20px; /* 下のマージンを調整 */
         }
         .profile-image-main, .profile-image-sub { /* プロフィール画像とイラスト画像の共通スタイル */
-            width: 180px; /* サイズ */
-            height: 180px; /* サイズ */
-            border: 4px solid #CD853F;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            width: 200px; /* サイズをさらに大きく */
+            height: 200px; /* サイズをさらに大きく */
+            border: 5px solid #CD853F; /* ボーダーを太く */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.7); /* 影を強調 */
             object-fit: cover;
+            margin-top: -50px; /* 上にさらに移動して切れないように調整 */
         }
         .profile-image-main { /* 自身の画像（IMG_5569.PNG）は丸型 */
             border-radius: 50%;
-            margin-top: -40px; /* 上にさらに移動 */
         }
         .profile-image-sub { /* 22212851.pngは正方形で傾ける */
-            border-radius: 8px;
-            transform: rotate(-5deg); /* 少し傾ける */
-            transition: transform 0.3s ease; /* ホバー効果 */
-            margin-top: -40px; /* 上にさらに移動 */
+            border-radius: 12px; /* 角をさらに丸く */
+            transform: rotate(-7deg); /* 少し傾きを強める */
+            transition: transform 0.4s ease, box-shadow 0.3s ease; /* ホバー効果 */
         }
         .profile-image-sub:hover {
-            transform: rotate(0deg) scale(1.05); /* ホバーで元に戻し少し拡大 */
+            transform: rotate(0deg) scale(1.08); /* ホバーで元に戻し少し拡大 */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
         }
 
         /* 自己紹介セクション内のテキストのスタイル */
         .profile-main-text { /* 自己紹介のメインテキスト用クラス */
             color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
-            font-size: 1.35rem; /* フォントサイズをさらに大きく */
+            font-size: 1.45rem; /* フォントサイズをさらに大きく (text-2xl相当) */
             text-shadow: 
-                -1.2px -1.2px 0 #5A2D0E,  
-                 1.2px -1.2px 0 #5A2D0E,
-                -1.2px  1.2px 0 #5A2D0E,
-                 1.2px  1.2px 0 #5A2D0E,
-                 0px     0px    6px rgba(0,0,0,0.8); /* 枠あり風の影を強調 */
+                -1.5px -1.5px 0 #5A2D0E,  
+                 1.5px -1.5px 0 #5A2D0E,
+                -1.5px  1.5px 0 #5A2D0E,
+                 1.5px  1.5px 0 #5A2D0E,
+                 0px     0px    8px rgba(0,0,0,0.8); /* 枠あり風の影を強調 */
             line-height: 1.8; /* 行間を広げて読みやすく */
             margin-bottom: 1.5rem; /* 下部マージン */
         }
@@ -316,7 +312,7 @@
         .profile-section-content li,
         .profile-section-content a {
             color: #FFF !important; /* 自己紹介内のテキストを白に強制 */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* 影を加えて見やすく */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9); /* 影を加えて見やすく */
         }
         .profile-section-content strong {
             color: #FFD700 !important; /* 略歴の年など強調部分をゴールドに */
