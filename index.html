@@ -22,10 +22,10 @@
             padding: 0;
             box-sizing: border-box; /* PaddingとBorderをwidth/heightに含める */
         }
-        /* コンテナの幅を調整し、中央に配置 */
+        /* コンテナの幅を調整し、自己紹介からプライバシーポリシーのセクション幅に合わせる */
         .container {
-            width: 95%; /* 少し広めに */
-            max-width: 1200px;
+            width: 95%; /* 以前より少し広めに */
+            max-width: 900px; /* ここでセクションの最大幅を調整。自己紹介の幅を基準 */
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
@@ -139,32 +139,32 @@
             gap: 25px; /* アイコンとテキストの間隔をさらに広げる */
         }
         .header-icon {
-            width: 80px; /* アイコンのサイズをさらに大きく */
-            height: 80px;
+            width: 100px; /* アイコンのサイズをさらに大きく */
+            height: 100px;
             object-fit: contain; /* アスペクト比を保持してフィット */
-            filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* 影を強調 */
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.7)); /* 影を強調 */
         }
         .main-title {
             color: white;
-            font-size: 4rem; /* テキストをさらに大きく */
+            font-size: 4.5rem; /* テキストをさらに大きく */
             /* 枠のあるフォント効果 */
             text-shadow: 
-                -2.5px -2.5px 0 #5A2D0E,  
-                 2.5px -2.5px 0 #5A2D0E,
-                -2.5px  2.5px 0 #5A2D0E,
-                 2.5px  2.5px 0 #5A2D0E,
-                 0px     0px    12px rgba(0,0,0,0.6); /* 通常の影も強調 */
+                -3px -3px 0 #5A2D0E,  
+                 3px -3px 0 #5A2D0E,
+                -3px  3px 0 #5A2D0E,
+                 3px  3px 0 #5A2D0E,
+                 0px     0px    15px rgba(0,0,0,0.7); /* 通常の影も強調 */
         }
         .main-subtitle { /* サブタイトル用のスタイル */
             color: white;
-            font-size: 1.6rem; /* サブタイトルをさらに大きく */
+            font-size: 1.8rem; /* サブタイトルをさらに大きく */
             /* 枠のあるフォント効果 */
             text-shadow: 
-                -1.2px -1.2px 0 #5A2D0E,  
-                 1.2px -1.2px 0 #5A2D0E,
-                -1.2px  1.2px 0 #5A2D0E,
-                 1.2px  1.2px 0 #5A2D0E,
-                 0px     0px    8px rgba(0,0,0,0.5);
+                -1.5px -1.5px 0 #5A2D0E,  
+                 1.5px -1.5px 0 #5A2D0E,
+                -1.5px  1.5px 0 #5A2D0E,
+                 1.5px  1.5px 0 #5A2D0E,
+                 0px     0px    10px rgba(0,0,0,0.6);
         }
         /* 各セクション見出しのデザイン */
         .section-h2 {
@@ -198,31 +198,63 @@
             font-size: 1.1rem;
             color: #555;
         }
+        /* ポートフォリオカードのグリッドレイアウトを調整 (2列表示に) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2列表示またはコンテンツに応じて調整 */
+            gap: 1.5rem; /* カード間の隙間 */
+        }
+        @media (min-width: 768px) { /* デスクトップでは2列に */
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portfolio-card.md\:col-span-full { /* 特定のカードはフル幅を維持 */
+                grid-column: span 2;
+            }
+        }
+        @media (max-width: 767px) { /* スマホでは1列に */
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .portfolio-card { /* Portfolio item card */
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.2s ease-in-out;
+            display: flex; /* flexboxでコンテンツを整列 */
+            flex-direction: column; /* 縦方向に配置 */
+            height: 100%; /* 親要素の高さに合わせる */
         }
         .portfolio-card:hover {
             transform: translateY(-5px);
         }
-        .portfolio-thumbnail { /* Project summary thumbnail image */
+        .portfolio-thumbnail { /* YouTube埋め込みのプレースホルダー */
             width: 100%;
-            height: 200px; /* Fixed height */
-            object-fit: cover;
-            border-bottom: 1px solid #e0e0e0;
+            height: 200px; /* 固定高さ */
+            background-color: #eee; /* 読み込み中の背景色 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #aaa;
+            object-fit: cover; /* 比率を維持してカバー */
         }
         .portfolio-content-summary {
             padding: 1rem;
+            flex-grow: 1; /* 残りのスペースを埋める */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* コンテンツとアコーディオンボタンの間隔を調整 */
         }
         .portfolio-detail-section { /* Collapsible detail content */
             padding: 1rem;
             background-color: #fcfcfc; /* Background for detail section */
             border-top: 1px solid #eee;
         }
-        .portfolio-detail-image {
+        .portfolio-detail-image { /* このクラスの画像は添付画像ではなくYouTubeサムネ表示に置き換わるため、実際には使用されません */
             width: 100%;
             max-width: 600px;
             height: auto;
@@ -278,6 +310,7 @@
             <div class="container mx-auto px-4 py-3">
                 <div class="main-header-content">
                     <!-- 左側のアイコン -->
+                    <!-- BOSS兄.jpg を直接指定し、サイズを大きくしました -->
                     <img src="BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
                     <h1 class="main-title text-3xl md:text-4xl font-bold text-center">VIDEO edit office BOSS兄</h1>
                     <!-- 右側のアイコン -->
@@ -409,11 +442,13 @@
         <!-- 制作作品セクション -->
         <section id="portfolio" class="scroll-mt-24">
             <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">制作作品</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="portfolio-grid">
 
                 <!-- 癒しの絶景 黒柴犬BOSS VOL.1 -->
                 <div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/CD853F/FDFBF6?text=癒しの絶景サムネイル" alt="癒しの絶景 黒柴犬BOSS VOL.1 サムネイル" class="portfolio-thumbnail">
+                    <div class="portfolio-video-container">
+                        <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="癒しの絶景　黒柴犬BOSS　VOL.1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-content-summary">
                         <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">癒しの絶景　黒柴犬BOSS　VOL.1</h3>
                         <p class="text-stone-700 text-sm">
@@ -421,14 +456,11 @@
                         </p>
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
-                                <span>動画を視聴</span>
+                                <span>詳細を見る</span>
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
-                                    <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/6PoVUnLztzA?si=DVG-dqHAC0PtWMf4" title="癒しの絶景　黒柴犬BOSS　VOL.1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </div>
                                     <p class="text-stone-700 text-sm mt-3">自然の美しさと愛犬の愛らしさを最大限に引き出す編集を心がけました。</p>
                                 </div>
                             </div>
@@ -438,7 +470,9 @@
 
                 <!-- 我家のヒーローBOSS君の散歩を大公開！ -->
                 <div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/A0522D/FDFBF6?text=BOSS君散歩サムネイル" alt="我家のヒーローBOSS君の散歩を大公開！ サムネイル" class="portfolio-thumbnail">
+                    <div class="portfolio-video-container">
+                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-content-summary">
                         <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">我家のヒーローBOSS君の散歩を大公開！</h3>
                         <p class="text-stone-700 text-sm">
@@ -446,14 +480,11 @@
                         </p>
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
-                                <span>動画を視聴</span>
+                                <span>詳細を見る</span>
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
-                                    <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g?si=iPpeHvIuBB8Xmg86" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </div>
                                     <p class="text-stone-700 text-sm mt-3">視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識して編集しました。</p>
                                 </div>
                             </div>
@@ -463,7 +494,9 @@
 
                 <!-- ある夏の一日 Booss君シャンプー -->
                 <div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/8B4513/FDFBF6?text=BOSS君シャンプーサムネイル" alt="ある夏の一日 Booss君シャンプー サムネイル" class="portfolio-thumbnail">
+                    <div class="portfolio-video-container">
+                        <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-content-summary">
                         <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ある夏の一日 Booss君シャンプー</h3>
                         <p class="text-stone-700 text-sm">
@@ -471,14 +504,11 @@
                         </p>
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
-                                <span>動画を視聴</span>
+                                <span>詳細を見る</span>
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
-                                    <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/sQsvC512Djc?si=ZJiA8iYmqs31iXr7" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </div>
                                     <p class="text-stone-700 text-sm mt-3">ユーモラスなBGMとテロップで、視聴者が笑顔になるような編集を心がけました。</p>
                                 </div>
                             </div>
@@ -487,7 +517,7 @@
                 </div>
 
                 <!-- 切り抜き動画制作作品 -->
-                <div class="portfolio-card md:col-span-full"> <!-- Full width display -->
+                <div class="portfolio-card md:col-span-full"> <!-- Full width display for this section title -->
                     <div class="portfolio-content-summary">
                         <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ウマキんグ切り抜き動画制作作品（YouTube）</h3>
                         <p class="text-stone-700 text-sm">
@@ -503,7 +533,7 @@
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/dWFDQCdXlRU?si=8zN32iKek14Z-7s2" title="2024年　東京大賞典..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/dWFDQCdXlRU" title="2024年　東京大賞典..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                     <p class="text-stone-700 text-sm mt-3">高額払い戻しを実現した予想のポイントを分かりやすく、スピーディーに伝えることを意識して編集しました。特に、重要な数字やデータは視覚的に強調しています。</p>
                                 </div>
@@ -519,7 +549,7 @@
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/3jTlCQ3jTlCQ?si=048Co0osWyau_93A" title="チャンネルPR　元動画のメンバーシップのご案内！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/3jTlCQ3jTlCQ" title="チャンネルPR　元動画のメンバーシップのご案内！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                     <p class="text-stone-700 text-sm mt-3">『はやい、みじかい、くわしい』をモットーに、チャンネルの強みをアピールするPR動画です。簡潔ながらもチャンネルの魅力を最大限に伝える構成を心がけました。</p>
                                 </div>
@@ -535,7 +565,7 @@
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/xU5LwmKHtaU?si=-MWoeU1h_Jc6gvCK" title="2025年フェアリーS S評価・☆ナーツごんにゃ中井！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/xU5LwmKHtaU" title="2025年フェアリーS S評価・☆ナーツごんにゃ中井！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                     <p class="text-stone-700 text-sm mt-3">重要なレースにおけるS評価馬の分析を、迅速かつ詳細にまとめた動画です。複雑な予想を分かりやすいテロップとアニメーションで視覚化しています。</p>
                                 </div>
@@ -547,7 +577,9 @@
 
                 <!-- 実績動画 - クイズ大会 -->
                 <div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/DAA520/5A2D0E?text=クイズ大会サムネイル" alt="クイズ大会実績 サムネイル" class="portfolio-thumbnail">
+                    <div class="portfolio-video-container">
+                        <iframe src="https://www.youtube.com/embed/YOUR_QUIZ_VIDEO_ID" title="クイズ大会動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-content-summary">
                         <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">実績動画：クイズ大会</h3>
                         <p class="text-stone-700 text-sm">
@@ -555,18 +587,13 @@
                         </p>
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
-                                <span>詳細を見る / 動画を視聴</span>
+                                <span>詳細を見る</span>
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <p class="text-stone-700 text-sm mb-3">
-                                        【PLACEHOLDER: クイズ大会の動画URLがあれば、ここにiframeを埋め込んでください。画像であれば`<img>`タグで表示できます。】<br>
-                                        例: <br>
-                                        <div class="portfolio-video-container">
-                                             <iframe src="https://www.youtube.com/embed/YOUR_QUIZ_VIDEO_ID" title="クイズ大会動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                        </div>
-                                        <img src="https://placehold.co/400x250/B8860B/5A2D0E?text=クイズ大会詳細画像" alt="クイズ大会詳細画像" class="portfolio-detail-image">
+                                        【PLACEHOLDER: クイズ大会の詳細な説明や、動画の具体的な見どころを記述してください。】
                                     </p>
                                 </div>
                             </div>
@@ -576,7 +603,9 @@
 
                 <!-- 実績動画 - ガムトーク -->
                 <div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/C19A6B/5A2D0E?text=ガムトークサムネイル" alt="ガムトーク実績 サムネイル" class="portfolio-thumbnail">
+                    <div class="portfolio-video-container">
+                        <iframe src="https://www.youtube.com/embed/YOUR_GAMETALK_VIDEO_ID" title="ガムトーク動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-content-summary">
                         <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">実績動画：ガムトーク</h3>
                         <p class="text-stone-700 text-sm">
@@ -584,18 +613,13 @@
                         </p>
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
-                                <span>詳細を見る / 動画を視聴</span>
+                                <span>詳細を見る</span>
                                 <span class="toggle-icon">▼</span>
                             </div>
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <p class="text-stone-700 text-sm mb-3">
-                                        【PLACEHOLDER: ガムトークの動画URLがあれば、ここにiframeを埋め込んでください。画像であれば`<img>`タグで表示できます。】<br>
-                                        例: <br>
-                                        <div class="portfolio-video-container">
-                                             <iframe src="https://www.youtube.com/embed/YOUR_GAMETALK_VIDEO_ID" title="ガムトーク動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                        </div>
-                                        <img src="https://placehold.co/400x250/D2691E/FDFBF6?text=ガムトーク詳細画像" alt="ガムトーク詳細画像" class="portfolio-detail-image">
+                                        【PLACEHOLDER: ガムトークの詳細な説明や、動画の具体的な見どころを記述してください。】
                                     </p>
                                 </div>
                             </div>
