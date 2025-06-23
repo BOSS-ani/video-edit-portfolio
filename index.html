@@ -43,13 +43,13 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             flex-grow: 1; /* 各リンクが均等な幅を占める */
             text-align: center; /* テキストを中央寄せ */
-            padding: 0.8rem 1.2rem; /* ナビリンクのパディングを調整 */
+            padding: 1rem 1.5rem; /* ナビリンクのパディングをさらに大きく */
             border-radius: 6px;
             text-decoration: none;
             color: #FFFFFF; /* ホワイト */
             background-color: #A0522D; /* Sienna (ブラウン) */
             font-weight: 500; /* Medium weight */
-            font-size: 1rem; /* さらに少し大きく */
+            font-size: 1.15rem; /* さらに大きく */
             white-space: nowrap; /* テキストの折り返しを防ぐ */
         }
         .nav-link:hover {
@@ -59,9 +59,21 @@
         /* ナビゲーションリスト全体に flex-grow を有効にするための調整 */
         #navbar ul {
             display: flex; /* flexboxを有効にする */
-            justify-content: space-around; /* 均等な間隔で配置 */
+            justify-content: center; /* 中央に寄せる */
             width: 100%; /* 親要素の幅いっぱいに広げる */
             padding: 0; /* デフォルトのパディングをリセット */
+            gap: 1rem; /* 各ボタン間の隙間 */
+        }
+        @media (max-width: 640px) { /* スマホ向けに調整 */
+            #navbar ul {
+                flex-wrap: wrap; /* ボタンが多ければ折り返す */
+                justify-content: center;
+            }
+            .nav-link {
+                flex-grow: 0; /* スマホでは均等幅を解除し、コンテンツ幅に合わせる */
+                width: auto;
+                margin: 0.25rem; /* ボタン間のマージン */
+            }
         }
 
         /* アコーディオンヘッダーのスタイル */
@@ -115,7 +127,7 @@
         /* メインヘッダーのデザイン */
         .main-header-container {
             background: linear-gradient(to right, #CD853F, #A0522D); /* Peru to Sienna gradient */
-            padding: 2.5rem 0; /* パディングをさらに増やす */
+            padding: 3rem 0; /* パディングをさらに増やす */
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -124,35 +136,35 @@
             display: flex;
             align-items: center;
             justify-content: center; /* 中央寄せ */
-            gap: 20px; /* アイコンとテキストの間隔を広げる */
+            gap: 25px; /* アイコンとテキストの間隔をさらに広げる */
         }
         .header-icon {
-            width: 70px; /* アイコンのサイズをさらに大きく */
-            height: 70px;
+            width: 80px; /* アイコンのサイズをさらに大きく */
+            height: 80px;
             object-fit: contain; /* アスペクト比を保持してフィット */
-            filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); /* 影を追加して強調 */
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* 影を強調 */
         }
         .main-title {
             color: white;
-            font-size: 3.5rem; /* テキストをさらに大きく */
+            font-size: 4rem; /* テキストをさらに大きく */
             /* 枠のあるフォント効果 */
             text-shadow: 
-                -2px -2px 0 #5A2D0E,  
-                 2px -2px 0 #5A2D0E,
-                -2px  2px 0 #5A2D0E,
-                 2px  2px 0 #5A2D0E,
-                 0px     0px    10px rgba(0,0,0,0.5); /* 通常の影も強調 */
+                -2.5px -2.5px 0 #5A2D0E,  
+                 2.5px -2.5px 0 #5A2D0E,
+                -2.5px  2.5px 0 #5A2D0E,
+                 2.5px  2.5px 0 #5A2D0E,
+                 0px     0px    12px rgba(0,0,0,0.6); /* 通常の影も強調 */
         }
         .main-subtitle { /* サブタイトル用のスタイル */
             color: white;
-            font-size: 1.4rem; /* サブタイトルをさらに大きく */
+            font-size: 1.6rem; /* サブタイトルをさらに大きく */
             /* 枠のあるフォント効果 */
             text-shadow: 
-                -1px -1px 0 #5A2D0E,  
-                 1px -1px 0 #5A2D0E,
-                -1px  1px 0 #5A2D0E,
-                 1px  1px 0 #5A2D0E,
-                 0px     0px    6px rgba(0,0,0,0.4);
+                -1.2px -1.2px 0 #5A2D0E,  
+                 1.2px -1.2px 0 #5A2D0E,
+                -1.2px  1.2px 0 #5A2D0E,
+                 1.2px  1.2px 0 #5A2D0E,
+                 0px     0px    8px rgba(0,0,0,0.5);
         }
         /* 各セクション見出しのデザイン */
         .section-h2 {
