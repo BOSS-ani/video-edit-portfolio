@@ -33,18 +33,26 @@
             border-radius: 12px; /* 角を丸く */
         }
 
+        /* ナビゲーションバー全体のスタイル */
+        #navbar {
+            background-color: #A0522D; /* Sienna (ブラウン) */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
         /* ナビゲーションリンクのスタイル */
         .nav-link {
             transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block; /* パディングを適用するため */
-            padding: 0.5rem 0.8rem; /* ナビリンクのパディングを調整 */
+            padding: 0.7rem 1.2rem; /* ナビリンクのパディングを調整 */
             border-radius: 6px;
             text-decoration: none;
-            color: white !important; /* 強制的に白に */
+            color: #FFFFFF; /* ホワイト */
+            background-color: #A0522D; /* Sienna (ブラウン) */
+            font-weight: 500; /* Medium weight */
+            font-size: 0.95rem; /* 少し大きく */
         }
         .nav-link:hover {
-            background-color: #CD853F !important; /* Hover effect: Peru */
-            color: white !important;
+            background-color: #CD853F; /* Hover effect: Peru (明るいブラウン) */
+            color: #FFFFFF;
         }
 
         /* アコーディオンヘッダーのスタイル */
@@ -98,14 +106,24 @@
         /* メインヘッダーのデザイン */
         .main-header-container {
             background: linear-gradient(to right, #CD853F, #A0522D); /* Peru to Sienna gradient */
-            padding: 1.5rem 0;
+            padding: 2rem 0; /* パディングを増やす */
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .main-title {
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            /* 枠のあるフォント効果 */
+            text-shadow: 
+                -1.5px -1.5px 0 #5A2D0E,  
+                 1.5px -1.5px 0 #5A2D0E,
+                -1.5px  1.5px 0 #5A2D0E,
+                 1.5px  1.5px 0 #5A2D0E,
+                 0px     0px    8px rgba(0,0,0,0.4); /* 通常の影も残す */
+        }
+        .main-subtitle { /* 新しいサブタイトル用のスタイル */
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         /* 各セクション見出しのデザイン */
         .section-h2 {
@@ -217,11 +235,11 @@
     <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <div class="main-header-container">
             <div class="container mx-auto px-4 py-3">
-                <h1 class="main-title text-2xl md:text-3xl font-bold text-center">VIDEO edit office BOSS兄</h1>
-                <p class="text-center text-sm text-white mt-1">Norishige Kawakatsu. In Osaka</p>
+                <h1 class="main-title text-3xl md:text-4xl font-bold text-center">VIDEO edit office BOSS兄</h1>
+                <p class="main-subtitle text-base md:text-lg text-center mt-1">Norishige Kawakatsu. In Osaka</p>
             </div>
         </div>
-        <nav id="navbar" class="bg-brown-700 text-white shadow-lg" style="background-color: #A0522D;"> <!-- Sienna for navbar background -->
+        <nav id="navbar" class="text-white shadow-lg">
              <div class="container mx-auto px-4">
                 <ul class="flex justify-center items-center space-x-2 sm:space-x-4 md:space-x-6 overflow-x-auto py-2">
                     <li><a href="#about" class="nav-link">自己紹介</a></li>
@@ -645,3 +663,26 @@
     </script>
 </body>
 </html>
+```
+
+ご指定のヘッダー部分とナビゲーションタブのスタイルを変更し、Canvasを更新しました。
+
+**変更点:**
+
+1.  **ヘッダー（`h1.main-title`）のフォントと枠線風デザイン:**
+    * `h1.main-title`のフォントサイズを`text-3xl md:text-4xl`に拡大しました。
+    * `text-shadow`プロパティを調整し、濃い茶色で四方に影を落とすことで、**枠のあるフォント（アウトライン風）**のような効果を表現しました。これにより、フォントがより際立ちます。
+    * サブタイトル（`main-subtitle`）も`text-base md:text-lg`に少し大きくしました。
+
+2.  **ナビゲーションタブ（自己紹介、制作作品など）のスタイル:**
+    * ナビゲーションバー（`#navbar`）の背景色をSienna（`#A0522D`）で統一しました。
+    * 各ナビゲーションリンク（`a.nav-link`）のテキスト色をホワイト（`#FFFFFF`）に設定し、背景色をナビゲーションバーと同じSienna（`#A0522D`）にしました。
+    * ホバー時の背景色をPeru（`#CD853F`）に変更し、ホワイトテキストとのコントラストを保ちつつ、ブラウン系のグラデーションを意識したデザインにしています。
+    * これまでのインラインスタイルを削除し、CSSスタイルブロックにまとめて記述することで、コードの可読性とメンテナンス性を向上させました。
+    * ナビゲーションタブは元々非表示の状態ではなかったため、「最初から表示」のための特別な変更は不要でした。
+
+これで、あなたのポートフォリオサイトのヘッダー部分とナビゲーションが、よりご希望に近いブラウン基調で統一感のあるデザインになったかと思います。
+
+この更新されたCanvasの内容をコピーして、ご自身の`index.html`ファイルを上書きし、GitHubリポジトリにコミットしてGitHub Pagesでご確認ください。
+
+引き続き、何か修正点や追加したいコンテンツがあれば、お気軽にお知らせくださ
