@@ -206,26 +206,66 @@
             margin-top: 2.5rem;
             font-size: 2.25rem; /* text-3xl相当に大きく */
         }
-        .profile-image-wrapper {
-            margin-top: 20px;
-            text-align: center;
+        .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
+            background-image: url('ゼゲイ.jpg'); /* 背景画像として指定 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 2rem; /* 背景画像内のパディング */
+            color: #FFF; /* 背景画像上のテキスト色を白に */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* テキストの視認性向上のための影 */
+            border-radius: 8px;
+            position: relative; /* オーバーレイのために必要 */
+            overflow: hidden; /* 角丸と背景のクリップ */
         }
-        .profile-image-wrapper img {
-            max-width: 180px; /* Adjust size */
-            height: auto;
-            border-radius: 50%; /* Circular image */
-            border: 4px solid #CD853F; /* Peru border */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            object-fit: cover; /* 画像の比率を維持してトリミング */
-            width: 180px; /* 明示的に幅も指定 */
-            height: 180px; /* 丸くするために高さを固定 */
+        .profile-section-content::before { /* 背景画像を暗くするオーバーレイ */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* 暗めの半透明オーバーレイ */
+            z-index: 1;
+        }
+        .profile-section-content > * { /* オーバーレイの上にコンテンツを表示 */
+            position: relative;
+            z-index: 2;
+        }
+        .profile-image-row { /* 2つの画像を並べるためのFlexbox */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* 画像間のスペース */
+            margin-bottom: 20px;
+        }
+        .profile-image-row img { /* 画像のスタイル調整 */
+            max-width: 180px; /* サイズ維持 */
+            height: 180px; /* サイズ維持 */
+            border-radius: 50%;
+            border: 4px solid #CD853F;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* 影を強める */
+            object-fit: cover;
         }
         .profile-text {
             text-align: center;
             margin-top: 10px;
             font-size: 1.1rem;
-            color: #555;
+            color: #FFF; /* 自己紹介テキストも白に */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* 影を加えて見やすく */
         }
+        .profile-section-content p, .profile-section-content ul, .profile-section-content strong, .profile-section-content a {
+            color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        .profile-section-content strong {
+            color: #FFD700 !important; /* 略歴の年など強調部分をゴールドに */
+        }
+        .collapsible-container .collapsible-header span { /* アコーディオンヘッダーのテキスト色も調整 */
+            color: white !important;
+        }
+
+
         /* ポートフォリオカードのグリッドレイアウトを調整 (2列表示に) */
         .portfolio-grid {
             display: grid;
@@ -449,11 +489,20 @@
                 <!-- 自己紹介セクション -->
                 <section id="about" class="scroll-mt-24">
                     <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">自己紹介</h2>
-                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                        <!-- 自身の画像（1枚目） -->
-                        <div class="profile-image-wrapper">
-                            <img src="IMG_5569.PNG" alt="川勝典茂（BOSS兄）プロフィール画像">
+                    <!-- 自己紹介セクションの背景画像を適用 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
+                        <!-- 自己紹介セクション内の要素をFlexboxで並べるコンテナ -->
+                        <div class="flex flex-wrap items-center justify-center gap-5">
+                            <!-- 自身の画像（1枚目） -->
+                            <div class="profile-image-wrapper">
+                                <img src="IMG_5569.PNG" alt="川勝典茂（BOSS兄）プロフィール画像">
+                            </div>
+                            <!-- 22212851.pngを反対側に配置 -->
+                            <div class="profile-image-wrapper">
+                                <img src="22212851.png" alt="イメージ画像" class="profile-image-right">
+                            </div>
                         </div>
+                        
                         <div class="profile-text">
                             <p class="font-bold text-lg">VIDEO edit office BOSS兄</p>
                             <p>Norishige Kawakatsu. In Osaka</p>
@@ -511,7 +560,7 @@
 
                                     <p class="text-stone-700 text-sm mb-3 font-semibold">我が家のヒーローBOSS</p>
                                     <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我が家のヒーローBOSS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我が家のヒーローBOSS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                     <p class="text-stone-700 text-sm mb-3">
                                         動画制作を始めるきっかけとなった記念すべき作品です。
