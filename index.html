@@ -232,16 +232,17 @@
             position: relative;
             z-index: 2;
         }
-        .profile-image-row { /* 2つの画像を並べるためのFlexbox */
+        .profile-image-pair { /* 2つの画像を横並びにするためのFlexbox */
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px; /* 画像間のスペース */
             margin-bottom: 20px;
+            flex-wrap: wrap; /* スマホで折り返す */
         }
-        .profile-image-row img { /* 画像のスタイル調整 */
-            max-width: 180px; /* サイズ維持 */
-            height: 180px; /* サイズ維持 */
+        .profile-image-pair img { /* 画像のスタイル調整 */
+            width: 180px; /* 明示的に幅も指定 */
+            height: 180px; /* 丸くするために高さを固定 */
             border-radius: 50%;
             border: 4px solid #CD853F;
             box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* 影を強める */
@@ -492,7 +493,7 @@
                     <!-- 自己紹介セクションの背景画像を適用 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
                         <!-- 自己紹介セクション内の要素をFlexboxで並べるコンテナ -->
-                        <div class="flex flex-wrap items-center justify-center gap-5">
+                        <div class="profile-image-pair">
                             <!-- 自身の画像（1枚目） -->
                             <div class="profile-image-wrapper">
                                 <img src="IMG_5569.PNG" alt="川勝典茂（BOSS兄）プロフィール画像">
@@ -560,7 +561,7 @@
 
                                     <p class="text-stone-700 text-sm mb-3 font-semibold">我が家のヒーローBOSS</p>
                                     <div class="portfolio-video-container">
-                                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我が家のヒーローBOSS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我が家のヒーローBOSS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                     <p class="text-stone-700 text-sm mb-3">
                                         動画制作を始めるきっかけとなった記念すべき作品です。
