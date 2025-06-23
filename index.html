@@ -41,18 +41,27 @@
         /* ナビゲーションリンクのスタイル */
         .nav-link {
             transition: background-color 0.3s ease, color 0.3s ease;
-            display: inline-block; /* パディングを適用するため */
-            padding: 0.7rem 1.2rem; /* ナビリンクのパディングを調整 */
+            flex-grow: 1; /* 各リンクが均等な幅を占める */
+            text-align: center; /* テキストを中央寄せ */
+            padding: 0.8rem 1.2rem; /* ナビリンクのパディングを調整 */
             border-radius: 6px;
             text-decoration: none;
             color: #FFFFFF; /* ホワイト */
             background-color: #A0522D; /* Sienna (ブラウン) */
             font-weight: 500; /* Medium weight */
-            font-size: 0.95rem; /* 少し大きく */
+            font-size: 1rem; /* さらに少し大きく */
+            white-space: nowrap; /* テキストの折り返しを防ぐ */
         }
         .nav-link:hover {
             background-color: #CD853F; /* Hover effect: Peru (明るいブラウン) */
             color: #FFFFFF;
+        }
+        /* ナビゲーションリスト全体に flex-grow を有効にするための調整 */
+        #navbar ul {
+            display: flex; /* flexboxを有効にする */
+            justify-content: space-around; /* 均等な間隔で配置 */
+            width: 100%; /* 親要素の幅いっぱいに広げる */
+            padding: 0; /* デフォルトのパディングをリセット */
         }
 
         /* アコーディオンヘッダーのスタイル */
@@ -106,7 +115,7 @@
         /* メインヘッダーのデザイン */
         .main-header-container {
             background: linear-gradient(to right, #CD853F, #A0522D); /* Peru to Sienna gradient */
-            padding: 2rem 0; /* パディングを増やす */
+            padding: 2.5rem 0; /* パディングをさらに増やす */
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -115,34 +124,35 @@
             display: flex;
             align-items: center;
             justify-content: center; /* 中央寄せ */
-            gap: 15px; /* アイコンとテキストの間隔 */
+            gap: 20px; /* アイコンとテキストの間隔を広げる */
         }
         .header-icon {
-            width: 50px; /* アイコンのサイズ調整 */
-            height: 50px;
+            width: 70px; /* アイコンのサイズをさらに大きく */
+            height: 70px;
             object-fit: contain; /* アスペクト比を保持してフィット */
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); /* 影を追加して強調 */
         }
         .main-title {
             color: white;
+            font-size: 3.5rem; /* テキストをさらに大きく */
             /* 枠のあるフォント効果 */
             text-shadow: 
-                -1.5px -1.5px 0 #5A2D0E,  
-                 1.5px -1.5px 0 #5A2D0E,
-                -1.5px  1.5px 0 #5A2D0E,
-                 1.5px  1.5px 0 #5A2D0E,
-                 0px     0px    8px rgba(0,0,0,0.4); /* 通常の影も残す */
+                -2px -2px 0 #5A2D0E,  
+                 2px -2px 0 #5A2D0E,
+                -2px  2px 0 #5A2D0E,
+                 2px  2px 0 #5A2D0E,
+                 0px     0px    10px rgba(0,0,0,0.5); /* 通常の影も強調 */
         }
         .main-subtitle { /* サブタイトル用のスタイル */
             color: white;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-            font-size: 1.15rem; /* 少し大きく */
+            font-size: 1.4rem; /* サブタイトルをさらに大きく */
             /* 枠のあるフォント効果 */
             text-shadow: 
-                -0.8px -0.8px 0 #5A2D0E,  
-                 0.8px -0.8px 0 #5A2D0E,
-                -0.8px  0.8px 0 #5A2D0E,
-                 0.8px  0.8px 0 #5A2D0E,
-                 0px     0px    5px rgba(0,0,0,0.3);
+                -1px -1px 0 #5A2D0E,  
+                 1px -1px 0 #5A2D0E,
+                -1px  1px 0 #5A2D0E,
+                 1px  1px 0 #5A2D0E,
+                 0px     0px    6px rgba(0,0,0,0.4);
         }
         /* 各セクション見出しのデザイン */
         .section-h2 {
