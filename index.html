@@ -207,7 +207,8 @@
             font-size: 2.25rem; /* text-3xl相当に大きく */
         }
         .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
-            background-image: url('ゼゲイ.jpg'); /* ゼゲイ.jpg を背景画像として使用 */
+            /* GitHub上の実際のファイル名に合わせることを推奨: ゼゲイ.jpg */
+            background-image: url('https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/ゼゲイ.jpg'); /* ゼゲイ.jpg を背景画像として使用（絶対パス指定） */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -243,65 +244,79 @@
             margin-bottom: 20px; /* 下部マージン */
             width: 100%; /* 親要素の幅いっぱいに広げる */
         }
-        .profile-image-pair { /* 2つの画像を横並びにするためのFlexbox */
+        .profile-image-group { /* 3つの画像をまとめてFlexboxで配置 */
             display: flex;
-            justify-content: space-between; /* 両サイドに離して配置 */
-            align-items: flex-start; /* 上寄せ */
+            align-items: center; /* 中央揃え（垂直方向） */
+            justify-content: space-around; /* 両サイドに離して均等配置 */
             width: 100%; /* 親要素の幅いっぱいに広げる */
-            max-width: 500px; /* 画像ペアの最大幅を制限 */
-            margin: 0 auto; /* 中央寄せ */
-            padding: 10px 0; /* 画像ペアの上下パディング */
+            max-width: 600px; /* 画像グループの最大幅を制限 */
+            margin: -50px auto 30px auto; /* 上部への負のマージンと中央寄せ */
             flex-wrap: wrap; /* スマホで折り返す */
+            gap: 15px; /* 画像間の隙間 */
         }
-        @media (max-width: 640px) { /* スマホでは縦並び */
-            .profile-image-pair {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
+        @media (max-width: 768px) { /* タブレット以下での調整 */
+            .profile-image-group {
+                flex-direction: column; /* 縦に並べる */
+                gap: 20px; /* 縦方向の隙間 */
+                margin-top: -30px; /* スマホでは少し上に */
+            }
+            .profile-section-logo-in-content {
+                order: 1; /* ロゴを一番上に */
+                margin-bottom: 0;
+            }
+            .profile-image-main, .profile-image-sub {
+                order: 2; /* 他の画像をその下に */
+                margin-top: 0; /* 縦並びなので負のマージンをリセット */
             }
         }
-        .profile-image-pair .profile-image-wrapper {
-            margin: 0; /* 親要素のprofile-image-wrapperのマージンをリセット */
-        }
-        .profile-image-pair .profile-image-wrapper img { /* 画像のスタイル調整 */
-            border: 4px solid #CD853F;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.6); /* 影を強める */
-            object-fit: cover;
-        }
-        .profile-image-pair .profile-image-wrapper:first-child img { /* 最初の画像（IMG_5569.PNG）は丸型 */
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-top: -30px; /* 少し上に移動 */
-        }
-        .profile-image-pair .profile-image-wrapper:last-child img { /* 2番目の画像（22212851.png）は正方形で傾ける */
-            width: 180px; /* 正方形に */
-            height: 180px; /* 正方形に */
-            border-radius: 8px; /* 角を少し丸く */
-            transform: rotate(-5deg); /* 少し傾ける */
-            transition: transform 0.3s ease; /* ホバー効果 */
-            margin-top: -30px; /* 少し上に移動 */
-        }
-        .profile-image-pair .profile-image-wrapper:last-child img:hover {
-            transform: rotate(0deg) scale(1.05); /* ホバーで元に戻し少し拡大 */
-        }
-        .profile-section-logo { /* 自己紹介セクション内のBOSS兄ロゴ */
+        .profile-section-logo-in-content { /* 自己紹介セクション内のBOSS兄ロゴ */
             width: 150px; /* サイズを調整 */
             height: 150px;
             object-fit: contain;
-            display: block;
-            margin: -50px auto 30px auto; /* 上部のマージンを負の値にして上に配置、下部マージンで調整 */
             filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* 影を追加 */
+            margin-top: 0; /* 親要素がgroupなので負のマージンはここでリセット */
+        }
+        .profile-image-main, .profile-image-sub { /* プロフィール画像とイラスト画像の共通スタイル */
+            width: 180px; /* サイズ */
+            height: 180px; /* サイズ */
+            border: 4px solid #CD853F;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            object-fit: cover;
+        }
+        .profile-image-main { /* 自身の画像（IMG_5569.PNG）は丸型 */
+            border-radius: 50%;
+            margin-top: -40px; /* 上にさらに移動 */
+        }
+        .profile-image-sub { /* 22212851.pngは正方形で傾ける */
+            border-radius: 8px;
+            transform: rotate(-5deg); /* 少し傾ける */
+            transition: transform 0.3s ease; /* ホバー効果 */
+            margin-top: -40px; /* 上にさらに移動 */
+        }
+        .profile-image-sub:hover {
+            transform: rotate(0deg) scale(1.05); /* ホバーで元に戻し少し拡大 */
         }
 
         /* 自己紹介セクション内のテキストのスタイル */
+        .profile-main-text { /* 自己紹介のメインテキスト用クラス */
+            color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
+            font-size: 1.35rem; /* フォントサイズをさらに大きく */
+            text-shadow: 
+                -1.2px -1.2px 0 #5A2D0E,  
+                 1.2px -1.2px 0 #5A2D0E,
+                -1.2px  1.2px 0 #5A2D0E,
+                 1.2px  1.2px 0 #5A2D0E,
+                 0px     0px    6px rgba(0,0,0,0.8); /* 枠あり風の影を強調 */
+            line-height: 1.8; /* 行間を広げて読みやすく */
+            margin-bottom: 1.5rem; /* 下部マージン */
+        }
+        /* 自己紹介セクション内の通常pタグとul, li, a のスタイルも強制 */
         .profile-section-content p, 
         .profile-section-content ul, 
-        .profile-section-content strong, 
+        .profile-section-content li,
         .profile-section-content a {
-            color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.9); /* 影を加えて見やすく */
-            line-height: 1.8; /* 行間を広げて読みやすく */
+            color: #FFF !important; /* 自己紹介内のテキストを白に強制 */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* 影を加えて見やすく */
         }
         .profile-section-content strong {
             color: #FFD700 !important; /* 略歴の年など強調部分をゴールドに */
@@ -491,10 +506,10 @@
             <div class="header-inner-content"> <!-- メインコンテンツ幅に合わせる新しいコンテナ -->
                 <div class="main-header-content">
                     <!-- 左側のアイコン -->
-                    <img src="BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
                     <h1 class="main-title text-3xl md:text-4xl font-bold text-center">VIDEO edit office BOSS兄</h1>
                     <!-- 右側のアイコン -->
-                    <img src="BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
                 </div>
                 <p class="main-subtitle text-base md:text-lg text-center mt-1">Norishige Kawakatsu. In Osaka</p>
             </div>
@@ -537,30 +552,28 @@
                     <!-- 自己紹介セクションの背景画像を適用 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
                         <!-- 自己紹介セクション内のロゴと画像ペア -->
-                        <div class="profile-section-branding">
-                            <img src="BOSS兄.jpg" alt="BOSS兄ロゴ" class="profile-section-logo">
-                            <div class="profile-image-pair">
-                                <!-- 自身の画像（1枚目） -->
-                                <div class="profile-image-wrapper">
-                                    <img src="IMG_5569.PNG" alt="川勝典茂（BOSS兄）プロフィール画像">
-                                </div>
-                                <!-- 22212851.pngを反対側に配置 -->
-                                <div class="profile-image-wrapper">
-                                    <img src="22212851.png" alt="イメージ画像" class="profile-image-right">
-                                </div>
+                        <div class="profile-image-group">
+                            <!-- 左の画像 (IMG_5569.PNG) -->
+                            <div class="profile-image-wrapper">
+                                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/IMG_5569.PNG" alt="川勝典茂（BOSS兄）プロフィール画像" class="profile-image-main">
+                            </div>
+                            <!-- 中央のロゴ (BOSS兄.jpg) -->
+                            <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄ロゴ" class="profile-section-logo-in-content">
+                            <!-- 右の画像 (22212851.png) -->
+                            <div class="profile-image-wrapper">
+                                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png" alt="イメージ画像" class="profile-image-sub">
                             </div>
                         </div>
                         
-                        <!-- profile-text divは削除し、直接自己紹介テキストが続くようにする -->
                         <!-- 自己紹介テキスト -->
-                        <p class="text-stone-700 leading-relaxed">
+                        <p class="profile-main-text">
                             初めまして！<br>
                             私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は、『我が家のヒーローBOSS』です。
                         </p>
-                        <p class="text-stone-700 leading-relaxed">
+                        <p class="profile-main-text">
                             その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。
                         </p>
-                        <p class="text-stone-700 leading-relaxed">
+                        <p class="profile-main-text">
                             私の作品は、下記の項目、または「制作作品」セクションでご覧いただけます。
                         </p>
 
@@ -870,7 +883,7 @@
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <!-- 画像パスを修正: GitHub上の現在のファイル名に合わせる -->
-                                    <img src="動画フロー.png" alt="動画制作フロー" class="portfolio-detail-image">
+                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/動画フロー.png" alt="動画制作フロー" class="portfolio-detail-image">
                                     <p class="text-stone-700 text-sm mt-3">
                                         お問い合わせから納品までの制作プロセスをステップごとに分かりやすく図解しています。
                                     </p>
@@ -887,7 +900,7 @@
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <!-- 画像パスを修正: GitHub上の現在のファイル名に合わせる -->
-                                    <img src="動画制作料金表１.png" alt="動画制作料金表" class="portfolio-detail-image">
+                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/動画制作料金表１.png" alt="動画制作料金表" class="portfolio-detail-image">
                                     <p class="text-stone-700 text-sm mt-3">
                                         ライト、スタンダード、プレミアの3つのプランをご用意しています。詳細についてはお問い合わせください。
                                     </p>
