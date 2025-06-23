@@ -207,7 +207,6 @@
             font-size: 2.25rem; /* text-3xl相当に大きく */
         }
         .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
-            /* 背景画像のパスをGitHub上のファイル名に合わせます */
             background-image: url('ゼゲイ.jpg'); /* ゼゲイ.jpg を背景画像として使用 */
             background-size: cover;
             background-position: center;
@@ -217,6 +216,11 @@
             position: relative; /* オーバーレイのために必要 */
             overflow: hidden; /* 角丸と背景のクリップ */
             box-shadow: 0 0 15px rgba(0,0,0,0.2); /* 全体的な影を強調 */
+            /* flexboxを適用してコンテンツの垂直方向の中央揃えを維持し、パディングも調整 */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 水平方向の中央寄せ */
+            text-align: center; /* テキストも中央寄せ */
         }
         .profile-section-content::before { /* 背景画像を暗くするオーバーレイ */
             content: '';
@@ -232,19 +236,28 @@
             position: relative;
             z-index: 2;
         }
+        .profile-section-branding { /* 自己紹介セクション内のロゴと画像ペアをまとめるコンテナ */
+            display: flex;
+            flex-direction: column; /* 縦に並べる */
+            align-items: center; /* 中央寄せ */
+            margin-bottom: 20px; /* 下部マージン */
+            width: 100%; /* 親要素の幅いっぱいに広げる */
+        }
         .profile-image-pair { /* 2つの画像を横並びにするためのFlexbox */
             display: flex;
             justify-content: space-between; /* 両サイドに離して配置 */
-            align-items: center;
-            gap: 20px; /* 画像間のスペース */
-            margin-bottom: 20px;
-            flex-wrap: wrap; /* スマホで折り返す */
-            padding: 10px 0; /* 画像ペアの上下パディング */
+            align-items: flex-start; /* 上寄せ */
             width: 100%; /* 親要素の幅いっぱいに広げる */
+            max-width: 500px; /* 画像ペアの最大幅を制限 */
+            margin: 0 auto; /* 中央寄せ */
+            padding: 10px 0; /* 画像ペアの上下パディング */
+            flex-wrap: wrap; /* スマホで折り返す */
         }
         @media (max-width: 640px) { /* スマホでは縦並び */
             .profile-image-pair {
                 flex-direction: column;
+                align-items: center;
+                gap: 20px;
             }
         }
         .profile-image-pair .profile-image-wrapper {
@@ -259,6 +272,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
+            margin-top: -30px; /* 少し上に移動 */
         }
         .profile-image-pair .profile-image-wrapper:last-child img { /* 2番目の画像（22212851.png）は正方形で傾ける */
             width: 180px; /* 正方形に */
@@ -266,25 +280,25 @@
             border-radius: 8px; /* 角を少し丸く */
             transform: rotate(-5deg); /* 少し傾ける */
             transition: transform 0.3s ease; /* ホバー効果 */
+            margin-top: -30px; /* 少し上に移動 */
         }
         .profile-image-pair .profile-image-wrapper:last-child img:hover {
             transform: rotate(0deg) scale(1.05); /* ホバーで元に戻し少し拡大 */
         }
         .profile-section-logo { /* 自己紹介セクション内のBOSS兄ロゴ */
-            width: 90px; /* サイズを調整 */
-            height: 90px;
+            width: 150px; /* サイズを調整 */
+            height: 150px;
             object-fit: contain;
             display: block;
-            margin: 10px auto 20px auto; /* 上下のマージンを調整し中央寄せ */
-            filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); /* 影を追加 */
+            margin: -50px auto 30px auto; /* 上部のマージンを負の値にして上に配置、下部マージンで調整 */
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* 影を追加 */
         }
 
         /* 自己紹介セクション内のテキストのスタイル */
         .profile-section-content p, 
         .profile-section-content ul, 
         .profile-section-content strong, 
-        .profile-section-content a,
-        .profile-section-content .profile-text p { /* profile-text内のpタグも対象に */
+        .profile-section-content a {
             color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9); /* 影を加えて見やすく */
             line-height: 1.8; /* 行間を広げて読みやすく */
