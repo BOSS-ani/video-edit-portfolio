@@ -111,6 +111,17 @@
             border-bottom-right-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
+        .main-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 中央寄せ */
+            gap: 15px; /* アイコンとテキストの間隔 */
+        }
+        .header-icon {
+            width: 50px; /* アイコンのサイズ調整 */
+            height: 50px;
+            object-fit: contain; /* アスペクト比を保持してフィット */
+        }
         .main-title {
             color: white;
             /* 枠のあるフォント効果 */
@@ -121,9 +132,17 @@
                  1.5px  1.5px 0 #5A2D0E,
                  0px     0px    8px rgba(0,0,0,0.4); /* 通常の影も残す */
         }
-        .main-subtitle { /* 新しいサブタイトル用のスタイル */
+        .main-subtitle { /* サブタイトル用のスタイル */
             color: white;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            font-size: 1.15rem; /* 少し大きく */
+            /* 枠のあるフォント効果 */
+            text-shadow: 
+                -0.8px -0.8px 0 #5A2D0E,  
+                 0.8px -0.8px 0 #5A2D0E,
+                -0.8px  0.8px 0 #5A2D0E,
+                 0.8px  0.8px 0 #5A2D0E,
+                 0px     0px    5px rgba(0,0,0,0.3);
         }
         /* 各セクション見出しのデザイン */
         .section-h2 {
@@ -235,7 +254,13 @@
     <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <div class="main-header-container">
             <div class="container mx-auto px-4 py-3">
-                <h1 class="main-title text-3xl md:text-4xl font-bold text-center">VIDEO edit office BOSS兄</h1>
+                <div class="main-header-content">
+                    <!-- 左側のアイコン -->
+                    <img src="BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
+                    <h1 class="main-title text-3xl md:text-4xl font-bold text-center">VIDEO edit office BOSS兄</h1>
+                    <!-- 右側のアイコン -->
+                    <img src="BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
+                </div>
                 <p class="main-subtitle text-base md:text-lg text-center mt-1">Norishige Kawakatsu. In Osaka</p>
             </div>
         </div>
