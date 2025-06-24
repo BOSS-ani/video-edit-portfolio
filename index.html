@@ -24,376 +24,228 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box; /* PaddingとBorderをwidth/heightに含める */
-        }
-        /* コンテナの幅を調整し、自己紹介からプライバシーポリシーのセクション幅に合わせる */
-        /* この.containerはメインコンテンツのセクションに使用され、ヘッダーとは独立して幅を制御 */
-        .container {
-            width: 95%; /* デフォルトの幅 */
-            max-width: 900px; /* 自己紹介からフッターまでのメインコンテンツの最大幅 */
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.08); /* 影を強調 */
-            border-radius: 12px; /* 角を丸く */
-        }
-        /* ヘッダーとフッターのコンテナは別途定義または直接インラインスタイルで制御 */
-        
-        /* ナビゲーションバー全体のスタイル */
-        #navbar {
-            background-color: #A0522D; /* Sienna (ブラウン) */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        /* ナビゲーションリンクのスタイル */
-        .nav-link {
-            transition: background-color 0.3s ease, color 0.3s ease;
-            flex-grow: 0; /* 各リンクが均等な幅を占めるのではなく、コンテンツ幅に合わせる */
-            text-align: center; /* テキストを中央寄せ */
-            padding: 1rem 2rem; /* ナビリンクのパディングをさらに大きく */
-            border-radius: 6px;
-            text-decoration: none;
-            color: #FFFFFF; /* ホワイト */
-            background-color: #A0522D; /* Sienna (ブラウン) */
-            font-weight: 500; /* Medium weight */
-            font-size: 1.25rem; /* さらに大きく */
-            white-space: nowrap; /* テキストの折り返しを防ぐ */
-        }
-        .nav-link:hover {
-            background-color: #CD853F; /* Hover effect: Peru (明るいブラウン) */
-            color: #FFFFFF;
-        }
-        /* ナビゲーションリスト全体に flex を有効にし、中央寄せとギャップを調整 */
-        #navbar ul {
-            display: flex; /* flexboxを有効にする */
-            justify-content: center; /* 中央に寄せる */
-            width: 100%; /* 親要素の幅いっぱいに広げる */
-            padding: 0; /* デフォルトのパディングをリセット */
-            gap: 1.5rem; /* 各ボタン間の隙間 */
-        }
-        @media (max-width: 640px) { /* スマホ向けに調整 */
-            #navbar ul {
-                flex-wrap: wrap; /* ボタンが多ければ折り返す */
-                justify-content: center;
-            }
-            .nav-link {
-                width: auto;
-                margin: 0.25rem; /* ボタン間のマージン */
-            }
+            /* 固定ヘッダーの高さ分、コンテンツを下にずらすためのpadding-topはJavaScriptで設定 */
         }
 
-        /* アコーディオンヘッダーのスタイル */
-        .collapsible-header {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.2rem 1.5rem; /* パディングを増やす */
-            font-weight: bold;
-            font-size: 1.25rem; /* text-xl相当に大きく */
-            color: #FFFFFF; /* White text */
-            background-color: #D2B48C; /* BurlyWood (Light brown) */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* 影を強調 */
-            margin-top: 1.5rem; /* 上のマージンを増やす */
-            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            border: 1px solid #C09B6A; /* 若干のボーダーを追加 */
-        }
-        .collapsible-header:hover {
-            background-color: #CD853F; /* Hover effect: Peru */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* ホバーで影を強調 */
-        }
-        .collapsible-content {
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* paddingもトランジション対象に */
-            max-height: 0; /* Initial state: closed */
-            padding: 0 1rem; /* 初期パディングは0 */
-            background-color: #fcfcfc;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .collapsible-content.expanded {
-            max-height: 2500px; /* 十分な高さを設定（コンテンツに応じて調整） */
-            padding-top: 1.5rem; /* 開いた時の上パディング */
-            padding-bottom: 1.5rem; /* 開いた時の下パディング */
-            border: 1px solid #e0e0e0;
-            border-top: none; /* 上のボーダーは無し */
-        }
-        .toggle-icon {
-            transform: rotate(0deg);
-            transition: transform 0.3s ease;
-            font-size: 1.5rem; /* アイコンサイズを大きく */
-            color: #FFFFFF; /* アイコンも白に */
-        }
-        .toggle-icon.rotated {
-            transform: rotate(180deg);
-        }
-
-        /* メインヘッダーのデザイン */
-        .main-header-container {
-            background: linear-gradient(to right, #CD853F, #A0522D); /* Peru to Sienna gradient */
-            padding: 4rem 0; /* パディングをさらに増やす */
+        /* ヘッダーの固定スタイル */
+        header {
+            position: fixed; /* ヘッダーを固定 */
+            top: 0;
+            width: 100%;
+            z-index: 100; /* 他のコンテンツの上に表示 */
+            background-color: #A0522D; /* Sienna (ブラウン) - ヘッダー背景を固定色に */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 2rem 0; /* パディングを増やす */
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        /* ヘッダー内部のコンテンツをメインコンテンツ幅に制限 */
+        /* ヘッダー内部のコンテンツ幅 */
         .header-inner-content {
             max-width: 900px; /* メインコンテンツの幅に合わせる */
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 1rem; /* 左右のパディング */
+            margin: 0 auto;
+            padding: 0 1rem;
         }
+        /* メインタイトルとロゴのグループ */
         .main-header-content {
             display: flex;
-            align-items: center;
-            justify-content: center; /* 中央寄せ */
-            gap: 30px; /* アイコンとテキストの間隔をさらに広げる */
+            align-items: center; /* 垂直方向中央揃え */
+            justify-content: center; /* 水平方向中央寄せ */
+            gap: 20px; /* アイコンとテキストの間隔 */
             flex-wrap: wrap; /* スマホで折り返す */
         }
         .header-icon {
-            width: 120px; /* アイコンのサイズをさらに大きく */
-            height: 120px;
-            object-fit: contain; /* アスペクト比を保持してフィット */
-            filter: drop-shadow(0 0 12px rgba(0,0,0,0.8)); /* 影を強調 */
+            width: 90px; /* アイコンの基本サイズ */
+            height: 90px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.7)); /* 影を強調 */
         }
         .main-title {
             color: white;
-            font-size: 5rem; /* テキストをさらに大きく */
-            line-height: 1.1; /* 行の高さを調整してコンパクトに */
-            /* 枠のあるフォント効果 */
+            font-size: 4rem; /* 基本のフォントサイズ */
+            line-height: 1.1;
             text-shadow: 
-                -4px -4px 0 #5A2D0E,  
-                 4px -4px 0 #5A2D0E,
-                -4px  4px 0 #5A2D0E,
-                 4px  4px 0 #5A2D0E,
-                 0px     0px    20px rgba(0,0,0,0.8); /* 通常の影も強調 */
+                -3px -3px 0 #5A2D0E,  
+                 3px -3px 0 #5A2D0E,
+                -3px  3px 0 #5A2D0E,
+                 3px  3px 0 #5A2D0E,
+                 0px     0px    15px rgba(0,0,0,0.8);
         }
-        /* スマホ向けヘッダー調整 */
-        @media (max-width: 768px) {
-            .main-header-content {
-                flex-direction: column; /* 縦並び */
-                gap: 10px; /* 間隔を調整 */
-            }
-            .header-icon {
-                width: 50px; /* スマホでアイコンを小さく */
-                height: 50px;
-            }
-            .main-title {
-                font-size: 2.5rem; /* スマホでタイトルを小さく */
-            }
-            .main-subtitle {
-                font-size: 1.2rem; /* スマホでサブタイトルを小さく */
-            }
-            /* ヘッダーのパディングも調整してコンパクトに */
-            .main-header-container {
-                padding: 2rem 0;
-            }
-        }
-        .main-subtitle { /* サブタイトル用のスタイル */
+        .main-subtitle {
             color: white;
-            font-size: 2rem; /* サブタイトルをさらに大きく */
+            font-size: 1.8rem;
             line-height: 1.2;
-            margin-top: 10px; /* 上部のマージン */
-            /* 枠のあるフォント効果 */
-            text-shadow: 
-                -1.8px -1.8px 0 #5A2D0E,  
-                 1.8px -1.8px 0 #5A2D0E,
-                -1.8px  1.8px 0 #5A2D0E,
-                 1.8px  1.8px 0 #5A2D0E,
-                 0px     0px    12px rgba(0,0,0,0.7);
-        }
-        /* 各セクション見出しのデザイン */
-        .section-h2 {
-            background: linear-gradient(to right, #FAEBD7, #FDFBF6); /* Antique White to light cream gradient */
-            padding: 1.2rem 1.8rem; /* パディングを調整 */
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* 影を強調 */
-            color: #5A2D0E; /* Deep Espresso Brown for text */
-            border-left: 8px solid #CD853F; /* Peru for accent border, 太く */
-            margin-bottom: 1.8rem;
-            margin-top: 2.5rem;
-            font-size: 2.25rem; /* text-3xl相当に大きく */
-        }
-        .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
-            /* 背景画像は使用せず、単色背景に */
-            background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
-            /* background-image: url('https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/ゼゲイ.jpg'); /* ゼゲイ.jpg を背景画像として使用（絶対パス指定） */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 2rem; /* 背景画像内のパディング */
-            border-radius: 8px;
-            position: relative; /* オーバーレイのために必要 */
-            overflow: hidden; /* 角丸と背景のクリップ */
-            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* 全体的な影を強調 */
-            /* flexboxを適用してコンテンツの垂直方向の中央揃えを維持し、パディングも調整 */
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* 水平方向の中央寄せ */
-            text-align: center; /* テキストも中央寄せ */
-            /* 読み込み失敗時の背景色を灰色ではなく、テーマカラーに近い色に */
-            min-height: 400px; /* 高さの最低値を設定してコンテンツが見えやすいように */
-        }
-        .profile-section-content::before { /* 背景画像を暗くするオーバーレイは不要になるため、透明に */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0); /* 透明なオーバーレイ */
-            z-index: 1;
-        }
-        .profile-section-content > * { /* オーバーレイの上にコンテンツを表示 */
-            position: relative;
-            z-index: 2;
-        }
-        .profile-section-branding { /* 自己紹介セクション内のロゴと画像ペアをまとめるコンテナ */
-            display: flex;
-            flex-direction: column; /* 縦に並べる */
-            align-items: center; /* 中央寄せ */
-            margin-bottom: 20px; /* 下部マージン */
-            width: 100%; /* 親要素の幅いっぱいに広げる */
-        }
-        .profile-image-group { /* 3つの画像をまとめてFlexboxで配置 */
-            display: flex;
-            align-items: center; /* 垂直方向中央揃え */
-            justify-content: space-evenly; /* 均等な間隔で配置 */
-            width: 100%; /* 親要素の幅いっぱいに広げる */
-            max-width: 800px; /* 画像グループの最大幅をさらに広げる */
-            margin: 0px auto 30px auto; /* 上部のマージンと中央寄せを調整 */
-            flex-wrap: wrap; /* スマホで折り返す */
-            padding: 0 20px; /* 左右のパディングを増やす */
-            box-sizing: border-box; /* パディングを幅に含める */
-            position: relative; /* 子要素のabsolute配置基準 */
-            min-height: 250px; /* 画像群が収まる最低限の高さ */
-            /* 新しい中央配置の調整 */
-            padding-top: 50px; /* 上部にパディングを追加して切れないようにする */
-            padding-bottom: 50px; /* 下部パディングも調整 */
-        }
-        @media (max-width: 768px) { /* タブレット以下での調整 */
-            .profile-image-group {
-                flex-direction: column; /* 縦に並べる */
-                gap: 20px; /* 縦方向の隙間 */
-                margin-top: 0; /* スマホでは負のマージンをリセット */
-                align-items: center; /* 中央寄せ */
-                min-height: auto; /* 高さのリセット */
-                padding-top: 20px; /* スマホでのパディング */
-                padding-bottom: 20px; /* スマホでのパディング */
-            }
-            .profile-section-logo-in-content {
-                order: 1; /* ロゴを一番上に */
-                margin-bottom: 0;
-                margin-top: 0; /* スマホでは負のマージンをリセット */
-            }
-            .profile-image-main, .profile-image-sub {
-                order: 2; /* 他の画像をその下に */
-                margin-top: 0; /* 縦並びなので負のマージンをリセット */
-            }
-        }
-        .profile-section-logo-in-content { /* 自己紹介セクション内のBOSS兄ロゴ (中央) */
-            width: 250px; /* さらに大きく */
-            height: 250px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); /* 影を強調 */
-            order: 2; /* 中央の画像を2番目に配置 */
-            transform: translateY(50px); /* 中央の画像を下に配置 */
-        }
-        .profile-image-main, .profile-image-sub { /* プロフィール画像とイラスト画像の共通スタイル (両サイド) */
-            width: 220px; /* サイズをさらに大きく */
-            height: 220px; /* サイズをさらに大きく */
-            border: 5px solid #CD853F; /* ボーダーを太く */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.7); /* 影を強調 */
-            object-fit: cover;
-            order: 1; /* 初期は左の画像を1番に */
-            transform: translateY(-50px); /* 両サイドの画像を上に移動 */
-        }
-        .profile-image-main { /* 自身の画像（IMG_5569.PNG）は丸型 */
-            border-radius: 50%;
-        }
-        .profile-image-sub { /* 22212851.pngは正方形で傾ける */
-            border-radius: 12px; /* 角をさらに丸く */
-            transform: translateY(-50px) rotate(-7deg); /* 少し傾きを強める */
-            transition: transform 0.4s ease, box-shadow 0.3s ease; /* ホバー効果 */
-            order: 3; /* 右の画像を3番に配置 */
-        }
-        .profile-image-sub:hover {
-            transform: translateY(-50px) rotate(0deg) scale(1.08); /* ホバーで元に戻し少し拡大 */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
-        }
-
-        /* 自己紹介セクション内のテキストのスタイル */
-        .profile-main-text { /* 自己紹介のメインテキスト用クラス */
-            color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
-            font-size: 1.45rem; /* フォントサイズをさらに大きく (text-2xl相当) */
+            margin-top: 10px;
             text-shadow: 
                 -1.5px -1.5px 0 #5A2D0E,  
                  1.5px -1.5px 0 #5A2D0E,
                 -1.5px  1.5px 0 #5A2D0E,
                  1.5px  1.5px 0 #5A2D0E,
-                 0px     0px    8px rgba(0,0,0,0.8); /* 枠あり風の影を強調 */
-            line-height: 1.8; /* 行間を広げて読みやすく */
-            margin-bottom: 1.5rem; /* 下部マージン */
-        }
-        /* 自己紹介セクション内の通常pタグとul, li, a のスタイルも強制 */
-        .profile-section-content p, 
-        .profile-section-content ul, 
-        .profile-section-content li,
-        .profile-section-content a {
-            color: #FFF !important; /* 自己紹介内のテキストを白に強制 */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.9); /* 影を加えて見やすく */
-        }
-        .profile-section-content strong {
-            color: #FFD700 !important; /* 略歴の年など強調部分をゴールドに */
-        }
-        .collapsible-container .collapsible-header span { /* アコーディオンヘッダーのテキスト色も調整 */
-            color: white !important;
+                 0px     0px    10px rgba(0,0,0,0.7);
         }
 
+        /* ナビゲーションバー */
+        #navbar {
+            background-color: #A0522D; /* Sienna (ブラウン) */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #navbar ul {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            gap: 1rem;
+        }
+        .nav-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #FFFFFF;
+            background-color: #A0522D;
+            font-weight: 500;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        .nav-link:hover {
+            background-color: #CD853F;
+            color: #FFFFFF;
+        }
 
-        /* ポートフォリオカードのグリッドレイアウトを調整 (2列表示に) */
+        /* 自己紹介セクション */
+        .section-h2 {
+            background: linear-gradient(to right, #FAEBD7, #FDFBF6);
+            padding: 1.2rem 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            color: #5A2D0E;
+            border-left: 8px solid #CD853F;
+            margin-bottom: 1.8rem;
+            margin-top: 2.5rem;
+            font-size: 2.25rem;
+        }
+        .profile-section-content {
+            background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 400px;
+        }
+        .profile-section-content::before { /* 背景画像を暗くするオーバーレイは不要なため削除 */
+            content: none;
+        }
+        .profile-section-content > * {
+            position: relative;
+            z-index: 2;
+        }
+        .profile-image-group {
+            display: flex;
+            align-items: flex-end; /* 画像を下部に揃える */
+            justify-content: space-evenly; /* 均等な間隔で配置 */
+            width: 100%;
+            max-width: 700px; /* 画像グループの最大幅 */
+            margin: 0 auto 30px auto; /* 中央寄せ、下部マージン */
+            flex-wrap: wrap; /* スマホで折り返す */
+            padding: 0 10px; /* 左右のパディング */
+            box-sizing: border-box;
+            min-height: 250px; /* 画像群が収まる最低限の高さ */
+        }
+        .profile-section-logo-in-content { /* 中央のBOSS兄ロゴ */
+            width: 200px; /* サイズを調整 */
+            height: 200px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 12px rgba(0,0,0,0.7)); /* 影を強調 */
+            order: 2; /* 配置順序 */
+            transform: translateY(20px); /* 中央の画像を下に移動 */
+            flex-shrink: 0;
+        }
+        .profile-image-main, .profile-image-sub { /* 両サイドの画像 */
+            width: 180px; /* サイズを調整 */
+            height: 180px;
+            border: 5px solid #CD853F;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+            object-fit: cover;
+            order: 1; /* 配置順序 */
+            transform: translateY(-20px); /* 両サイドの画像を上に移動 */
+            flex-shrink: 0;
+        }
+        .profile-image-main { border-radius: 50%; }
+        .profile-image-sub {
+            border-radius: 12px;
+            transform: translateY(-20px) rotate(-7deg);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            order: 3; /* 配置順序 */
+        }
+        .profile-image-sub:hover {
+            transform: translateY(-20px) rotate(0deg) scale(1.08);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+        }
+
+        /* 自己紹介テキストのスタイル */
+        .profile-main-text {
+            color: #FFF !important;
+            font-size: 1.3rem; /* フォントサイズを調整 */
+            text-shadow: 
+                -1px -1px 0 #5A2D0E,  
+                 1px -1px 0 #5A2D0E,
+                -1px  1px 0 #5A2D0E,
+                 1px  1px 0 #5A2D0E,
+                 0px     0px    5px rgba(0,0,0,0.7);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .profile-section-content p, .profile-section-content ul, .profile-section-content li, .profile-section-content a {
+            color: #FFF !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        .profile-section-content strong { color: #FFD700 !important; }
+        .collapsible-container .collapsible-header span { color: white !important; }
+
+        /* ポートフォリオカードのグリッドレイアウト */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2列表示またはコンテンツに応じて調整 */
-            gap: 1.5rem; /* カード間の隙間 */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
-        @media (min-width: 768px) { /* デスクトップでは2列に */
+        @media (min-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .portfolio-card.md\:col-span-full { /* 特定のカードはフル幅を維持 */
+            .portfolio-card.md\:col-span-full {
                 grid-column: span 2;
             }
         }
-        @media (max-width: 767px) { /* スマホでは1列に */
+        @media (max-width: 767px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        .portfolio-card { /* Portfolio item card */
+        .portfolio-card {
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.2s ease-in-out;
-            display: flex; /* flexboxでコンテンツを整列 */
-            flex-direction: column; /* 縦方向に配置 */
-            height: 100%; /* 親要素の高さに合わせる */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-        }
-        /* YouTube埋め込みのコンテナの調整 */
+        .portfolio-card:hover { transform: translateY(-5px); }
         .portfolio-video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            margin-top: 0; /* マージンをリセット */
-            margin-bottom: 0; /* マージンをリセット */
-            border-radius: 8px; /* Rounded corners for embedded video */
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .portfolio-video-container iframe {
@@ -404,160 +256,103 @@
             height: 100%;
             border: 0;
         }
+
         /* AdSense specific style */
         .adsense-unit {
-            background-color: #F8F8F8; /* 広告ユニットの背景色 */
-            border: 1px dashed #CCC; /* 広告ユニットの境界線 */
+            background-color: #F8F8F8;
+            border: 1px dashed #CCC;
             padding: 10px;
-            margin: 2rem auto; /* 上下のマージンを調整し、中央寄せ */
-            max-width: 728px; /* 広告の一般的な最大幅 */
+            margin: 2rem auto;
+            max-width: 728px;
             text-align: center;
             font-size: 0.9rem;
             color: #666;
             border-radius: 8px;
         }
-        /* サイドバー広告ユニットのスタイルを調整 */
         .sidebar-ad-unit {
             background-color: #F8F8F8;
             border: 1px dashed #CCC;
             padding: 10px;
-            margin-bottom: 1.5rem; /* 下のマージンを調整 */
+            margin-bottom: 1.5rem;
             text-align: center;
             font-size: 0.9rem;
             color: #666;
             border-radius: 8px;
         }
 
-        /* フッターリンクの調整 */
-        footer a {
-            color: #FDFBF6 !important; /* フッターのリンク色を調整 */
-        }
-        footer a:hover {
-            text-decoration: underline !important;
-        }
+        /* フッターリンク */
+        footer a { color: #FDFBF6 !important; }
+        footer a:hover { text-decoration: underline !important; }
 
-        /* サイドバー広告用のスタイル */
+        /* サイドバー */
         .main-content-layout {
             display: flex;
-            gap: 20px; /* メインコンテンツとサイドバーの隙間 */
-            flex-wrap: wrap; /* スマホで折り返す */
-            justify-content: center; /* コンテンツが中央に寄るように */
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-
         .main-content-area {
-            flex-grow: 1; /* 残りのスペースを埋める */
-            max-width: 900px; /* メインコンテンツの最大幅を維持 */
-            width: 100%; /* 小さい画面でフル幅に */
+            flex-grow: 1;
+            max-width: 900px;
+            width: 100%;
         }
-
         .sidebar-ad-area {
-            flex-basis: 250px; /* サイドバーの推奨幅 */
-            min-width: 200px; /* 最小幅 */
+            flex-basis: 250px;
+            min-width: 200px;
             background-color: #FFF;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
-            margin-top: 2rem; /* トップコンテンツとの間隔 */
+            margin-top: 2rem;
         }
-        .sidebar-contact-area { /* 新しいお問い合わせエリアのスタイル */
-            background-color: #FAEBD7; /* ライトブラウン */
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-top: 1.5rem; /* サイドバー広告との間隔 */
-            text-align: center;
-        }
-        .sidebar-contact-area h4 {
-            font-weight: bold;
-            color: #5A2D0E;
-            margin-bottom: 0.5rem;
-        }
-        .sidebar-contact-area a {
-            color: #CD853F; /* 少し明るいブラウンのリンク色 */
-            text-decoration: underline;
-            font-weight: 500;
-        }
-        .sidebar-link-area { /* 新しいリンクエリアのスタイル */
-            background-color: #FDFBF6; /* ライトベージュ */
+        .sidebar-contact-area, .sidebar-link-area {
+            background-color: #FAEBD7;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin-top: 1.5rem;
             text-align: center;
         }
-        .sidebar-link-area ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar-link-area li {
-            margin-bottom: 0.5rem;
-        }
-        .sidebar-link-area a {
-            color: #A0522D; /* 少し濃いブラウンのリンク色 */
-            text-decoration: none;
-            font-weight: normal;
-        }
-        .sidebar-link-area a:hover {
-            text-decoration: underline;
-        }
-
-
-        @media (max-width: 1023px) { /* サイドバーが下に回るブレークポイント */
-            .sidebar-ad-area, .sidebar-contact-area, .sidebar-link-area {
-                order: 1; /* スマホで上に表示 */
-                width: 100%; /* フル幅に */
-                max-width: 728px; /* 広告の最大幅に合わせる */
-            }
-            .main-content-area {
-                order: 2; /* スマホで下に表示 */
-            }
-            .main-content-layout { /* スマホでサイドバーが独立した行になるように調整 */
-                flex-direction: column;
-                align-items: center; /* 中央寄せ */
-            }
-        }
-        @media (min-width: 1024px) { /* デスクトップでサイドバーを右に */
-            .main-content-area {
-                max-width: calc(100% - 250px - 20px); /* サイドバーとギャップを引いた幅 */
-            }
-        }
+        .sidebar-contact-area h4 { font-weight: bold; color: #5A2D0E; margin-bottom: 0.5rem; }
+        .sidebar-contact-area a { color: #CD853F; text-decoration: underline; font-weight: 500; }
+        .sidebar-link-area ul { list-style: none; padding: 0; }
+        .sidebar-link-area li { margin-bottom: 0.5rem; }
+        .sidebar-link-area a { color: #A0522D; text-decoration: none; font-weight: normal; }
+        .sidebar-link-area a:hover { text-decoration: underline; }
     </style>
 </head>
-<body class="text-stone-800 min-h-screen">
+<body>
 
-    <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
-        <div class="main-header-container">
-            <div class="header-inner-content"> <!-- メインコンテンツ幅に合わせる新しいコンテナ -->
-                <div class="main-header-content">
-                    <!-- 左側のアイコン -->
-                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
-                    <h1 class="main-title text-3xl md:text-4xl font-bold text-center">VIDEO edit office BOSS兄</h1>
-                    <!-- 右側のアイコン -->
-                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
-                </div>
-                <p class="main-subtitle text-base md:text-lg text-center mt-1">Norishige Kawakatsu. In Osaka</p>
+    <header id="main-header">
+        <div class="header-inner-content">
+            <div class="main-header-content">
+                <!-- 左側のアイコン -->
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
+                <h1 class="main-title">VIDEO edit office BOSS兄</h1>
+                <!-- 右側のアイコン -->
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
             </div>
+            <p class="main-subtitle">Norishige Kawakatsu. In Osaka</p>
         </div>
-        <nav id="navbar" class="text-white shadow-lg">
+        <nav id="navbar">
              <div class="container mx-auto px-4">
-                <ul class="flex justify-center items-center space-x-2 sm:space-x-4 md:space-x-6 overflow-x-auto py-2">
+                <ul>
                     <li><a href="#about" class="nav-link">自己紹介</a></li>
                     <li><a href="#portfolio" class="nav-link">制作作品</a></li>
-                    <li><a href="#price-guide" class="nav-link">料金案内</a></li> <!-- お問い合わせから料金案内に変更 -->
-                    <li><a href="#contact-sidebar" class="nav-link">お問い合わせ</a></li> <!-- サイドバーに移動したお問い合わせへのリンク -->
+                    <li><a href="#price-guide" class="nav-link">料金案内</a></li>
+                    <li><a href="#contact-sidebar" class="nav-link">お問い合わせ</a></li>
                     <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="main-content-layout"> <!-- メインコンテンツとサイドバー広告のためのフレックスコンテナ -->
-        <div class="main-content-area"> <!-- 自己紹介からフッターまでのメインコンテンツ領域 -->
+    <main class="main-content-layout">
+        <div class="main-content-area">
             <div class="container mx-auto p-4 md:p-8 space-y-12 pb-20">
                 
-                <!-- Google AdSense Unit (ヘッダー下部分) - 審査が承認されたらコメントアウトを外してください -->
-                <!-- あなたのAdSenseクライアントIDと広告スロットIDに置き換えてください -->
+                <!-- Google AdSense Unit (ヘッダー下部分) -->
                 <div class="adsense-unit">
                     <p>ここにヘッダー下広告が表示されます (審査承認後)</p>
                     <!-- <ins class="adsbygoogle"
@@ -573,7 +368,7 @@
 
                 <!-- 自己紹介セクション -->
                 <section id="about" class="scroll-mt-24">
-                    <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">自己紹介</h2>
+                    <h2 class="section-h2">自己紹介</h2>
                     <!-- 自己紹介セクションの背景画像を適用 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
                         <!-- 自己紹介セクション内のロゴと画像ペア -->
@@ -683,8 +478,7 @@
                     </div>
                 </section>
 
-                <!-- Google AdSense Unit (自己紹介と制作作品の間) - 審査が承認されたらコメントアウトを外してください -->
-                <!-- あなたのAdSenseクライアントIDと広告スロットIDに置き換えてください -->
+                <!-- Google AdSense Unit (自己紹介と制作作品の間) -->
                 <div class="adsense-unit">
                     <p>ここに自己紹介と制作作品の間広告が表示されます (審査承認後)</p>
                     <!-- <ins class="adsbygoogle"
@@ -700,7 +494,7 @@
 
                 <!-- 制作作品セクション -->
                 <section id="portfolio" class="scroll-mt-24">
-                    <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">制作作品</h2>
+                    <h2 class="section-h2">制作作品</h2>
                     <div class="portfolio-grid">
 
                         <!-- 癒しの絶景 黒柴犬BOSS VOL.1 -->
@@ -935,8 +729,7 @@
                     </div>
                 </section>
 
-                <!-- Google AdSense Unit (プライバシーポリシーの前) - 審査が承認されたらコメントアウトを外してください -->
-                <!-- あなたのAdSenseクライアントIDと広告スロットIDに置き換えてください -->
+                <!-- Google AdSense Unit (プライバシーポリシーの前) -->
                 <div class="adsense-unit">
                     <p>ここにプライバシーポリシー前の広告が表示されます (審査承認後)</p>
                     <!-- <ins class="adsbygoogle"
@@ -952,7 +745,7 @@
 
                 <!-- プライバシーポリシーセクション -->
                 <section id="privacy" class="scroll-mt-24">
-                    <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">プライバシーポリシー</h2>
+                    <h2 class="section-h2">プライバシーポリシー</h2>
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                         <p class="text-stone-700 leading-relaxed">
                             【PLACEHOLDER: プライバシーポリシーの具体的な内容を記述してください。】<br>
@@ -965,7 +758,7 @@
         </div>
         <!-- 右サイドバー広告と新しいお問い合わせエリアのコンテナ -->
         <div class="sidebar-ad-area">
-            <div class="sidebar-ad-unit"> <!-- 広告ユニットのスタイルを適用 -->
+            <div class="sidebar-ad-unit">
                 <p>ここに右サイドバー広告が表示されます (審査承認後)</p>
                 <!-- <ins class="adsbygoogle"
                     style="display:block"
@@ -979,7 +772,7 @@
             </div>
             
             <!-- 新しいお問い合わせエリア (以前のお問い合わせセクションの内容を縮小) -->
-            <div id="contact-sidebar" class="sidebar-contact-area"> <!-- サイドバーお問い合わせにIDを追加 -->
+            <div id="contact-sidebar" class="sidebar-contact-area">
                 <h4>お問い合わせ</h4>
                 <p class="text-sm">ご質問やご依頼はこちらからどうぞ。</p>
                 <p class="mt-2 text-md font-semibold">
@@ -999,7 +792,7 @@
         </div>
     </main>
 
-    <footer class="bg-brown-900 text-white mt-12 py-6" style="background-color: #5A2D0E;"> <!-- Deep Espresso Brown for footer background -->
+    <footer class="bg-brown-900 text-white mt-12 py-6" style="background-color: #5A2D0E;">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p>
             <p class="text-xs text-yellow-100 mt-2">制作：AI Powered by Google Gemini</p>
@@ -1013,6 +806,35 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ヘッダーの高さを動的に取得し、bodyのpadding-topに設定
+            const header = document.getElementById('main-header');
+            const setBodyPadding = () => {
+                document.body.style.paddingTop = header.offsetHeight + 'px';
+            };
+
+            // ロード時とウィンドウリサイズ時に実行
+            window.addEventListener('load', setBodyPadding);
+            window.addEventListener('resize', setBodyPadding);
+
+            // ナビゲーションリンクのスムーズスクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = header.offsetHeight; // 動的にヘッダーの高さを取得
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset - 10; // 少し余裕を持たせる
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
             // 開閉機能のJavaScript
             document.querySelectorAll('.collapsible-header').forEach(header => {
                 header.addEventListener('click', () => {
@@ -1023,41 +845,27 @@
                     
                     // 開いた時に見出しが画面内に入るようにスムーズスクロール
                     if (content.classList.contains('expanded')) {
-                        header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        // アコーディオンヘッダー自身までスクロールするように変更
+                        const headerOffset = header.getBoundingClientRect().top + window.pageYOffset;
+                        const headerHeight = document.getElementById('main-header').offsetHeight;
+                        window.scrollTo({
+                            top: headerOffset - headerHeight - 10, // ヘッダーの高さを考慮して調整
+                            behavior: "smooth"
+                        });
                     }
                 });
             });
 
             // 初期状態でアコーディオンを全て閉じる設定
             document.querySelectorAll('.collapsible-content').forEach(content => {
-                // 初期ロード時にexpandedクラスが付いている場合は除去し、max-heightを0にする
                 if (content.classList.contains('expanded')) {
                     content.classList.remove('expanded');
-                    content.style.maxHeight = '0'; // 明示的に高さをリセット
+                    content.style.maxHeight = '0';
                 }
                 const icon = content.previousElementSibling.querySelector('.toggle-icon');
                 if (icon) {
-                    icon.classList.remove('rotated'); // アイコンも閉じた状態に
+                    icon.classList.remove('rotated');
                 }
-            });
-
-            // ナビゲーションリンクのスムーズスクロール
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    // ヘッダーの高さ考慮（stickyヘッダーの場合）
-                    const headerOffset = document.querySelector('header').offsetHeight;
-                    const targetElement = document.querySelector(this.getAttribute('href'));
-                    if (targetElement) {
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
-                    }
-                });
             });
         });
     </script>
