@@ -70,20 +70,8 @@
                  2.5px  2.5px 0 #5A2D0E,
                  0px     0px    12px rgba(0,0,0,0.7);
         }
-        /* サブタイトル - 'Norishige Kawakatsu. In Osaka' の位置調整 */
-        .main-subtitle {
-            color: white;
-            font-size: 1.4rem; /* フォントサイズを小さく調整 */
-            line-height: 1.2;
-            margin-top: 0px; /* 上部マージンを調整 */
-            text-align: center; /* 中央寄せ */
-            text-shadow: 
-                -1px -1px 0 #5A2D0E,  
-                 1px -1px 0 #5A2D0E,
-                -1px  1px 0 #5A2D0E,
-                 1px  1px 0 #5A2D0E,
-                 0px     0px    6px rgba(0,0,0,0.6);
-        }
+        /* サブタイトル - 'Norishige Kawakatsu. In Osaka' の位置調整はHTMLで直接行い、CSSは削除 */
+        /* .main-subtitle {} は削除または上書きされる */
 
         /* ナビゲーションバー */
         #navbar {
@@ -114,6 +102,15 @@
         }
 
         /* 自己紹介セクション */
+        .section-h2-container { /* h2とサブタイトルを横並びにするためのコンテナ */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 両端に配置 */
+            gap: 1rem; /* 間隔 */
+            margin-bottom: 1.8rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap; /* スマホで折り返す */
+        }
         .section-h2 {
             background: linear-gradient(to right, #FAEBD7, #FDFBF6);
             padding: 1.2rem 1.8rem;
@@ -121,10 +118,27 @@
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
             color: #5A2D0E;
             border-left: 8px solid #CD853F;
-            margin-bottom: 1.8rem;
-            margin-top: 2.5rem;
             font-size: 2.25rem;
+            margin: 0; /* 親要素でマージンを制御するためリセット */
         }
+        .section-subtitle-right { /* 自己紹介の右横に配置するサブタイトル */
+            color: #555; /* メインコンテンツの通常テキスト色に近い色 */
+            font-size: 0.9rem; /* フォントサイズを小さく */
+            white-space: nowrap; /* 折り返さない */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* 軽く影をつけて見やすく */
+        }
+        @media (max-width: 768px) {
+            .section-h2-container {
+                flex-direction: column; /* スマホで縦並び */
+                align-items: flex-start; /* 左寄せ */
+            }
+            .section-subtitle-right {
+                text-align: left; /* 左寄せ */
+                width: 100%;
+                font-size: 0.8rem; /* スマホでさらに小さく */
+            }
+        }
+
         .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
             background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
             background-size: cover;
@@ -410,14 +424,14 @@
     <header id="main-header">
         <div class="header-inner-content">
             <div class="main-header-content">
-                <!-- 左側のアイコン (PC版もスマホ版も同じスタイル) -->
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <!-- 左側のアイコン -->
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/60x60/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
                 <h1 class="main-title">VIDEO edit office BOSS兄</h1>
-                <!-- 右側のアイコン (PC版もスマホ版も同じスタイル) -->
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <!-- 右側のアイコン -->
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/60x60/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
             </div>
             <!-- Norishige Kawakatsu. In Osaka の位置を調整 -->
-            <p class="main-subtitle" style="margin-top: -5px;">Norishige Kawakatsu. In Osaka</p>
+            <p class="main-subtitle">Norishige Kawakatsu. In Osaka</p>
         </div>
         <nav id="navbar">
              <div class="container mx-auto px-4">
@@ -425,7 +439,6 @@
                     <li><a href="#about" class="nav-link">自己紹介</a></li>
                     <li><a href="#portfolio" class="nav-link">制作作品</a></li>
                     <li><a href="#price-guide" class="nav-link">料金案内</a></li>
-                    <!-- 「お問い合わせ」ナビリンクはメインナビから削除し、サイドバーに移動 -->
                     <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
                 </ul>
             </div>
