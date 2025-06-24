@@ -350,7 +350,7 @@
         }
         @media (max-width: 768px) { /* スマホ向けヘッダー/ナビゲーション */
             header {
-                padding: 1rem 0; /* スマホでヘッダーの上下パディングをさらに減らす */
+                padding: 0.5rem 0; /* スマホでヘッダーの上下パディングをさらに減らす */
             }
             .main-header-content {
                 flex-direction: column; /* 縦並び */
@@ -361,18 +361,18 @@
                 height: 30px;
             }
             .main-title {
-                font-size: 2rem; /* スマホでタイトルを小さく */
+                font-size: 1.8rem; /* スマホでタイトルを小さく */
             }
             .main-subtitle {
-                font-size: 1rem; /* スマホでサブタイトルを小さく */
+                font-size: 0.9rem; /* スマホでサブタイトルを小さく */
                 margin-top: 0;
             }
             #navbar ul {
-                gap: 0.5rem; /* ボタン間隔を狭める */
+                gap: 0.3rem; /* ボタン間隔を狭める */
             }
             .nav-link {
-                padding: 0.6rem 0.8rem; /* パディングを調整 */
-                font-size: 0.8rem; /* スマホでフォントサイズを小さく */
+                padding: 0.4rem 0.6rem; /* パディングを調整 */
+                font-size: 0.7rem; /* スマホでフォントサイズを小さく */
             }
             /* 自己紹介セクションのスマホ調整 */
             .profile-image-group {
@@ -384,8 +384,8 @@
             .profile-section-logo-in-content,
             .profile-image-main,
             .profile-image-sub {
-                width: 150px; /* スマホで画像をさらに小さく */
-                height: 150px;
+                width: 120px; /* スマホで画像をさらに小さく */
+                height: 120px;
                 transform: translateY(0) !important; /* スマホでは位置調整をリセット */
                 margin-top: 0; /* スマホでは負のマージンをリセット */
             }
@@ -393,7 +393,7 @@
             .profile-image-main { order: 2; }
             .profile-image-sub { order: 3; transform: rotate(0deg) !important; } /* スマホでは傾きもリセット */
             .profile-main-text {
-                font-size: 1rem; /* スマホで自己紹介テキストを小さく */
+                font-size: 0.9rem; /* スマホで自己紹介テキストを小さく */
                 text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
             }
             .profile-section-content p, 
@@ -417,7 +417,7 @@
                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/bossani.jpg" alt="BOSS兄アイコン" class="header-icon">
             </div>
             <!-- Norishige Kawakatsu. In Osaka の位置を調整 -->
-            <p class="main-subtitle" style="margin-top: -5px;">Norishige Kawakatsu. In Osaka</p>
+            <p class="main-subtitle" style="margin-top: -10px;">Norishige Kawakatsu. In Osaka</p>
         </div>
         <nav id="navbar">
              <div class="container mx-auto px-4">
@@ -465,7 +465,7 @@
                             <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/bossani.jpg" alt="BOSS兄ロゴ" class="profile-section-logo-in-content">
                             <!-- 右の画像 (22212851.png) -->
                             <div class="profile-image-wrapper">
-                                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/illust_22212851.png" alt="イメージ画像" class="profile-image-sub">
+                                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png" alt="イメージ画像" class="profile-image-sub">
                             </div>
                         </div>
                         
@@ -786,7 +786,7 @@
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <!-- 画像パスを修正: GitHub上の現在のファイル名に合わせる -->
-                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/doga-flow.png" alt="動画制作フロー" class="portfolio-detail-image">
+                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/doga_flow.png" alt="動画制作フロー" class="portfolio-detail-image">
                                     <p class="text-stone-700 text-sm mt-3">
                                         お問い合わせから納品までの制作プロセスをステップごとに分かりやすく図解しています。
                                     </p>
@@ -803,7 +803,7 @@
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
                                     <!-- 画像パスを修正: GitHub上の現在のファイル名に合わせる -->
-                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/doga-seisaku-ryokin_hyo_1.png" alt="動画制作料金表" class="portfolio-detail-image">
+                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/doga_seisaku_ryokin_hyo_1.png" alt="動画制作料金表" class="portfolio-detail-image">
                                     <p class="text-stone-700 text-sm mt-3">
                                         ライト、スタンダード、プレミアの3つのプランをご用意しています。詳細についてはお問い合わせください。
                                     </p>
