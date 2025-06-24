@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
+    <!-- Google AdSense Script (HEAD内) - 審査が承認されたらコメントアウトを外して、ca-pub-XXXXXXXXXXXXXXXX をあなたのIDに置き換えてください -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <!-- Chosen Palette: Warm Brown & Golden Accents -->
     <style>
         /* 全体的なリセットと基本スタイル */
         body {
@@ -23,7 +27,7 @@
         }
         /* コンテナの幅を調整し、自己紹介からプライバシーポリシーのセクション幅に合わせる */
         /* この.containerはメインコンテンツのセクションに使用され、ヘッダーとは独立して幅を制御 */
-       .container {
+        .container {
             width: 95%; /* デフォルトの幅 */
             max-width: 900px; /* 自己紹介からフッターまでのメインコンテンツの最大幅 */
             margin: 20px auto;
@@ -40,7 +44,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         /* ナビゲーションリンクのスタイル */
-       .nav-link {
+        .nav-link {
             transition: background-color 0.3s ease, color 0.3s ease;
             flex-grow: 0; /* 各リンクが均等な幅を占めるのではなく、コンテンツ幅に合わせる */
             text-align: center; /* テキストを中央寄せ */
@@ -53,7 +57,7 @@
             font-size: 1.25rem; /* さらに大きく */
             white-space: nowrap; /* テキストの折り返しを防ぐ */
         }
-       .nav-link:hover {
+        .nav-link:hover {
             background-color: #CD853F; /* Hover effect: Peru (明るいブラウン) */
             color: #FFFFFF;
         }
@@ -70,14 +74,14 @@
                 flex-wrap: wrap; /* ボタンが多ければ折り返す */
                 justify-content: center;
             }
-           .nav-link {
+            .nav-link {
                 width: auto;
                 margin: 0.25rem; /* ボタン間のマージン */
             }
         }
 
         /* アコーディオンヘッダーのスタイル */
-       .collapsible-header {
+        .collapsible-header {
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -93,11 +97,11 @@
             transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             border: 1px solid #C09B6A; /* 若干のボーダーを追加 */
         }
-       .collapsible-header:hover {
+        .collapsible-header:hover {
             background-color: #CD853F; /* Hover effect: Peru */
             box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* ホバーで影を強調 */
         }
-       .collapsible-content {
+        .collapsible-content {
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* paddingもトランジション対象に */
             max-height: 0; /* Initial state: closed */
@@ -107,25 +111,25 @@
             border-bottom-right-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-       .collapsible-content.expanded {
+        .collapsible-content.expanded {
             max-height: 2500px; /* 十分な高さを設定（コンテンツに応じて調整） */
             padding-top: 1.5rem; /* 開いた時の上パディング */
             padding-bottom: 1.5rem; /* 開いた時の下パディング */
             border: 1px solid #e0e0e0;
             border-top: none; /* 上のボーダーは無し */
         }
-       .toggle-icon {
+        .toggle-icon {
             transform: rotate(0deg);
             transition: transform 0.3s ease;
             font-size: 1.5rem; /* アイコンサイズを大きく */
             color: #FFFFFF; /* アイコンも白に */
         }
-       .toggle-icon.rotated {
+        .toggle-icon.rotated {
             transform: rotate(180deg);
         }
 
         /* メインヘッダーのデザイン */
-       .main-header-container {
+        .main-header-container {
             background: linear-gradient(to right, #CD853F, #A0522D); /* Peru to Sienna gradient */
             padding: 4rem 0; /* パディングをさらに増やす */
             border-bottom-left-radius: 15px;
@@ -133,26 +137,26 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         /* ヘッダー内部のコンテンツをメインコンテンツ幅に制限 */
-       .header-inner-content {
+        .header-inner-content {
             max-width: 900px; /* メインコンテンツの幅に合わせる */
             margin-left: auto;
             margin-right: auto;
             padding: 0 1rem; /* 左右のパディング */
         }
-       .main-header-content {
+        .main-header-content {
             display: flex;
             align-items: center;
             justify-content: center; /* 中央寄せ */
             gap: 30px; /* アイコンとテキストの間隔をさらに広げる */
             flex-wrap: wrap; /* スマホで折り返す */
         }
-       .header-icon {
+        .header-icon {
             width: 120px; /* アイコンのサイズをさらに大きく */
             height: 120px;
             object-fit: contain; /* アスペクト比を保持してフィット */
             filter: drop-shadow(0 0 12px rgba(0,0,0,0.8)); /* 影を強調 */
         }
-       .main-title {
+        .main-title {
             color: white;
             font-size: 5rem; /* テキストをさらに大きく */
             line-height: 1.1; /* 行の高さを調整してコンパクトに */
@@ -165,19 +169,19 @@
                  0px     0px    20px rgba(0,0,0,0.8); /* 通常の影も強調 */
         }
         @media (max-width: 768px) { /* タブレット以下ではアイコンとタイトルを縦並びに */
-           .main-header-content {
+            .main-header-content {
                 flex-direction: column;
                 gap: 15px;
             }
-           .main-title {
+            .main-title {
                 font-size: 3.5rem; /* スマホでのサイズ調整 */
             }
-           .header-icon {
+            .header-icon {
                 width: 90px;
                 height: 90px;
             }
         }
-       .main-subtitle { /* サブタイトル用のスタイル */
+        .main-subtitle { /* サブタイトル用のスタイル */
             color: white;
             font-size: 2rem; /* サブタイトルをさらに大きく */
             line-height: 1.2;
@@ -191,7 +195,7 @@
                  0px     0px    12px rgba(0,0,0,0.7);
         }
         /* 各セクション見出しのデザイン */
-       .section-h2 {
+        .section-h2 {
             background: linear-gradient(to right, #FAEBD7, #FDFBF6); /* Antique White to light cream gradient */
             padding: 1.2rem 1.8rem; /* パディングを調整 */
             border-radius: 10px;
@@ -202,7 +206,7 @@
             margin-top: 2.5rem;
             font-size: 2.25rem; /* text-3xl相当に大きく */
         }
-       .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
+        .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
             /* 背景画像は使用せず、単色背景に */
             background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
             background-size: cover; /* coverは維持 */
@@ -218,8 +222,11 @@
             flex-direction: column;
             align-items: center; /* 水平方向の中央寄せ */
             text-align: center; /* テキストも中央寄せ */
+            /* 読み込み失敗時の背景色を灰色ではなく、テーマカラーに近い色に */
+            background-color: #D2B48C; /* BurlyWood fallback */
+            min-height: 400px; /* 高さの最低値を設定してコンテンツが見えやすいように */
         }
-       .profile-section-content::before { /* 背景画像を暗くするオーバーレイは不要になるため、透明に */
+        .profile-section-content::before { /* 背景画像を暗くするオーバーレイは不要になるため、透明に */
             content: '';
             position: absolute;
             top: 0;
@@ -229,121 +236,129 @@
             background-color: rgba(0, 0, 0, 0); /* 透明なオーバーレイ */
             z-index: 1;
         }
-       .profile-section-content > * { /* オーバーレイの上にコンテンツを表示 */
+        .profile-section-content > * { /* オーバーレイの上にコンテンツを表示 */
             position: relative;
             z-index: 2;
         }
-       .profile-section-branding { /* 自己紹介セクション内のロゴと画像ペアをまとめるコンテナ */
+        .profile-section-branding { /* 自己紹介セクション内のロゴと画像ペアをまとめるコンテナ */
             display: flex;
             flex-direction: column; /* 縦に並べる */
             align-items: center; /* 中央寄せ */
             margin-bottom: 20px; /* 下部マージン */
             width: 100%; /* 親要素の幅いっぱいに広げる */
         }
-       .profile-image-group { /* 3つの画像をまとめてFlexboxで配置 */
+        .profile-image-group { /* 3つの画像をまとめてFlexboxで配置 */
             display: flex;
-            align-items: center; /* 中央揃え（垂直方向） */
+            align-items: flex-start; /* 上部に揃える */
             justify-content: space-around; /* 両サイドに離して均等配置 */
             width: 100%; /* 親要素の幅いっぱいに広げる */
-            max-width: 650px; /* 画像グループの最大幅をさらに広げる */
+            max-width: 700px; /* 画像グループの最大幅をさらに広げる */
             margin: -50px auto 30px auto; /* 上部への負のマージンと中央寄せ */
             flex-wrap: wrap; /* スマホで折り返す */
-            gap: 30px; /* 画像間の隙間をさらに広げる */
+            padding: 0 10px; /* 左右のパディング */
+            box-sizing: border-box; /* パディングを幅に含める */
+            position: relative; /* 子要素のabsolute配置基準 */
+            min-height: 250px; /* 画像群が収まる最低限の高さ */
         }
         @media (max-width: 768px) { /* タブレット以下での調整 */
-           .profile-image-group {
+            .profile-image-group {
                 flex-direction: column; /* 縦に並べる */
                 gap: 20px; /* 縦方向の隙間 */
-                margin-top: -30px; /* スマホでは少し上に */
+                margin-top: 0; /* スマホでは負のマージンをリセット */
+                align-items: center; /* 中央寄せ */
+                min-height: auto; /* 高さのリセット */
             }
-           .profile-section-logo-in-content {
+            .profile-section-logo-in-content {
                 order: 1; /* ロゴを一番上に */
                 margin-bottom: 0;
+                margin-top: 0; /* スマホでは負のマージンをリセット */
             }
-           .profile-image-main,.profile-image-sub {
+            .profile-image-main, .profile-image-sub {
                 order: 2; /* 他の画像をその下に */
                 margin-top: 0; /* 縦並びなので負のマージンをリセット */
             }
         }
-       .profile-section-logo-in-content { /* 自己紹介セクション内のBOSS兄ロゴ */
-            width: 220px; /* サイズをさらに大きく */
-            height: 220px;
+        .profile-section-logo-in-content { /* 自己紹介セクション内のBOSS兄ロゴ (中央) */
+            width: 250px; /* さらに大きく */
+            height: 250px;
             object-fit: contain;
-            filter: drop-shadow(0 0 12px rgba(0,0,0,0.8)); /* 影を強調 */
-            margin-top: -100px; /* さらに上に移動して切れないように調整 */
-            margin-bottom: 30px; /* 下のマージンを調整 */
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); /* 影を強調 */
+            margin-top: 50px; /* 中央の画像を下に配置 */
+            z-index: 10; /* 他の画像より手前に */
         }
-       .profile-image-main,.profile-image-sub { /* プロフィール画像とイラスト画像の共通スタイル */
+        .profile-image-main, .profile-image-sub { /* プロフィール画像とイラスト画像の共通スタイル (両サイド) */
             width: 220px; /* サイズをさらに大きく */
             height: 220px; /* サイズをさらに大きく */
             border: 5px solid #CD853F; /* ボーダーを太く */
             box-shadow: 0 5px 15px rgba(0,0,0,0.7); /* 影を強調 */
             object-fit: cover;
-            margin-top: -70px; /* 上にさらに移動して切れないように調整 */
+            z-index: 5; /* ロゴより奥に */
         }
-       .profile-image-main { /* 自身の画像（IMG_5569.PNG）は丸型 */
+        .profile-image-main { /* 自身の画像（IMG_5569.PNG）は丸型 */
             border-radius: 50%;
+            margin-top: 0px; /* 上に揃える */
         }
-       .profile-image-sub { /* 22212851.pngは正方形で傾ける */
+        .profile-image-sub { /* 22212851.pngは正方形で傾ける */
             border-radius: 12px; /* 角をさらに丸く */
             transform: rotate(-7deg); /* 少し傾きを強める */
             transition: transform 0.4s ease, box-shadow 0.3s ease; /* ホバー効果 */
+            margin-top: 0px; /* 上に揃える */
         }
-       .profile-image-sub:hover {
+        .profile-image-sub:hover {
             transform: rotate(0deg) scale(1.08); /* ホバーで元に戻し少し拡大 */
             box-shadow: 0 8px 20px rgba(0,0,0,0.8);
         }
 
         /* 自己紹介セクション内のテキストのスタイル */
-       .profile-main-text { /* 自己紹介のメインテキスト用クラス */
-            color: #FFF!important; /* 自己紹介内のすべてのテキストを白に強制 */
+        .profile-main-text { /* 自己紹介のメインテキスト用クラス */
+            color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
             font-size: 1.45rem; /* フォントサイズをさらに大きく (text-2xl相当) */
             text-shadow: 
-                -1.5px -1.5px 0 #5A2D0E,  
-                 1.5px -1.5px 0 #5A2D0E,
-                -1.5px  1.5px 0 #5A2D0E,
-                 1.5px  1.5px 0 #5A2D0E,
+                -1.2px -1.2px 0 #5A2D0E,  
+                 1.2px -1.2px 0 #5A2D0E,
+                -1.2px  1.2px 0 #5A2D0E,
+                 1.2px  1.2px 0 #5A2D0E,
                  0px     0px    8px rgba(0,0,0,0.8); /* 枠あり風の影を強調 */
             line-height: 1.8; /* 行間を広げて読みやすく */
             margin-bottom: 1.5rem; /* 下部マージン */
         }
         /* 自己紹介セクション内の通常pタグとul, li, a のスタイルも強制 */
-       .profile-section-content p, 
-       .profile-section-content ul, 
-       .profile-section-content li,
-       .profile-section-content a {
-            color: #FFF!important; /* 自己紹介内のテキストを白に強制 */
+        .profile-section-content p, 
+        .profile-section-content ul, 
+        .profile-section-content li,
+        .profile-section-content a {
+            color: #FFF !important; /* 自己紹介内のテキストを白に強制 */
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9); /* 影を加えて見やすく */
         }
-       .profile-section-content strong {
-            color: #FFD700!important; /* 略歴の年など強調部分をゴールドに */
+        .profile-section-content strong {
+            color: #FFD700 !important; /* 略歴の年など強調部分をゴールドに */
         }
-       .collapsible-container.collapsible-header span { /* アコーディオンヘッダーのテキスト色も調整 */
-            color: white!important;
+        .collapsible-container .collapsible-header span { /* アコーディオンヘッダーのテキスト色も調整 */
+            color: white !important;
         }
 
 
         /* ポートフォリオカードのグリッドレイアウトを調整 (2列表示に) */
-       .portfolio-grid {
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2列表示またはコンテンツに応じて調整 */
             gap: 1.5rem; /* カード間の隙間 */
         }
         @media (min-width: 768px) { /* デスクトップでは2列に */
-           .portfolio-grid {
+            .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-           .portfolio-card.md\:col-span-full { /* 特定のカードはフル幅を維持 */
+            .portfolio-card.md\:col-span-full { /* 特定のカードはフル幅を維持 */
                 grid-column: span 2;
             }
         }
         @media (max-width: 767px) { /* スマホでは1列に */
-           .portfolio-grid {
+            .portfolio-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-       .portfolio-card { /* Portfolio item card */
+        .portfolio-card { /* Portfolio item card */
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -353,11 +368,11 @@
             flex-direction: column; /* 縦方向に配置 */
             height: 100%; /* 親要素の高さに合わせる */
         }
-       .portfolio-card:hover {
+        .portfolio-card:hover {
             transform: translateY(-5px);
         }
         /* YouTube埋め込みのコンテナの調整 */
-       .portfolio-video-container {
+        .portfolio-video-container {
             position: relative;
             width: 100%;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
@@ -368,7 +383,7 @@
             border-radius: 8px; /* Rounded corners for embedded video */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-       .portfolio-video-container iframe {
+        .portfolio-video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -377,7 +392,7 @@
             border: 0;
         }
         /* AdSense specific style */
-       .adsense-unit {
+        .adsense-unit {
             background-color: #F8F8F8; /* 広告ユニットの背景色 */
             border: 1px dashed #CCC; /* 広告ユニットの境界線 */
             padding: 10px;
@@ -389,7 +404,7 @@
             border-radius: 8px;
         }
         /* サイドバー広告ユニットのスタイルを調整 */
-       .sidebar-ad-unit {
+        .sidebar-ad-unit {
             background-color: #F8F8F8;
             border: 1px dashed #CCC;
             padding: 10px;
@@ -402,27 +417,27 @@
 
         /* フッターリンクの調整 */
         footer a {
-            color: #FDFBF6!important; /* フッターのリンク色を調整 */
+            color: #FDFBF6 !important; /* フッターのリンク色を調整 */
         }
         footer a:hover {
-            text-decoration: underline!important;
+            text-decoration: underline !important;
         }
 
         /* サイドバー広告用のスタイル */
-       .main-content-layout {
+        .main-content-layout {
             display: flex;
             gap: 20px; /* メインコンテンツとサイドバーの隙間 */
             flex-wrap: wrap; /* スマホで折り返す */
             justify-content: center; /* コンテンツが中央に寄るように */
         }
 
-       .main-content-area {
+        .main-content-area {
             flex-grow: 1; /* 残りのスペースを埋める */
             max-width: 900px; /* メインコンテンツの最大幅を維持 */
             width: 100%; /* 小さい画面でフル幅に */
         }
 
-       .sidebar-ad-area {
+        .sidebar-ad-area {
             flex-basis: 250px; /* サイドバーの推奨幅 */
             min-width: 200px; /* 最小幅 */
             background-color: #FFF;
@@ -432,7 +447,7 @@
             text-align: center;
             margin-top: 2rem; /* トップコンテンツとの間隔 */
         }
-       .sidebar-contact-area { /* 新しいお問い合わせエリアのスタイル */
+        .sidebar-contact-area { /* 新しいお問い合わせエリアのスタイル */
             background-color: #FAEBD7; /* ライトブラウン */
             padding: 15px;
             border-radius: 8px;
@@ -440,17 +455,17 @@
             margin-top: 1.5rem; /* サイドバー広告との間隔 */
             text-align: center;
         }
-       .sidebar-contact-area h4 {
+        .sidebar-contact-area h4 {
             font-weight: bold;
             color: #5A2D0E;
             margin-bottom: 0.5rem;
         }
-       .sidebar-contact-area a {
+        .sidebar-contact-area a {
             color: #CD853F; /* 少し明るいブラウンのリンク色 */
             text-decoration: underline;
             font-weight: 500;
         }
-       .sidebar-link-area { /* 新しいリンクエリアのスタイル */
+        .sidebar-link-area { /* 新しいリンクエリアのスタイル */
             background-color: #FDFBF6; /* ライトベージュ */
             padding: 15px;
             border-radius: 8px;
@@ -458,39 +473,39 @@
             margin-top: 1.5rem;
             text-align: center;
         }
-       .sidebar-link-area ul {
+        .sidebar-link-area ul {
             list-style: none;
             padding: 0;
         }
-       .sidebar-link-area li {
+        .sidebar-link-area li {
             margin-bottom: 0.5rem;
         }
-       .sidebar-link-area a {
+        .sidebar-link-area a {
             color: #A0522D; /* 少し濃いブラウンのリンク色 */
             text-decoration: none;
             font-weight: normal;
         }
-       .sidebar-link-area a:hover {
+        .sidebar-link-area a:hover {
             text-decoration: underline;
         }
 
 
         @media (max-width: 1023px) { /* サイドバーが下に回るブレークポイント */
-           .sidebar-ad-area,.sidebar-contact-area,.sidebar-link-area {
+            .sidebar-ad-area, .sidebar-contact-area, .sidebar-link-area {
                 order: 1; /* スマホで上に表示 */
                 width: 100%; /* フル幅に */
                 max-width: 728px; /* 広告の最大幅に合わせる */
             }
-           .main-content-area {
+            .main-content-area {
                 order: 2; /* スマホで下に表示 */
             }
-           .main-content-layout { /* スマホでサイドバーが独立した行になるように調整 */
+            .main-content-layout { /* スマホでサイドバーが独立した行になるように調整 */
                 flex-direction: column;
                 align-items: center; /* 中央寄せ */
             }
         }
         @media (min-width: 1024px) { /* デスクトップでサイドバーを右に */
-           .main-content-area {
+            .main-content-area {
                 max-width: calc(100% - 250px - 20px); /* サイドバーとギャップを引いた幅 */
             }
         }
@@ -500,9 +515,12 @@
 
     <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <div class="main-header-container">
-            <div class="header-inner-content"> <div class="main-header-content">
+            <div class="header-inner-content"> <!-- メインコンテンツ幅に合わせる新しいコンテナ -->
+                <div class="main-header-content">
+                    <!-- 左側のアイコン -->
                     <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
                     <h1 class="main-title text-3xl md:text-4xl font-bold text-center">VIDEO edit office BOSS兄</h1>
+                    <!-- 右側のアイコン -->
                     <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
                 </div>
                 <p class="main-subtitle text-base md:text-lg text-center mt-1">Norishige Kawakatsu. In Osaka</p>
@@ -513,31 +531,53 @@
                 <ul class="flex justify-center items-center space-x-2 sm:space-x-4 md:space-x-6 overflow-x-auto py-2">
                     <li><a href="#about" class="nav-link">自己紹介</a></li>
                     <li><a href="#portfolio" class="nav-link">制作作品</a></li>
-                    <li><a href="#price-guide" class="nav-link">料金案内</a></li> <li><a href="#contact-sidebar" class="nav-link">お問い合わせ</a></li> <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
+                    <li><a href="#price-guide" class="nav-link">料金案内</a></li> <!-- お問い合わせから料金案内に変更 -->
+                    <li><a href="#contact-sidebar" class="nav-link">お問い合わせ</a></li> <!-- サイドバーに移動したお問い合わせへのリンク -->
+                    <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="main-content-layout"> <div class="main-content-area"> <div class="container mx-auto p-4 md:p-8 space-y-12 pb-20">
+    <main class="main-content-layout"> <!-- メインコンテンツとサイドバー広告のためのフレックスコンテナ -->
+        <div class="main-content-area"> <!-- 自己紹介からフッターまでのメインコンテンツ領域 -->
+            <div class="container mx-auto p-4 md:p-8 space-y-12 pb-20">
                 
+                <!-- Google AdSense Unit (ヘッダー下部分) - 審査が承認されたらコメントアウトを外してください -->
+                <!-- あなたのAdSenseクライアントIDと広告スロットIDに置き換えてください -->
                 <div class="adsense-unit">
                     <p>ここにヘッダー下広告が表示されます (審査承認後)</p>
-                    </div>
+                    <!-- <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="YYYYYYYYYY"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script> -->
+                </div>
 
+                <!-- 自己紹介セクション -->
                 <section id="about" class="scroll-mt-24">
                     <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">自己紹介</h2>
+                    <!-- 自己紹介セクションの背景画像を適用 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
+                        <!-- 自己紹介セクション内のロゴと画像ペア -->
                         <div class="profile-image-group">
+                            <!-- 左の画像 (IMG_5569.PNG) -->
                             <div class="profile-image-wrapper">
                                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/IMG_5569.PNG" alt="川勝典茂（BOSS兄）プロフィール画像" class="profile-image-main">
                             </div>
+                            <!-- 中央のロゴ (BOSS兄.jpg) -->
                             <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄ロゴ" class="profile-section-logo-in-content">
+                            <!-- 右の画像 (22212851.png) -->
                             <div class="profile-image-wrapper">
                                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png" alt="イメージ画像" class="profile-image-sub">
                             </div>
                         </div>
                         
+                        <!-- 自己紹介テキスト -->
                         <p class="profile-main-text">
                             初めまして！<br>
                             私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は、『我が家のヒーローBOSS』です。
@@ -549,6 +589,7 @@
                             私の作品は、下記の項目、または「制作作品」セクションでご覧いただけます。
                         </p>
 
+                        <!-- 略歴・資格のアコーディオン -->
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
                                 <span>略歴・資格</span>
@@ -570,6 +611,7 @@
                             </div>
                         </div>
 
+                        <!-- 代表作品のアコーディオン（自己紹介内で言及された動画） -->
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
                                 <span>自己紹介で触れた代表作品</span>
@@ -596,6 +638,7 @@
                             </div>
                         </div>
 
+                        <!-- ウマキんグ切り抜きチャンネルの詳細アコーディオン -->
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
                                 <span>ウマキんグ切り抜きチャンネルについて</span>
@@ -627,14 +670,27 @@
                     </div>
                 </section>
 
+                <!-- Google AdSense Unit (自己紹介と制作作品の間) - 審査が承認されたらコメントアウトを外してください -->
+                <!-- あなたのAdSenseクライアントIDと広告スロットIDに置き換えてください -->
                 <div class="adsense-unit">
                     <p>ここに自己紹介と制作作品の間広告が表示されます (審査承認後)</p>
-                    </div>
+                    <!-- <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="YYYYYYYYYY"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script> -->
+                </div>
 
+                <!-- 制作作品セクション -->
                 <section id="portfolio" class="scroll-mt-24">
                     <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">制作作品</h2>
                     <div class="portfolio-grid">
 
+                        <!-- 癒しの絶景 黒柴犬BOSS VOL.1 -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
                                 <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="癒しの絶景　黒柴犬BOSS　VOL.1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -658,6 +714,7 @@
                             </div>
                         </div>
 
+                        <!-- 我家のヒーローBOSS君の散歩を大公開！ -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
                                 <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -681,6 +738,7 @@
                             </div>
                         </div>
 
+                        <!-- ある夏の一日 Booss君シャンプー -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
                                 <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -704,12 +762,15 @@
                             </div>
                         </div>
 
-                        <div class="portfolio-card md:col-span-full"> <div class="portfolio-content-summary">
+                        <!-- 切り抜き動画制作作品 -->
+                        <div class="portfolio-card md:col-span-full"> <!-- Full width display for this section title -->
+                            <div class="portfolio-content-summary">
                                 <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ウマキんグ切り抜き動画制作作品（YouTube）</h3>
                                 <p class="text-stone-700 text-sm">
                                     『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』で培った、競馬予想に特化した高速・高密度な動画編集の事例です。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
                                 </p>
                                 
+                                <!-- 2024年 東京大賞典 -->
                                 <div class="collapsible-container mt-4">
                                     <div class="collapsible-header">
                                         <span>2024年 東京大賞典 A評価・印BY史上最高払戻４２９万円を獲得☆ナーツごんにゃ中井！</span>
@@ -725,6 +786,7 @@
                                     </div>
                                 </div>
 
+                                <!-- チャンネルPR 元動画のメンバーシップのご案内！ -->
                                 <div class="collapsible-container mt-4">
                                     <div class="collapsible-header">
                                         <span>チャンネルPR　元動画のメンバーシップのご案内！</span>
@@ -740,6 +802,7 @@
                                     </div>
                                 </div>
 
+                                <!-- 2025年フェアリーS S評価 -->
                                 <div class="collapsible-container mt-4">
                                     <div class="collapsible-header">
                                         <span>2025年フェアリーS S評価・☆ナーツごんにゃ中井！</span>
@@ -758,8 +821,10 @@
                             </div>
                         </div>
 
+                        <!-- 実績動画 - クイズ大会 -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
+                                <!-- クイズ大会のURLを組み込み -->
                                 <iframe src="https://www.youtube.com/embed/z1CZEdZl6VU" title="クイズ大会動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="portfolio-content-summary">
@@ -783,8 +848,10 @@
                             </div>
                         </div>
 
+                        <!-- 実績動画 - ガムトーク -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
+                                <!-- 川勝ガムトークのURLを組み込み -->
                                 <iframe src="https://www.youtube.com/embed/3ow3VL8kGHQ" title="ガムトーク動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="portfolio-content-summary">
@@ -811,6 +878,7 @@
                     </div>
                 </section>
 
+                <!-- 料金案内セクション -->
                 <section id="price-guide" class="scroll-mt-24">
                     <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">料金案内</h2>
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
@@ -818,6 +886,7 @@
                             私の動画制作サービスに関する料金と制作フローをご案内いたします。
                         </p>
                         
+                        <!-- 動画制作フロー -->
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
                                 <span>動画制作フロー</span>
@@ -825,6 +894,7 @@
                             </div>
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
+                                    <!-- 画像パスを修正: GitHub上の現在のファイル名に合わせる -->
                                     <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/動画フロー.png" alt="動画制作フロー" class="portfolio-detail-image">
                                     <p class="text-stone-700 text-sm mt-3">
                                         お問い合わせから納品までの制作プロセスをステップごとに分かりやすく図解しています。
@@ -833,6 +903,7 @@
                             </div>
                         </div>
 
+                        <!-- 動画制作料金表 -->
                         <div class="collapsible-container mt-4">
                             <div class="collapsible-header">
                                 <span>動画制作料金表</span>
@@ -840,6 +911,7 @@
                             </div>
                             <div class="collapsible-content">
                                 <div class="portfolio-detail-section">
+                                    <!-- 画像パスを修正: GitHub上の現在のファイル名に合わせる -->
                                     <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/動画制作料金表１.png" alt="動画制作料金表" class="portfolio-detail-image">
                                     <p class="text-stone-700 text-sm mt-3">
                                         ライト、スタンダード、プレミアの3つのプランをご用意しています。詳細についてはお問い合わせください。
@@ -850,10 +922,22 @@
                     </div>
                 </section>
 
+                <!-- Google AdSense Unit (プライバシーポリシーの前) - 審査が承認されたらコメントアウトを外してください -->
+                <!-- あなたのAdSenseクライアントIDと広告スロットIDに置き換えてください -->
                 <div class="adsense-unit">
                     <p>ここにプライバシーポリシー前の広告が表示されます (審査承認後)</p>
-                    </div>
+                    <!-- <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                        data-ad-slot="YYYYYYYYYY"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script> -->
+                </div>
 
+                <!-- プライバシーポリシーセクション -->
                 <section id="privacy" class="scroll-mt-24">
                     <h2 class="section-h2 text-2xl font-bold pl-4 mb-6">プライバシーポリシー</h2>
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
@@ -866,33 +950,49 @@
 
             </div>
         </div>
+        <!-- 右サイドバー広告と新しいお問い合わせエリアのコンテナ -->
         <div class="sidebar-ad-area">
-            <div class="sidebar-ad-unit"> <p>ここに右サイドバー広告が表示されます (審査承認後)</p>
-                </div>
+            <div class="sidebar-ad-unit"> <!-- 広告ユニットのスタイルを適用 -->
+                <p>ここに右サイドバー広告が表示されます (審査承認後)</p>
+                <!-- <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                    data-ad-slot="YYYYYYYYYY"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script> -->
+            </div>
             
-            <div id="contact-sidebar" class="sidebar-contact-area"> <h4>お問い合わせ</h4>
+            <!-- 新しいお問い合わせエリア (以前のお問い合わせセクションの内容を縮小) -->
+            <div id="contact-sidebar" class="sidebar-contact-area"> <!-- サイドバーお問い合わせにIDを追加 -->
+                <h4>お問い合わせ</h4>
                 <p class="text-sm">ご質問やご依頼はこちらからどうぞ。</p>
                 <p class="mt-2 text-md font-semibold">
                     <a href="mailto:katualoma@gmail.com">katualoma@gmail.com</a>
                 </p>
             </div>
 
+            <!-- 新しいリンク設置エリア -->
             <div class="sidebar-link-area">
                 <h4>関連リンク</h4>
                 <ul>
                     <li><a href="https://x.gd/kGwqM" target="_blank">ウマキんグ切り抜き動画チャンネル</a></li>
-                    </ul>
+                    <!-- 他の関連リンクがあればここに追加 -->
+                </ul>
             </div>
 
         </div>
     </main>
 
-    <footer class="bg-brown-900 text-white mt-12 py-6" style="background-color: #5A2D0E;"> <div class="container mx-auto px-4 text-center">
+    <footer class="bg-brown-900 text-white mt-12 py-6" style="background-color: #5A2D0E;"> <!-- Deep Espresso Brown for footer background -->
+        <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p>
             <p class="text-xs text-yellow-100 mt-2">制作：AI Powered by Google Gemini</p>
             <p class="text-xs mt-1">
                 <a href="#privacy" class="footer-link text-yellow-100 hover:underline">プライバシーポリシー</a>
-|
+                |
                 <a href="mailto:katualoma@gmail.com" class="footer-link text-yellow-100 hover:underline">お問い合わせ</a>
             </p>
         </div>
