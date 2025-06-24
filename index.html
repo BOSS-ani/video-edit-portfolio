@@ -74,7 +74,7 @@
             color: white;
             font-size: 1.6rem;
             line-height: 1.2;
-            margin-top: 5px; /* 上部のマージンを減らして少し上に移動 */
+            margin-top: 5px; /* 上部のマージンを調整して、タイトルに近づける */
             text-shadow: 
                 -1.2px -1.2px 0 #5A2D0E,  
                  1.2px -1.2px 0 #5A2D0E,
@@ -123,8 +123,11 @@
             margin-top: 2.5rem;
             font-size: 2.25rem;
         }
-        .profile-section-content {
+        .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
             background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 2rem;
             border-radius: 8px;
             position: relative;
@@ -332,6 +335,72 @@
         .sidebar-link-area li { margin-bottom: 0.5rem; }
         .sidebar-link-area a { color: #A0522D; text-decoration: none; font-weight: normal; }
         .sidebar-link-area a:hover { text-decoration: underline; }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 1023px) { /* サイドバーが下に回るブレークポイント */
+            .sidebar-ad-area, .sidebar-contact-area, .sidebar-link-area {
+                order: 1;
+                width: 100%;
+                max-width: 728px;
+            }
+            .main-content-area { order: 2; }
+            .main-content-layout { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 768px) { /* スマホ向けヘッダー/ナビゲーション */
+            header {
+                padding: 1rem 0; /* スマホでヘッダーの上下パディングをさらに減らす */
+            }
+            .main-header-content {
+                flex-direction: column; /* 縦並び */
+                gap: 5px; /* 間隔をさらに調整 */
+            }
+            .header-icon {
+                width: 50px; /* スマホでアイコンを小さく */
+                height: 50px;
+            }
+            .main-title {
+                font-size: 2rem; /* スマホでタイトルを小さく */
+            }
+            .main-subtitle {
+                font-size: 1rem; /* スマホでサブタイトルを小さく */
+                margin-top: 0;
+            }
+            #navbar ul {
+                gap: 0.5rem; /* ボタン間隔を狭める */
+            }
+            .nav-link {
+                padding: 0.6rem 0.8rem; /* パディングを調整 */
+                font-size: 0.8rem; /* スマホでフォントサイズを小さく */
+            }
+            /* 自己紹介セクションのスマホ調整 */
+            .profile-image-group {
+                flex-direction: column; /* 縦並び */
+                gap: 15px; /* 縦方向の隙間を調整 */
+                padding-top: 20px; /* スマホでのパディング */
+                padding-bottom: 20px; /* スマホでのパディング */
+            }
+            .profile-section-logo-in-content,
+            .profile-image-main,
+            .profile-image-sub {
+                width: 150px; /* スマホで画像をさらに小さく */
+                height: 150px;
+                transform: translateY(0) !important; /* スマホでは位置調整をリセット */
+                margin-top: 0; /* スマホでは負のマージンをリセット */
+            }
+            .profile-section-logo-in-content { order: 1; }
+            .profile-image-main { order: 2; }
+            .profile-image-sub { order: 3; transform: rotate(0deg) !important; } /* スマホでは傾きもリセット */
+            .profile-main-text {
+                font-size: 1rem; /* スマホで自己紹介テキストを小さく */
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
+            }
+            .profile-section-content p, 
+            .profile-section-content ul, 
+            .profile-section-content li,
+            .profile-section-content a {
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -345,6 +414,7 @@
                 <!-- 右側のアイコン (PC版もスマホ版も同じスタイル) -->
                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" alt="BOSS兄アイコン" class="header-icon">
             </div>
+            <!-- Norishige Kawakatsu. In Osaka はヘッダーの最下部に独立して配置 -->
             <p class="main-subtitle">Norishige Kawakatsu. In Osaka</p>
         </div>
         <nav id="navbar">
@@ -423,6 +493,58 @@
                                         <li><strong>2013年:</strong> Appleで動画編集ソフト『iMovie 』編集スキル習得</li>
                                         <li><strong>2014年:</strong> YouTube動画チャンネル開設</li>
                                         <li><strong>2024年8月:</strong> Adobe Premiere Proで動画編集スキルアップスタート</li>
+                                        <li><strong>2024年10月:</strong> ウマキんグ切り抜きチャンネル開設</li>
+                                        <li><strong>2024年12月:</strong> ウマキんグ切り抜きチャンネル登録1,000名突破</li>
+                                        <li><strong>2025年2月:</strong> ウマキんグ切り抜きチャンネル登録2,100名達成（2/11現在）</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 代表作品のアコーディオン（自己紹介内で言及された動画） -->
+                        <div class="collapsible-container mt-4">
+                            <div class="collapsible-header">
+                                <span>自己紹介で触れた代表作品</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <p class="text-stone-700 text-sm mb-3 font-semibold">癒しの絶景</p>
+                                    <div class="portfolio-video-container">
+                                        <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="癒しの絶景" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <p class="text-stone-700 text-sm mb-5">
+                                        黒柴犬BOSSとの自然の中での触れ合いを美しく捉えた癒し動画です。
+                                    </p>
+
+                                    <p class="text-stone-700 text-sm mb-3 font-semibold">我が家のヒーローBOSS</p>
+                                    <div class="portfolio-video-container">
+                                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我が家のヒーローBOSS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <p class="text-stone-700 text-sm mb-3">
+                                        動画制作を始めるきっかけとなった記念すべき作品です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ウマキんグ切り抜きチャンネルの詳細アコーディオン -->
+                        <div class="collapsible-container mt-4">
+                            <div class="collapsible-header">
+                                <span>ウマキんグ切り抜きチャンネルについて</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <p class="text-stone-700 text-sm mb-3">
+                                        人気沸騰中の競馬YouTuber『ウマキんグ』の協力を得て開設しました。毎週2本前後の動画をアップロードしており、競馬ファンに最新情報と深い考察をお届けしています。
+                                    </p>
+                                    <h4 class="font-semibold text-stone-800 mt-4 mb-2">チャンネルの特徴:</h4>
+                                    <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
+                                        <li><strong>はやい:</strong> 最新の競馬情報を迅速にお届け</li>
+                                        <li><strong>みじかい:</strong> 短時間で楽しめる動画</li>
+                                        <li><strong>くわしい:</strong> 初心者から上級者まで楽しめる内容</li>
+                                    <li><strong>2024年8月:</strong> Adobe Premiere Proで動画編集スキルアップスタート</li>
                                         <li><strong>2024年10月:</strong> ウマキんグ切り抜きチャンネル開設</li>
                                         <li><strong>2024年12月:</strong> ウマキんグ切り抜きチャンネル登録1,000名突破</li>
                                         <li><strong>2025年2月:</strong> ウマキんグ切り抜きチャンネル登録2,100名達成（2/11現在）</li>
