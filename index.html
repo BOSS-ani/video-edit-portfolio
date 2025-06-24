@@ -350,9 +350,8 @@
             .main-title {
                 font-size: 1.8rem; /* スマホでタイトルを小さく */
             }
-            .main-subtitle {
-                font-size: 0.9rem; /* スマホでサブタイトルを小さく */
-                margin-top: 0;
+            .main-subtitle { /* スマホでは非表示 */
+                display: none;
             }
             #navbar ul {
                 gap: 0.3rem; /* ボタン間隔を狭める */
@@ -401,6 +400,7 @@
                 <h1 class="main-title">VIDEO edit office BOSS兄</h1>
                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/60x60/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
             </div>
+            <!-- 『Norishige Kawakatsu. In Osaka』を完全に削除 -->
         </div>
         <nav id="navbar">
              <div class="container mx-auto px-4">
@@ -532,12 +532,34 @@
                     <h2 class="section-h2">制作作品</h2>
                     <div class="portfolio-grid">
 
-                        <!-- 癒しの絶景 黒柴犬BOSS VOL.1 (削除済み) -->
-                        <!-- 我が家のヒーローBOSS君の散歩を大公開！ (削除済み) -->
-                        
+                        <!-- 我が家のヒーローBOSS君の散歩を大公開！ (残す) -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
-                                <iframe src="https://www.youtube.com/embed/-Da_AapqN7M" title="WEB活用・動画制作編　Apple の凄さ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="portfolio-content-summary">
+                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">我が家のヒーローBOSS君の散歩を大公開！</h3>
+                                <p class="text-stone-700 text-sm">
+                                    BOSS君の楽しいお散歩風景をお届けする動画です。視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識し、軽快なテンポで編集しました。
+                                </p>
+                                <div class="collapsible-container mt-4">
+                                    <div class="collapsible-header">
+                                        <span>制作コメント</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <p class="text-stone-700 text-sm mt-3">視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識して編集しました。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ある夏の一日 Booss君シャンプー -->
+                        <div class="portfolio-card">
+                            <div class="portfolio-video-container">
+                                <iframe src="https://www.youtube.com/embed/-Da_AapqN7M" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="portfolio-content-summary">
                                 <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ある夏の一日 Booss君シャンプー</h3>
@@ -574,7 +596,7 @@
                                             <div class="portfolio-video-container">
                                                 <iframe src="https://www.youtube.com/embed/dWFDQCdXlRU" title="2024年　東京大賞典..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                             </div>
-                                            <p class="text-stone-700 text-sm mt-3">高額払い戻しを実現した予想のポイントを分かりやすく、スピーディーに伝えることを意識して編集しました。特に、重要な数字やデータは視覚的に強調しています。</p>
+                                            <p class="text-stone-700 text-sm mt-3">高額払い戻しを実現した予想のポイントを分かりやすく、スピーディーに伝えることを意識しました。特に、重要な数字やデータは視覚的に強調しています。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -788,7 +810,7 @@
                             <li>広告掲載目的のデータ収集（広告 Cookie と識別子によるデータ収集を含む）のためにGoogle アナリティクスを必要とするサービス</li>
                         </ul>
                         <p class="text-stone-700 leading-relaxed">
-                            本サイトは、Google アナリティクスの広告向けの機能に関するポリシーに準拠し、個人を特定したり、個人を特定できる情報とGoogleの広告サービスまたは広告機能介して収集された個人を特定できない情報を組み合わせたりすることは致しません。
+                            本サイトは、Google アナリティクス の広告向けの機能に関するポリシーに準拠し、個人を特定したり、個人を特定できる情報とGoogleの広告サービスまたは広告機能介して収集された個人を特定できない情報を組み合わせたりすることは致しません。
                         </p>
                         <p class="text-stone-700 leading-relaxed">
                             Googleが開発したGoogle アナリティクス オプトアウトアドオン をご利用するとGoogle アナリティクスによる本サイトご利用のお客様のデータ使用を無効にすることができます。
