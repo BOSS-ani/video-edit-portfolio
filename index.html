@@ -366,31 +366,33 @@
             }
             /* 自己紹介セクションのスマホ調整 */
             .profile-image-group {
-                flex-direction: column; /* 縦並び */
-                gap: 15px; /* 縦方向の隙間を調整 */
+                flex-direction: row; /* スマホでも横並びを維持 */
+                justify-content: center; /* 中央寄せ */
+                align-items: flex-end; /* 下揃えで逆三角形を表現 */
+                gap: 15px; /* 横方向の隙間を調整 */
                 padding-top: 20px; /* スマホでのパディング */
                 padding-bottom: 20px; /* スマホでのパディング */
             }
             .profile-section-logo-in-content { /* スマホでの中央ロゴ */
-                width: 120px; /* スマホで画像をさらに小さく */
-                height: 120px;
-                order: 1; /* ロゴを一番上に */
-                transform: translateY(0) !important; /* スマホでは位置調整をリセット */
-                margin-top: 0; /* スマホでは負のマージンをリセット */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 2; /* ロゴを中央に */
+                transform: translateY(10px) !important; /* 少し下に移動 */
+                margin-top: 0; /* マージンリセット */
             }
             .profile-image-main { /* スマホでの左の画像 */
-                width: 120px; /* スマホで画像をさらに小さく */
-                height: 120px;
-                order: 2; /* 2番目に配置 */
-                transform: translateY(0) !important; /* スマホでは位置調整をリセット */
-                margin-top: 0; /* スマホでは負のマージンをリセット */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 1; /* 1番目に配置 */
+                transform: translateY(-10px) !important; /* 少し上に移動 */
+                margin-top: 0; /* マージンリセット */
             }
             .profile-image-sub { /* スマホでの右の画像 */
-                width: 120px; /* スマホで画像をさらに小さく */
-                height: 120px;
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
                 order: 3; /* 3番目に配置 */
-                transform: translateY(0) !important; /* スマホでは傾きもリセット */
-                margin-top: 0; /* スマホでは負のマージンをリセット */
+                transform: translateY(-10px) rotate(0deg) !important; /* 少し上に移動、傾きリセット */
+                margin-top: 0; /* マージンリセット */
             }
             .profile-main-text {
                 font-size: 0.9rem; /* スマホで自己紹介テキストを小さく */
@@ -594,7 +596,8 @@
                         </div>
 
                         <!-- ウマキんグ切り抜き動画制作作品（YouTube）の動画を差し替え -->
-                        <div class="portfolio-card md:col-span-full"> <div class="portfolio-content-summary">
+                        <div class="portfolio-card md:col-span-full"> 
+                            <div class="portfolio-content-summary">
                                 <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ウマキんグ切り抜き動画制作作品（YouTube）</h3>
                                 <p class="text-stone-700 text-sm">
                                     『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』で培った、競馬予想に特化した高速・高密度な動画編集の事例です。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
