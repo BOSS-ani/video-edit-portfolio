@@ -299,16 +299,7 @@
             max-width: 900px;
             width: 100%;
         }
-        .sidebar-ad-area {
-            flex-basis: 250px;
-            min-width: 200px;
-            background-color: #FFF;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-            margin-top: 2rem;
-        }
+        /* サイドバーの要素をメインコンテンツの下に移動 */
         .sidebar-contact-area, .sidebar-link-area {
             background-color: #FAEBD7;
             padding: 15px;
@@ -316,6 +307,8 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin-top: 1.5rem;
             text-align: center;
+            width: 100%; /* フル幅に */
+            max-width: 728px; /* 広告の最大幅に合わせる */
         }
         .sidebar-contact-area h4 { font-weight: bold; color: #5A2D0E; margin-bottom: 0.5rem; }
         .sidebar-contact-area a { color: #CD853F; text-decoration: underline; font-weight: 500; }
@@ -326,10 +319,12 @@
 
         /* レスポンシブ調整 */
         @media (max-width: 1023px) { /* サイドバーが下に回るブレークポイント */
-            .sidebar-ad-area, .sidebar-contact-area, .sidebar-link-area {
-                order: 1;
+            .sidebar-ad-area { /* 広告エリアはメインコンテンツレイアウトの外に維持 */
+                order: 1; /* スマホで上に表示 */
                 width: 100%;
                 max-width: 728px;
+                margin-left: auto;
+                margin-right: auto;
             }
             .main-content-area { order: 2; }
             .main-content-layout { flex-direction: column; align-items: center; }
@@ -366,6 +361,7 @@
             }
             /* 自己紹介セクションのスマホ調整 */
             .profile-image-group {
+                display: flex; /* Flexboxを明示的に指定 */
                 flex-direction: row; /* スマホでも横並びを維持 */
                 justify-content: center; /* 中央寄せ */
                 align-items: flex-end; /* 下揃えで逆三角形を表現 */
