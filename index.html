@@ -300,6 +300,7 @@
             width: 100%;
         }
         /* サイドバーの要素をメインコンテンツの下に移動 */
+        /* sidebar-ad-areaはmain-content-layoutの直下にあるため、HTMLの記述順で制御 */
         .sidebar-contact-area, .sidebar-link-area {
             background-color: #FAEBD7;
             padding: 15px;
@@ -871,11 +872,14 @@
 
             </div>
         </div>
+        <!-- サイドバー広告と移動したお問い合わせ・関連リンクエリア -->
         <div class="sidebar-ad-area">
             <div class="sidebar-ad-unit">
                 <p>ここに右サイドバー広告が表示されます (審査承認後)</p>
                 </div>
-            
+        </div>
+        <!-- お問い合わせと関連リンクをメインコンテンツエリアの直下に移動 -->
+        <div class="main-content-area">
             <div id="contact-sidebar" class="sidebar-contact-area">
                 <h4>お問い合わせ</h4>
                 <p class="text-sm">ご質問やご依頼はこちらからどうぞ。</p>
@@ -890,7 +894,6 @@
                     <li><a href="https://x.gd/kGwqM" target="_blank">ウマキんグ切り抜き動画チャンネル</a></li>
                     </ul>
             </div>
-
         </div>
     </main>
 
