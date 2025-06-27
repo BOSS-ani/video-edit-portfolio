@@ -340,7 +340,9 @@
                 padding: 0.5rem 0; /* スマホでヘッダーの上下パディングをさらに減らす */
             }
             .main-header-content {
-                flex-direction: column; /* 縦並び */
+                flex-direction: row; /* スマホでも横並びを維持 */
+                justify-content: center; /* 中央寄せ */
+                align-items: center;
                 gap: 5px; /* 間隔をさらに調整 */
             }
             .header-icon {
@@ -349,6 +351,9 @@
             }
             .main-title {
                 font-size: 1.8rem; /* スマホでタイトルを小さく */
+                white-space: nowrap; /* 折り返さない */
+                overflow: hidden; /* はみ出た部分を隠す */
+                text-overflow: ellipsis; /* はみ出た部分を「...」で表示 */
             }
             .main-subtitle { /* スマホでは非表示 */
                 display: none;
@@ -367,17 +372,27 @@
                 padding-top: 20px; /* スマホでのパディング */
                 padding-bottom: 20px; /* スマホでのパディング */
             }
-            .profile-section-logo-in-content,
-            .profile-image-main,
-            .profile-image-sub {
+            .profile-section-logo-in-content { /* スマホでの中央ロゴ */
                 width: 120px; /* スマホで画像をさらに小さく */
                 height: 120px;
+                order: 1; /* ロゴを一番上に */
                 transform: translateY(0) !important; /* スマホでは位置調整をリセット */
                 margin-top: 0; /* スマホでは負のマージンをリセット */
             }
-            .profile-section-logo-in-content { order: 1; }
-            .profile-image-main { order: 2; }
-            .profile-image-sub { order: 3; transform: rotate(0deg) !important; } /* スマホでは傾きもリセット */
+            .profile-image-main { /* スマホでの左の画像 */
+                width: 120px; /* スマホで画像をさらに小さく */
+                height: 120px;
+                order: 2; /* 2番目に配置 */
+                transform: translateY(0) !important; /* スマホでは位置調整をリセット */
+                margin-top: 0; /* スマホでは負のマージンをリセット */
+            }
+            .profile-image-sub { /* スマホでの右の画像 */
+                width: 120px; /* スマホで画像をさらに小さく */
+                height: 120px;
+                order: 3; /* 3番目に配置 */
+                transform: translateY(0) !important; /* スマホでは傾きもリセット */
+                margin-top: 0; /* スマホでは負のマージンをリセット */
+            }
             .profile-main-text {
                 font-size: 0.9rem; /* スマホで自己紹介テキストを小さく */
                 text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
@@ -400,6 +415,7 @@
                 <h1 class="main-title">VIDEO edit office BOSS兄</h1>
                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/60x60/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
             </div>
+            <!-- 『Norishige Kawakatsu. In Osaka』を完全に削除 -->
         </div>
         <nav id="navbar">
              <div class="container mx-auto px-4">
@@ -580,28 +596,12 @@
                         </div>
 
                         <!-- ウマキんグ切り抜き動画制作作品（YouTube）の動画を差し替え -->
-                        <div class="portfolio-card md:col-span-full"> 
-                            <div class="portfolio-content-summary">
+                        <div class="portfolio-card md:col-span-full"> <div class="portfolio-content-summary">
                                 <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ウマキんグ切り抜き動画制作作品（YouTube）</h3>
                                 <p class="text-stone-700 text-sm">
                                     『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』で培った、競馬予想に特化した高速・高密度な動画編集の事例です。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
                                 </p>
                                 
-                                <div class="collapsible-container mt-4">
-                                    <div class="collapsible-header">
-                                        <span>2024年 東京大賞典 A評価・印BY史上最高払戻４２９万円を獲得☆ナーツごんにゃ中井！</span>
-                                        <span class="toggle-icon">▼</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <div class="portfolio-detail-section">
-                                            <div class="portfolio-video-container">
-                                                <iframe src="https://www.youtube.com/embed/dWFDQCdXlRU" title="2024年　東京大賞典..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                            </div>
-                                            <p class="text-stone-700 text-sm mt-3">高額払い戻しを実現した予想のポイントを分かりやすく、スピーディーに伝えることを意識しました。特に、重要な数字やデータは視覚的に強調しています。</p>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="collapsible-container mt-4">
                                     <div class="collapsible-header">
                                         <span>チャンネルPR動画：重賞馬券師育成コンテンツ</span>
@@ -615,6 +615,21 @@
                                             <p class="text-stone-700 text-sm mt-3">
                                                 「重賞馬券師育成コンテンツ」のPR動画です。ウマキんグ様のノウハウを凝縮したコンテンツの魅力を最大限に伝えられるよう制作しました。
                                             </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="collapsible-container mt-4">
+                                    <div class="collapsible-header">
+                                        <span>チャンネルPR　元動画のメンバーシップのご案内！</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <div class="portfolio-video-container">
+                                                <iframe src="https://www.youtube.com/embed/3jTlCQ3jTlCQ" title="チャンネルPR　元動画のメンバーシップのご案内！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            </div>
+                                            <p class="text-stone-700 text-sm mt-3">『はやい、みじかい、くわしい』をモットーに、チャンネルの強みをアピールするPR動画です。簡潔ながらもチャンネルの魅力を最大限に伝える構成を心がけました。</p>
                                         </div>
                                     </div>
                                 </div>
