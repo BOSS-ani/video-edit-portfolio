@@ -272,7 +272,17 @@
             color: #666;
             border-radius: 8px;
         }
-        /* sidebar-ad-areaはmain-content-layoutの直下にあるため、HTMLの記述順で制御 */
+        /* PC版のサイドバー */
+        .sidebar-ad-area {
+            flex-basis: 250px;
+            min-width: 200px;
+            background-color: #FFF;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 2rem;
+        }
         .sidebar-contact-area, .sidebar-link-area {
             background-color: #FAEBD7;
             padding: 15px;
@@ -280,8 +290,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin-top: 1.5rem;
             text-align: center;
-            width: 100%; /* フル幅に */
-            max-width: 728px; /* 広告の最大幅に合わせる */
+            width: 100%; /* サイドバー内の要素はフル幅に */
         }
         .sidebar-contact-area h4 { font-weight: bold; color: #5A2D0E; margin-bottom: 0.5rem; }
         .sidebar-contact-area a { color: #CD853F; text-decoration: underline; font-weight: 500; }
@@ -291,17 +300,61 @@
         .sidebar-link-area a:hover { text-decoration: underline; }
 
         /* レスポンシブ調整 */
-        @media (max-width: 1023px) { /* サイドバーが下に回るブレークポイント */
-            .sidebar-ad-area { /* 広告エリアはメインコンテンツレイアウトの外に維持 */
-                order: 1; /* スマホで上に表示 */
-                width: 100%;
+        @media (min-width: 1024px) { /* PC版のレイアウト */
+            .main-content-layout {
+                display: flex;
+                justify-content: center; /* 中央寄せ */
+                align-items: flex-start; /* 上揃え */
+                gap: 20px;
+                max-width: 1200px; /* 全体の最大幅を調整 */
+                margin: 0 auto; /* 中央寄せ */
+            }
+            .main-content-area {
+                flex-grow: 1;
+                max-width: 900px; /* メインコンテンツの最大幅 */
+            }
+            .sidebar-ad-area {
+                order: 2; /* PC版では右側に表示 */
+                flex-shrink: 0; /* 縮まないように */
+            }
+            /* お問い合わせと関連リンクはサイドバー内に表示 */
+            .main-content-area #contact-sidebar,
+            .main-content-area .sidebar-link-area {
+                display: none; /* PC版ではメインコンテンツ下のこれらの要素を非表示 */
+            }
+        }
+
+        @media (max-width: 1023px) { /* タブレット・スマホ向けのブレークポイント */
+            .main-content-layout {
+                flex-direction: column; /* 縦並び */
+                align-items: center; /* 中央寄せ */
+                gap: 20px;
+            }
+            .main-content-area {
+                order: 2; /* メインコンテンツは広告の下に */
+                width: 95%; /* 幅を調整 */
+                max-width: 728px; /* 広告の最大幅に合わせる */
+                margin: 0 auto;
+            }
+            .sidebar-ad-area {
+                order: 1; /* 広告エリアは一番上に */
+                width: 95%; /* 幅を調整 */
                 max-width: 728px;
+                margin: 0 auto;
+            }
+            /* スマホ版ではお問い合わせと関連リンクをメインコンテンツの下に表示 */
+            .sidebar-ad-area #contact-sidebar,
+            .sidebar-ad-area .sidebar-link-area {
+                display: none; /* スマホ版ではサイドバー内のこれらの要素を非表示 */
+            }
+            .main-content-area #contact-sidebar,
+            .main-content-area .sidebar-link-area {
+                display: block; /* スマホ版ではメインコンテンツ下のこれらの要素を表示 */
                 margin-left: auto;
                 margin-right: auto;
             }
-            .main-content-area { order: 2; }
-            .main-content-layout { flex-direction: column; align-items: center; }
         }
+
         @media (max-width: 768px) { /* スマホ向けヘッダー/ナビゲーション */
             header {
                 padding: 0.5rem 0; /* スマホでヘッダーの上下パディングをさらに減らす */
