@@ -6,6 +6,9 @@
     <title>VIDEO edit office BOSS兄 - ポートフォリオ</title>
     <meta name="description" content="大阪を拠点とするVIDEO edit office BOSS兄（川勝典茂）のポートフォリオサイトです。ウマキんグ公認切り抜きチャンネルの運営実績など、動画編集編集の制作事例をご紹介しています。">
     
+    <!-- Google AdSense 自動広告コード (HEAD内) -->
+    <!-- このコードを貼り付けるだけで、AdSenseが自動的にサイト全体に広告を最適配置します。 -->
+    <!-- 個別の広告ユニットを配置する必要はありません。 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419575231209847" crossorigin="anonymous"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
+    <!-- Chosen Palette: Warm Brown & Golden Accents -->
     <style>
         /* 全体的なリセットと基本スタイル */
         body {
@@ -970,7 +974,7 @@
                         const headerOffset = header.getBoundingClientRect().top + window.pageYOffset;
                         const headerHeight = document.getElementById('main-header').offsetHeight;
                         window.scrollTo({
-                            top: headerOffset - headerHeight - 10, // ヘッダーの高さを考慮して調整
+                            top: offsetPosition,
                             behavior: "smooth"
                         });
                     }
