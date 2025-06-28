@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIDEO edit office BOSS兄 - ポートフォリオ</title>
     <meta name="description" content="大阪を拠点とするVIDEO edit office BOSS兄（川勝典茂）のポートフォリオサイトです。ウマキんグ公認切り抜きチャンネルの運営実績など、動画編集編集の制作事例をご紹介しています。">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419575231209847" crossorigin="anonymous"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Google AdSense Script (HEAD内) - 審査が承認されたらコメントアウトを外して、ca-pub-XXXXXXXXXXXXXXXX をあなたのIDに置き換えてください -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-
-    <!-- Chosen Palette: Warm Brown & Golden Accents -->
     <style>
         /* 全体的なリセットと基本スタイル */
         body {
@@ -282,6 +281,8 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
             margin-top: 2rem;
+            /* PC版では表示 */
+            display: block; 
         }
         .sidebar-contact-area, .sidebar-link-area {
             background-color: #FAEBD7;
@@ -341,12 +342,9 @@
                 width: 95%; /* 幅を調整 */
                 max-width: 728px;
                 margin: 0 auto;
+                display: none; /* スマホ版では広告エリアを非表示にする */
             }
             /* スマホ版ではお問い合わせと関連リンクをメインコンテンツの下に表示 */
-            .sidebar-ad-area #contact-sidebar,
-            .sidebar-ad-area .sidebar-link-area {
-                display: none; /* スマホ版ではサイドバー内のこれらの要素を非表示 */
-            }
             .main-content-area #contact-sidebar,
             .main-content-area .sidebar-link-area {
                 display: block; /* スマホ版ではメインコンテンツ下のこれらの要素を表示 */
@@ -569,7 +567,6 @@
                     <h2 class="section-h2">制作作品</h2>
                     <div class="portfolio-grid">
 
-                        <!-- 我が家のヒーローBOSS君の散歩を大公開！ (残す) -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
                                 <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -593,7 +590,6 @@
                             </div>
                         </div>
                         
-                        <!-- ある夏の一日 Booss君シャンプー -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
                                 <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -617,7 +613,6 @@
                             </div>
                         </div>
 
-                        <!-- ウマキんグ切り抜き動画制作作品（YouTube）の動画を差し替え -->
                         <div class="portfolio-card md:col-span-full"> 
                             <div class="portfolio-content-summary">
                                 <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ウマキんグ切り抜き動画制作作品（YouTube）</h3>
@@ -897,12 +892,10 @@
 
             </div>
         </div>
-        <!-- サイドバー広告と移動したお問い合わせ・関連リンクエリア -->
         <div class="sidebar-ad-area">
             <div class="sidebar-ad-unit">
                 <p>ここに右サイドバー広告が表示されます (審査承認後)</p>
                 </div>
-            <!-- PC版ではサイドバーに表示されるように、このdivをmain-content-layoutの直下に配置 -->
             <div id="contact-sidebar" class="sidebar-contact-area">
                 <h4>お問い合わせ</h4>
                 <p class="text-sm">ご質問やご依頼はこちらからどうぞ。</p>
