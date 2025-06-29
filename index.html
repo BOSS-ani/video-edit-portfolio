@@ -138,12 +138,12 @@
         }
         .profile-image-group {
             display: flex;
-            align-items: center; /* 垂直方向中央揃え */
-            justify-content: space-evenly; /* 均等な間隔で配置 */
+            align-items: flex-end; /* 下揃えで逆三角形を表現 */
+            justify-content: center; /* 中央寄せ */
             width: 100%;
             max-width: 800px; /* 画像グループの最大幅をさらに広げる */
             margin: 0 auto; /* 中央寄せ */
-            flex-wrap: wrap; /* スマホで折り返す */
+            flex-wrap: nowrap; /* PCでは折り返さない */
             padding: 40px 10px 40px 10px; /* 上下にパディングを追加して切れないように */
             box-sizing: border-box;
             min-height: 250px; /* 画像群が収まる最低限の高さ */
@@ -169,9 +169,10 @@
             transform: translateY(-50px); /* 両サイドの画像を上に移動 */
             flex-shrink: 0;
             margin: 0 20px; /* 間隔調整 */
+            border-radius: 50%; /* プロフィール画像は丸に */
         }
         .profile-image-sub {
-            border-radius: 12px;
+            border-radius: 12px; /* イラスト画像は角丸に */
             transform: translateY(-50px) rotate(-7deg);
             transition: transform 0.4s ease, box-shadow 0.3s ease;
             order: 3; /* 配置順序 */
@@ -611,7 +612,7 @@
                         <!-- ある夏の一日 Booss君シャンプー -->
                         <div class="portfolio-card">
                             <div class="portfolio-video-container">
-                                <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="portfolio-content-summary">
                                 <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ある夏の一日 Booss君シャンプー</h3>
