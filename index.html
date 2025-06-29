@@ -1,559 +1,1011 @@
 <!DOCTYPE html>
-    <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VIDEO edit office BOSS兄 - ポートフォリオ</title>
-        <meta name="description" content="大阪を拠点とするVIDEO edit office BOSS兄（川勝典茂）のポートフォリオサイトです。ウマキんグ公認切り抜きチャンネルの運営実績など、動画編集編集の制作事例をご紹介しています。">
-        
-        <script async src="[https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419575231209847](https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419575231209847)" crossorigin="anonymous"></script>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO edit office BOSS兄 - ポートフォリオ</title>
+    <meta name="description" content="大阪を拠点とするVIDEO edit office BOSS兄（川勝典茂）のポートフォリオサイトです。ウマキんグ公認切り抜きチャンネルの運営実績など、動画編集編集の制作事例をご紹介しています。">
     
-        <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-        <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-        <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-        <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap)" rel="stylesheet">
-        
-        <style>
-            /* 全体的なリセットと基本スタイル */
-            body {
-                font-family: 'Inter', 'Noto Sans JP', sans-serif;
-                background-color: #FDFBF6; /* Very light cream/beige */
-                line-height: 1.6;
-                color: #333; /* Default text color, dark neutral */
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box; /* PaddingとBorderをwidth/heightに含める */
-                /* 固定ヘッダーの高さ分、コンテンツを下にずらすためのpadding-topはJavaScriptで設定 */
-            }
+    <!-- Google AdSense 自動広告コード (HEAD内) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419575231209847" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
-            /* ヘッダーの固定スタイル */
-            header {
-                position: fixed; /* ヘッダーを固定 */
-                top: 0;
-                width: 100%;
-                z-index: 100; /* 他のコンテンツの上に表示 */
-                background-color: #A0522D; /* Sienna (ブラウン) - ヘッダー背景を固定色に */
-                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-                padding: 1rem 0; /* PC版ヘッダーの上下パディングを調整 */
-                border-bottom-left-radius: 15px;
-                border-bottom-right-radius: 15px;
+    <!-- Chosen Palette: Warm Brown & Golden Accents -->
+    <style>
+        /* 全体的なリセットと基本スタイル */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #FDFBF6; /* Very light cream/beige */
+            line-height: 1.6;
+            color: #333; /* Default text color, dark neutral */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* PaddingとBorderをwidth/heightに含める */
+            /* 固定ヘッダーの高さ分、コンテンツを下にずらすためのpadding-topはJavaScriptで設定 */
+        }
+
+        /* ヘッダーの固定スタイル */
+        header {
+            position: fixed; /* ヘッダーを固定 */
+            top: 0;
+            width: 100%;
+            z-index: 100; /* 他のコンテンツの上に表示 */
+            background-color: #A0522D; /* Sienna (ブラウン) - ヘッダー背景を固定色に */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 1rem 0; /* PC版ヘッダーの上下パディングを調整 */
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        /* ヘッダー内部のコンテンツ幅 */
+        .header-inner-content {
+            max-width: 900px; /* メインコンテンツの幅に合わせる */
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        /* メインタイトルとロゴのグループ */
+        .main-header-content {
+            display: flex;
+            align-items: center; /* 垂直方向中央揃え */
+            justify-content: center; /* 水平方向中央寄せ */
+            gap: 10px; /* アイコンとテキストの間隔を調整 */
+            flex-wrap: nowrap; /* PCでは折り返さない */
+        }
+        .header-icon {
+            width: 60px; /* アイコンの基本サイズを調整 */
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* 影を強調 */
+        }
+        .main-title {
+            color: white;
+            font-size: 3.2rem; /* 基本のフォントサイズをさらに調整 */
+            line-height: 1.1;
+            text-shadow: 
+                -2.5px -2.5px 0 #5A2D0E,  
+                 2.5px -2.5px 0 #5A2D0E,
+                -2.5px  2.5px 0 #5A2D0E,
+                 2.5px  2.5px 0 #5A2D0E,
+                 0px     0px    12px rgba(0,0,0,0.7);
+        }
+        /* サブタイトル - 'Norishige Kawakatsu. In Osaka' は削除されるため、このスタイルは影響しない */
+
+        /* ナビゲーションバー */
+        #navbar {
+            background-color: #A0522D; /* Sienna (ブラウン) */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #navbar ul {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            gap: 1.5rem; /* ボタン間の間隔を調整 */
+        }
+        .nav-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #FFFFFF;
+            background-color: #A0522D;
+            font-weight: 500;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        .nav-link:hover {
+            background-color: #CD853F;
+            color: #FFFFFF;
+        }
+
+        /* 自己紹介セクション */
+        .section-h2 {
+            background: linear-gradient(to right, #FAEBD7, #FDFBF6);
+            padding: 1.2rem 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            color: #5A2D0E;
+            border-left: 8px solid #CD853F;
+            margin-bottom: 1.8rem;
+            margin-top: 2.5rem;
+            font-size: 2.25rem;
+        }
+        .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
+            background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 400px;
+        }
+        .profile-section-content::before { /* 背景画像を暗くするオーバーレイは不要なため削除 */
+            content: none;
+        }
+        .profile-section-content > * {
+            position: relative;
+            z-index: 2;
+        }
+        .profile-image-group {
+            display: flex;
+            align-items: flex-end; /* 下揃えで逆三角形を表現 */
+            justify-content: center; /* 中央寄せ */
+            width: 100%;
+            max-width: 800px; /* 画像グループの最大幅をさらに広げる */
+            margin: 0 auto; /* 中央寄せ */
+            flex-wrap: nowrap; /* PCでは折り返さない */
+            padding: 40px 10px 40px 10px; /* 上下にパディングを追加して切れないように */
+            box-sizing: border-box;
+            min-height: 250px; /* 画像群が収まる最低限の高さ */
+            position: relative; /* 子要素のabsolute配置基準 */
+        }
+        .profile-section-logo-in-content { /* 自己紹介セクション内のBOSS兄ロゴ (中央) */
+            width: 250px; /* さらに大きく */
+            height: 250px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); /* 影を強調 */
+            order: 2; /* 配置順序 */
+            transform: translateY(50px); /* 中央の画像を下に配置 */
+            flex-shrink: 0;
+            margin: 0 20px; /* 間隔調整 */
+        }
+        .profile-image-main { /* プロフィール画像とイラスト画像の共通スタイル (両サイド) */
+            width: 220px; /* サイズをさらに大きく */
+            height: 220px; /* サイズをさらに大きく */
+            border: 5px solid #CD853F; /* ボーダーを太く */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.7); /* 影を強調 */
+            object-fit: cover;
+            order: 1; /* 配置順序 */
+            transform: translateY(-50px); /* 両サイドの画像を上に移動 */
+            flex-shrink: 0;
+            margin: 0 20px; /* 間隔調整 */
+            border-radius: 50%; /* プロフィール画像は丸に */
+        }
+        .profile-image-sub {
+            border-radius: 12px; /* イラスト画像は角丸に */
+            transform: translateY(-50px) rotate(-7deg);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            order: 3; /* 配置順序 */
+        }
+        .profile-image-sub:hover {
+            transform: translateY(-50px) rotate(0deg) scale(1.08);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+        }
+
+        /* 自己紹介テキストのスタイル */
+        .profile-main-text { /* 自己紹介のメインテキスト用クラス */
+            color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
+            font-size: 1.45rem; /* フォントサイズをさらに大きく (text-2xl相当) */
+            text-shadow: 
+                -1.5px -1.5px 0 #000,  
+                 1.5px -1.5px 0 #000,
+                -1.5px  1.5px 0 #000,
+                 1.5px  1.5px 0 #000,
+                 0px     0px    8px rgba(0,0,0,0.9);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .profile-section-content p, 
+        .profile-section-content ul, 
+        .profile-section-content li,
+        .profile-section-content a {
+            color: #FFF !important;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+        }
+        .profile-section-content strong {
+            color: #FFD700 !important;
+        }
+        .collapsible-container .collapsible-header span {
+            color: white !important;
+        }
+
+
+        /* ポートフォリオカードのグリッドレイアウト */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            /* ヘッダー内部のコンテンツ幅 */
-            .header-inner-content {
-                max-width: 900px; /* メインコンテンツの幅に合わせる */
-                margin: 0 auto;
-                padding: 0 1rem;
+            .portfolio-card.md\:col-span-full {
+                grid-column: span 2;
             }
-            /* メインタイトルとロゴのグループ */
-            .main-header-content {
+        }
+        @media (max-width: 767px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .portfolio-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .portfolio-card:hover { transform: translateY(-5px); }
+        .portfolio-video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .portfolio-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* AdSense specific style */
+        .adsense-unit {
+            background-color: #F8F8F8;
+            border: 1px dashed #CCC;
+            padding: 10px;
+            margin: 2rem auto;
+            max-width: 728px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-radius: 8px;
+        }
+        /* PC版のサイドバー */
+        .sidebar-ad-area {
+            flex-basis: 250px;
+            min-width: 200px;
+            background-color: #FFF;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 2rem;
+            /* PC版では表示 */
+            display: block; 
+        }
+        .sidebar-contact-area, .sidebar-link-area {
+            background-color: #FAEBD7;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 1.5rem;
+            text-align: center;
+            width: 100%; /* サイドバー内の要素はフル幅に */
+        }
+        .sidebar-contact-area h4 { font-weight: bold; color: #5A2D0E; margin-bottom: 0.5rem; }
+        .sidebar-contact-area a { color: #CD853F; text-decoration: underline; font-weight: 500; }
+        .sidebar-link-area ul { list-style: none; padding: 0; }
+        .sidebar-link-area li { margin-bottom: 0.5rem; }
+        .sidebar-link-area a { color: #A0522D; text-decoration: none; font-weight: normal; }
+        .sidebar-link-area a:hover { text-decoration: underline; }
+
+        /* レスポンシブ調整 */
+        @media (min-width: 1024px) { /* PC版のレイアウト */
+            .main-content-layout {
                 display: flex;
-                align-items: center; /* 垂直方向中央揃え */
-                justify-content: center; /* 水平方向中央寄せ */
-                gap: 10px; /* アイコンとテキストの間隔を調整 */
-                flex-wrap: nowrap; /* PCでは折り返さない */
+                justify-content: center; /* 中央寄せ */
+                align-items: flex-start; /* 上揃え */
+                gap: 20px;
+                max-width: 1200px; /* 全体の最大幅を調整 */
+                margin: 0 auto; /* 中央寄せ */
+            }
+            .main-content-area {
+                flex-grow: 1;
+                max-width: 900px; /* メインコンテンツの最大幅 */
+            }
+            .sidebar-ad-area {
+                order: 2; /* PC版では右側に表示 */
+                flex-shrink: 0; /* 縮まないように */
+            }
+            /* お問い合わせと関連リンクはサイドバー内に表示 */
+            .main-content-area #contact-sidebar,
+            .main-content-area .sidebar-link-area {
+                display: none; /* PC版ではメインコンテンツ下のこれらの要素を非表示 */
+            }
+        }
+
+        @media (max-width: 1023px) { /* タブレット・スマホ向けのブレークポイント */
+            .main-content-layout {
+                flex-direction: column; /* 縦並び */
+                align-items: center; /* 中央寄せ */
+                gap: 20px;
+            }
+            .main-content-area {
+                order: 2; /* メインコンテンツは広告の下に */
+                width: 95%; /* 幅を調整 */
+                max-width: 728px; /* 広告の最大幅に合わせる */
+                margin: 0 auto;
+            }
+            .sidebar-ad-area {
+                order: 1; /* 広告エリアは一番上に */
+                width: 95%; /* 幅を調整 */
+                max-width: 728px;
+                margin: 0 auto;
+                display: block; /* スマホ版でも広告エリアを表示する */
+            }
+            /* スマホ版ではお問い合わせと関連リンクをメインコンテンツの下に表示 */
+            .main-content-area #contact-sidebar,
+            .main-content-area .sidebar-link-area {
+                display: block; /* スマホ版ではメインコンテンツ下のこれらの要素を表示 */
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 768px) { /* スマホ向けヘッダー/ナビゲーション */
+            header {
+                padding: 0.5rem 0; /* スマホでヘッダーの上下パディングをさらに減らす */
+            }
+            .main-header-content {
+                flex-direction: row; /* スマホでも横並びを維持 */
+                justify-content: center; /* 中央寄せ */
+                align-items: center;
+                gap: 5px; /* 間隔をさらに調整 */
             }
             .header-icon {
-                width: 60px; /* アイコンの基本サイズを調整 */
-                height: 60px;
-                object-fit: contain;
-                filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); /* 影を強調 */
+                width: 30px; /* スマホでアイコンを小さく */
+                height: 30px;
             }
             .main-title {
-                color: white;
-                font-size: 3.2rem; /* 基本のフォントサイズをさらに調整 */
-                line-height: 1.1;
-                text-shadow: 
-                    -2.5px -2.5px 0 #5A2D0E,  
-                     2.5px -2.5px 0 #5A2D0E,
-                    -2.5px  2.5px 0 #5A2D0E,
-                     2.5px  2.5px 0 #5A2D0E,
-                     0px     0px    12px rgba(0,0,0,0.7);
+                font-size: 1.8rem; /* スマホでタイトルを小さく */
+                white-space: nowrap; /* 折り返さない */
+                overflow: hidden; /* はみ出た部分を隠す */
+                text-overflow: ellipsis; /* はみ出た部分を「...」で表示 */
             }
-            /* サブタイトル - 'Norishige Kawakatsu. In Osaka' は削除されるため、このスタイルは影響しない */
-    
-            /* ナビゲーションバー */
-            #navbar {
-                background-color: #A0522D; /* Sienna (ブラウン) */
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            .main-subtitle { /* スマホでは非表示 */
+                display: none;
             }
             #navbar ul {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                padding: 0;
-                gap: 1.5rem; /* ボタン間の間隔を調整 */
+                gap: 0.3rem; /* ボタン間隔を狭める */
             }
             .nav-link {
-                transition: background-color 0.3s ease, color 0.3s ease;
-                padding: 0.8rem 1.5rem;
-                border-radius: 6px;
-                text-decoration: none;
-                color: #FFFFFF;
-                background-color: #A0522D;
-                font-weight: 500;
-                font-size: 1rem;
-                white-space: nowrap;
+                padding: 0.3rem 0.8rem;
+                font-size: 0.9rem;
             }
-            .nav-link:hover {
-                background-color: #CD853F;
-                color: #FFFFFF;
+            main {
+                padding: 0 1rem;
             }
-    
-            /* 自己紹介セクション */
-            .section-h2 {
-                background: linear-gradient(to right, #FAEBD7, #FDFBF6);
-                padding: 1.2rem 1.8rem;
-                border-radius: 10px;
-                box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-                color: #5A2D0E;
-                border-left: 8px solid #CD853F;
-                margin-bottom: 1.8rem;
-                margin-top: 2.5rem;
-                font-size: 2.25rem;
+            section {
+                padding: 1.5rem;
             }
-            .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
-                background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                padding: 2rem;
-                border-radius: 8px;
-                position: relative;
-                overflow: hidden;
-                box-shadow: 0 0 15px rgba(0,0,0,0.2);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                min-height: 400px;
+            h2 {
+                font-size: 1.8rem;
             }
-            .profile-section-content::before { /* 背景画像を暗くするオーバーレイは不要なため削除 */
-                content: none;
+            h3 {
+                font-size: 1.2rem;
             }
-            .profile-section-content > * {
-                position: relative;
-                z-index: 2;
+            .adsense-unit {
+                margin: 1.5rem auto; /* スマホでのマージン調整 */
+                max-width: 100%; /* スマホではフル幅に */
             }
+            /* 自己紹介セクションのスマホ調整 */
             .profile-image-group {
-                display: flex;
-                align-items: center; /* 垂直方向中央揃え */
-                justify-content: space-evenly; /* 均等な間隔で配置 */
-                width: 100%;
-                max-width: 800px; /* 画像グループの最大幅をさらに広げる */
-                margin: 0 auto; /* 中央寄せ */
-                flex-wrap: wrap; /* スマホで折り返す */
-                padding: 40px 10px 40px 10px; /* 上下にパディングを追加して切れないように */
-                box-sizing: border-box;
-                min-height: 250px; /* 画像群が収まる最低限の高さ */
-                position: relative; /* 子要素のabsolute配置基準 */
+                display: flex; /* Flexboxを明示的に指定 */
+                flex-direction: row; /* スマホでも横並びを維持 */
+                justify-content: center; /* 中央寄せ */
+                align-items: flex-end; /* 下揃えで逆三角形を表現 */
+                gap: 15px; /* 横方向の隙間を調整 */
+                padding-top: 20px; /* スマホでのパディング */
+                padding-bottom: 20px; /* スマホでのパディング */
             }
-            .profile-section-logo-in-content { /* 自己紹介セクション内のBOSS兄ロゴ (中央) */
-                width: 250px; /* さらに大きく */
-                height: 250px;
-                object-fit: contain;
-                filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); /* 影を強調 */
-                order: 2; /* 配置順序 */
-                transform: translateY(50px); /* 中央の画像を下に配置 */
-                flex-shrink: 0;
-                margin: 0 20px; /* 間隔調整 */
+            .profile-section-logo-in-content { /* スマホでの中央ロゴ */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 2; /* ロゴを中央に */
+                transform: translateY(10px) !important; /* 少し下に移動 */
+                margin-top: 0; /* マージンリセット */
             }
-            .profile-image-main { /* プロフィール画像とイラスト画像の共通スタイル (両サイド) */
-                width: 220px; /* サイズをさらに大きく */
-                height: 220px; /* サイズをさらに大きく */
-                border: 5px solid #CD853F; /* ボーダーを太く */
-                box-shadow: 0 5px 15px rgba(0,0,0,0.7); /* 影を強調 */
-                object-fit: cover;
-                order: 1; /* 配置順序 */
-                transform: translateY(-50px); /* 両サイドの画像を上に移動 */
-                flex-shrink: 0;
-                margin: 0 20px; /* 間隔調整 */
-                border-radius: 50%; /* プロフィール画像は丸に */
+            .profile-image-main { /* スマホでの左の画像 */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 1; /* 1番目に配置 */
+                transform: translateY(-10px) !important; /* 少し上に移動 */
+                margin-top: 0; /* マージンリセット */
             }
-            .profile-image-sub {
-                border-radius: 12px; /* イラスト画像は角丸に */
-                transform: translateY(-50px) rotate(-7deg);
-                transition: transform 0.4s ease, box-shadow 0.3s ease;
-                order: 3; /* 配置順序 */
+            .profile-image-sub { /* スマホでの右の画像 */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 3; /* 3番目に配置 */
+                transform: translateY(-10px) rotate(0deg) !important; /* 少し上に移動、傾きリセット */
+                margin-top: 0; /* マージンリセット */
             }
-            .profile-image-sub:hover {
-                transform: translateY(-50px) rotate(0deg) scale(1.08);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.8);
-            }
-    
-            /* 自己紹介テキストのスタイル */
-            .profile-main-text { /* 自己紹介のメインテキスト用クラス */
-                color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
-                font-size: 1.45rem; /* フォントサイズをさらに大きく (text-2xl相当) */
-                text-shadow: 
-                    -1.5px -1.5px 0 #000,  
-                     1.5px -1.5px 0 #000,
-                    -1.5px  1.5px 0 #000,
-                     1.5px  1.5px 0 #000,
-                     0px     0px    8px rgba(0,0,0,0.9);
-                line-height: 1.8;
-                margin-bottom: 1.5rem;
+            .profile-main-text {
+                font-size: 0.9rem; /* スマホで自己紹介テキストを小さく */
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
             }
             .profile-section-content p, 
             .profile-section-content ul, 
             .profile-section-content li,
             .profile-section-content a {
-                color: #FFF !important;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
             }
-            .profile-section-content strong {
-                color: #FFD700 !important;
-            }
-            .collapsible-container .collapsible-header span {
-                color: white !important;
-            }
-    
-    
-            /* ポートフォリオカードのグリッドレイアウト */
-            .portfolio-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 1.5rem;
-            }
-            @media (min-width: 768px) {
-                .portfolio-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                .portfolio-card.md\:col-span-full {
-                    grid-column: span 2;
-                }
-            }
-            @media (max-width: 767px) {
-                .portfolio-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-    
-            .portfolio-card {
-                background-color: #ffffff;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-                transition: transform 0.2s ease-in-out;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-            }
-            .portfolio-card:hover { transform: translateY(-5px); }
-            .portfolio-video-container {
-                position: relative;
-                width: 100%;
-                padding-bottom: 56.25%;
-                height: 0;
-                overflow: hidden;
-                margin-top: 0;
-                margin-bottom: 0;
-                border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            .portfolio-video-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-            }
-    
-            /* AdSense specific style */
-            .adsense-unit {
-                background-color: #F8F8F8;
-                border: 1px dashed #CCC;
-                padding: 10px;
-                margin: 2rem auto;
-                max-width: 728px;
-                text-align: center;
-                font-size: 0.9rem;
-                color: #666;
-                border-radius: 8px;
-            }
-            /* PC版のサイドバー */
-            .sidebar-ad-area {
-                flex-basis: 250px;
-                min-width: 200px;
-                background-color: #FFF;
-                padding: 15px;
-                border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-                text-align: center;
-                margin-top: 2rem;
-                /* PC版では表示 */
-                display: block; 
-            }
-            .sidebar-contact-area, .sidebar-link-area {
-                background-color: #FAEBD7;
-                padding: 15px;
-                border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-                margin-top: 1.5rem;
-                text-align: center;
-                width: 100%; /* サイドバー内の要素はフル幅に */
-            }
-            .sidebar-contact-area h4 { font-weight: bold; color: #5A2D0E; margin-bottom: 0.5rem; }
-            .sidebar-contact-area a { color: #CD853F; text-decoration: underline; font-weight: 500; }
-            .sidebar-link-area ul { list-style: none; padding: 0; }
-            .sidebar-link-area li { margin-bottom: 0.5rem; }
-            .sidebar-link-area a { color: #A0522D; text-decoration: none; font-weight: normal; }
-            .sidebar-link-area a:hover { text-decoration: underline; }
-    
-            /* レスポンシブ調整 */
-            @media (min-width: 1024px) { /* PC版のレイアウト */
-                .main-content-layout {
-                    display: flex;
-                    justify-content: center; /* 中央寄せ */
-                    align-items: flex-start; /* 上揃え */
-                    gap: 20px;
-                    max-width: 1200px; /* 全体の最大幅を調整 */
-                    margin: 0 auto; /* 中央寄せ */
-                }
-                .main-content-area {
-                    flex-grow: 1;
-                    max-width: 900px; /* メインコンテンツの最大幅 */
-                }
-                .sidebar-ad-area {
-                    order: 2; /* PC版では右側に表示 */
-                    flex-shrink: 0; /* 縮まないように */
-                }
-                /* お問い合わせと関連リンクはサイドバー内に表示 */
-                .main-content-area #contact-sidebar,
-                .main-content-area .sidebar-link-area {
-                    display: none; /* PC版ではメインコンテンツ下のこれらの要素を非表示 */
-                }
-            }
-    
-            @media (max-width: 1023px) { /* タブレット・スマホ向けのブレークポイント */
-                .main-content-layout {
-                    flex-direction: column; /* 縦並び */
-                    align-items: center; /* 中央寄せ */
-                    gap: 20px;
-                }
-                .main-content-area {
-                    order: 2; /* メインコンテンツは広告の下に */
-                    width: 95%; /* 幅を調整 */
-                    max-width: 728px; /* 広告の最大幅に合わせる */
-                    margin: 0 auto;
-                }
-                .sidebar-ad-area {
-                    order: 1; /* 広告エリアは一番上に */
-                    width: 95%; /* 幅を調整 */
-                    max-width: 728px;
-                    margin: 0 auto;
-                    display: block; /* スマホ版でも広告エリアを表示する */
-                }
-                /* スマホ版ではお問い合わせと関連リンクをメインコンテンツの下に表示 */
-                .main-content-area #contact-sidebar,
-                .main-content-area .sidebar-link-area {
-                    display: block; /* スマホ版ではメインコンテンツ下のこれらの要素を表示 */
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-            }
-    
-            @media (max-width: 768px) { /* スマホ向けヘッダー/ナビゲーション */
-                header {
-                    padding: 0.5rem 0; /* スマホでヘッダーの上下パディングをさらに減らす */
-                }
-                .main-header-content {
-                    flex-direction: row; /* スマホでも横並びを維持 */
-                    justify-content: center; /* 中央寄せ */
-                    align-items: center;
-                    gap: 5px; /* 間隔をさらに調整 */
-                }
-                .header-icon {
-                    width: 30px; /* スマホでアイコンを小さく */
-                    height: 30px;
-                }
-                .main-title {
-                    font-size: 1.8rem; /* スマホでタイトルを小さく */
-                    white-space: nowrap; /* 折り返さない */
-                    overflow: hidden; /* はみ出た部分を隠す */
-                    text-overflow: ellipsis; /* はみ出た部分を「...」で表示 */
-                }
-                .main-subtitle { /* スマホでは非表示 */
-                    display: none;
-                }
-                #navbar ul {
-                    gap: 0.3rem; /* ボタン間隔を狭める */
-                }
-                .nav-link {
-                    padding: 0.3rem 0.8rem;
-                    font-size: 0.9rem;
-                }
-                main {
-                    padding: 0 1rem;
-                }
-                section {
-                    padding: 1.5rem;
-                }
-                h2 {
-                    font-size: 1.8rem;
-                }
-                h3 {
-                    font-size: 1.2rem;
-                }
-                .adsense-unit {
-                    margin: 1.5rem auto; /* スマホでのマージン調整 */
-                    max-width: 100%; /* スマホではフル幅に */
-                }
-                /* 自己紹介セクションのスマホ調整 */
-                .profile-image-group {
-                    display: flex; /* Flexboxを明示的に指定 */
-                    flex-direction: row; /* スマホでも横並びを維持 */
-                    justify-content: center; /* 中央寄せ */
-                    align-items: flex-end; /* 下揃えで逆三角形を表現 */
-                    gap: 15px; /* 横方向の隙間を調整 */
-                    padding-top: 20px; /* スマホでのパディング */
-                    padding-bottom: 20px; /* スマホでのパディング */
-                }
-                .profile-section-logo-in-content { /* スマホでの中央ロゴ */
-                    width: 80px; /* スマホで画像を小さく */
-                    height: 80px;
-                    order: 2; /* ロゴを中央に */
-                    transform: translateY(10px) !important; /* 少し下に移動 */
-                    margin-top: 0; /* マージンリセット */
-                }
-                .profile-image-main { /* スマホでの左の画像 */
-                    width: 80px; /* スマホで画像を小さく */
-                    height: 80px;
-                    order: 1; /* 1番目に配置 */
-                    transform: translateY(-10px) !important; /* 少し上に移動 */
-                    margin-top: 0; /* マージンリセット */
-                }
-                .profile-image-sub { /* スマホでの右の画像 */
-                    width: 80px; /* スマホで画像を小さく */
-                    height: 80px;
-                    order: 3; /* 3番目に配置 */
-                    transform: translateY(-10px) rotate(0deg) !important; /* 少し上に移動、傾きリセット */
-                    margin-top: 0; /* マージンリセット */
-                }
-                .profile-main-text {
-                    font-size: 0.9rem; /* スマホで自己紹介テキストを小さく */
-                    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
-                }
-                .profile-section-content p, 
-                .profile-section-content ul, 
-                .profile-section-content li,
-                .profile-section-content a {
-                    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
-                }
-            }
-        </style>
-    </head>
-    <body>
-    
-        <header id="main-header">
-            <div class="header-inner-content">
-                <div class="main-header-content">
-                    <img src="[https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg](https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg)" onerror="this.onerror=null;this.src='[https://placehold.co/60x60/000/FFF?text=BOSS](https://placehold.co/60x60/000/FFF?text=BOSS)';" alt="BOSS兄アイコン" class="header-icon">
-                    <h1 class="main-title">VIDEO edit office BOSS兄</h1>
-                    <img src="[https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg](https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg)" onerror="this.onerror=null;this.src='[https://placehold.co/60x60/000/FFF?text=BOSS](https://placehold.co/60x60/000/FFF?text=BOSS)';" alt="BOSS兄アイコン" class="header-icon">
-                </div>
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-inner-content">
+            <div class="main-header-content">
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/60x60/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <h1 class="main-title">VIDEO edit office BOSS兄</h1>
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/60x60/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
             </div>
-            <nav id="navbar">
-                 <div class="container mx-auto px-4">
-                    <ul>
-                        <li><a href="#about" class="nav-link">自己紹介</a></li>
-                        <li><a href="#portfolio" class="nav-link">制作作品</a></li>
-                        <li><a href="#price-guide" class="nav-link">料金案内</a></li>
-                        <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    
-        <main class="main-content-layout">
-            <div class="main-content-area">
-                <div class="container mx-auto p-4 md:p-8 space-y-12 pb-20">
-                    
-                    <div class="adsense-unit">
-                        <p>ここにヘッダー下広告が表示されます (審査承認後)</p>
+        </div>
+        <nav id="navbar">
+             <div class="container mx-auto px-4">
+                <ul>
+                    <li><a href="#about" class="nav-link">自己紹介</a></li>
+                    <li><a href="#portfolio" class="nav-link">制作作品</a></li>
+                    <li><a href="#price-guide" class="nav-link">料金案内</a></li>
+                    <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content-layout">
+        <div class="main-content-area">
+            <div class="container mx-auto p-4 md:p-8 space-y-12 pb-20">
+                
+                <div class="adsense-unit">
+                    <p>ここにヘッダー下広告が表示されます (審査承認後)</p>
+                    </div>
+
+                <section id="about" class="scroll-mt-24">
+                    <h2 class="section-h2">自己紹介</h2>
+                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
+                        <div class="profile-image-group">
+                            <div class="profile-image-wrapper">
+                                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/IMG_5569.PNG" onerror="this.onerror=null;this.src='https://placehold.co/220x220/D2B48C/5A2D0E?text=プロフィール画像';" alt="川勝典茂（BOSS兄）プロフィール画像" class="profile-image-main">
+                            </div>
+                            <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg" onerror="this.onerror=null;this.src='https://placehold.co/250x250/000/FFF?text=BOSSロゴ';" alt="BOSS兄ロゴ" class="profile-section-logo-in-content">
+                            <div class="profile-image-wrapper">
+                                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png" onerror="this.onerror=null;this.src='https://placehold.co/220x220/D2B48C/5A2D0E?text=イラスト画像';" alt="イメージ画像" class="profile-image-sub">
+                            </div>
                         </div>
-    
-                    <section id="about" class="scroll-mt-24">
-                        <h2 class="section-h2">自己紹介</h2>
-                        <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
-                            <div class="profile-image-group">
-                                <div class="profile-image-wrapper">
-                                    <img src="[https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/IMG_5569.PNG](https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/IMG_5569.PNG)" onerror="this.onerror=null;this.src='[https://placehold.co/220x220/D2B48C/5A2D0E?text=プロフィール画像](https://placehold.co/220x220/D2B48C/5A2D0E?text=プロフィール画像)';" alt="川勝典茂（BOSS兄）プロフィール画像" class="profile-image-main">
-                                </div>
-                                <img src="[https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg](https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS兄.jpg)" onerror="this.onerror=null;this.src='[https://placehold.co/250x250/000/FFF?text=BOSSロゴ](https://placehold.co/250x250/000/FFF?text=BOSSロゴ)';" alt="BOSS兄ロゴ" class="profile-section-logo-in-content">
-                                <div class="profile-image-wrapper">
-                                    <img src="[https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png](https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png)" onerror="this.onerror=null;this.src='[https://placehold.co/220x220/D2B48C/5A2D0E?text=イラスト画像](https://placehold.co/220x220/D2B48C/5A2D0E?text=イラスト画像)';" alt="イメージ画像" class="profile-image-sub">
+                        
+                        <p class="profile-main-text">
+                            初めまして！<br>
+                            私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は、『我が家のヒーローBOSS』です。
+                        </p>
+                        <p class="profile-main-text">
+                            その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。
+                        </p>
+                        <p class="profile-main-text">
+                            私の作品は、下記の項目、<br>または「制作作品」セクションでご覧いただけます。
+                        </p>
+
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">
+                                <span>略歴・資格</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
+                                        <li><strong>2011年:</strong> アロマサロンの業務一環として動画制作に携わる</li>
+                                        <li><strong>2013年:</strong> AEAJ アロマインストラクター資格取得</li>
+                                        <li><strong>2013年:</strong> Appleで動画編集ソフト『iMovie 』編集スキル習得</li>
+                                        <li><strong>2014年:</strong> YouTube動画チャンネル開設</li>
+                                        <li><strong>2024年8月:</strong> Adobe Premiere Proで動画編集スキルアップスタート</li>
+                                        <li><strong>2024年10月:</strong> ウマキんグ切り抜きチャンネル開設</li>
+                                        <li><strong>2024年12月:</strong> ウマキんグ切り抜きチャンネル登録1,000名突破</li>
+                                        <li><strong>2025年2月:</strong> ウマキんグ切り抜きチャンネル登録2,100名達成（2/11現在）</li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <p class="profile-main-text">
-                                初めまして！<br>
-                                私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は、『我が家のヒーローBOSS』です。
-                            </p>
-                            <p class="profile-main-text">
-                                その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。
-                            </p>
-                            <p class="profile-main-text">
-                                私の作品は、下記の項目、<br>または「制作作品」セクションでご覧いただけます。
-                            </p>
-    
-                            <div class="collapsible-container">
-                                <div class="collapsible-header">
-                                    <span>略歴・資格</span>
-                                    <span class="toggle-icon">▼</span>
+                        </div>
+
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">
+                                <span>自己紹介で触れた代表作品</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <p class="text-stone-700 text-sm mb-3 font-semibold">癒しの絶景</p>
+                                    <div class="portfolio-video-container">
+                                        <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="癒しの絶景" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <p class="text-stone-700 text-sm mb-5">
+                                        黒柴犬BOSSとの自然の中での触れ合いを美しく捉えた癒し動画です。
+                                    </p>
+
+                                    <p class="text-stone-700 text-sm mb-3 font-semibold">WEB活用・動画制作編　Apple の凄さ</p>
+                                    <div class="portfolio-video-container">
+                                        <iframe src="https://www.youtube.com/embed/RfVW3MePsRw" title="WEB活用・動画制作編　Apple の凄さ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <p class="text-stone-700 text-sm mb-3">
+                                        動画制作を始めるきっかけとなった記念すべき作品です。
+                                    </p>
                                 </div>
-                                <div class="collapsible-content">
-                                    <div class="portfolio-detail-section">
-                                        <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
-                                            <li><strong>2011年:</strong> アロマサロンの業務一環として動画制作に携わる</li>
-                                            <li><strong>2013年:</strong> AEAJ アロマインストラクター資格取得</li>
-                                            <li><strong>2013年:</strong> Appleで動画編集ソフト『iMovie 』編集スキル習得</li>
-                                            <li><strong>2014年:</strong> YouTube動画チャンネル開設</li>
-                                            <li><strong>2024年8月:</strong> Adobe Premiere Proで動画編集スキルアップスタート</li>
-                                            <li><strong>2024年10月:</strong> ウマキんグ切り抜きチャンネル開設</li>
-                                            <li><strong>2024年12月:</strong> ウマキんグ切り抜きチャンネル登録1,000名突破</li>
-                                            <li><strong>2025年2月:</strong> ウマキんグ切り抜きチャンネル登録2,100名達成（2/11現在）</li>
-                                        </ul>
+                            </div>
+                        </div>
+
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">
+                                <span>ウマキんグ切り抜きチャンネルについて</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <p class="text-stone-700 text-sm mb-3">
+                                        人気沸騰中の競馬YouTuber『ウマキんグ』の協力を得て開設しました。毎週2本前後の動画をアップロードしており、競馬ファンに最新情報と深い考察をお届けしています。
+                                    </p>
+                                    <h4 class="font-semibold text-stone-800 mt-4 mb-2">チャンネルの特徴:</h4>
+                                    <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
+                                        <li><strong>はやい:</strong> 最新の競馬情報を迅速にお届け</li>
+                                        <li><strong>みじかい:</strong> 短時間で楽しめる動画</li>
+                                        <li><strong>くわしい:</strong> 初心者から上級者まで楽しめる内容</li>
+                                    </ul>
+                                    <h4 class="font-semibold text-stone-800 mt-4 mb-2">目標:</h4>
+                                    <p class="text-stone-700 text-sm">
+                                        競馬の魅力を広め、100万人のファンを目指します！
+                                    </p>
+                                    <p class="text-stone-700 text-sm mt-4">
+                                        元動画はこちらからご覧いただけます：
+                                        <a href="https://x.gd/kGwqM" target="_blank" class="text-amber-700 hover:underline">ウマキんグ切り抜き動画チャンネル</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div class="adsense-unit">
+                    <p>ここに自己紹介と制作作品の間広告が表示されます (審査承認後)</p>
+                    </div>
+
+                <section id="portfolio" class="scroll-mt-24">
+                    <h2 class="section-h2">制作作品</h2>
+                    <div class="portfolio-grid">
+
+                        <!-- 我が家のヒーローBOSS君の散歩を大公開！ (残す) -->
+                        <div class="portfolio-card">
+                            <div class="portfolio-video-container">
+                                <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="portfolio-content-summary">
+                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">我が家のヒーローBOSS君の散歩を大公開！</h3>
+                                <p class="text-stone-700 text-sm">
+                                    BOSS君の楽しいお散歩風景をお届けする動画です。視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識し、軽快なテンポで編集しました。
+                                </p>
+                                <div class="collapsible-container">
+                                    <div class="collapsible-header">
+                                        <span>制作コメント</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <p class="text-stone-700 text-sm mt-3">視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識して編集しました。</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-    
-                            <div class="collapsible-container">
-                                <div class="collapsible-header">
-                                    <span>自己紹介で触れた代表作品</span>
-                                    <span class="toggle-icon">▼</span>
-                                </div>
-                                <div class="collapsible-content">
-                                    <div class="portfolio-detail-section">
-                                        <p class="text-stone-700 text-sm mb-3 font-semibold">癒しの絶景</p>
-                                        <div class="portfolio-video-container">
-                                            <iframe src="[https://www.youtube.com/embed/6PoVUnLztzA](https://www.youtube.com/embed/6PoVUnLztzA)" title="癒しの絶景" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- ある夏の一日 Booss君シャンプー -->
+                        <div class="portfolio-card">
+                            <div class="portfolio-video-container">
+                                <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="portfolio-content-summary">
+                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ある夏の一日 Booss君シャンプー</h3>
+                                <p class="text-stone-700 text-sm">
+                                    BOSS君のシャンプーシーンを可愛らしく、面白く編集しました。ユーモラスなBGMとテロップで、視聴者が笑顔になるような構成を心がけました。
+                                </p>
+                                <div class="collapsible-container">
+                                    <div class="collapsible-header">
+                                        <span>制作コメント</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <p class="text-stone-700 text-sm mt-3">ユーモラスなBGMとテロップで、視聴者が笑顔になるような編集を心がけました。</p>
                                         </div>
-                                        <p class="text-stone-700 text-sm mb-5">
-                                            黒柴犬BOSSとの自然の中での触れ合いを美しく捉えた癒し動画です。
-                                        </p>
-    
-                                        <p class="text-stone-700 text-sm mb-3 font-semibold">WEB活用・動画制作編　Apple の凄さ</p>
-                                        <div class="portfolio-video-container">
-                                            <iframe src="[https://www.youtube.com/embed/RfVW3MePsRw](https://www.youtube.com/embed/RfVW3MePsRw)" title="WEB活用・動画制作編　Apple の凄さ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                        </div>
-                                        <p class="text-stone-700 text-sm mb-3">
-                                            動画制作を始めるきっかけとなった記念すべき作品です。
-                                        </p>
                                     </div>
                                 </div>
                             </div>
-    
-                            <div class="collapsible-container">
-                                <div class="collapsible-header">
-                                    <span>ウマキんグ切り抜きチャンネルについて</span>
-                                    <span class="toggle-icon">▼</span>
+                        </div>
+
+                        <!-- ウマキんグ切り抜き動画制作作品（YouTube）の動画を差し替え -->
+                        <div class="portfolio-card md:col-span-full"> 
+                            <div class="portfolio-content-summary">
+                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ウマキんグ切り抜き動画制作作品（YouTube）</h3>
+                                <p class="text-stone-700 text-sm">
+                                    『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』で培った、競馬予想に特化した高速・高密度な動画編集の事例です。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
+                                </p>
+                                
+                                <div class="collapsible-container">
+                                    <div class="collapsible-header">
+                                        <span>チャンネルPR動画：重賞馬券師育成コンテンツ</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <div class="portfolio-video-container">
+                                                <iframe src="https://www.youtube.com/embed/3jTlCQ7nhIs" title="チャンネルPR動画：重賞馬券師育成コンテンツ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            </div>
+                                            <p class="text-stone-700 text-sm mt-3">
+                                                「重賞馬券師育成コンテンツ」のPR動画です。ウマキんグ様のノウハウを凝縮したコンテンツの魅力を最大限に伝えられるよう制作しました。
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="collapsible-content">
-                                    <div class="portfolio-detail-section">
-                                        <p class="text-stone-700 text-sm mb-3">
-                                            人気沸騰中の競馬YouTuber『ウマキんグ』の協力を得て開設しました。毎週2本前後の動画をアップロードしており、競馬ファンに最新情報と深い考察をお届けしています。
-                                        </p>
-                                        <h4 class="font-semibold text-stone-800 mt-4 mb-2">チャンネルの特徴:</h4>
-                                        <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
-                                            <li><strong>はやい:</strong> 最新の
+
+                                <div class="collapsible-container">
+                                    <div class="collapsible-header">
+                                        <span>2024年 東京大賞典 A評価・印BY史上最高払戻４２９万円を獲得☆ナーツごんにゃ中井！</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <div class="portfolio-video-container">
+                                                <iframe src="https://www.youtube.com/embed/dWFDQCdXlRU" title="2024年　東京大賞典..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            </div>
+                                            <p class="text-stone-700 text-sm mt-3">高額払い戻しを実現した予想のポイントを分かりやすく、スピーディーに伝えることを意識しました。特に、重要な数字やデータは視覚的に強調しています。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="collapsible-container">
+                                    <div class="collapsible-header">
+                                        <span>2025年フェアリーS S評価・☆ナーツごんにゃ中井！</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <div class="portfolio-video-container">
+                                                <iframe src="https://www.youtube.com/embed/xU5LwmKHtaU" title="2025年フェアリーS S評価・☆ナーツごんにゃ中井！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            </div>
+                                            <p class="text-stone-700 text-sm mt-3">重要なレースにおけるS評価馬の分析を、迅速かつ詳細にまとめた動画です。複雑な予想を分かりやすいテロップとアニメーションで視覚化しています。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-video-container">
+                                <iframe src="https://www.youtube.com/embed/z1CZEdZl6VU" title="クイズ大会動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="portfolio-content-summary">
+                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">実績動画：クイズ大会</h3>
+                                <p class="text-stone-700 text-sm">
+                                    企画・編集を担当した白熱のクイズ大会動画です。見どころ満載のエンターテイメントコンテンツ。
+                                </p>
+                                <div class="collapsible-container">
+                                    <div class="collapsible-header">
+                                        <span>制作コメント</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <p class="text-stone-700 text-sm mt-3">
+                                                参加者の知識とひらめきが試される緊張感あふれるバトルを、テンポの良い編集と効果的なテロップで表現しました。特に、視聴者が飽きずに最後まで楽しめるよう、ユーモラスな要素も随所に散りばめています。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-video-container">
+                                <iframe src="https://www.youtube.com/embed/3ow3VL8kGHQ" title="ガムトーク動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="portfolio-content-summary">
+                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">実績動画：川勝ガムトーク</h3>
+                                <p class="text-stone-700 text-sm">
+                                    私の経験や裏側を本音で語った独占ガムトーク動画です。企画から編集まで自身で担当。
+                                </p>
+                                <div class="collapsible-container">
+                                    <div class="collapsible-header">
+                                        <span>制作コメント</span>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <div class="portfolio-detail-section">
+                                            <p class="text-stone-700 text-sm mt-3">
+                                                動画制作歴やチャンネル運営の経験、そして独立への想いを、視聴者が感情移入しやすいように構成しました。飾らない本音のトークを最大限に引き出す編集を心がけています。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="price-guide" class="scroll-mt-24">
+                    <h2 class="section-h2">料金案内</h2>
+                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                        <p class="text-stone-700 leading-relaxed mb-4">
+                            私の動画制作サービスに関する料金と制作フローをご案内いたします。
+                        </p>
+                        
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">
+                                <span>動画制作フロー</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/doga-flow.png" onerror="this.onerror=null;this.src='https://placehold.co/400x250/F8F8F8/666?text=画像が見つかりません';" alt="動画制作フロー" class="portfolio-detail-image">
+                                    <p class="text-stone-700 text-sm mt-3">
+                                        お問い合わせから納品までの制作プロセスをステップごとに分かりやすく図解しています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">
+                                <span>動画制作料金表</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/doga-seisaku-ryokinhyo-1.png" onerror="this.onerror=null;this.src='https://placehold.co/400x250/F8F8F8/666?text=画像が見つかりません';" alt="動画制作料金表" class="portfolio-detail-image">
+                                    <p class="text-stone-700 text-sm mt-3">
+                                        ライト、スタンダード、プレミアの3つのプランをご用意しています。詳細についてはお問い合わせください。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="privacy" class="scroll-mt-24">
+                    <h2 class="section-h2">プライバシーポリシー</h2>
+                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                        <p class="text-stone-700 leading-relaxed">
+                            当サイトをご覧いただき、誠にありがとうございます。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            「VIDEO　edit　office　BOSS兄」（以下、本サイト）は、ご訪問者が安心してご利用頂けるよう、個人情報の保護に最大限の注意を払います。本サイトの個人情報保護方針は以下の通りです。
+                        </p>
+                        <h3 class="font-bold text-stone-800 text-lg mt-4">個人情報保護方針（プライバシーポリシー）</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            ご利用者の登録された個人および法人の情報については、本サイトにおいての機能やサービスを提供するためのみに利用します。個人及び法人の登録情報の保護に細心の注意を払います。ご利用者の同意なく、適用範囲を超えて登録情報を利用することはありません。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            当個人情報保護方針（プライバシーポリシー）の適用範囲は、本サイトが提供する機能、サービスに限定されます。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            ご利用者が本サイトのサービス（含む”お問い合わせ”）をご利用の際に記載した個人・法人情報は、守秘義務を徹底し厳重に管理致します。また、サイトのセキュリティの向上に努め、より安心してご利用頂けるように配慮してまいります。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            ご利用者からご提供頂いた個人・法人のプライベートな情報は、ご利用者の同意がない限り第三者に開示することはありません。ただし、法律に基づき公的機関から要請があった場合や、法令に特別の規定がある場合、お客様や公衆の生命、健康、資産等に重大な損害が発生する恐れがある場合には、適用外となります。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            個人情報保護のため、必要に応じて本方針を改定する場合がございます。改定が行われた場合、利用者がその内容を知ることができるよう、速やかにホームページに公開し、プライバシーポリシーに記載致します。
+                        </p>
+                        
+                        <h3 class="font-bold text-stone-800 text-lg mt-4">第三者配信事業者による広告について</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            本サイトは、Googleなどの第三者配信事業者が配信する広告、その他の広告ネットワークを介した広告を掲載しています。 これらの広告は、広告Cookie を使用して、ユーザーがそのウェッブサイトや他のウェッブサイトに過去にアクセスした際の情報に基づいて配信される広告が含まれます。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            本サイトにおける広告掲載について<br>
+                            広告によって、Google及び多くのウェッブサイトと関連サービスは無料でご利用することを可能にしています。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            Google社は、広告が安全で邪魔にならず、適切に配信されていることに可能な限り努めています。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            本サイトもGoogle社の方針を理解し、ユーザーエクスピリエンスの向上に努めながら、広告配信ポリシーに準拠するように努めております。
+                        </p>
+
+                        <h3 class="font-bold text-stone-800 text-lg mt-4">Cookie とは</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            Cookieは、ユーザーのブラウザに保存される小さなテキストファイルです。Cookieは、広告掲載の利便性を高めるために使用されています。Cookieを使用しないと、ユーザーに適切な広告を配信することが難しくなります。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            Googleやそのパートナーは、広告 Cookie を使用することによって、適切な広告を配信し、本サイトで表示しています。広告 Cookie には、個人を特定できる情報は含まれません。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            本サイトのご利用者は、Googleの広告設定ページ でパーソナライズ広告を無効にできます。または、www.aboutads.info のページからパーソナライズ広告に使われる第三者配信事業者の Cookie を無効にすることができます。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            第三者配信による広告掲載を無効にしていない場合、広告の配信時に第三者配信事業者や広告ネットワークの Cookie が使用される可能性があります。
+                        </p>
+
+                        <h3 class="font-bold text-stone-800 text-lg mt-4">本サイトで掲載する広告を配信する第三者配信事業者及び広告ネットワーク</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            以下は本サイトで掲載する広告を配信する事業者及び広告ネットワークです。 各社のプライバシーポリシーについては、リンク先のページをご参照下さい。
+                        </p>
+                        <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
+                            <li><a href="https://policies.google.com/technologies/ads" target="_blank" class="text-blue-600 hover:underline">Googleの広告ポリシーと規約</a></li>
+                            <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" class="text-blue-600 hover:underline">Googleと第三者配信事業者と広告ネットワーク</a></li>
+                            <li><a href="https://www.amazon.co.jp/gp/help/customer/display.html?nodeId=202075020" target="_blank" class="text-blue-600 hover:underline">Amazon パーソナライズド広告規約</a></li>
+                            <li><a href="https://privacy.rakuten.co.jp/" target="_blank" class="text-blue-600 hover:underline">楽天グループ 個人情報保護方針</a></li>
+                            <li><a href="https://www.a8.net/privacy.html" target="_blank" class="text-blue-600 hover:underline">A8net運営会社ファンコミュニケーションズ行動ターゲティング広告ポリシー</a></li>
+                            <li><a href="https://fori.co.jp/privacy/" target="_blank" class="text-blue-600 hover:underline">afiB(アフィリエイトB)株式会社フォーイットプライバシーポリシー</a></li>
+                            <li><a href="https://moshimo.com/privacy" target="_blank" class="text-blue-600 hover:underline">moshimoアフィリエイト(株式会社もしも)プライバシーポリシー</a></li>
+                        </ul>
+
+                        <h3 class="font-bold text-stone-800 text-lg mt-4">アクセス解析について</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            本サイトは、Google アナリティクス の広告向け機能を使用しています。当該、広告向け機能の内容は次のとおりです。
+                        </p>
+                        <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
+                            <li>Google アナリティクス リマーケティング</li>
+                            <li>Google ディスプライ ネットワークのインプレッション レポート</li>
+                            <li>Google アナリティクスのユーザーの分析とインタレスト カテゴリに関するレポート</li>
+                            <li>広告掲載目的のデータ収集（広告 Cookie と識別子によるデータ収集を含む）のためにGoogle アナリティクスを必要とするサービス</li>
+                        </ul>
+                        <p class="text-stone-700 leading-relaxed">
+                            本サイトは、Google アナリティクス の広告向けの機能に関するポリシーに準拠し、個人を特定したり、個人を特定できる情報とGoogleの広告サービスまたは広告機能介して収集された個人を特定できない情報を組み合わせたりすることは致しません。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            Googleが開発したGoogle アナリティクス オプトアウトアドオン をご利用するとGoogle アナリティクスによる本サイトご利用のお客様のデータ使用を無効にすることができます。
+                        </p>
+
+                        <h3 class="font-bold text-stone-800 text-lg mt-4">当サイトへのコメントについて</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            当サイトでは、スパム・荒らしへの対応として、コメントの際に使用されたIPアドレスを記録しています。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            これはブログの標準機能としてサポートされている機能で、スパム・荒らしへの対応以外にこのIPアドレスを使用することはありません。また、メールアドレスとURLの入力に関しては、任意となっております。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            全てのコメントは管理人が事前にその内容を確認し、承認した上での掲載となりますことをあらかじめご了承下さい。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            加えて、次の各号に掲げる内容を含むコメントは管理人の裁量によって承認せず、削除する事があります。
+                        </p>
+                        <ul class="list-disc pl-5 text-stone-700 text-sm space-y-1">
+                            <li>特定の自然人または法人を誹謗し、中傷するもの。</li>
+                            <li>極度にわいせつな内容を含むもの。</li>
+                            <li>禁制品の取引に関するものや、他者を害する行為の依頼など、法律によって禁止されている物品、行為の依 頼や斡旋などに関するもの。</li>
+                            <li>その他、公序良俗に反し、または管理人によって承認すべきでないと認められるもの。</li>
+                        </ul>
+
+                        <h3 class="font-bold text-stone-800 text-lg mt-4">免責事項</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            当サイトのコンテンツ・情報につきまして、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。
+                        </p>
+                        <p class="text-stone-700 leading-relaxed">
+                            当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。
+                        </p>
+
+                        <p class="text-stone-700 text-sm mt-4">
+                            【運営者】：BOSSKATU<br>
+                            【初出掲載】：2025年 3月2日
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <div class="sidebar-ad-area">
+            <div class="sidebar-ad-unit">
+                <p>ここに右サイドバー広告が表示されます (審査承認後)</p>
+                </div>
+            <div id="contact-sidebar" class="sidebar-contact-area">
+                <h4>お問い合わせ</h4>
+                <p class="text-sm">ご質問やご依頼はこちらからどうぞ。</p>
+                <p class="mt-2 text-md font-semibold">
+                    <a href="https://x.gd/tNb7K" target="_blank">お問い合わせはこちら</a>
+                </p>
+            </div>
+
+            <div class="sidebar-link-area">
+                <h4>関連リンク</h4>
+                <ul>
+                    <li><a href="https://x.gd/kGwqM" target="_blank">ウマキんグ切り抜き動画チャンネル</a></li>
+                    </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brown-900 text-white mt-12 py-6" style="background-color: #5A2D0E;">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 VIDEO edit office BOSS兄. All rights reserved.</p>
+            <p class="text-xs text-yellow-100 mt-2">制作：AI Powered by Google Gemini</p>
+            <p class="text-xs mt-1">
+                <a href="#privacy" class="footer-link text-yellow-100 hover:underline">プライバシーポリシー</a>
+                |
+                <a href="https://x.gd/tNb7K" target="_blank" class="footer-link text-yellow-100 hover=">お問い合わせ</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ヘッダーの高さを動的に取得し、bodyのpadding-topに設定
+            const header = document.getElementById('main-header');
+            const setBodyPadding = () => {
+                document.body.style.paddingTop = header.offsetHeight + 'px';
+            };
+
+            // ロード時とウィンドウリサイズ時に実行
+            window.addEventListener('load', setBodyPadding);
+            window.addEventListener('resize', setBodyPadding);
+
+            // ナビゲーションリンクのスムーズスクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = header.offsetHeight; // 動的にヘッダーの高さを取得
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset - 10; // 少し余裕を持たせる
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // 開閉機能のJavaScript
+            document.querySelectorAll('.collapsible-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+                    content.classList.toggle('expanded');
+                    icon.classList.toggle('rotated');
+                    
+                    // 開いた時に見出しが画面内に入るようにスムーズスクロール
+                    if (content.classList.contains('expanded')) {
+                        // アコーディオンヘッダー自身までスクロールするように変更
+                        const headerOffset = header.getBoundingClientRect().top + window.pageYOffset;
+                        const headerHeight = document.getElementById('main-header').offsetHeight;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // 初期状態でアコーディオンを全て閉じる設定
+            document.querySelectorAll('.collapsible-content').forEach(content => {
+                if (content.classList.contains('expanded')) {
+                    content.classList.remove('expanded');
+                    content.style.maxHeight = '0';
+                }
+                const icon = content.previousElementSibling.querySelector('.toggle-icon');
+                if (icon) {
+                    icon.classList.remove('rotated');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
