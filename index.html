@@ -159,7 +159,7 @@
             flex-shrink: 0;
             margin: 0 20px; /* 間隔調整 */
         }
-        .profile-image-main, .profile-image-sub { /* プロフィール画像とイラスト画像の共通スタイル (両サイド) */
+        .profile-image-main { /* プロフィール画像とイラスト画像の共通スタイル (両サイド) */
             width: 220px; /* サイズをさらに大きく */
             height: 220px; /* サイズをさらに大きく */
             border: 5px solid #CD853F; /* ボーダーを太く */
@@ -170,7 +170,6 @@
             flex-shrink: 0;
             margin: 0 20px; /* 間隔調整 */
         }
-        .profile-image-main { border-radius: 50%; }
         .profile-image-sub {
             border-radius: 12px;
             transform: translateY(-50px) rotate(-7deg);
@@ -400,6 +399,47 @@
             .adsense-unit {
                 margin: 1.5rem auto; /* スマホでのマージン調整 */
                 max-width: 100%; /* スマホではフル幅に */
+            }
+            /* 自己紹介セクションのスマホ調整 */
+            .profile-image-group {
+                display: flex; /* Flexboxを明示的に指定 */
+                flex-direction: row; /* スマホでも横並びを維持 */
+                justify-content: center; /* 中央寄せ */
+                align-items: flex-end; /* 下揃えで逆三角形を表現 */
+                gap: 15px; /* 横方向の隙間を調整 */
+                padding-top: 20px; /* スマホでのパディング */
+                padding-bottom: 20px; /* スマホでのパディング */
+            }
+            .profile-section-logo-in-content { /* スマホでの中央ロゴ */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 2; /* ロゴを中央に */
+                transform: translateY(10px) !important; /* 少し下に移動 */
+                margin-top: 0; /* マージンリセット */
+            }
+            .profile-image-main { /* スマホでの左の画像 */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 1; /* 1番目に配置 */
+                transform: translateY(-10px) !important; /* 少し上に移動 */
+                margin-top: 0; /* マージンリセット */
+            }
+            .profile-image-sub { /* スマホでの右の画像 */
+                width: 80px; /* スマホで画像を小さく */
+                height: 80px;
+                order: 3; /* 3番目に配置 */
+                transform: translateY(-10px) rotate(0deg) !important; /* 少し上に移動、傾きリセット */
+                margin-top: 0; /* マージンリセット */
+            }
+            .profile-main-text {
+                font-size: 0.9rem; /* スマホで自己紹介テキストを小さく */
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
+            }
+            .profile-section-content p, 
+            .profile-section-content ul, 
+            .profile-section-content li,
+            .profile-section-content a {
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* スマホで影を調整 */
             }
         }
     </style>
