@@ -208,6 +208,54 @@
             color: white !important;
         }
 
+        /* アコーディオンのスタイル */
+        .collapsible-container {
+            background-color: #D2B48C; /* 親セクションの背景色と同じ */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            overflow: hidden; /* コンテンツがはみ出さないように */
+        }
+
+        .collapsible-header {
+            background-color: #A0522D; /* Sienna (ブラウン) */
+            color: #FFFFFF;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 8px; /* 角丸を適用 */
+            transition: background-color 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background-color: #CD853F; /* ホバー時の色 */
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out; /* スムーズなアニメーション */
+            padding: 0 1.5rem; /* 隠れている間はパディングなし */
+        }
+
+        .collapsible-content.expanded {
+            max-height: 1000px; /* 十分な高さを設定してコンテンツを表示 */
+            padding: 1.5rem; /* 開いた時にパディングを適用 */
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: #FFFFFF; /* アイコンの色も白に */
+        }
+
+        .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
 
         /* ポートフォリオカードのグリッドレイアウト */
         .portfolio-grid {
@@ -259,6 +307,43 @@
             height: 100%;
             border: 0;
         }
+        .portfolio-content-summary {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* メインプロジェクトバナーのスタイル */
+        .main-project-banner-style {
+            background-color: #A0522D; /* Sienna (ブラウン) */
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .main-project-banner-style .collapsible-header {
+            background-color: #CD853F; /* バナー内のアコーディオンヘッダー色 */
+            color: #FFFFFF;
+        }
+        .main-project-banner-style .collapsible-header:hover {
+            background-color: #D2B48C; /* ホバー時の色 */
+        }
+        .main-project-banner-style .collapsible-content {
+            background-color: #FAEBD7; /* バナー内のアコーディオンコンテンツ背景色 */
+            color: #5A2D0E;
+        }
+        .main-project-banner-style .collapsible-content p,
+        .main-project-banner-style .collapsible-content ul,
+        .main-project-banner-style .collapsible-content li,
+        .main-project-banner-style .collapsible-content a {
+            color: #5A2D0E !important; /* テキスト色を濃い茶色に */
+            text-shadow: none; /* 影を削除 */
+        }
+
 
         /* AdSense specific style */
         .adsense-unit {
@@ -550,6 +635,70 @@
                             </div>
                         </div>
 
+                        <!-- 移動したコンテンツの開始 -->
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">
+                                <span>我が家のヒーローBOSS君の散歩を大公開！</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <div class="portfolio-video-container">
+                                        <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="portfolio-content-summary" style="padding: 0; background: none;">
+                                        <h3 class="text-xl font-bold text-white">我が家のヒーローBOSS君の散歩を大公開！</h3>
+                                        <p class="text-white text-sm">
+                                            BOSS君の楽しいお散歩風景をお届けする動画です。視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識し、軽快なテンポで編集しました。
+                                        </p>
+                                        <div class="collapsible-container">
+                                            <div class="collapsible-header">
+                                                <span>制作コメント</span>
+                                                <span class="toggle-icon">▼</span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <div class="portfolio-detail-section">
+                                                    <p class="text-white text-sm mt-3">視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識して編集しました。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">
+                                <span>ある夏の一日 Booss君シャンプー</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-detail-section">
+                                    <div class="portfolio-video-container">
+                                        <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="portfolio-content-summary" style="padding: 0; background: none;">
+                                        <h3 class="text-xl font-bold text-white">ある夏の一日 Booss君シャンプー</h3>
+                                        <p class="text-white text-sm">
+                                            BOSS君のシャンプーシーンを可愛らしく、面白く編集しました。ユーモラスなBGMとテロップで、視聴者が笑顔になるような構成を心がけました。
+                                        </p>
+                                        <div class="collapsible-container">
+                                            <div class="collapsible-header">
+                                                <span>制作コメント</span>
+                                                <span class="toggle-icon">▼</span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <div class="portfolio-detail-section">
+                                                    <p class="text-white text-sm mt-3">ユーモラスなBGMとテロップで、視聴者が笑顔になるような編集を心がけました。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 移動したコンテンツの終了 -->
+
                         <div class="collapsible-container">
                             <div class="collapsible-header">
                                 <span>ウマキんグ切り抜きチャンネルについて</span>
@@ -595,156 +744,110 @@
 
                 <section id="portfolio" class="scroll-mt-24">
                     <h2 class="section-h2">制作作品</h2>
+                    <!-- メインプロジェクトバナーをportfolio-gridの外に移動 -->
+                    <div class="main-project-banner-style"> 
+                        <div class="portfolio-content-summary">
+                            <h3 class="text-2xl font-bold text-white text-center mb-4">メインプロジェクト</h3>
+                            <p class="text-white leading-relaxed text-center text-lg mb-4">
+                                『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』は、私の動画編集者としての情熱とスキルを注ぎ込んだメインプロジェクトです。
+                                競馬予想に特化した高速・高密度な動画編集の事例をご紹介します。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
+                            </p>
+
+                            <!-- チャンネル開設のきっかけ -->
+                            <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
+                                <div class="collapsible-header text-brown-800">
+                                    <span>チャンネル開設のきっかけ</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-detail-section text-stone-700">
+                                        <p class="text-sm mb-3">
+                                            「ウマキんグの本編動画を視聴し、その熱量に感銘を受けました。自分自身にできることは何か？と考えた時、長年培ってきた動画編集への情熱と、再スタートしたばかりのスキルをウマキんグの応援に活かせないかと強く感じました。ウマキんグファンの私が、動画編集者として貢献できる最善の道だと確信し、スキルアップのための実践の場として、ウマキんグ様の許可を得て切り抜き動画制作をスタートしました。この時の熱い思いが、後のチャンネルPR動画制作にも繋がっています。」
+                                        </p>
+                                        <p class="text-sm mb-3 font-semibold">チャンネルPR　元動画のメンバーシップのご案内！当チャンネルは、『はやい、みじかい、くわしい』をモットーに制作されたウマキんグ応援チャンネルです。＃ウマキんグ　＃なーつごんにゃ中井</p>
+                                        <p class="text-sm mb-3">視聴した本編動画URL：<!-- チャンネルPR動画のURLをここに貼り付け --></p>
+                                        <p class="text-sm mb-3">・チャンネル開設日：2024/10/15 に登録</p>
+                                        <p class="text-sm">・動画初投稿日:2024/10/23</p>
+                                        <p class="text-sm">・初投稿作品URL：<!-- 初投稿作品のURLをここに貼り付け --> 【2024 菊花賞】全頭診断ダイジェスト　ウマキング切り抜き</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
+                                <div class="collapsible-header text-brown-800">
+                                    <span>私が実現するチャンネルの特徴</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-detail-section text-stone-700">
+                                        <p class="text-sm mb-3">
+                                            **はやい：** 「週末のJRA重賞レースのナーツゴンニャ中井さんの見解を、最速で競馬ファンにお届けするため、情報公開から瞬時に動画を編集・公開する独自のワークフローを確立しています。これにより、鮮度の高い情報提供を実現し、多くの視聴者から『速い！』と評価いただいています。」
+                                        </p>
+                                        <p class="text-sm mb-3">
+                                            **みじかい：** 「長尺の本編動画から、週末のJRA重賞レースのナーツゴンニャ中井さんの見解の**『核心』だけを抽出**し、短時間で視聴できる動画に凝縮しています。無駄な間を徹底的にカットし、テロップやBGM、効果音を駆使したテンポの良い編集で、視聴者が飽きずに最後まで楽しめるよう工夫しています。」
+                                        </p>
+                                        <p class="text-sm">
+                                            **くわしい：** 「初心者から上級者まで、幅広い競馬ファンがナーツゴンニャ中井さんの見解を深く理解できるよう、複雑なデータや専門用語を視覚的に分かりやすいグラフ、図、アニメーションテロップで解説しています。これにより、単なる切り抜きに留まらない、『見て納得』の深い考察を提供しています。」
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
+                                <div class="collapsible-header text-brown-800">
+                                    <span>チャンネルの成長実績と私の貢献</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-detail-section text-stone-700">
+                                        <p class="text-sm mb-3">
+                                            2024年12月22日にチャンネル登録者1000名を達成し、その後も順調に成長を続け、現在に至っています。この成長において、私は動画編集者として以下の点で貢献しました。
+                                            （2025年7月現在チャンネル登録者数3260名）
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm space-y-1">
+                                            <li>**テロップと演出の統一化:** チャンネル全体の動画に、私の考案した視認性の高いテロップデザインと効果的な演出を導入しました。これにより、視聴者にとって動画がより見やすくなり、チャンネルのブランドイメージ確立に貢献しました。</li>
+                                            <li>**視聴維持率の向上:** テンポの良い編集と重要な情報の視覚化により、動画の平均視聴維持率が向上しました。これは、視聴者が動画を最後まで見てくれることに繋がり、結果としてチャンネルの成長を加速させました。</li>
+                                            <li>**本編動画への影響:** 私のテロップやアイデアが、ウマキんグ様の本編動画にも採用されるようになりました。これは、私の編集スキルとコンテンツ構成力が、公式チャンネルにも認められた証だと自負しております。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
+                                <div class="collapsible-header text-brown-800">
+                                    <span>主要な制作作品（再生リスト）</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-detail-section space-y-4 text-stone-700">
+                                        <h4 class="font-semibold text-stone-800 mb-2">チャンネル創成期：基礎と挑戦の記録（2024年10月～12月）</h4>
+                                        <p class="text-sm">
+                                            この再生リストは、ウマキング公認応援chの開設初期（2024年10月～12月）に投稿された動画をまとめたものです。当チャンネルが「いつでも学習・調査できるコンテンツ」へと進化する過程の原点であり、ウマキんグ様との出会い、そして動画編集者としての私の初期の挑戦と試行錯誤の記録でもあります。
+                                            <br>補足：開設したばかりで『はやい、みじかい、くわしい』を意識しながら、1つ1つ階段を昇るように制作してました。酷似する他の切り抜きチャンネルは、本動画の単純な切り貼りでした。そこで少しでも独自性をだし、テロップ、動画内容のポイントを表示することを導入して制作してました。
+                                        </p>
+                                        <a href="https://www.youtube.com/playlist?list=PLrh8Km8X4VUsmaNfuH1uIr8oPmzIIa7VM" target="_blank" class="text-amber-700 hover:underline">再生リストを見る</a>
+
+                                        <h4 class="font-semibold text-stone-800 mt-4 mb-2">チャンネルⅡ期：分析の深化とファンとの絆（2025年1月～3月）</h4>
+                                        <p class="text-sm">
+                                            この再生リストは、ウマキング公認応援chの開設後（2025年1月～3月）に投稿された動画をまとめたものです。公開されている再生回数4000回以上の動画です。当チャンネルが「いつでも学習・調査できるコンテンツ」へと進化する過程の原点であり、初期の挑戦と試行錯誤の記録でもあります。
+                                            <br>補足：競馬ファンの視点に重きを置き切り抜き動画を制作することに拘るようになり創世記より見やすく、動画が訴えたいポイントが分かり易くなりました。また、サムネイルにも工夫を凝らして、気になる、目を引く、わかりやすいことに拘りました。
+                                        </p>
+                                        <a href="https://www.youtube.com/playlist?list=PLrh8Km8X4VUsTI3VIQxbrVpQHYxEk0s1L" target="_blank" class="text-amber-700 hover:underline">再生リストを見る</a>
+
+                                        <h4 class="font-semibold text-stone-800 mt-4 mb-2">チャンネルⅢ期：AI活用とコンテンツ革新（2025年4月～6月）</h4>
+                                        <p class="text-sm">
+                                            この再生リストは、ウマキング公認応援chの開設後（2025年4月～6月）に投稿された動画をまとめたものです。公開されている再生回数4000回以上の動画です。当チャンネルが「いつでも学習・調査できるコンテンツ」へと進化する過程の原点であり、初期の挑戦と試行錯誤の記録でもあります。
+                                            <br>補足：AIを活用してタイムスタンプを概要欄に記載するようになりました。当チャンネルの登録者がスマホで見ている人が多く、またSHORTSからの視聴者多いのでスマホで見やすい切り抜き動画を制作することを意識するように編集しました。
+                                        </p>
+                                        <a href="https://www.youtube.com/playlist?list=PLrh8Km8X4VUtES9VGi36nNCjfs3-gxeFY" target="_blank" class="text-amber-700 hover:underline">再生リストを見る</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="portfolio-grid">
-
-                        <div class="portfolio-card">
-                            <div class="portfolio-video-container">
-                                <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我家のヒーローBOSS君の散歩を大公開！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="portfolio-content-summary">
-                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">我が家のヒーローBOSS君の散歩を大公開！</h3>
-                                <p class="text-stone-700 text-sm">
-                                    BOSS君の楽しいお散歩風景をお届けする動画です。視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識し、軽快なテンポで編集しました。
-                                </p>
-                                <div class="collapsible-container">
-                                    <div class="collapsible-header">
-                                        <span>制作コメント</span>
-                                        <span class="toggle-icon">▼</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <div class="portfolio-detail-section">
-                                            <p class="text-stone-700 text-sm mt-3">視聴者がBOSS君と一緒に散歩しているかのような臨場感を意識して編集しました。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-card">
-                            <div class="portfolio-video-container">
-                                <iframe src="https://www.youtube.com/embed/sQsvC512Djc" title="ある夏の一日 Booss君シャンプー" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="portfolio-content-summary">
-                                <h3 class="text-xl font-bold text-brown-800" style="color: #5A2D0E;">ある夏の一日 Booss君シャンプー</h3>
-                                <p class="text-stone-700 text-sm">
-                                    BOSS君のシャンプーシーンを可愛らしく、面白く編集しました。ユーモラスなBGMとテロップで、視聴者が笑顔になるような構成を心がけました。
-                                </p>
-                                <div class="collapsible-container">
-                                    <div class="collapsible-header">
-                                        <span>制作コメント</span>
-                                        <span class="toggle-icon">▼</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <div class="portfolio-detail-section">
-                                            <p class="text-stone-700 text-sm mt-3">ユーモラスなBGMとテロップで、視聴者が笑顔になるような編集を心がけました。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- メインプロジェクトバナー -->
-                <section id="price-guide" class="scroll-mt-24">
-                    <h2 class="section-h2">メインプロジェクト</h2>
-                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                                <p class="text-white leading-relaxed text-center text-lg mb-4">
-                                    『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』は、私の動画編集者としての情熱とスキルを注ぎ込んだメインプロジェクトです。
-                                    競馬予想に特化した高速・高密度な動画編集の事例をご紹介します。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
-                                </p>
-
-                                <!-- チャンネル開設のきっかけ -->
-                                <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
-                                    <div class="collapsible-header text-brown-800">
-                                        <span>チャンネル開設のきっかけ</span>
-                                        <span class="toggle-icon">▼</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <div class="portfolio-detail-section text-stone-700">
-                                            <p class="text-sm mb-3">
-                                                「ウマキんグの本編動画を視聴し、その熱量に感銘を受けました。自分自身にできることは何か？と考えた時、長年培ってきた動画編集への情熱と、再スタートしたばかりのスキルをウマキんグの応援に活かせないかと強く感じました。ウマキんグファンの私が、動画編集者として貢献できる最善の道だと確信し、スキルアップのための実践の場として、ウマキんグ様の許可を得て切り抜き動画制作をスタートしました。この時の熱い思いが、後のチャンネルPR動画制作にも繋がっています。」
-                                            </p>
-                                            <p class="text-sm mb-3 font-semibold">チャンネルPR　元動画のメンバーシップのご案内！当チャンネルは、『はやい、みじかい、くわしい』をモットーに制作されたウマキんグ応援チャンネルです。＃ウマキんグ　＃なーつごんにゃ中井</p>
-                                            <p class="text-sm mb-3">視聴した本編動画URL：<!-- チャンネルPR動画のURLをここに貼り付け --></p>
-                                            <p class="text-sm mb-3">・チャンネル開設日：2024/10/15 に登録</p>
-                                            <p class="text-sm">・動画初投稿日:2024/10/23</p>
-                                            <p class="text-sm">・初投稿作品URL：<!-- 初投稿作品のURLをここに貼り付け --> 【2024 菊花賞】全頭診断ダイジェスト　ウマキング切り抜き</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
-                                    <div class="collapsible-header text-brown-800">
-                                        <span>私が実現するチャンネルの特徴</span>
-                                        <span class="toggle-icon">▼</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <div class="portfolio-detail-section text-stone-700">
-                                            <p class="text-sm mb-3">
-                                                **はやい：** 「週末のJRA重賞レースのナーツゴンニャ中井さんの見解を、最速で競馬ファンにお届けするため、情報公開から瞬時に動画を編集・公開する独自のワークフローを確立しています。これにより、鮮度の高い情報提供を実現し、多くの視聴者から『速い！』と評価いただいています。」
-                                            </p>
-                                            <p class="text-sm mb-3">
-                                                **みじかい：** 「長尺の本編動画から、週末のJRA重賞レースのナーツゴンニャ中井さんの見解の**『核心』だけを抽出**し、短時間で視聴できる動画に凝縮しています。無駄な間を徹底的にカットし、テロップやBGM、効果音を駆使したテンポの良い編集で、視聴者が飽きずに最後まで楽しめるよう工夫しています。」
-                                            </p>
-                                            <p class="text-sm">
-                                                **くわしい：** 「初心者から上級者まで、幅広い競馬ファンがナーツゴンニャ中井さんの見解を深く理解できるよう、複雑なデータや専門用語を視覚的に分かりやすいグラフ、図、アニメーションテロップで解説しています。これにより、単なる切り抜きに留まらない、『見て納得』の深い考察を提供しています。」
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
-                                    <div class="collapsible-header text-brown-800">
-                                        <span>チャンネルの成長実績と私の貢献</span>
-                                        <span class="toggle-icon">▼</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <div class="portfolio-detail-section text-stone-700">
-                                            <p class="text-sm mb-3">
-                                                2024年12月22日にチャンネル登録者1000名を達成し、その後も順調に成長を続け、現在に至っています。この成長において、私は動画編集者として以下の点で貢献しました。
-                                                （2025年7月現在チャンネル登録者数3260名）
-                                            </p>
-                                            <ul class="list-disc pl-5 text-sm space-y-1">
-                                                <li>**テロップと演出の統一化:** チャンネル全体の動画に、私の考案した視認性の高いテロップデザインと効果的な演出を導入しました。これにより、視聴者にとって動画がより見やすくなり、チャンネルのブランドイメージ確立に貢献しました。</li>
-                                                <li>**視聴維持率の向上:** テンポの良い編集と重要な情報の視覚化により、動画の平均視聴維持率が向上しました。これは、視聴者が動画を最後まで見てくれることに繋がり、結果としてチャンネルの成長を加速させました。</li>
-                                                <li>**本編動画への影響:** 私のテロップやアイデアが、ウマキんグ様の本編動画にも採用されるようになりました。これは、私の編集スキルとコンテンツ構成力が、公式チャンネルにも認められた証だと自負しております。</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="collapsible-container bg-white/80 p-4 rounded-lg shadow-md mb-4">
-                                    <div class="collapsible-header text-brown-800">
-                                        <span>主要な制作作品（再生リスト）</span>
-                                        <span class="toggle-icon">▼</span>
-                                    </div>
-                                    <div class="collapsible-content">
-                                        <div class="portfolio-detail-section space-y-4 text-stone-700">
-                                            <h4 class="font-semibold text-stone-800 mb-2">チャンネル創成期：基礎と挑戦の記録（2024年10月～12月）</h4>
-                                            <p class="text-sm">
-                                                この再生リストは、ウマキング公認応援chの開設初期（2024年10月～12月）に投稿された動画をまとめたものです。当チャンネルが「いつでも学習・調査できるコンテンツ」へと進化する過程の原点であり、ウマキんグ様との出会い、そして動画編集者としての私の初期の挑戦と試行錯誤の記録でもあります。
-                                                <br>補足：開設したばかりで『はやい、みじかい、くわしい』を意識しながら、1つ1つ階段を昇るように制作してました。酷似する他の切り抜きチャンネルは、本動画の単純な切り貼りでした。そこで少しでも独自性をだし、テロップ、動画内容のポイントを表示することを導入して制作してました。
-                                            </p>
-                                            <a href="https://www.youtube.com/playlist?list=PLrh8Km8X4VUsmaNfuH1uIr8oPmzIIa7VM" target="_blank" class="text-amber-700 hover:underline">再生リストを見る</a>
-
-                                            <h4 class="font-semibold text-stone-800 mt-4 mb-2">チャンネルⅡ期：分析の深化とファンとの絆（2025年1月～3月）</h4>
-                                            <p class="text-sm">
-                                                この再生リストは、ウマキング公認応援chの開設後（2025年1月～3月）に投稿された動画をまとめたものです。公開されている再生回数4000回以上の動画です。当チャンネルが「いつでも学習・調査できるコンテンツ」へと進化する過程の原点であり、初期の挑戦と試行錯誤の記録でもあります。
-                                                <br>補足：競馬ファンの視点に重きを置き切り抜き動画を制作することに拘るようになり創世記より見やすく、動画が訴えたいポイントが分かり易くなりました。また、サムネイルにも工夫を凝らして、気になる、目を引く、わかりやすいことに拘りました。
-                                            </p>
-                                            <a href="https://www.youtube.com/playlist?list=PLrh8Km8X4VUsTI3VIQxbrVpQHYxEk0s1L" target="_blank" class="text-amber-700 hover:underline">再生リストを見る</a>
-
-                                            <h4 class="font-semibold text-stone-800 mt-4 mb-2">チャンネルⅢ期：AI活用とコンテンツ革新（2025年4月～6月）</h4>
-                                            <p class="text-sm">
-                                                この再生リストは、ウマキング公認応援chの開設後（2025年4月～6月）に投稿された動画をまとめたものです。公開されている再生回数4000回以上の動画です。当チャンネルが「いつでも学習・調査できるコンテンツ」へと進化する過程の原点であり、初期の挑戦と試行錯誤の記録でもあります。
-                                                <br>補足：AIを活用してタイムスタンプを概要欄に記載するようになりました。当チャンネルの登録者がスマホで見ている人が多く、またSHORTSからの視聴者多いのでスマホで見やすい切り抜き動画を制作することを意識するように編集しました。
-                                            </p>
-                                            <a href="https://www.youtube.com/playlist?list=PLrh8Km8X4VUtES9VGi36nNCjfs3-gxeFY" target="_blank" class="text-amber-700 hover:underline">再生リストを見る</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <!-- 元々あった我が家のヒーローBOSS君の散歩を大公開！とある夏の一日 Booss君シャンプーのカードは削除されました -->
                     </div>
                 </section>
 
@@ -921,7 +1024,7 @@
                 <h4>お問い合わせ</h4>
                 <p class="text-sm">ご質問やご依頼はこちらからどうぞ。</p>
                 <p class="mt-2 text-md font-semibold">
-                    <a href="mailto:katualoma@gmail.com" class="text-teal-600 hover:text-teal-800 font-medium break-all">katualoma@gmail.com</a>
+                    <a href="https://forms.gle/7dxaGWkbEepYbfRcA" target="_blank" class="text-teal-600 hover:text-teal-800 font-medium break-all">Googleフォームからお問い合わせ</a>
                 </p>
             </div>
 
@@ -941,7 +1044,7 @@
             <p class="text-xs mt-1">
                 <a href="#privacy" class="footer-link text-yellow-100 hover:underline">プライバシーポリシー</a>
                 |
-                <a href="mailto:katualoma@gmail.com" class="footer-link">お問い合わせ</a>
+                <a href="https://forms.gle/7dxaGWkbEepYbfRcA" target="_blank" class="footer-link">お問い合わせ</a>
             </p>
         </div>
     </footer>
