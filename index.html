@@ -231,7 +231,7 @@
         }
         .profile-image-sub:hover {
             transform: translateY(-30px) rotate(0deg) scale(1.08); /* ホバー時のアニメーション */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.8);
         }
 
         /* 自己紹介テキストのスタイル */
@@ -259,6 +259,11 @@
         }
         .collapsible-container .collapsible-header span {
             color: white !important;
+        }
+        .collapsible-container .collapsible-header small {
+            color: #ccc !important;
+            text-shadow: none;
+            font-weight: normal;
         }
 
         /* ポートフォリオカードのグリッドレイアウト */
@@ -341,12 +346,21 @@
             background-color: #FAEBD7; /* バナー内のアコーディオンコンテンツ背景色 */
             color: #5A2D0E;
         }
-        .main-project-banner-style .collapsible-content p,
-        .main-project-banner-style .collapsible-content ul,
-        .main-project-banner-style .collapsible-content li,
-        .main-project-banner-style .collapsible-content a {
-            color: #5A2D0E !important; /* テキスト色を濃い茶色に */
-            text-shadow: none; /* 影を削除 */
+        .main-project-banner-style .section-h2,
+        .main-project-banner-style h3 {
+            color: red;
+            text-shadow:
+                -1px -1px 0 white,
+                 1px -1px 0 white,
+                -1px  1px 0 white,
+                 1px  1px 0 white;
+            font-size: 2.5rem;
+        }
+        @media (max-width: 768px) {
+            .main-project-banner-style .section-h2,
+            .main-project-banner-style h3 {
+                font-size: 1.8rem;
+            }
         }
 
 
@@ -408,11 +422,6 @@
             /* PC版では広告エリアを右サイドバーに表示し、メインコンテンツ下のものは非表示 */
             .adsense-unit {
                 display: none;
-            }
-            .sidebar-ad-area {
-                order: 2; /* PC版では右側に表示 */
-                flex-shrink: 0; /* 縮まないように */
-                display: block;
             }
             .sidebar-contact-area, .sidebar-link-area {
                 display: block !important;
@@ -519,6 +528,7 @@
                     <li><a href="#portfolio" class="nav-link">制作作品</a></li>
                     <li><a href="#about" class="nav-link">自己紹介</a></li>
                     <li><a href="#price-guide" class="nav-link">料金案内</a></li>
+                    <li><a href="#blog-posts" class="nav-link">ブログ</a></li>
                     <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
                 </ul>
             </div>
@@ -535,20 +545,22 @@
                 </div>
 
                 <!-- 『VIDEO edit office BOSS兄』の自慢エリア -->
-                <section id="introduction-pr" class="main-project-banner-style scroll-mt-24">
-                    <h2 class="text-2xl font-bold mb-2 text-white text-center">『VIDEO edit office BOSS兄』の自慢</h2>
+                  <section id="introduction-pr" class="main-project-banner-style scroll-mt-24">
+                    <h3 class="class="text-xl font-bold mb-2 text-white">『VIDEO edit office BOSS兄』の推しポイントは？</h3>
                     <div class="space-y-6 mt-6">
                         <div>
-                            <h3 class="text-xl font-bold mb-2 text-white">・学習・教育系の動画編集が得意です</h3>
+                            <h2 class="text-xl font-bold mb-2 text-white">・学習・教育系の動画編集が得意です</h2>
                             <p class="text-white leading-relaxed mb-4">
-                                『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、視聴者が内容を深く理解できるような学習・教育系の動画編集を得意としています。特に、エンドロールを活用したナレーションの文字起こしスキルは、学習効果を高めるための大きな武器です。
+                                『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、視聴者が内容を深く理解できるような学習・教育系の動画編集を得意としています。<br>
+                                特に、エンドロールを活用したナレーションの文字起こしスキルは<br>
+                                学習効果を高めるための大きな武器です。
                             </p>
                             <div class="portfolio-video-container">
                                 <iframe src="https://www.youtube.com/embed/GQrXptXUO7Y?si=ehteedGQCz8YrjOy" title="ウマキング切り抜き動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold mb-2 text-white">・静止版のサイトをビデオ化するスキルに優れています</h3>
+                            <h2 class=class="text-xl font-bold mb-2 text-white">・静止版のサイトをビデオ化するスキルに優れています</h2>
                             <p class="text-white leading-relaxed mb-4">
                                 既存の静止画サイトや資料を、視聴者の興味を惹きつける動的なビデオコンテンツに変換するスキルがあります。情報をただ動画にするのではなく、視覚効果やアニメーションを駆使して、より分かりやすく、記憶に残りやすい形に再構成します。
                             </p>
@@ -557,7 +569,7 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold mb-2 text-white">・心に残るビデオレター制作も得意です</h3>
+                            <h2 class="text-2xl font-bold mb-2 text-white text-center">・心に残るビデオレター制作も得意です</h2>
                             <p class="text-white leading-relaxed mb-4">
                                 大切な人へのメッセージや、特別な記念日を彩るビデオレターの制作もお任せください。また、単調なスライド資料を動きのあるプレゼン動画に仕上げることで、視聴者の興味を引きつけ、メッセージをより強く印象づけるお手伝いをします。
                             </p>
@@ -567,10 +579,9 @@
                         </div>
                     </div>
                 </section>
-                
+
                 <section id="portfolio" class="scroll-mt-24">
                     <h2 class="section-h2">制作作品</h2>
-                    <!-- メインプロジェクトバナーをportfolio-gridの外に移動 -->
                     <div class="main-project-banner-style"> 
                         <div class="portfolio-content-summary">
                             <h3 class="text-2xl font-bold text-white text-center mb-4">メインプロジェクト</h3>
@@ -578,7 +589,6 @@
                                 『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』は、私の動画編集者としての情熱とスキルを注ぎ込んだメインプロジェクトです。
                                 競馬予想に特化した高速・高密度な動画編集の事例をご紹介します。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
                             </p>
-
                             <!-- チャンネル開設のきっかけ -->
                             <div class="collapsible-container">
                                 <div class="collapsible-header">
@@ -672,11 +682,66 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-grid">
-                        <!-- 元々あった我が家のヒーローBOSS君の散歩を大公開！とある夏の一日 Booss君シャンプーのカードは削除されました -->
+                    <div class="portfolio-grid space-y-8">
+                        <!-- 癒しの絶景動画 -->
+                        <div class="portfolio-card md:col-span-full">
+                            <div class="collapsible-container">
+                                <div class="collapsible-header">
+                                    <h3 class="text-lg font-semibold text-white">癒しの絶景 - BGM動画<br><small style="color: white; font-weight: normal;">あなたの映像を、ただの記録から「心に響く作品」へ。</small></h3>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="【作業用】集中力が切れないBGM｜癒しの絶景と水の音" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="portfolio-detail-section text-stone-700">
+                                        <p class="text-sm mt-2">
+                                            「なんだか心惹かれる」「最後まで見てしまった」人の心を動かす映像には、理由があります。私たち「VIDEO edit office BOSS兄」は、プロの映像編集技術で、お客様の動画をワンランク上の作品へと昇華させます。
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm mt-4 space-y-2">
+                                            <li>**色彩補正（カラーグレーディング）**：元の映像が持つ美しさを、さらに上のレベルへ引き上げます。映像全体の印象をコントロールし、視聴者に「癒し」という感情を意図的に届けます。</li>
+                                            <li>**BGMとの完璧な同期（音ハメ）**：映像の切り替えポイントが、BGMのメロディやリズム、盛り上がりに完璧に合致しています。映像と音楽が一体となったときの圧倒的な没入感と感動を、あなたの動画で実現します。</li>
+                                            <li>**視聴者を飽きさせない構成力**：壮大なドローン映像、地上からの固定映像、動きのある映像など、様々な画角のショットが巧みに配置されています。単調になりがちな風景動画に緩急をつけ、視聴者を最後まで惹きつけるストーリーテリングの能力があります。</li>
+                                        </ul>
+                                        <p class="text-sm mt-4">
+                                            これらのスキルは、お客様の映像素材が持つポテンシャルを120%引き出し、「伝えたい想い」を「伝わるカタチ」にするために不可欠なものです。<br>商品やサービスのPR、大切な思い出の記録、YouTubeコンテンツなど、あらゆる映像素材をお預かりします。<br>「伝えたい想い」を、最高のカタチで届けませんか？<br>まずはお気軽にご相談ください。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- クイズ大会動画 -->
+                        <div class="portfolio-card md:col-span-full">
+                            <div class="collapsible-container">
+                                <div class="collapsible-header">
+                                    <h3 class="text-lg font-semibold text-white">クイズ大会<br><small style="color: white; font-weight: normal;">あなたのイベントを、何度でも見返したくなる「番組」に。</small></h3>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/z1CZEdZl6VU?si=MTxDzQP0sK8BMBgf" title="クイズ大会" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="portfolio-detail-section text-stone-700">
+                                        <p class="text-sm mt-2">
+                                            社内イベント、セミナー、地域の催し物…。その一瞬の熱量を、もっと多くの人に、もっと面白く伝えたい。そうお考えの主催者様へ。
+                                            私たち「VIDEO edit office BOSS兄」は、イベントの記録映像を、視聴者が夢中になる「エンターテイメントコンテンツ」へと昇華させます。
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm mt-4 space-y-2">
+                                            <li>**テロップで、分かりやすく**：クイズの問題や答え、参加者の名前や補足情報などを、見やすく、かつ番組の雰囲気に合ったデザインで表示しています。適切なタイミングで情報を提示することで、視聴者の理解を助け、ストレスなく内容に集中させています。</li>
+                                            <li>**音で、臨場感をプラス**：正解・不正解のブザー音、シンキングタイムのBGM、盛り上がる場面での歓声など、状況に応じた効果音を巧みに使用しています。これにより、クイズの臨場感や緊張感を演出し、視聴者を飽きさせません。</li>
+                                            <li>**カット割りで、惹きつける**：出題者、回答者、そして周りの反応など、複数のカメラ映像を小気味良いテンポで切り替えています。この緩急のあるカット編集が、動画全体の勢いを生み出し、視聴者の集中力を維持させます。</li>
+                                        </ul>
+                                        <p class="text-sm mt-4">
+                                            撮りっぱなしの映像素材が、プロの手で価値あるコンテンツに生まれ変わります。<br>イベントの価値を最大化する映像編集なら、私たちにお任せください。
+                                            <br>まずはお気軽にご相談ください。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
-                
+
                 <section id="about" class="scroll-mt-24">
                     <h2 class="section-h2">自己紹介</h2>
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4 profile-section-content">
@@ -684,7 +749,7 @@
                             <div class="profile-image-wrapper">
                                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/IMG_5569.PNG" onerror="this.onerror=null;this.src='https://placehold.co/120x120/D2B48C/5A2D0E?text=プロフィール画像';" alt="川勝典茂（BOSS兄）プロフィール画像" class="profile-image-main">
                             </div>
-                            <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/000/FFF?text=BOSSロゴ';" alt="BOSS兄ロゴ" class="profile-section-logo-in-content">
+                            <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄ロゴ" class="profile-section-logo-in-content">
                             <div class="profile-image-wrapper">
                                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png" onerror="this.onerror=null;this.src='https://placehold.co/120x120/D2B48C/5A2D0E?text=イラスト画像';" alt="イメージ画像" class="profile-image-sub">
                             </div>
@@ -759,6 +824,20 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="blog-posts" class="scroll-mt-24">
+                    <h2 class="section-h2">はてなブログ記事</h2>
+                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                        <p class="text-center text-stone-700">
+                            ここに、はてなブログのウィジェットコードを挿入してください。
+                        </p>
+                        <!-- ここにブログの埋め込みコードを配置します -->
+                        <!-- 例: <div class="hatena-blogcard" data-card-layout="vertical" data-uuid="your-blog-post-uuid"></div> -->
+                        <div class="adsense-unit">
+                            <p>ここにブログ記事ウィジェットが表示されます</p>
                         </div>
                     </div>
                 </section>
