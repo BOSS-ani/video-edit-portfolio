@@ -17,7 +17,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Chosen Palette: Warm Brown & Golden Accents -->
     <style>
@@ -128,22 +128,18 @@
         .collapsible-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            background-color: #F8F8F8;
+            transition: max-height 0.5s ease-out; /* 少しゆっくりに */
+            background-color: #FDFBF6;
             padding: 0 1.5rem; /* 初期はパディングなし */
             border-radius: 0 0 8px 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-top: -10px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+            margin-top: -8px;
             border-top: none;
         }
         .collapsible-content.expanded {
             padding: 1.5rem; /* 展開時にパディングを追加 */
-            max-height: 1000px; /* 適切な高さに調整 */
-            margin-top: 5px;
-        }
-        .collapsible-content.expanded + .collapsible-header { /* 展開している時のヘッダーに下部の角丸を適用 */
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
+            max-height: 3000px; /* コンテンツに合わせて高さを十分に確保 */
+            margin-top: 0px;
         }
         .toggle-icon {
             transition: transform 0.3s ease, color 0.3s ease;
@@ -235,15 +231,31 @@
         }
 
         /* 自己紹介テキストのスタイル */
+        .profile-text-wrapper {
+            border: 4px solid #000000;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            background-color: rgba(0, 0, 0, 0.15);
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 95%;
+            width: 100%;
+        }
+        .profile-text-wrapper .profile-main-text {
+            margin-bottom: 1rem;
+        }
+        .profile-text-wrapper .profile-main-text:last-child {
+            margin-bottom: 0;
+        }
         .profile-main-text { /* 自己紹介のメインテキスト用クラス */
             color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
             font-size: 1.3rem; /* フォントサイズを調整 */
             text-shadow: 
-                -1.5px -1.5px 0 #000,  
-                 1.5px -1.5px 0 #000,
-                -1.5px  1.5px 0 #000,
-                 1.5px  1.5px 0 #000,
-                 0px     0px    8px rgba(0,0,0,0.9);
+                 -1.5px -1.5px 0 #000,  
+                  1.5px -1.5px 0 #000,
+                 -1.5px  1.5px 0 #000,
+                  1.5px  1.5px 0 #000,
+                  0px     0px     8px rgba(0,0,0,0.9);
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
@@ -350,10 +362,10 @@
         .main-project-banner-style h3 {
             color: red;
             text-shadow:
-                -1px -1px 0 white,
-                 1px -1px 0 white,
-                -1px  1px 0 white,
-                 1px  1px 0 white;
+                 -1px -1px 0 white,
+                  1px -1px 0 white,
+                 -1px  1px 0 white,
+                  1px  1px 0 white;
             font-size: 2.5rem;
         }
         @media (max-width: 768px) {
@@ -404,6 +416,92 @@
         .sidebar-link-area li { margin-bottom: 0.5rem; }
         .sidebar-link-area a { color: #A0522D; text-decoration: none; font-weight: normal; }
         .sidebar-link-area a:hover { text-decoration: underline; }
+
+        /* --- START: Skill Chart Styles --- */
+        .skill-chart-container {
+            background-color: #FDFBF6;
+            padding-top: 1.5rem;
+        }
+        .skill-chart-title {
+            color: #5A2D0E;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .skill-card {
+            background-color: #FFF;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        .skill-card h4 {
+            color: #A0522D;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .skill-card p {
+            font-size: 0.9rem;
+            color: #4A5568;
+        }
+        .progress-bar-container {
+            background-color: #E2E8F0;
+            border-radius: 9999px;
+            height: 10px;
+            margin-top: 0.75rem;
+        }
+        .progress-bar {
+            background-color: #CD853F;
+            height: 100%;
+            border-radius: 9999px;
+        }
+        /* --- END: Skill Chart Styles --- */
+
+        /* --- START: Hatena Blog Feed Styles --- */
+        #hatena-blog-feed {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        #hatena-blog-feed li {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s ease;
+        }
+        #hatena-blog-feed li:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #hatena-blog-feed a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #5A2D0E;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        #hatena-blog-feed a:hover {
+            background-color: #FAEBD7;
+            border-radius: 8px;
+        }
+        .blog-title-custom {
+            color: red;
+            font-weight: 900;
+            text-shadow: 
+                -2px -2px 0 #000,  
+                 2px -2px 0 #000,
+                -2px  2px 0 #000,
+                 2px  2px 0 #000,
+                -1px -1px 0 red,
+                 1px -1px 0 red,
+                -1px  1px 0 red,
+                 1px  1px 0 red;
+        }
+        /* --- END: Hatena Blog Feed Styles --- */
+
 
         /* レスポンシブ調整 */
         @media (min-width: 1024px) { /* PC版のレイアウト */
@@ -541,12 +639,12 @@
                 
                 <!-- ヘッダー下バナー画像エリア -->
                 <div class="flex justify-center my-8">
-                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/VIDEO-edit-office1.jpg" alt="伝える動画 届けます！" class="w-full h-auto max-w-4xl rounded-lg shadow-lg">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/VIDEO-edit-office1.jpg" alt="学習効果を最大化する独自の編集スキル 伝わる動画届けます！" class="w-full h-auto max-w-4xl rounded-lg shadow-lg">
                 </div>
 
                 <!-- 『VIDEO edit office BOSS兄』の自慢エリア -->
                   <section id="introduction-pr" class="main-project-banner-style scroll-mt-24">
-                    <h3 class="class="text-xl font-bold mb-2 text-white">『VIDEO edit office BOSS兄』の推しポイントは？</h3>
+                    <h3 class="class="text-xl font-bold mb-2 text-white">『VIDEO edit office BOSS兄』　　　推しポイントは？</h3>
                     <div class="space-y-6 mt-6">
                         <div>
                             <h2 class="text-xl font-bold mb-2 text-white">・学習・教育系の動画編集が得意です</h2>
@@ -560,7 +658,7 @@
                             </div>
                         </div>
                         <div>
-                            <h2 class=class="text-xl font-bold mb-2 text-white">・静止版のサイトをビデオ化するスキルに優れています</h2>
+                            <h2 class="text-xl font-bold mb-2 text-white">・静止版のサイトをビデオ化するスキルに優れています</h2>
                             <p class="text-white leading-relaxed mb-4">
                                 既存の静止画サイトや資料を、視聴者の興味を惹きつける動的なビデオコンテンツに変換するスキルがあります。情報をただ動画にするのではなく、視覚効果やアニメーションを駆使して、より分かりやすく、記憶に残りやすい形に再構成します。
                             </p>
@@ -659,7 +757,7 @@
                                         <h4 class="font-semibold text-stone-800 mb-2">チャンネル創成期：基礎と挑戦の記録（2024年10月～12月）</h4>
                                         <p class="text-sm">
                                             この再生リストは、ウマキング公認応援chの開設初期（2024年10月～12月）に投稿された動画をまとめたものです。当チャンネルが「いつでも学習・調査できるコンテンツ」へと進化する過程の原点であり、ウマキんグ様との出会い、そして動画編集者としての私の初期の挑戦と試行錯誤の記録でもあります。
-                                        <br>補足：開設したばかりで『はやい、みじかい、くわしい』を意識しながら、1つ1つ階段を昇るように制作してました。酷似する他の切り抜きチャンネルは、本動画の単純な切り貼りでした。そこで少しでも独自性をだし、テロップ、動画内容のポイントを表示することを導入して制作してました。
+                                            <br>補足：開設したばかりで『はやい、みじかい、くわしい』を意識しながら、1つ1つ階段を昇るように制作してました。酷似する他の切り抜きチャンネルは、本動画の単純な切り貼りでした。そこで少しでも独自性をだし、テロップ、動画内容のポイントを表示することを導入して制作してました。
                                         </p>
                                         <a href="https://www.youtube.com/playlist?list=PLrh8Km8X4VUsmaNfuH1uIr8oPmzIIa7VM" target="_blank" class="text-amber-700 hover:underline">再生リストを見る</a>
 
@@ -683,29 +781,64 @@
                     </div>
 
                     <div class="portfolio-grid space-y-8">
-                        <!-- 癒しの絶景動画 -->
+                        <!-- 編集スキル インフォグラフィック -->
                         <div class="portfolio-card md:col-span-full">
                             <div class="collapsible-container">
                                 <div class="collapsible-header">
-                                    <h3 class="text-lg font-semibold text-white">癒しの絶景 - BGM動画<br><small style="color: white; font-weight: normal;">あなたの映像を、ただの記録から「心に響く作品」へ。</small></h3>
+                                    <h3 class="text-lg font-semibold" style="color: #5A2D0E;">編集スキル：「記録」を「記憶」に変える技術<br><small style="color: #5A2D0E; font-weight: normal;">プロの編集スキルをインフォグラフィックで解説</small></h3>
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
-                                    <div class="portfolio-video-container mt-4">
-                                        <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="【作業用】集中力が切れないBGM｜癒しの絶景と水の音" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="portfolio-detail-section text-stone-700">
-                                        <p class="text-sm mt-2">
+                                    <div class="text-center mb-6">
+                                        <p class="text-stone-700 leading-relaxed max-w-3xl mx-auto mb-4">
                                             「なんだか心惹かれる」「最後まで見てしまった」人の心を動かす映像には、理由があります。私たち「VIDEO edit office BOSS兄」は、プロの映像編集技術で、お客様の動画をワンランク上の作品へと昇華させます。
                                         </p>
-                                        <ul class="list-disc pl-5 text-sm mt-4 space-y-2">
-                                            <li>**色彩補正（カラーグレーディング）**：元の映像が持つ美しさを、さらに上のレベルへ引き上げます。映像全体の印象をコントロールし、視聴者に「癒し」という感情を意図的に届けます。</li>
-                                            <li>**BGMとの完璧な同期（音ハメ）**：映像の切り替えポイントが、BGMのメロディやリズム、盛り上がりに完璧に合致しています。映像と音楽が一体となったときの圧倒的な没入感と感動を、あなたの動画で実現します。</li>
-                                            <li>**視聴者を飽きさせない構成力**：壮大なドローン映像、地上からの固定映像、動きのある映像など、様々な画角のショットが巧みに配置されています。単調になりがちな風景動画に緩急をつけ、視聴者を最後まで惹きつけるストーリーテリングの能力があります。</li>
-                                        </ul>
-                                        <p class="text-sm mt-4">
-                                            これらのスキルは、お客様の映像素材が持つポテンシャルを120%引き出し、「伝えたい想い」を「伝わるカタチ」にするために不可欠なものです。<br>商品やサービスのPR、大切な思い出の記録、YouTubeコンテンツなど、あらゆる映像素材をお預かりします。<br>「伝えたい想い」を、最高のカタチで届けませんか？<br>まずはお気軽にご相談ください。
-                                        </p>
+                                        <div class="portfolio-video-container">
+                                            <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="【作業用】集中力が切れないBGM｜癒しの絶景と水の音" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-chart-container">
+                                        <h3 class="skill-chart-title">この動画で使われている主な編集スキル</h3>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <!-- "魅せる" スキル -->
+                                            <div class="space-y-4">
+                                                <div class="skill-card">
+                                                    <h4>🎨 色彩補正（カラーグレーディング）</h4>
+                                                    <p>元の映像が持つ美しさを、さらに上のレベルへ引き上げます。映像全体の印象をコントロールし、視聴者に「癒し」という感情を意図的に届けます。</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                                                </div>
+                                                <div class="skill-card">
+                                                    <h4>🎵 BGMとの完璧な同期（音ハメ）</h4>
+                                                    <p>映像の切り替えポイントが、BGMのメロディやリズム、盛り上がりに完璧に合致。映像と音楽が一体となったときの圧倒的な没入感と感動を、あなたの動画で実現します。</p>
+                                                     <div class="progress-bar-container"><div class="progress-bar" style="width: 95%;"></div></div>
+                                                </div>
+                                                <div class="skill-card">
+                                                    <h4>📜 構成力（ストーリーテリング）</h4>
+                                                    <p>壮大なドローン映像、地上からの固定映像、動きのある映像など、様々な画角のショットを巧みに配置。単調になりがちな風景動画に緩急をつけ、視聴者を最後まで惹きつけます。</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                                                </div>
+                                            </div>
+                        
+                                            <!-- "楽しませる" スキル -->
+                                            <div class="space-y-4">
+                                                <div class="skill-card">
+                                                    <h4>✍️ テロップ演出</h4>
+                                                    <p>情報を的確に伝え、面白さを加速させることで、視聴者の理解度と満足度を高めます。（この動画では使用していませんが、クイズ大会の動画などでご覧いただけます）</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div>
+                                                </div>
+                                                <div class="skill-card">
+                                                    <h4>🔊 効果音・BGM</h4>
+                                                    <p>場の空気感を自在に創り出し、臨場感や緊張感を演出して視聴者を飽きさせません。</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 88%;"></div></div>
+                                                </div>
+                                                <div class="skill-card">
+                                                    <h4>⏱️ テンポの良い編集</h4>
+                                                    <p>緩急のあるカット編集で映像全体の勢いを生み出し、視聴者の集中力を維持させます。</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 92%;"></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -714,27 +847,43 @@
                         <div class="portfolio-card md:col-span-full">
                             <div class="collapsible-container">
                                 <div class="collapsible-header">
-                                    <h3 class="text-lg font-semibold text-white">クイズ大会<br><small style="color: white; font-weight: normal;">あなたのイベントを、何度でも見返したくなる「番組」に。</small></h3>
+                                    <h3 class="text-lg font-semibold" style="color: #5A2D0E;">イベント映像を「番組」に<br><small style="color: #5A2D0E; font-weight: normal;">プロの編集がもたらす「3つの魔法」を解説</small></h3>
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
-                                    <div class="portfolio-video-container mt-4">
-                                        <iframe src="https://www.youtube.com/embed/z1CZEdZl6VU?si=MTxDzQP0sK8BMBgf" title="クイズ大会" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    <div class="text-center mb-6">
+                                        <p class="text-stone-700 leading-relaxed max-w-3xl mx-auto mb-4">
+                                            撮りっぱなしの記録映像を、誰もが夢中になるエンターテイメントへ。社内イベント、セミナー、地域の催し物…。その一瞬の熱量を、プロの編集技術で「番組」のように面白く仕上げます。
+                                        </p>
+                                        <div class="portfolio-video-container">
+                                            <iframe src="https://www.youtube.com/embed/z1CZEdZl6VU?si=MTxDzQP0sK8BMBgf" title="クイズ大会" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        </div>
                                     </div>
-                                    <div class="portfolio-detail-section text-stone-700">
-                                        <p class="text-sm mt-2">
-                                            社内イベント、セミナー、地域の催し物…。その一瞬の熱量を、もっと多くの人に、もっと面白く伝えたい。そうお考えの主催者様へ。
-                                            私たち「VIDEO edit office BOSS兄」は、イベントの記録映像を、視聴者が夢中になる「エンターテイメントコンテンツ」へと昇華させます。
-                                        </p>
-                                        <ul class="list-disc pl-5 text-sm mt-4 space-y-2">
-                                            <li>**テロップで、分かりやすく**：クイズの問題や答え、参加者の名前や補足情報などを、見やすく、かつ番組の雰囲気に合ったデザインで表示しています。適切なタイミングで情報を提示することで、視聴者の理解を助け、ストレスなく内容に集中させています。</li>
-                                            <li>**音で、臨場感をプラス**：正解・不正解のブザー音、シンキングタイムのBGM、盛り上がる場面での歓声など、状況に応じた効果音を巧みに使用しています。これにより、クイズの臨場感や緊張感を演出し、視聴者を飽きさせません。</li>
-                                            <li>**カット割りで、惹きつける**：出題者、回答者、そして周りの反応など、複数のカメラ映像を小気味良いテンポで切り替えています。この緩急のあるカット編集が、動画全体の勢いを生み出し、視聴者の集中力を維持させます。</li>
-                                        </ul>
-                                        <p class="text-sm mt-4">
-                                            撮りっぱなしの映像素材が、プロの手で価値あるコンテンツに生まれ変わります。<br>イベントの価値を最大化する映像編集なら、私たちにお任せください。
-                                            <br>まずはお気軽にご相談ください。
-                                        </p>
+                                    <div class="skill-chart-container">
+                                        <h3 class="skill-chart-title">この動画で使われている主な編集スキル</h3>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div class="space-y-4">
+                                                <div class="skill-card">
+                                                    <h4>✍️ テロップ演出</h4>
+                                                    <p>クイズの問題や補足情報、面白いリアクションへのツッコミなど、的確なテロップは視聴者の理解度と満足度を劇的に向上させます。</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 98%;"></div></div>
+                                                </div>
+                                            </div>
+                                            <div class="space-y-4">
+                                                <div class="skill-card">
+                                                    <h4>🎵 効果音 & BGM</h4>
+                                                    <p>正解音、不正解音、シンキングタイムのBGMは、場の空気感を創り出します。音は映像に臨場感と緊張感を与え、視聴者をイベントの渦中へと引き込みます。</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 95%;"></div></div>
+                                                </div>
+                                            </div>
+                                            <div class="md:col-span-2">
+                                                <div class="skill-card">
+                                                    <h4>🎬 テンポの良いカット編集</h4>
+                                                    <p>長時間の映像から「見せ場」だけを抜き出し、出題者・回答者・周りの反応を小気味良いテンポで繋ぎ合わせることで、視聴者の集中力は維持されます。単調な記録ではなく、緩急のある「物語」として再構成する技術です。</p>
+                                                    <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -755,16 +904,40 @@
                             </div>
                         </div>
                         
-                        <p class="profile-main-text">
-                            初めまして！<br>
-                            私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。
-                        </p>
-                        <p class="profile-main-text">
-                            その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。
-                        </p>
-                        <p class="profile-main-text">
-                            私の作品は、下記の項目、<br>または「制作作品」セクションでご覧いただけます。
-                        </p>
+                        <div class="profile-text-wrapper">
+                            <p class="profile-main-text">
+                                初めまして！<br>
+                                私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。
+                            </p>
+                            <p class="profile-main-text">
+                                その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。
+                            </p>
+                            <p class="profile-main-text">
+                                私の作品は、「制作作品」セクションでご覧いただけます。
+                            </p>
+                        </div>
+
+                        <div class="collapsible-container my-4">
+                            <div class="collapsible-header">
+                                <span>初めて制作した動画</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content">
+                                <div class="portfolio-video-container mt-4">
+                                    <iframe src="https://www.youtube.com/embed/C1XXEY3p78g" title="我が家のヒーロー 黒柴BOSS VOL1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                                <div class="text-left text-stone-700 mt-4">
+                                    <p class="text-sm">
+                                        10年以上前、初めてiMovieを使って制作した作品です。写真のスライドショーにBGMとシンプルなテロップを加える基本的な編集ですが、これが私の動画制作の原点です。この動画には、現在のスキルにも通じる以下の要素が含まれています。
+                                    </p>
+                                    <ul class="list-disc pl-5 text-sm mt-2 space-y-1">
+                                        <li><strong>構成力:</strong> 写真の順番を工夫し、一つの物語として見せる構成</li>
+                                        <li><strong>BGM選定:</strong> 動画の雰囲気に合わせた音楽の選択</li>
+                                        <li><strong>テロップ演出:</strong> 伝えたいメッセージを的確なタイミングで表示</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="collapsible-container">
                             <div class="collapsible-header">
@@ -829,16 +1002,12 @@
                 </section>
                 
                 <section id="blog-posts" class="scroll-mt-24">
-                    <h2 class="section-h2">はてなブログ記事</h2>
+                    <h2 class="section-h2 text-center blog-title-custom">「伝わる」にはワケがある。<br>BOSS兄の編集術</h2>
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                        <p class="text-center text-stone-700">
-                            ここに、はてなブログのウィジェットコードを挿入してください。
-                        </p>
-                        <!-- ここにブログの埋め込みコードを配置します -->
-                        <!-- 例: <div class="hatena-blogcard" data-card-layout="vertical" data-uuid="your-blog-post-uuid"></div> -->
-                        <div class="adsense-unit">
-                            <p>ここにブログ記事ウィジェットが表示されます</p>
-                        </div>
+                        <p class="text-center text-stone-700 mb-6">なぜ、あの動画は心に残るのか？ 編集の力で「記録」を「記憶」に変えるノウハウを、惜しみなくお伝えします。</p>
+                        <ul id="hatena-blog-feed">
+                            <!-- ブログ記事がここに挿入されます -->
+                        </ul>
                     </div>
                 </section>
                 
@@ -1006,7 +1175,7 @@
                      data-ad-client="ca-pub-8419575231209847"
                      data-ad-slot="2222222222"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
                 -->
             </div>
@@ -1076,18 +1245,22 @@
                 header.addEventListener('click', () => {
                     const content = header.nextElementSibling;
                     const icon = header.querySelector('.toggle-icon');
+                    
                     content.classList.toggle('expanded');
                     icon.classList.toggle('rotated');
                     
-                    // 開いた時に見出しが画面内に入るようにスムーズスクロール
                     if (content.classList.contains('expanded')) {
-                        const headerHeight = document.getElementById('main-header').offsetHeight;
-                        const elementPosition = header.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - headerHeight - 10; // ヘッダーの下に表示されるように調整
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
+                        // 開いた時に見出しが画面内に入るようにスムーズスクロール
+                        // 少し遅延させて、レイアウトの計算が終わるのを待つ
+                        setTimeout(() => {
+                            const headerHeight = document.getElementById('main-header').offsetHeight;
+                            const elementPosition = header.getBoundingClientRect().top + window.pageYOffset;
+                            const offsetPosition = elementPosition - headerHeight - 10; // ヘッダーの下に表示されるように調整
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: "smooth"
+                            });
+                        }, 100);
                     }
                 });
             });
@@ -1096,13 +1269,56 @@
             document.querySelectorAll('.collapsible-content').forEach(content => {
                 if (content.classList.contains('expanded')) {
                     content.classList.remove('expanded');
-                    content.style.maxHeight = '0';
                 }
                 const icon = content.previousElementSibling.querySelector('.toggle-icon');
                 if (icon) {
                     icon.classList.remove('rotated');
                 }
             });
+
+            // --- START: Hatena Blog Feed Script ---
+            // 1. あなたのはてなブログのRSSフィードURL
+            const hatenaRssUrl = 'https://bosskatu.hateblo.jp/rss';
+
+            // 2. RSSをJSONに変換するAPIのURL
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(hatenaRssUrl)}`;
+
+            // 3. 記事リストを表示するHTML要素を取得
+            const feedContainer = document.getElementById('hatena-blog-feed');
+
+            // 4. APIから記事データを取得して表示する
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.items && data.items.length > 0) {
+                        // 取得した記事データ（data.items）をループ処理
+                        data.items.forEach(item => {
+                            // li要素とa要素を新しく作成
+                            const listItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            
+                            // a要素に記事のURLとタイトルを設定
+                            link.href = item.link;
+                            link.textContent = item.title;
+                            link.target = '_blank'; // リンクを新しいタブで開く
+                            link.rel = 'noopener noreferrer';
+
+                            // li要素の中にa要素を追加
+                            listItem.appendChild(link);
+                            
+                            // ul要素（表示エリア）の中にli要素を追加
+                            feedContainer.appendChild(listItem);
+                        });
+                    } else {
+                         feedContainer.innerHTML = '<li>現在、表示できる記事がありません。</li>';
+                    }
+                })
+                .catch(error => {
+                    // エラーが発生した場合の処理
+                    console.error('ブログフィードの取得に失敗しました:', error);
+                    feedContainer.innerHTML = '<li>記事の読み込みに失敗しました。</li>';
+                });
+            // --- END: Hatena Blog Feed Script ---
         });
     </script>
 </body>
