@@ -150,7 +150,7 @@
             transform: rotate(180deg);
         }
 
-        /* 自己紹介セクション */
+        /* セクション見出し */
         .section-h2 {
             background: linear-gradient(to right, #FAEBD7, #FDFBF6);
             padding: 1.2rem 1.8rem;
@@ -162,6 +162,18 @@
             margin-top: 2.5rem;
             font-size: 2.25rem;
         }
+        
+        /* 強調されたセクション見出し */
+        .main-heading-highlight {
+            background: linear-gradient(135deg, #CD853F, #A0522D);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border: 3px solid #5A2D0E;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
         .profile-section-content { /* 自己紹介セクションの背景画像とテキストスタイル */
             background-color: #D2B48C; /* 薄い茶色 (BurlyWood) */
             background-size: cover;
@@ -255,7 +267,7 @@
                   1.5px -1.5px 0 #000,
                  -1.5px  1.5px 0 #000,
                   1.5px  1.5px 0 #000,
-                  0px     0px     8px rgba(0,0,0,0.9);
+                  0px     0px    8px rgba(0,0,0,0.9);
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
@@ -367,6 +379,7 @@
                  -1px  1px 0 white,
                   1px  1px 0 white;
             font-size: 2.5rem;
+            line-height: 1.5;
         }
         @media (max-width: 768px) {
             .main-project-banner-style .section-h2,
@@ -499,9 +512,21 @@
                  1px -1px 0 red,
                 -1px  1px 0 red,
                  1px  1px 0 red;
+            text-align: center;
+            border-left: none;
         }
         /* --- END: Hatena Blog Feed Styles --- */
 
+        .coming-soon-banner {
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            color: #888;
+            padding: 2rem;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
 
         /* レスポンシブ調整 */
         @media (min-width: 1024px) { /* PC版のレイアウト */
@@ -591,11 +616,18 @@
                 display: none;
             }
             #navbar ul {
-                gap: 0.3rem; /* ボタン間隔を狭める */
+                flex-wrap: wrap; /* 2段表示のために折り返しを許可 */
+                gap: 0.5rem 0; /* 上下のギャップを調整、左右は0に */
+                padding: 0.5rem 0; /* 上下に少しパディングを追加 */
+            }
+            #navbar li { /* li要素を追加して幅を制御 */
+                flex-basis: 33.33%; /* 3つのアイテムが1行に収まるように幅を設定 */
+                text-align: center; /* テキストを中央揃え */
             }
             .nav-link {
-                padding: 0.3rem 0.8rem;
-                font-size: 0.9rem;
+                padding: 0.5rem 0.2rem; /* パディングを調整 */
+                font-size: 0.8rem; /* フォントサイズを少し小さくして収まりを良くする */
+                display: inline-block; /* 中央揃えを有効にするため */
             }
             main {
                 padding: 0 1rem;
@@ -643,38 +675,121 @@
                 </div>
 
                 <!-- 『VIDEO edit office BOSS兄』の自慢エリア -->
-                  <section id="introduction-pr" class="main-project-banner-style scroll-mt-24">
-                    <h3 class="class="text-xl font-bold mb-2 text-white">『VIDEO edit office BOSS兄』<br>推しポイントは？</h3>
-                    <div class="space-y-6 mt-6">
-                        <div>
-                            <h2 class="text-xl font-bold mb-2 text-white">・学習・教育系の動画編集が得意です</h2>
-                            <p class="text-white leading-relaxed mb-4">
+                <section id="introduction-pr" class="scroll-mt-24">
+                    <h2 class="section-h2 main-heading-highlight">『VIDEO edit office BOSS兄』<br>推しポイント</h2>
+                    <div class="space-y-8">
+                        <!-- 学習・教育系の動画編集 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                             <h3 class="text-xl font-bold text-center text-stone-800">学習・教育系の動画編集が得意です</h3>
+                            <p class="text-stone-700 leading-relaxed">
                                 『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、視聴者が内容を深く理解できるような学習・教育系の動画編集を得意としています。<br>
-                                特に、エンドロールを活用したナレーションの文字起こしスキルは<br>
-                                学習効果を高めるための大きな武器です。
+                                特に、エンドロールを活用したナレーションの文字起こしスキルは学習効果を高めるための大きな武器です。
                             </p>
-                            <div class="portfolio-video-container">
-                                <iframe src="https://www.youtube.com/embed/GQrXptXUO7Y?si=ehteedGQCz8YrjOy" title="ウマキング切り抜き動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div class="collapsible-container">
+                                <div class="collapsible-header">
+                                    <span>代表作品 1</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/GQrXptXUO7Y?si=ehteedGQCz8YrjOy" title="ウマキング切り抜き動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapsible-container mt-4">
+                                <div class="collapsible-header">
+                                    <span>代表作品 2</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="coming-soon-banner">只今制作・準備中</div>
+                                </div>
+                            </div>
+                            <div class="collapsible-container mt-4">
+                                <div class="collapsible-header">
+                                    <span>代表作品 3</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                     <div class="coming-soon-banner">只今制作・準備中</div>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h2 class="text-xl font-bold mb-2 text-white">・静止版のサイトをビデオ化するスキルに優れています</h2>
-                            <p class="text-white leading-relaxed mb-4">
+
+                        <!-- 静止画サイトのビデオ化 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                            <h3 class="text-xl font-bold text-center text-stone-800">静止版のサイトをビデオ化するスキルに優れています</h3>
+                            <p class="text-stone-700 leading-relaxed">
                                 既存の静止画サイトや資料を、視聴者の興味を惹きつける動的なビデオコンテンツに変換するスキルがあります。情報をただ動画にするのではなく、視覚効果やアニメーションを駆使して、より分かりやすく、記憶に残りやすい形に再構成します。
                             </p>
-                            <div class="portfolio-video-container">
-                                <iframe src="https://www.youtube.com/embed/DlPGVt3TUJ8" title="静止画サイトのビデオ化" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div class="collapsible-container">
+                                <div class="collapsible-header">
+                                    <span>代表作品 1</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/DlPGVt3TUJ8" title="静止画サイトのビデオ化" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapsible-container mt-4">
+                                <div class="collapsible-header">
+                                    <span>代表作品 2</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                     <div class="coming-soon-banner">只今制作・準備中</div>
+                                </div>
+                            </div>
+                            <div class="collapsible-container mt-4">
+                                <div class="collapsible-header">
+                                    <span>代表作品 3</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                     <div class="coming-soon-banner">只今制作・準備中</div>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-bold mb-2 text-white text-center">・心に残るビデオレター制作も得意です</h2>
-                            <p class="text-white leading-relaxed mb-4">
+                        
+                        <!-- ビデオレター制作 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                            <h3 class="text-xl font-bold text-center text-stone-800">心に残るビデオレター制作</h3>
+                             <p class="text-stone-700 leading-relaxed">
                                 大切な人へのメッセージや、特別な記念日を彩るビデオレターの制作もお任せください。また、単調なスライド資料を動きのあるプレゼン動画に仕上げることで、視聴者の興味を引きつけ、メッセージをより強く印象づけるお手伝いをします。
                             </p>
-                            <div class="portfolio-video-container">
-                                <iframe src="https://www.youtube.com/embed/TKUuvimwCB4?si=6Ci9PDQwpJwegu7O" title="心に残るビデオレター" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div class="collapsible-container">
+                                <div class="collapsible-header">
+                                    <span>代表作品 1</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/TKUuvimwCB4?si=6Ci9PDQwpJwegu7O" title="心に残るビデオレター" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="collapsible-container mt-4">
+                                <div class="collapsible-header">
+                                    <span>代表作品 2</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                     <div class="coming-soon-banner">只今制作・準備中</div>
+                                </div>
+                            </div>
+                             <div class="collapsible-container mt-4">
+                                <div class="collapsible-header">
+                                    <span>代表作品 3</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="collapsible-content">
+                                     <div class="coming-soon-banner">只今制作・準備中</div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -819,7 +934,7 @@
                                                     <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
                                                 </div>
                                             </div>
-                        
+                                
                                             <!-- "楽しませる" スキル -->
                                             <div class="space-y-4">
                                                 <div class="skill-card">
@@ -1002,7 +1117,7 @@
                 </section>
                 
                 <section id="blog-posts" class="scroll-mt-24">
-                    <h2 class="section-h2 text-center blog-title-custom">「伝わる」にはワケがある。<br>BOSS兄の編集術</h2>
+                    <h2 class="section-h2 blog-title-custom">「伝わる」にはワケがある！<br>BOSS兄の編集術</h2>
                     <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                         <p class="text-center text-stone-700 mb-6">なぜ、あの動画は心に残るのか？ 編集の力で「記録」を「記憶」に変えるノウハウを、惜しみなくお伝えします。</p>
                         <ul id="hatena-blog-feed">
@@ -1277,44 +1392,38 @@
             });
 
             // --- START: Hatena Blog Feed Script ---
-            // 1. あなたのはてなブログのRSSフィードURL
             const hatenaRssUrl = 'https://bosskatu.hateblo.jp/rss';
-
-            // 2. RSSをJSONに変換するAPIのURL
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(hatenaRssUrl)}`;
-
-            // 3. 記事リストを表示するHTML要素を取得
             const feedContainer = document.getElementById('hatena-blog-feed');
 
-            // 4. APIから記事データを取得して表示する
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
                     if (data.items && data.items.length > 0) {
-                        // 取得した記事データ（data.items）をループ処理
-                        data.items.forEach(item => {
-                            // li要素とa要素を新しく作成
-                            const listItem = document.createElement('li');
-                            const link = document.createElement('a');
-                            
-                            // a要素に記事のURLとタイトルを設定
-                            link.href = item.link;
-                            link.textContent = item.title;
-                            link.target = '_blank'; // リンクを新しいタブで開く
-                            link.rel = 'noopener noreferrer';
+                        // タイトルの先頭に「＊」または「*」がついている記事のみをフィルタリング
+                        const filteredItems = data.items.filter(item => item.title.startsWith('＊') || item.title.startsWith('*'));
 
-                            // li要素の中にa要素を追加
-                            listItem.appendChild(link);
-                            
-                            // ul要素（表示エリア）の中にli要素を追加
-                            feedContainer.appendChild(listItem);
-                        });
+                        if (filteredItems.length > 0) {
+                            filteredItems.forEach(item => {
+                                const listItem = document.createElement('li');
+                                const link = document.createElement('a');
+                                
+                                link.href = item.link;
+                                link.textContent = item.title;
+                                link.target = '_blank';
+                                link.rel = 'noopener noreferrer';
+
+                                listItem.appendChild(link);
+                                feedContainer.appendChild(listItem);
+                            });
+                        } else {
+                            feedContainer.innerHTML = '<li>現在、表示できる記事がありません。</li>';
+                        }
                     } else {
-                         feedContainer.innerHTML = '<li>現在、表示できる記事がありません。</li>';
+                        feedContainer.innerHTML = '<li>現在、表示できる記事がありません。</li>';
                     }
                 })
                 .catch(error => {
-                    // エラーが発生した場合の処理
                     console.error('ブログフィードの取得に失敗しました:', error);
                     feedContainer.innerHTML = '<li>記事の読み込みに失敗しました。</li>';
                 });
@@ -1323,4 +1432,3 @@
     </script>
 </body>
 </html>
-
