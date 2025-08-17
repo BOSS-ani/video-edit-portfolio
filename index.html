@@ -244,10 +244,10 @@
 
         /* 自己紹介テキストのスタイル */
         .profile-text-wrapper {
-            border: 4px solid #000000;
+            border: 3px solid #FFD700; /* Gold Border */
             border-radius: 12px;
-            padding: 1rem 1.5rem;
-            background-color: rgba(0, 0, 0, 0.15);
+            padding: 1.5rem 2rem;
+            background-color: rgba(90, 45, 14, 0.7); /* Darker, semi-transparent brown */
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
             max-width: 95%;
@@ -260,14 +260,9 @@
             margin-bottom: 0;
         }
         .profile-main-text { /* 自己紹介のメインテキスト用クラス */
-            color: #FFF !important; /* 自己紹介内のすべてのテキストを白に強制 */
-            font-size: 1.3rem; /* フォントサイズを調整 */
-            text-shadow: 
-                 -1.5px -1.5px 0 #000,  
-                  1.5px -1.5px 0 #000,
-                 -1.5px  1.5px 0 #000,
-                  1.5px  1.5px 0 #000,
-                  0px     0px    8px rgba(0,0,0,0.9);
+            color: #FDFBF6 !important; /* Light cream/beige text color */
+            font-size: 1.2rem; /* フォントサイズを調整 */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Softer shadow for readability */
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
@@ -275,8 +270,8 @@
         .profile-section-content ul, 
         .profile-section-content li,
         .profile-section-content a {
-            color: #FFF !important;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            color: #FDFBF6 !important; /* Light cream/beige text color */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
         .profile-section-content strong {
             color: #FFD700 !important;
@@ -288,6 +283,15 @@
             color: #ccc !important;
             text-shadow: none;
             font-weight: normal;
+        }
+        #about .collapsible-container {
+            width: 100%;
+            max-width: 95%;
+        }
+        #about .collapsible-content li {
+            color: #5A2D0E !important; /* Dark brown for readability on light background */
+            font-size: 1rem; /* Larger font size */
+            text-shadow: none !important; /* Remove text shadow */
         }
 
         /* ポートフォリオカードのグリッドレイアウト */
@@ -713,7 +717,7 @@
                             </h3>
                             <p class="text-stone-700 leading-relaxed">
                                 <span class="hidden sm:inline">『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、視聴者が内容を深く理解できるような学習・教育系の動画編集を得意としています。<br>特に、エンドロールを活用したナレーションの文字起こしスキルは学習効果を高めるための大きな武器です。</span>
-                                <span class="inline sm:hidden">『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、<br>視聴者が内容を深く理解できるような<br>学習・教育系の動画編集を得意としています。<br>特に、エンドロールを活用したナレーションの文字起こしスキルは<br>学習効果を高めるための大きな武器です。</span>
+                                <span class="inline sm:hidden">『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、<br>視聴者が内容を深く理解できるような<br>学習・教育系の動画編集を得意としています。<br>特に、エンドロールを活用したナレーションの文字起こしスキルは<br>学習効果を高めるための<br>大きな武器です。</span>
                             </p>
                             <h4 class="text-lg font-semibold text-stone-800 mt-6 mb-2 text-center">代表作品 1</h4>
                             <div class="portfolio-video-container">
@@ -741,9 +745,9 @@
 
                         <!-- 静止画サイトのビデオ化 -->
                         <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                            <h3 class="text-xl font-bold text-center text-stone-800">静止版のサイトを<br>ビデオ化するスキルに優れています</h3>
+                            <h3 class="text-xl font-bold text-center text-stone-800">静止版のサイトを<br>ビデオ化するスキルに<br>優れています</h3>
                             <p class="text-stone-700 leading-relaxed">
-                                既存の静止画サイトや資料を、視聴者の興味を惹きつける動的なビデオコンテンツに変換するスキルがあります。情報をただ動画にするのではなく、視覚効果やアニメーションを駆使して、より分かりやすく、記憶に残りやすい形に再構成します。
+                                既存の静止画サイトや資料を、視聴者の興味を惹きつける動的なビデオコンテンツに変換するスキルがあります。情報をただ動画にするのではなく、視覚効果や<br>アニメーションを駆使して、より分かり易く、記憶に残り易い形に再構成します。
                             </p>
                             <h4 class="text-lg font-semibold text-stone-800 mt-6 mb-2 text-center">代表作品 1</h4>
                             <div class="portfolio-video-container">
@@ -773,7 +777,7 @@
                         <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                             <h3 class="text-xl font-bold text-center text-stone-800">心に残る<br>ビデオレター制作</h3>
                              <p class="text-stone-700 leading-relaxed">
-                                大切な人へのメッセージや、特別な記念日を彩るビデオレターの制作もお任せください。また、単調なスライド資料を動きのあるプレゼン動画に仕上げることで、視聴者の興味を引きつけ、メッセージをより強く印象づけるお手伝いをします。
+                                大切な人へのメッセージや記念日を彩るビデオレターの制作もお任せください。<br>また、単調なスライド資料を動きのあるプレゼン動画に仕上げることで<br>視聴者の興味を引きつけ、メッセージをより強く印象づけるお手伝いをします。
                             </p>
                             <h4 class="text-lg font-semibold text-stone-800 mt-6 mb-2 text-center">代表作品 1</h4>
                             <div class="portfolio-video-container">
@@ -812,12 +816,12 @@
                             </h3>
                             <p class="text-white leading-relaxed text-center text-lg mb-4">
                                 『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』は、私の動画編集者としての情熱とスキルを注ぎ込んだメインプロジェクトです。
-                                競馬予想に特化した高速・高密度な動画編集の事例をご紹介します。スマホユーザーに最適化された見やすいテロップ、素早い展開、重要なポイントを逃さない構成が特徴です。
+                                競馬予想に特化した高速・高密度な動画編集の事例をご紹介します。スマホユーザーに最適化された見やすいテロップ<br>素早い展開、重要なポイントを逃さない構成が特徴です。
                             </p>
                             <!-- チャンネル開設のきっかけ -->
                             <div class="collapsible-container">
                                 <div class="collapsible-header">
-                                    <span>チャンネル開設のきっかけ</span>
+                                    <span>channel開設<br>きっかけ</span>
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
@@ -836,7 +840,7 @@
 
                             <div class="collapsible-container mt-4">
                                 <div class="collapsible-header">
-                                    <span>私が実現するチャンネルの特徴</span>
+                                    <span>私が実現する<br>channelの特徴</span>
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
@@ -856,7 +860,7 @@
 
                             <div class="collapsible-container mt-4">
                                 <div class="collapsible-header">
-                                    <span>チャンネルの成長実績と私の貢献</span>
+                                <span>成長実績と私の貢献</span>
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
@@ -876,7 +880,7 @@
 
                             <div class="collapsible-container mt-4">
                                 <div class="collapsible-header">
-                                    <span>主要な制作作品（再生リスト）</span>
+                                    <span>主要な制作作品<br>（再生リスト）</span>
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
@@ -912,7 +916,7 @@
                         <div class="portfolio-card md:col-span-full">
                             <div class="collapsible-container">
                                 <div class="collapsible-header">
-                                    <h3 class="text-lg font-semibold" style="color: #5A2D0E;">編集スキル：「記録」を「記憶」に変える技術<br><small style="color: #5A2D0E; font-weight: normal;">プロの編集スキルをインフォグラフィックで解説</small></h3>
+                                    <h3 class="text-lg font-semibold" style="color: #5A2D0E;">「記録」を「記憶」に変える編集スキル<br><small style="color: #5A2D0E; font-weight: normal;">プロの編集スキルをインフォグラフィックで解説</small></h3>
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
@@ -1034,13 +1038,13 @@
                         <div class="profile-text-wrapper">
                             <p class="profile-main-text">
                                 初めまして！<br>
-                                私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。
+                                私は10年以上前に動画制作に興味を持ち<br>Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。
                             </p>
                             <p class="profile-main-text">
-                                その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。
+                                その後、数本の動画を制作しましたが、日々の業務や<br>家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。
                             </p>
                             <p class="profile-main-text">
-                                私の作品は、「制作作品」セクションでご覧いただけます。
+                                作品は、「制作作品」セクションでご覧いただけます。
                             </p>
                         </div>
 
@@ -1443,16 +1447,4 @@
         });
     </script>
 </body>
-</ht" code between  and  in the most up-to-date Canvas "ポートフォリオサイトのHTMLコード（修正版）" document above and am asking a query about/based on this code below.
-Instructions to follow:
-  * Don't output/edit the document if the query is Direct/Simple. For example, if the query asks for a simple explanation, output a direct answer.
-  * Make sure to **edit** the document if the query shows the intent of editing the document, in which case output the entire edited document, **not just that section or the edits**.
-    * Don't output the same document/empty document and say that you have edited it.
-    * Don't change unrelated code in the document.
-  * Don't output  and  in your final response.
-  * Any references like "this" or "selected code" refers to the code between  and  tags.
-  * Just acknowledge my request in the introduction.
-  * Make sure to refer to the document as "Canvas" in your response.
-
-(actual user query begins now)
-合格！ありが
+</html>
