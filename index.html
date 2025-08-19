@@ -745,7 +745,9 @@
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
-                                    <div class="coming-soon-banner">只今制作・準備中</div>
+                                     <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/mRQQAiD5YU0" title="学習・教育系動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
                                 </div>
                             </div>
                             <div class="collapsible-container mt-4">
@@ -778,7 +780,9 @@
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
-                                     <div class="coming-soon-banner">只今制作・準備中</div>
+                                     <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/W5BWFgemIBM" title="静止画サイトのビデオ化2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
                                 </div>
                             </div>
                             <div class="collapsible-container mt-4">
@@ -812,7 +816,9 @@
                                     <span class="toggle-icon">▼</span>
                                 </div>
                                 <div class="collapsible-content">
-                                     <div class="coming-soon-banner">只今制作・準備中</div>
+                                    <div class="portfolio-video-container mt-4">
+                                        <iframe src="https://www.youtube.com/embed/cqN0IO5C86E" title="心に残るビデオレター2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
                                 </div>
                             </div>
                              <div class="collapsible-container mt-4">
@@ -1244,12 +1250,12 @@
                 
                 <section id="privacy" class="scroll-mt-24">
                     <div class="collapsible-container">
-                        <div class="collapsible-header">
+                        <div class="collapsible-header section-h2">
                             <span>プライバシーポリシー</span>
                             <span class="toggle-icon">▼</span>
                         </div>
                         <div class="collapsible-content">
-                            <div class="p-6">
+                            <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                                 <p class="text-stone-700 leading-relaxed">
                                     当サイトをご覧いただき、誠にありがとうございます。
                                 </p>
@@ -1516,7 +1522,7 @@
 
             // --- START: Hatena Blog Feed Script ---
             const hatenaRssUrl = 'https://bosskatu.hateblo.jp/rss';
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(hatenaRssUrl)}`;
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(hatenaRssUrl)}&_=${new Date().getTime()}`;
             const feedContainer = document.getElementById('hatena-blog-feed');
 
             fetch(apiUrl)
@@ -1527,6 +1533,7 @@
                         const filteredItems = data.items.filter(item => item.title.startsWith('＊') || item.title.startsWith('*'));
 
                         if (filteredItems.length > 0) {
+                            feedContainer.innerHTML = ''; // Clear existing content
                             filteredItems.forEach(item => {
                                 const listItem = document.createElement('li');
                                 const link = document.createElement('a');
