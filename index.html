@@ -503,48 +503,39 @@
         /* --- END: Skill Chart Styles --- */
 
         /* --- START: Hatena Blog Feed Styles --- */
-        #hatena-blog-feed {
+        .blog-feed-container {
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+        }
+        .blog-feed-title {
+            text-align: center;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #5A2D0E;
+            margin-bottom: 1rem;
+        }
+        .blog-feed-list {
             list-style: none;
             padding: 0;
-            margin-top: 1rem;
         }
-        #hatena-blog-feed li {
-            background-color: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            margin-bottom: 0.75rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: box-shadow 0.2s ease;
+        .blog-feed-list li {
+            border-bottom: 1px solid #f3f4f6;
         }
-        #hatena-blog-feed li:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .blog-feed-list li:last-child {
+            border-bottom: none;
         }
-        #hatena-blog-feed a {
+        .blog-feed-list a {
             display: block;
-            padding: 1rem 1.5rem;
-            color: #5A2D0E;
-            font-weight: 500;
+            padding: 0.75rem 0.5rem;
+            color: #A0522D;
             text-decoration: none;
             transition: background-color 0.2s ease;
+            border-radius: 4px;
+            font-size: 0.9rem;
         }
-        #hatena-blog-feed a:hover {
+        .blog-feed-list a:hover {
             background-color: #FAEBD7;
-            border-radius: 8px;
-        }
-        .blog-title-custom {
-            color: red;
-            font-weight: 900;
-            text-shadow: 
-                 -2px -2px 0 #000,  
-                  2px -2px 0 #000,
-                 -2px  2px 0 #000,
-                  2px  2px 0 #000,
-                 -1px -1px 0 red,
-                  1px -1px 0 red,
-                 -1px  1px 0 red,
-                  1px  1px 0 red;
-            text-align: center;
-            border-left: none;
         }
         /* --- END: Hatena Blog Feed Styles --- */
 
@@ -737,7 +728,6 @@
                     <li><a href="#portfolio" class="nav-link">制作作品</a></li>
                     <li><a href="#about" class="nav-link">自己紹介</a></li>
                     <li><a href="#price-guide" class="nav-link">料金案内</a></li>
-                    <li><a href="#blog-posts" class="nav-link">ブログ</a></li>
                     <li><a href="#privacy" class="nav-link">プライバシーポリシー</a></li>
                 </ul>
             </div>
@@ -794,6 +784,12 @@
                                         </div>
                                     </a>
                                 </div>
+                                <div class="blog-feed-container">
+                                    <h4 class="blog-feed-title">ブログ：生涯現役シニアライフを育む！競馬と美食の全国巡り</h4>
+                                    <ul class="blog-feed-list" id="hatena-feed-keiba">
+                                        <li>記事を読み込んでいます...</li>
+                                    </ul>
+                                </div>
                             </div>
 
                         <!-- 静止画サイトのビデオ化 -->
@@ -828,6 +824,12 @@
                                         </div>
                                     </div>
                                 </a>
+                            </div>
+                             <div class="blog-feed-container">
+                                <h4 class="blog-feed-title">ブログ：未来の政治図鑑・・・闇を照らす光</h4>
+                                <ul class="blog-feed-list" id="hatena-feed-seiji">
+                                    <li>記事を読み込んでいます...</li>
+                                </ul>
                             </div>
                         </div>
                         
@@ -864,6 +866,12 @@
                                         </div>
                                     </div>
                                 </a>
+                            </div>
+                            <div class="blog-feed-container">
+                                <h4 class="blog-feed-title">ブログ：実践的アンチエイジング（エビデンス無き養生）</h4>
+                                <ul class="blog-feed-list" id="hatena-feed-antiaging">
+                                    <li>記事を読み込んでいます...</li>
+                                </ul>
                             </div>
                         </div>
 
@@ -1036,7 +1044,7 @@
                         </div>
 
                         <!-- ▼▼▼ ここを修正します ▼▼▼ -->
-                        <div class="portfolio-grid" style="max-width: 400px; margin: 1rem auto;">
+                        <div class="portfolio-grid">
                             <a href="portfolio-09.html" class="portfolio-card">
                                <div class="portfolio-thumbnail-container">
                                    <img src="https://img.youtube.com/vi/C1XXEY3p78g/mqdefault.jpg" alt="初めて制作した動画">
@@ -1205,16 +1213,6 @@
                                 <!-- ▲▲▲ 打ち合わせ予約ボタン追加 ▲▲▲ -->
                             </div>
                         </div>
-                    </div>
-                </section>
-                
-                <section id="blog-posts" class="scroll-mt-24">
-                    <h2 class="section-h2 blog-title-custom">「伝わる」にはワケがある！<br>BOSS兄編集術</h2>
-                    <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                        <p class="text-center text-stone-700 mb-6">なぜ、あの動画は心に残るのか？ 編集の力で「記録」を「記憶」に変えるノハウを、惜しみなくお伝えします。</p>
-                        <ul id="hatena-blog-feed">
-                            <!-- ブログ記事がここに挿入されます -->
-                        </ul>
                     </div>
                 </section>
                 
@@ -1491,42 +1489,53 @@
             });
 
             // --- START: Hatena Blog Feed Script ---
-            const hatenaRssUrl = 'https://bosskatu.hateblo.jp/rss';
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(hatenaRssUrl)}&_=${new Date().getTime()}`;
-            const feedContainer = document.getElementById('hatena-blog-feed');
+            const fetchAndDisplayFeed = (rssUrl, containerId) => {
+                const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+                const feedContainer = document.getElementById(containerId);
 
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.items && data.items.length > 0) {
-                        // タイトルの先頭に「＊」または「*」がついている記事のみをフィルタリング
-                        const filteredItems = data.items.filter(item => item.title.startsWith('＊') || item.title.startsWith('*'));
+                if (!feedContainer) {
+                    console.error(`Feed container with id '${containerId}' not found.`);
+                    return;
+                }
 
-                        if (filteredItems.length > 0) {
-                            feedContainer.innerHTML = ''; // Clear existing content
-                            filteredItems.forEach(item => {
-                                const listItem = document.createElement('li');
-                                const link = document.createElement('a');
-                                
-                                link.href = item.link;
-                                link.textContent = item.title;
-                                link.target = '_blank';
-                                link.rel = 'noopener noreferrer';
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.items && data.items.length > 0) {
+                            
+                            const filteredItems = data.items.filter(item => {
+                                return item.title.startsWith('＊') || item.title.startsWith('*');
+                            }).slice(0, 5);
 
-                                listItem.appendChild(link);
-                                feedContainer.appendChild(listItem);
-                            });
+                            if (filteredItems.length > 0) {
+                                let html = '';
+                                filteredItems.forEach(item => {
+                                    html += `
+                                        <li>
+                                            <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                                                ${item.title}
+                                            </a>
+                                        </li>`;
+                                });
+                                feedContainer.innerHTML = html;
+                            } else {
+                                feedContainer.innerHTML = '<li>現在、表示できる記事がありません。</li>';
+                            }
                         } else {
                             feedContainer.innerHTML = '<li>現在、表示できる記事がありません。</li>';
                         }
-                    } else {
-                        feedContainer.innerHTML = '<li>現在、表示できる記事がありません。</li>';
-                    }
-                })
-                .catch(error => {
-                    console.error('ブログフィードの取得に失敗しました:', error);
-                    feedContainer.innerHTML = '<li>記事の読み込みに失敗しました。</li>';
-                });
+                    })
+                    .catch(error => {
+                        console.error(`ブログフィードの取得に失敗しました (${containerId}):`, error);
+                        feedContainer.innerHTML = '<li>記事の読み込みに失敗しました。</li>';
+                    });
+            };
+
+            // Load all feeds
+            fetchAndDisplayFeed('https://bosskatu.hateblo.jp/rss', 'hatena-feed-keiba');
+            fetchAndDisplayFeed('https://bosskatu.hatenablog.jp/rss', 'hatena-feed-seiji');
+            fetchAndDisplayFeed('https://bosskatu.hatenablog.com/rss', 'hatena-feed-antiaging');
+            
             // --- END: Hatena Blog Feed Script ---
         });
     </script>
