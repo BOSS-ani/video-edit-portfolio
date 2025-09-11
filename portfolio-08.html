@@ -35,11 +35,9 @@
         .portfolio-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .back-button { display: inline-block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; background-color: #CD853F; color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background-color 0.3s ease; }
         .back-button:hover { background-color: #A0522D; }
-        .skill-card { background-color: #FFF; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .skill-card h4 { color: #A0522D; font-weight: 700; margin-bottom: 0.5rem; }
-        .skill-card p { font-size: 0.9rem; color: #4A5568; }
-        .progress-bar-container { background-color: #E2E8F0; border-radius: 9999px; height: 10px; margin-top: 0.75rem; }
-        .progress-bar { background-color: #CD853F; height: 100%; border-radius: 9999px; }
+        .content-body h4 { font-size: 1.25rem; font-weight: bold; color: #5A2D0E; margin-top: 1.5rem; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #D2B48C;}
+        .content-body p { margin-bottom: 1rem; }
+        .content-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
         @media (max-width: 768px) { .main-title { font-size: 1.8rem; } .header-icon { width: 30px; height: 30px; } #navbar ul { flex-wrap: wrap; } .nav-link { font-size: 0.8rem; } .section-h2 { font-size: 1.8rem; } }
     </style>
 </head>
@@ -59,7 +57,6 @@
                     <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
                     <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
                     <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
-                    <li><a href="index.html#blog-posts" class="nav-link">ブログ</a></li>
                     <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
                 </ul>
             </div>
@@ -69,10 +66,12 @@
     <main>
         <div class="main-content-area" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
             <section>
-                <h2 class="section-h2">作品詳細：イベント映像を「番組」に</h2>
+                <h2 class="section-h2">作品解説：イベント映像を「番組」に</h2>
+                
                 <div class="portfolio-video-container">
                     <iframe src="https://www.youtube.com/embed/z1CZEdZl6VU?si=MTxDzQP0sK8BMBgf" title="クイズ大会" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+
                 <script type="application/ld+json">
                 {
                   "@context": "https://schema.org",
@@ -84,24 +83,27 @@
                   "embedUrl": "https://www.youtube.com/embed/z1CZEdZl6VU"
                 }
                 </script>
-                <div class="bg-white p-6 rounded-lg shadow-lg mt-8">
-                    <h3 class="text-xl font-bold text-stone-800 mb-4">この動画について</h3>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg mt-8 content-body">
+                    <h3 class="text-xl font-bold text-stone-800 mb-4">この動画の目的とコンセプト</h3>
                     <p class="text-stone-700 leading-relaxed">
-                        撮りっぱなしの記録映像を、誰もが夢中になるエンターテイメントへ。社内イベント、セミナー、地域の催し物…。その一瞬の熱量を、プロの編集技術で「番組」のように面白く仕上げます。この動画は、その「3つの魔法」（テロップ、音響効果、カット編集）を駆使した一例です。
+                        社内イベント、セミナー、地域の催し物…。その場にいた人だけが楽しむにはもったいない、素晴らしい瞬間がたくさんあるはずです。この動画は、撮りっぱなしになりがちなイベントの記録映像を、プロの編集技術で**誰もが夢中になるエンターテイメント性の高い「番組」**へと作り変えることができる、という実例です。単なる記録ではなく、イベントの熱量や楽しさを追体験できるコンテンツとして蘇らせます。
                     </p>
-                    <div class="mt-6">
-                        <h4 class="text-lg font-bold text-stone-800 mb-4">この動画で使われている主な編集スキル</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                             <div class="space-y-4">
-                                <div class="skill-card"><h4>✍️ テロップ演出</h4><p>的確なテロップは視聴者の理解度と満足度を劇的に向上させます。</p><div class="progress-bar-container"><div class="progress-bar" style="width: 98%;"></div></div></div>
-                                <div class="skill-card"><h4>🎵 効果音 & BGM</h4><p>音は映像に臨場感と緊張感を与え、視聴者をイベントの渦中へと引き込みます。</p><div class="progress-bar-container"><div class="progress-bar" style="width: 95%;"></div></div></div>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="skill-card"><h4>🎬 テンポの良いカット編集</h4><p>長時間の映像から「見せ場」だけを抜き出し、緩急のある「物語」として再構成する技術です。</p><div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="index.html#portfolio" class="back-button">作品一覧へ戻る</a>
+                    
+                    <h4>編集の「3つの魔法」で映像はここまで面白くなる</h4>
+                    <p>このクイズ大会の映像では、主に3つの「魔法」を駆使しています。</p>
+                    <ul>
+                        <li><strong>魔法1：テロップ演出:</strong> クイズの問題や補足情報はもちろん、回答者の面白いリアクションへの「ツッコミ」など、的確なテロップは視聴者の理解度と満足度を劇的に向上させます。まるでテレビ番組を見ているかのような感覚で、イベントに参加していない人でも楽しめます。</li>
+                        <li><strong>魔法2：効果音 & BGM:</strong> 正解音、不正解音、シンキングタイムのBGMは、場の空気感を創り出します。音の力は絶大で、映像に臨場感と緊張感を与え、視聴者をイベントの渦中へと引き込む重要な役割を果たします。</li>
+                        <li><strong>魔法3：テンポの良いカット編集:</strong> 長時間撮影された映像から「見せ場」だけを的確に抜き出します。出題者、回答者、そして周りの観客の反応を小気味良いテンポで繋ぎ合わせることで、視聴者の集中力は途切れません。これは、単調な記録を緩急のある「物語」として再構成する技術です。</li>
+                    </ul>
+
+                    <h4>ビジネスへの応用</h4>
+                    <p>
+                        この編集技術は、社内イベントのダイジェスト映像を制作して従業員のエンゲージメントを高めたり、セミナーの様子を魅力的に編集して次回の集客に繋げたりと、様々なビジネスシーンで活用できます。眠っている記録映像を、企業の資産として再活用しませんか？
+                    </p>
+
+                    <a href="index.html#portfolio" class="back-button">他の作品も見る</a>
                 </div>
             </section>
         </div>
@@ -123,3 +125,4 @@
     </script>
 </body>
 </html>
+
