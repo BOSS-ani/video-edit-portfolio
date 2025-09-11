@@ -35,11 +35,9 @@
         .portfolio-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .back-button { display: inline-block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; background-color: #CD853F; color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background-color 0.3s ease; }
         .back-button:hover { background-color: #A0522D; }
-        .skill-card { background-color: #FFF; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .skill-card h4 { color: #A0522D; font-weight: 700; margin-bottom: 0.5rem; }
-        .skill-card p { font-size: 0.9rem; color: #4A5568; }
-        .progress-bar-container { background-color: #E2E8F0; border-radius: 9999px; height: 10px; margin-top: 0.75rem; }
-        .progress-bar { background-color: #CD853F; height: 100%; border-radius: 9999px; }
+        .content-body h4 { font-size: 1.25rem; font-weight: bold; color: #5A2D0E; margin-top: 1.5rem; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #D2B48C;}
+        .content-body p { margin-bottom: 1rem; }
+        .content-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
         @media (max-width: 768px) { .main-title { font-size: 1.8rem; } .header-icon { width: 30px; height: 30px; } #navbar ul { flex-wrap: wrap; } .nav-link { font-size: 0.8rem; } .section-h2 { font-size: 1.8rem; } }
     </style>
 </head>
@@ -59,7 +57,6 @@
                     <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
                     <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
                     <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
-                    <li><a href="index.html#blog-posts" class="nav-link">ブログ</a></li>
                     <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
                 </ul>
             </div>
@@ -69,10 +66,12 @@
     <main>
         <div class="main-content-area" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
             <section>
-                <h2 class="section-h2">作品詳細：「記録」を「記憶」に変える編集スキル</h2>
+                <h2 class="section-h2">作品解説：「記録」を「記憶」に変える編集スキル</h2>
+                
                 <div class="portfolio-video-container">
                     <iframe src="https://www.youtube.com/embed/6PoVUnLztzA" title="【作業用】集中力が切れないBGM｜癒しの絶景と水の音" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+
                 <script type="application/ld+json">
                 {
                   "@context": "https://schema.org",
@@ -84,31 +83,36 @@
                   "embedUrl": "https://www.youtube.com/embed/6PoVUnLztzA"
                 }
                 </script>
-                <div class="bg-white p-6 rounded-lg shadow-lg mt-8">
-                    <h3 class="text-xl font-bold text-stone-800 mb-4">この動画について</h3>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg mt-8 content-body">
+                    <h3 class="text-xl font-bold text-stone-800 mb-4">この動画の目的とコンセプト</h3>
                     <p class="text-stone-700 leading-relaxed">
-                        「なんだか心惹かれる」「最後まで見てしまった」人の心を動かす映像には、理由があります。私たち「VIDEO edit office BOSS兄」は、プロの映像編集技術で、お客様の動画をワンランク上の作品へと昇華させます。この動画では、そのスキルの一部をインフォグラフィック形式で分かりやすく解説しています。
+                        「なんだか心惹かれる」「なぜか最後まで見てしまった」。人の心を動かす映像には、必ず理由があります。この動画は、単なる美しい風景動画ではありません。私が提供するプロの映像編集技術が、撮りっぱなしの「記録」を、視聴者の心に残る「記憶」へとどのように昇華させるのかを、視覚的にご理解いただくために制作したインフォグラフィック動画です。
                     </p>
-                    <div class="mt-6">
-                        <h4 class="text-lg font-bold text-stone-800 mb-4">この動画で使われている主な編集スキル</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="space-y-4">
-                                <div class="skill-card"><h4>🎨 色彩補正（カラーグレーディング）</h4><p>元の映像が持つ美しさを、さらに上のレベルへ引き上げます。</p><div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div></div>
-                                <div class="skill-card"><h4>🎵 BGMとの完璧な同期（音ハメ）</h4><p>映像と音楽が一体となったときの圧倒的な没入感を実現します。</p><div class="progress-bar-container"><div class="progress-bar" style="width: 95%;"></div></div></div>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="skill-card"><h4>📜 構成力（ストーリーテリング）</h4><p>様々な画角のショットを巧みに配置し、視聴者を最後まで惹きつけます。</p><div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="index.html#portfolio" class="back-button">作品一覧へ戻る</a>
+                    
+                    <h4>編集で特に注力した3つのポイント</h4>
+                    <p>この作品では、特に以下の3つの編集技術に重点を置いています。</p>
+                    <ul>
+                        <li><strong>色彩補正（カラーグレーディング）:</strong> 元の映像が持つ美しさを最大限に引き出し、映像全体のトーンを「癒し」というテーマに統一しました。空の青、木々の緑をより鮮やかに、しかし自然に調整することで、視聴者が映像の世界に没入できるような色彩を追求しています。</li>
+                        <li><strong>BGMとの完璧な同期（音ハメ）:</strong> 映像の切り替えポイントを、BGMのメロディやリズム、そして感情の盛り上がりに完璧にシンクロさせています。ドローンが上昇するタイミングで壮大なメロディが始まるなど、映像と音楽が一体となることで生まれる圧倒的な没入感と感動を意図的に演出しています。</li>
+                        <li><strong>構成力（ストーリーテリング）:</strong> 壮大なドローン映像、地上からの固定ショット、動きのある手持ち映像など、様々な画角のショットを戦略的に配置しました。これにより、単調になりがちな風景動画に緩急とストーリー性が生まれ、視聴者を最後まで惹きつける構成を実現しています。</li>
+                    </ul>
+
+                    <h4>ビジネスへの応用</h4>
+                    <p>
+                        ここで使用されている技術は、企業のプロモーションビデオ、製品紹介、イベントのアフタームービーなど、あらゆるビジネスシーンで応用可能です。お客様が撮影された素材の価値を最大限に高め、ターゲットの心に響く「伝わる動画」を制作します。ご自身のビジネスでこのような動画活用に興味がございましたら、ぜひお気軽にご相談ください。
+                    </p>
+
+                    <a href="index.html#portfolio" class="back-button">他の作品も見る</a>
                 </div>
             </section>
         </div>
     </main>
+
     <footer>
         <div class="container mx-auto px-4"><p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p></div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.getElementById('main-header');
@@ -121,3 +125,4 @@
     </script>
 </body>
 </html>
+
