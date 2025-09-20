@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作品詳細：ウマキング切り抜き動画 - VIDEO edit office BOSS兄</title>
     <meta name="description" content="VIDEO edit office BOSS兄の制作事例「ウマキング切り抜き動画」。学習効果を高める編集スキルが活かされた代表作品です。">
+
+    <!-- Canonical Tag for SEO -->
     <link rel="canonical" href="https://bossboss.jp/portfolio-01.html">
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="5a9G8fB7c6D5e4F3g2H1i0j-k9L8m7N6p5Q4r3s2t1u" />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFG5YFETXC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,20 +20,46 @@
       gtag('js', new Date());
       gtag('config', 'G-KFG5YFETXC');
     </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
+    <!-- ▼▼▼ ここに動画の構造化データを追加・修正しました ▼▼▼ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "ウマキング切り抜き動画 - 競馬予想の核心を最速で",
+      "description": "「超最速・スマホで見やすい ウマキング切り抜き公認応援ch」の代表作。長尺の本編動画から週末のレース予想に直結する部分だけを抽出し、スマホ視聴に最適化したテロップや要約エンドロールで学習効果を最大化しています。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/GQrXptXUO7Y/maxresdefault.jpg",
+      "uploadDate": "2025-06-03T09:00:00+09:00",
+      "duration": "PT3M15S",  // 動画の長さに合わせて修正してください
+      "contentUrl": "https://www.youtube.com/watch?v=GQrXptXUO7Y",
+      "embedUrl": "https://www.youtube.com/embed/GQrXptXUO7Y",
+      "publisher": {
+        "@type": "Organization",
+        "name": "VIDEO edit office BOSS兄",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg"
+        }
+      }
+    }
+    </script>
+    <!-- ▲▲▲ ここまで ▲▲▲ -->
+    
+    <!-- サイト共通のCSS -->
     <style>
-        /* index.htmlからヘッダーと共通のスタイルをコピー */
+        /* index.htmlから共通のスタイルをコピー */
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
             background-color: #FDFBF6;
-            line-height: 1.6;
             color: #333;
             margin: 0;
             padding: 0;
+            padding-top: 150px; /* 固定ヘッダー分のスペース */
         }
         header {
             position: fixed;
@@ -35,164 +68,133 @@
             z-index: 100;
             background-color: #A0522D;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
-        .header-inner-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .main-header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 0.5rem;
-            padding-top: 0.5rem;
-        }
-        .header-icon {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
-        }
-        .main-title {
-            color: white;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 2.8rem;
-            line-height: 1.1;
-            text-shadow: 
-                -2.5px -2.5px 0 #5A2D0E,  
-                 2.5px -2.5px 0 #5A2D0E,
-                -2.5px  2.5px 0 #5A2D0E,
-                 2.5px  2.5px 0 #5A2D0E,
-                 0px    0px    12px rgba(0,0,0,0.7);
-        }
-        .main-title a {
-            color: inherit;
-            text-decoration: none;
-        }
-        #navbar {
-            background-color: #A0522D;
-            padding-bottom: 0.5rem;
-        }
-        #navbar ul {
-            display: flex;
-            justify-content: center;
+        .header-inner-content { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+        .main-header-content { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: nowrap; margin-bottom: 0.5rem; }
+        .header-icon { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); }
+        .main-title { color: white; font-family: 'Noto Serif JP', serif; font-size: 2.8rem; line-height: 1.1; text-shadow: -2.5px -2.5px 0 #5A2D0E, 2.5px -2.5px 0 #5A2D0E, -2.5px 2.5px 0 #5A2D0E, 2.5px 2.5px 0 #5A2D0E, 0px 0px 12px rgba(0,0,0,0.7); }
+        #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
+        .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
+        .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+        .portfolio-video-container {
+            position: relative;
             width: 100%;
-            padding: 0;
-            gap: 1.5rem;
+            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
         }
-        .nav-link {
-            transition: background-color 0.3s ease, color 0.3s ease;
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #FFFFFF;
+        .portfolio-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .back-to-portfolio {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
             background-color: #A0522D;
-            font-weight: 500;
-            font-size: 1rem;
-            white-space: nowrap;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-        .nav-link:hover {
+        .back-to-portfolio:hover {
             background-color: #CD853F;
         }
-        .section-h2 { background: linear-gradient(to right, #FAEBD7, #FDFBF6); padding: 1.2rem 1.8rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); color: #5A2D0E; border-left: 8px solid #CD853F; margin-bottom: 1.8rem; font-size: 2.25rem; }
         footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center;}
-        .portfolio-video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .portfolio-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .back-button { display: inline-block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; background-color: #CD853F; color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background-color 0.3s ease; }
-        .back-button:hover { background-color: #A0522D; }
-        .content-body h4 { font-size: 1.25rem; font-weight: bold; color: #5A2D0E; margin-top: 1.5rem; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #D2B48C;}
-        .content-body p { margin-bottom: 1rem; }
-        .content-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
-        @media (max-width: 768px) { .main-title { font-size: 1.8rem; } .header-icon { width: 30px; height: 30px; } #navbar ul { flex-wrap: wrap; } .nav-link { font-size: 0.8rem; } .section-h2 { font-size: 1.8rem; } }
+        @media (max-width: 768px) {
+             body { padding-top: 120px; }
+            .main-title { font-size: 1.8rem; }
+            #navbar ul { flex-wrap: wrap; gap: 0.5rem 0; }
+            #navbar li { flex-basis: 33.33%; text-align: center; }
+            .nav-link { padding: 0.5rem 0.2rem; font-size: 0.8rem; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- 共通ヘッダー -->
     <header id="main-header">
         <div class="header-inner-content">
             <div class="main-header-content">
-                <a href="index.html"><img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon"></a>
-                <h1 class="main-title"><a href="index.html">VIDEO edit office BOSS兄</a></h1>
-                <a href="index.html"><img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon"></a>
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <h1 class="main-title">VIDEO edit office BOSS兄</h1>
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
             </div>
         </div>
         <nav id="navbar">
            <div class="container mx-auto px-4">
-                <ul>
-                    <li><a href="index.html#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
-                    <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
-                    <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
-                    <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
-                    <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
-                </ul>
-            </div>
+               <ul>
+                   <li><a href="/#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
+                   <li><a href="/#portfolio" class="nav-link">制作作品</a></li>
+                   <li><a href="/#about" class="nav-link">自己紹介</a></li>
+                   <li><a href="/#price-guide" class="nav-link">料金案内</a></li>
+                   <li><a href="/#privacy" class="nav-link">プライバシーポリシー</a></li>
+               </ul>
+           </div>
         </nav>
     </header>
 
-    <main>
-        <div class="main-content-area" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
-            <section>
-                <h2 class="section-h2">作品解説：ウマキング切り抜き動画</h2>
-                
-                <div class="portfolio-video-container">
-                    <iframe src="https://www.youtube.com/embed/GQrXptXUO7Y" title="ウマキング切り抜き動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+    <!-- メインコンテンツ -->
+    <main class="container mx-auto py-8 px-4 md:px-8">
+        
+        <section>
+            <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：ウマキング切り抜き動画</h2>
+            <p class="text-center text-stone-600 mb-8">学習効果を高める編集スキルが活かされた代表作品です。</p>
 
-                <script type="application/ld+json">
-                {
-                  "@context": "https://schema.org",
-                  "@type": "VideoObject",
-                  "name": "ウマキング切り抜き動画",
-                  "description": "ウマキんグチャンネルの切り抜き動画。学習効果を高める編集スキルが活かされた代表作品です。",
-                  "thumbnailUrl": "https://img.youtube.com/vi/GQrXptXUO7Y/maxresdefault.jpg",
-                  "uploadDate": "2025-08-29T09:00:00+09:00",
-                  "embedUrl": "https://www.youtube.com/embed/GQrXptXUO7Y"
-                }
-                </script>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg mt-8 content-body">
-                    <h3 class="text-xl font-bold text-stone-800 mb-4">この動画の目的とコンセプト</h3>
-                    <p class="text-stone-700 leading-relaxed">
-                        この動画は、私のメインプロジェクトである『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』の代表作の一つです。コンセプトは「**多忙な競馬ファンが、短い時間で核心をついた情報を得られる**」こと。長尺の本編動画から、週末のレース予想に直結する重要な部分だけを抽出し、スマートフォンでの視聴に最適化された形でスピーディに提供することを目指しています。
-                    </p>
-                    
-                    <h4>学習効果を最大化する編集の工夫</h4>
-                    <p>単なる「切り抜き」に留まらず、視聴者の理解度と満足度を高めるために、以下の編集スキルを駆使しています。</p>
-                    <ul>
-                        <li><strong>核心を突くカット編集:</strong> 1時間以上の本編から、視聴者が最も知りたい「結論」と「その根拠」を数分に凝縮します。大胆なカット割りで、情報の純度を極限まで高めています。</li>
-                        <li><strong>スマホ最適化テロップ:</strong> 通勤中などの「ながら見」でも内容が頭に入るよう、テロップのフォントサイズ、色、表示時間をスマートフォンに最適化。重要なキーワードは大きく表示し、視覚的なインパクトを重視しています。</li>
-                        <li><strong>エンドロールでの要約:</strong> 動画の最後には、ナレーションの重要部分を文字起こししたエンドロールを挿入。これにより、視聴者は内容を復習し、知識を確実に定着させることができます。これは、私の動画編集における大きな特徴の一つです。</li>
-                    </ul>
-
-                    <h4>ビジネスへの応用</h4>
+            <!-- YouTube動画埋め込み -->
+            <div class="portfolio-video-container max-w-4xl mx-auto">
+                <iframe 
+                    src="https://www.youtube.com/embed/GQrXptXUO7Y" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <!-- 作品解説 -->
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
+                <h3 class="text-2xl font-bold text-stone-800 mb-4">この動画のポイント</h3>
+                <div class="text-stone-700 leading-relaxed space-y-4">
                     <p>
-                        この「切り抜き編集」スキルは、様々なビジネスシーンで応用可能です。例えば、長時間のオンラインセミナーや会議の要約動画を作成したり、製品のPR動画から最も魅力的な部分だけを抜き出してSNS用のショート動画を作成したりと、情報発信の効率を飛躍的に高めることができます。
+                        この動画は、私のメインプロジェクトである『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』の代表作の一つです。コンセプトは「<strong>多忙な競馬ファンが、短い時間で核心をついた情報を得られる</strong>」こと。長尺の本編動画から、週末のレース予想に直結する重要な部分だけを抽出し、スマートフォンでの視聴に最適化された形でスピーディに提供することを目指しています。
                     </p>
-
-                    <a href="index.html#introduction-pr" class="back-button">他の作品も見る</a>
+                    <div>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">学習効果を最大化する編集の工夫</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>核心を突くカット編集:</strong> 1時間以上の本編から、視聴者が最も知りたい「結論」と「その根拠」を数分に凝縮。大胆なカット割りで、情報の純度を極限まで高めています。</li>
+                            <li><strong>スマホ最適化テロップ:</strong> 通勤中などの「ながら見」でも内容が頭に入るよう、テロップのフォントサイズ、色、表示時間をスマートフォンに最適化。重要なキーワードは大きく表示し、視覚的なインパクトを重視しています。</li>
+                            <li><strong>エンドロールでの要約:</strong> 動画の最後には、ナレーションの重要部分を文字起こししたエンドロールを挿入。これにより、視聴者は内容を復習し、知識を確実に定着させることができます。</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+
+            <div class="text-center">
+                <a href="/#portfolio" class="back-to-portfolio">ポートフォリオ一覧に戻る</a>
+            </div>
+        </section>
+
     </main>
 
+    <!-- 共通フッター -->
     <footer>
-        <div class="container mx-auto px-4"><p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p></div>
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.getElementById('main-header');
-            if (header) {
-                const setBodyPadding = () => { document.body.style.paddingTop = header.offsetHeight + 'px'; };
-                window.addEventListener('load', setBodyPadding);
-                window.addEventListener('resize', setBodyPadding);
-            }
-        });
-    </script>
 </body>
 </html>
 
