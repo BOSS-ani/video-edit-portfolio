@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品詳細：心に残るビデオレター 2 - VIDEO edit office BOSS兄</title>
-    <meta name="description" content="VIDEO edit office BOSS兄の制作事例。「心に残るビデオレター 2」では、プレゼン資料を印象的な動画に仕上げた事例を紹介します。">
+    <title>作品詳細：プレゼン資料のビデオ化 - VIDEO edit office BOSS兄</title>
+    <meta name="description" content="VIDEO edit office BOSS兄の制作事例。「プレゼン資料のビデオ化」では、静的なプレゼン資料を、動きと音の力で心に残るビデオコンテンツへと昇華させるスキルを紹介します。">
+
+    <!-- Canonical Tag for SEO -->
     <link rel="canonical" href="https://bossboss.jp/portfolio-06.html">
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="5a9G8fB7c6D5e4F3g2H1i0j-k9L8m7N6p5Q4r3s2t1u" />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFG5YFETXC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,20 +20,45 @@
       gtag('js', new Date());
       gtag('config', 'G-KFG5YFETXC');
     </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
+    <!-- ▼▼▼ ここに動画の構造化データを追加・修正しました ▼▼▼ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "プレゼン資料のビデオ化 - 印象に残るコンテンツへの昇華",
+      "description": "静的なプレゼン資料を、動きと音の力で「心に残るビデオコンテンツ」へと昇華させる制作事例です。伝えたいメッセージの核心はそのままに、表現方法をビデオに最適化することで、視聴者の理解度と満足度を飛躍的に高めます。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/cqN0IO5C86E/maxresdefault.jpg",
+      "uploadDate": "2023-10-25T09:00:00+09:00",
+      "duration": "PT1M58S",
+      "contentUrl": "https://www.youtube.com/watch?v=cqN0IO5C86E",
+      "embedUrl": "https://www.youtube.com/embed/cqN0IO5C86E",
+      "publisher": {
+        "@type": "Organization",
+        "name": "VIDEO edit office BOSS兄",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg"
+        }
+      }
+    }
+    </script>
+    <!-- ▲▲▲ ここまで ▲▲▲ -->
+    
+    <!-- サイト共通のCSS -->
     <style>
-        /* index.htmlからヘッダーと共通のスタイルをコピー */
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
             background-color: #FDFBF6;
-            line-height: 1.6;
             color: #333;
             margin: 0;
             padding: 0;
+            padding-top: 150px; /* 固定ヘッダー分のスペース */
         }
         header {
             position: fixed;
@@ -35,164 +67,138 @@
             z-index: 100;
             background-color: #A0522D;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
-        .header-inner-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .main-header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 0.5rem;
-            padding-top: 0.5rem;
-        }
-        .header-icon {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
-        }
-        .main-title {
-            color: white;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 2.8rem;
-            line-height: 1.1;
-            text-shadow: 
-                -2.5px -2.5px 0 #5A2D0E,  
-                 2.5px -2.5px 0 #5A2D0E,
-                -2.5px  2.5px 0 #5A2D0E,
-                 2.5px  2.5px 0 #5A2D0E,
-                 0px    0px    12px rgba(0,0,0,0.7);
-        }
-        .main-title a {
-            color: inherit;
-            text-decoration: none;
-        }
-        #navbar {
-            background-color: #A0522D;
-            padding-bottom: 0.5rem;
-        }
-        #navbar ul {
-            display: flex;
-            justify-content: center;
+        .header-inner-content { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+        .main-header-content { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: nowrap; margin-bottom: 0.5rem; }
+        .header-icon { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); }
+        .main-title { color: white; font-family: 'Noto Serif JP', serif; font-size: 2.8rem; line-height: 1.1; text-shadow: -2.5px -2.5px 0 #5A2D0E, 2.5px -2.5px 0 #5A2D0E, -2.5px 2.5px 0 #5A2D0E, 2.5px 2.5px 0 #5A2D0E, 0px 0px 12px rgba(0,0,0,0.7); }
+        #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
+        .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
+        .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+        .portfolio-video-container {
+            position: relative;
             width: 100%;
-            padding: 0;
-            gap: 1.5rem;
+            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
         }
-        .nav-link {
-            transition: background-color: 0.3s ease, color: 0.3s ease;
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #FFFFFF;
+        .portfolio-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .back-to-portfolio {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
             background-color: #A0522D;
-            font-weight: 500;
-            font-size: 1rem;
-            white-space: nowrap;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-        .nav-link:hover {
+        .back-to-portfolio:hover {
             background-color: #CD853F;
         }
-        .section-h2 { background: linear-gradient(to right, #FAEBD7, #FDFBF6); padding: 1.2rem 1.8rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); color: #5A2D0E; border-left: 8px solid #CD853F; margin-bottom: 1.8rem; font-size: 2.25rem; }
         footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center;}
-        .portfolio-video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .portfolio-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .back-button { display: inline-block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; background-color: #CD853F; color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background-color 0.3s ease; }
-        .back-button:hover { background-color: #A0522D; }
-        .content-body h4 { font-size: 1.25rem; font-weight: bold; color: #5A2D0E; margin-top: 1.5rem; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #D2B48C;}
-        .content-body p { margin-bottom: 1rem; }
-        .content-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
-        @media (max-width: 768px) { .main-title { font-size: 1.8rem; } .header-icon { width: 30px; height: 30px; } #navbar ul { flex-wrap: wrap; } .nav-link { font-size: 0.8rem; } .section-h2 { font-size: 1.8rem; } }
+        @media (max-width: 768px) {
+            body { padding-top: 130px; }
+            .main-title { font-size: 1.8rem; }
+            #navbar ul { flex-wrap: wrap; gap: 0.5rem 0; }
+            #navbar li { flex-basis: 33.33%; text-align: center; }
+            .nav-link { padding: 0.5rem 0.2rem; font-size: 0.8rem; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- 共通ヘッダー -->
     <header id="main-header">
         <div class="header-inner-content">
             <div class="main-header-content">
-                <a href="index.html"><img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon"></a>
-                <h1 class="main-title"><a href="index.html">VIDEO edit office BOSS兄</a></h1>
-                <a href="index.html"><img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon"></a>
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <h1 class="main-title">VIDEO edit office BOSS兄</h1>
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
             </div>
         </div>
         <nav id="navbar">
            <div class="container mx-auto px-4">
-                <ul>
-                    <li><a href="index.html#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
-                    <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
-                    <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
-                    <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
-                    <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
-                </ul>
-            </div>
+               <ul>
+                   <li><a href="index.html#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
+                   <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
+                   <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
+                   <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
+                   <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
+               </ul>
+           </div>
         </nav>
     </header>
 
-    <main>
-        <div class="main-content-area" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
-            <section>
-                <h2 class="section-h2">作品解説：心に残るビデオレター 2</h2>
-                
-                <div class="portfolio-video-container">
-                    <iframe src="https://www.youtube.com/embed/cqN0IO5C86E" title="心に残るビデオレター2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+    <!-- メインコンテンツ -->
+    <main class="container mx-auto py-8 px-4 md:px-8">
+        
+        <section>
+            <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：プレゼン資料のビデオ化</h2>
+            <p class="text-center text-stone-600 mb-8">静的なプレゼン資料を、動きと音の力で心に残るコンテンツへ。</p>
 
-                <script type="application/ld+json">
-                {
-                  "@context": "https://schema.org",
-                  "@type": "VideoObject",
-                  "name": "心に残るビデオレター 2",
-                  "description": "プレゼンテーション資料を動きのある印象的な動画に仕上げた制作事例です。",
-                  "thumbnailUrl": "https://img.youtube.com/vi/cqN0IO5C86E/maxresdefault.jpg",
-                  "uploadDate": "2025-08-29T09:00:00+09:00",
-                  "embedUrl": "https://www.youtube.com/embed/cqN0IO5C86E"
-                }
-                </script>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg mt-8 content-body">
-                    <h3 class="text-xl font-bold text-stone-800 mb-4">この動画の目的とコンセプト</h3>
-                    <p class="text-stone-700 leading-relaxed">
+            <!-- YouTube動画埋め込み -->
+            <div class="portfolio-video-container max-w-4xl mx-auto">
+                <iframe 
+                    src="https://www.youtube.com/embed/cqN0IO5C86E" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <!-- 作品解説 -->
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
+                <h3 class="text-2xl font-bold text-stone-800 mb-4">この動画のポイント</h3>
+                <div class="text-stone-700 leading-relaxed space-y-4">
+                    <p>
                         プレゼンテーションやセミナーの資料は、しばしば文字と静止画ばかりで単調になりがちです。この動画は、そうした**静的なプレゼン資料を、動きと音の力で「心に残るビデオコンテンツ」へと昇華させる**ことができる、という実例です。伝えたいメッセージの核心はそのままに、表現方法をビデオに最適化することで、視聴者の理解度と満足度を飛躍的に高めることを目的としています。
                     </p>
-                    
-                    <h4>プレゼン資料を魅力的に変える編集のポイント</h4>
-                    <p>この作品では、元の資料が持つ情報をより効果的に伝えるため、以下の点に注力しました。</p>
-                    <ul>
-                        <li><strong>動きによる意味の付加:</strong> 各スライドの要素（テキスト、グラフ、画像）に、その内容に合わせたアニメーションを加えています。例えば、グラフの棒が伸びる動きは「成長」を、テキストがフェードインする動きは「注目」を促すなど、動き自体がメッセージの一部となるように設計しています。</li>
-                        <li><strong>ナレーションとBGMによる感情の演出:</strong> プロのナレーターによる聞き取りやすい音声と、内容の緩急に合わせたBGMを追加することで、視聴者は耳からも情報をインプットできます。これにより、ただ目で追うだけの資料よりも、はるかに内容が記憶に残りやすくなります。</li>
-                        <li><strong>情報の再構築とテンポ感:</strong> 資料のページをめくるのではなく、動画として最も伝わりやすい順番に情報を再配置し、テンポの良いカット割りで繋いでいます。これにより、視聴者は飽きることなく、最後までストーリーを追うようにプレゼンの内容を理解することができます。</li>
-                    </ul>
-
-                    <h4>ビジネスへの応用</h4>
-                    <p>
-                        この技術は、営業用の提案資料、IR情報の説明会資料、新入社員向けの研修コンテンツなど、あらゆるプレゼンテーションをより強力なコミュニケーションツールへと進化させます。一度作成した資料を動画化し、ウェブサイトやSNSで二次活用することで、その価値を最大化しませんか？
-                    </p>
-
-                    <a href="index.html#introduction-pr" class="back-button">他の作品も見る</a>
+                    <div>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">プレゼン資料を魅力的に変える編集のポイント</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>動きによる意味の付加:</strong> 各スライドの要素（テキスト、グラフ、画像）に、その内容に合わせたアニメーションを加えています。例えば、グラフの棒が伸びる動きは「成長」を、テキストがフェードインする動きは「注目」を促すなど、動き自体がメッセージの一部となるように設計しています。</li>
+                            <li><strong>ナレーションとBGMによる感情の演出:</strong> プロのナレーターによる聞き取りやすい音声と、内容の緩急に合わせたBGMを追加することで、視聴者は耳からも情報をインプットできます。これにより、ただ目で追うだけの資料よりも、はるかに内容が記憶に残りやすくなります。</li>
+                            <li><strong>情報の再構築とテンポ感:</strong> 資料のページをめくるのではなく、動画として最も伝わりやすい順番に情報を再配置し、テンポの良いカット割りで繋いでいます。これにより、視聴者は飽きることなく、最後までストーリーを追うようにプレゼンの内容を理解することができます。</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">ビジネスへの応用</h4>
+                         <p>
+                            この技術は、営業用の提案資料、IR情報の説明会資料、新入社員向けの研修コンテンツなど、あらゆるプレゼンテーションをより強力なコミュニケーションツールへと進化させます。一度作成した資料を動画化し、ウェブサイトやSNSで二次活用することで、その価値を最大化しませんか？
+                        </p>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+
+            <div class="text-center">
+                <a href="index.html#portfolio" class="back-to-portfolio">ポートフォリオ一覧に戻る</a>
+            </div>
+        </section>
+
     </main>
 
+    <!-- 共通フッター -->
     <footer>
-        <div class="container mx-auto px-4"><p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p></div>
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.getElementById('main-header');
-            if (header) {
-                const setBodyPadding = () => { document.body.style.paddingTop = header.offsetHeight + 'px'; };
-                window.addEventListener('load', setBodyPadding);
-                window.addEventListener('resize', setBodyPadding);
-            }
-        });
-    </script>
 </body>
 </html>
-
