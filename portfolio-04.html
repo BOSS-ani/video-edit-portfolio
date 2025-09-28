@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
-    <!-- ▼▼▼ ここに動画の構造化データを追加・修正しました ▼▼▼ -->
+    <!-- ▼▼▼ 動画の構造化データ ▼▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -35,7 +35,7 @@
       "description": "静的な情報に動きを加えるだけでなく、「どのように情報を再構成すれば、視聴者の記憶に残りやすくなるか」という点に主眼を置いた応用編の動画です。",
       "thumbnailUrl": "https://i.ytimg.com/vi/W5BWFgemIBM/maxresdefault.jpg",
       "uploadDate": "2023-10-15T09:00:00+09:00",
-      "duration": "PT2M10S",  // 動画の長さに合わせて修正してください
+      "duration": "PT2M10S",
       "contentUrl": "https://www.youtube.com/watch?v=W5BWFgemIBM",
       "embedUrl": "https://www.youtube.com/embed/W5BWFgemIBM",
       "publisher": {
@@ -52,7 +52,6 @@
     
     <!-- サイト共通のCSS -->
     <style>
-        /* index.htmlから共通のスタイルをコピー */
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
             background-color: #FDFBF6;
@@ -113,7 +112,7 @@
         }
         footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center;}
         @media (max-width: 768px) {
-             body { padding-top: 120px; }
+            body { padding-top: 130px; }
             .main-title { font-size: 1.8rem; }
             #navbar ul { flex-wrap: wrap; gap: 0.5rem 0; }
             #navbar li { flex-basis: 33.33%; text-align: center; }
@@ -135,11 +134,11 @@
         <nav id="navbar">
            <div class="container mx-auto px-4">
                <ul>
-                   <li><a href="/#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
-                   <li><a href="/#portfolio" class="nav-link">制作作品</a></li>
-                   <li><a href="/#about" class="nav-link">自己紹介</a></li>
-                   <li><a href="/#price-guide" class="nav-link">料金案内</a></li>
-                   <li><a href="/#privacy" class="nav-link">プライバシーポリシー</a></li>
+                   <li><a href="index.html#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
+                   <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
+                   <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
+                   <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
+                   <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
                </ul>
            </div>
         </nav>
@@ -182,7 +181,7 @@
             </div>
 
             <div class="text-center">
-                <a href="/#portfolio" class="back-to-portfolio">ポートフォリオ一覧に戻る</a>
+                <a href="index.html#portfolio" class="back-to-portfolio">ポートフォリオ一覧に戻る</a>
             </div>
         </section>
 
@@ -197,4 +196,3 @@
 
 </body>
 </html>
-
