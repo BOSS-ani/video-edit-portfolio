@@ -26,16 +26,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
-    <!-- ▼▼▼ 動画の構造化データ ▼▼▼ -->
+    <!-- ▼▼▼ 動画の構造化データ（URL修正） ▼▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "name": "心に残るビデオレター - 感動的な思い出を永遠に",
-      "description": "結婚式や記念日など、大切な日に向けて、お客様からお預かりした写真や動画素材を一つの感動的な物語として紡ぎ直した制作事例です。",
+      "name": "心に残るビデオレター - 感動を形に",
+      "description": "結婚式や記念日など、大切な人への想いを伝えるビデオレターの制作事例です。写真や動画を一本の感動的な物語に編集します。",
       "thumbnailUrl": "https://i.ytimg.com/vi/TKUuvimwCB4/maxresdefault.jpg",
       "uploadDate": "2023-10-20T09:00:00+09:00",
-      "duration": "PT2M5S",
+      "duration": "PT1M58S",
       "contentUrl": "https://www.youtube.com/watch?v=TKUuvimwCB4",
       "embedUrl": "https://www.youtube.com/embed/TKUuvimwCB4",
       "publisher": {
@@ -78,24 +78,23 @@
         #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
         .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
         .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+
+        /* ▼▼▼ ここのCSSを修正しました ▼▼▼ */
         .portfolio-video-container {
-            position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
-            height: 0;
+            aspect-ratio: 16 / 9; /* 縦横比を16:9に固定 */
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             margin-bottom: 2rem;
         }
         .portfolio-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: 0;
         }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         .back-to-portfolio {
             display: inline-block;
             margin-top: 2rem;
@@ -149,7 +148,7 @@
         
         <section>
             <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：心に残るビデオレター</h2>
-            <p class="text-center text-stone-600 mb-8">言葉だけでは伝えきれない「ありがとう」を、映像の力で永遠の思い出に。</p>
+            <p class="text-center text-stone-600 mb-8">大切な記念日を彩る感動的な動画制作の事例です。</p>
 
             <!-- YouTube動画埋め込み -->
             <div class="portfolio-video-container max-w-4xl mx-auto">
@@ -176,6 +175,12 @@
                             <li><strong>BGMとの調和:</strong> 選曲はビデオレターの魂です。お客様の思い出の曲や、動画の雰囲気に合わせた感動的な音楽を選び、その歌詞やメロディの盛り上がりに合わせて映像が展開するように編集します。</li>
                             <li><strong>心に響くテロップ:</strong> 写真だけでは伝わらない当時の気持ちや、伝えたいメッセージを、効果的なテロップで挿入します。フォントの選び方や表示するタイミング一つで、言葉の重みは大きく変わります。</li>
                         </ul>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">様々なシーンでのご活用</h4>
+                        <p>
+                            結婚式や誕生日、還暦祝いといった個人的なお祝い事はもちろん、退職される方への感謝のメッセージ、会社の創立記念ムービーなど、ビジネスシーンでもご活用いただけます。あなたの伝えたい想いを、最高の形で映像にしてみませんか？
+                        </p>
                     </div>
                 </div>
             </div>
