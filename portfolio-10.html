@@ -26,16 +26,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
-    <!-- ▼▼▼ ここに動画の構造化データを追加・修正しました ▼▼▼ -->
+    <!-- ▼▼▼ 動画の構造化データ（URL修正） ▼▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "name": "Appleに通って制作した動画 - iMovie基礎編",
-      "description": "Appleの講座でiMovieの基礎を学び、動画制作の楽しさを再認識するきっかけとなった作品です。Ken Burnsエフェクトやトランジションなど基本的な技術を試しています。",
+      "name": "Appleに通って制作した動画 - iMovie基礎",
+      "description": "Appleの講座でiMovieの基礎を学び、動画制作の楽しさを再認識するきっかけとなった作品です。",
       "thumbnailUrl": "https://i.ytimg.com/vi/RfVW3MePsRw/maxresdefault.jpg",
       "uploadDate": "2014-02-01T09:00:00+09:00",
-      "duration": "PT3M46S",
+      "duration": "PT3M5S",
       "contentUrl": "https://www.youtube.com/watch?v=RfVW3MePsRw",
       "embedUrl": "https://www.youtube.com/embed/RfVW3MePsRw",
       "publisher": {
@@ -78,24 +78,23 @@
         #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
         .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
         .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+
+        /* ▼▼▼ ここのCSSを修正しました ▼▼▼ */
         .portfolio-video-container {
-            position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
-            height: 0;
+            aspect-ratio: 16 / 9; /* 縦横比を16:9に固定 */
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             margin-bottom: 2rem;
         }
         .portfolio-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: 0;
         }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         .back-to-portfolio {
             display: inline-block;
             margin-top: 2rem;
@@ -149,7 +148,7 @@
         
         <section>
             <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：Appleに通って制作した動画</h2>
-            <p class="text-center text-stone-600 mb-8">「学ぶ楽しさ」と「創る喜び」を形にした、次への一歩。</p>
+            <p class="text-center text-stone-600 mb-8">iMovieの基礎を学び、動画制作の楽しさを再認識。</p>
 
             <!-- YouTube動画埋め込み -->
             <div class="portfolio-video-container max-w-4xl mx-auto">
@@ -179,7 +178,7 @@
                     </div>
                      <div>
                         <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">この経験から得たもの</h4>
-                         <p>
+                        <p>
                             この動画制作を通じて、基本的なテクニック一つひとつが、映像の表現力をいかに豊かにするかを実感しました。この経験が、現在の私のより複雑な編集スキルの礎となっています。たとえシンプルなツールであっても、使い方次第で人の心を動かすことができる。その確信が、今の私のクリエイターとしての活動を支えています。
                         </p>
                     </div>
