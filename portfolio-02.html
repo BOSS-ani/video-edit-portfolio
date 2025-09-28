@@ -31,11 +31,11 @@
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "name": "静止画サイトのビデオ化 - 情報がスッと頭に入る動画",
-      "description": "ウェブサイトのような静的な情報を、動きと音の力で「スッと頭に入る」魅力的な動画コンテンツに変換する制作事例です。",
+      "name": "静止画サイトのビデオ化 - 情報を魅力的に再構成",
+      "description": "ウェブサイトなどの静的な情報を、動きと音で魅力的な動画コンテンツに変換する制作事例です。",
       "thumbnailUrl": "https://i.ytimg.com/vi/mRQQAiD5YU0/maxresdefault.jpg",
       "uploadDate": "2023-10-05T09:00:00+09:00",
-      "duration": "PT1M34S",
+      "duration": "PT2M3S",
       "contentUrl": "https://www.youtube.com/watch?v=mRQQAiD5YU0",
       "embedUrl": "https://www.youtube.com/embed/mRQQAiD5YU0",
       "publisher": {
@@ -78,24 +78,23 @@
         #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
         .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
         .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+
+        /* ▼▼▼ ここのCSSを修正しました ▼▼▼ */
         .portfolio-video-container {
-            position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
-            height: 0;
+            aspect-ratio: 16 / 9; /* 縦横比を16:9に固定 */
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             margin-bottom: 2rem;
         }
         .portfolio-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: 0;
         }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         .back-to-portfolio {
             display: inline-block;
             margin-top: 2rem;
@@ -149,9 +148,9 @@
         
         <section>
             <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：静止画サイトのビデオ化</h2>
-            <p class="text-center text-stone-600 mb-8">静的な情報が、動きと音で生まれ変わる。</p>
+            <p class="text-center text-stone-600 mb-8">静的な情報を、動きと音で魅力的に再構成。</p>
 
-            <!-- ▼▼▼ YouTube動画埋め込み（URL修正） ▼▼▼ -->
+            <!-- YouTube動画埋め込み -->
             <div class="portfolio-video-container max-w-4xl mx-auto">
                 <iframe 
                     src="https://www.youtube.com/embed/mRQQAiD5YU0" 
@@ -161,21 +160,20 @@
                     allowfullscreen>
                 </iframe>
             </div>
-            <!-- ▲▲▲ ここまで ▲▲▲ -->
             
             <!-- 作品解説 -->
             <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
                 <h3 class="text-2xl font-bold text-stone-800 mb-4">この動画のポイント</h3>
                 <div class="text-stone-700 leading-relaxed space-y-4">
                     <p>
-                        ウェブサイトやパンフレットなどの静止画ベースの情報は、ともすれば単調で読みにくいものになりがちです。この動画は、そうした静的な情報を、動きと音の力で「スッと頭に入る」魅力的な動画コンテンツに変換できることを示す制作事例です。
+                        ウェブサイトやパンフレットなどの静的な情報を、動きと音の力で魅力的な動画コンテンツへと変換するスキルを示す制作事例です。ただ情報を羅列するのではなく、視聴者の関心を引きつけ、理解を深めるための工夫を凝らしています。
                     </p>
                     <div>
                         <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">情報を動画に最適化する編集のポイント</h4>
                         <ul class="list-disc list-inside space-y-2">
-                            <li><strong>視線誘導アニメーション:</strong> 視聴者に見てほしい箇所に自然と目が向くように、テキストや画像にアニメーションを加えています。これにより、情報の理解度が飛躍的に向上します。</li>
-                            <li><strong>ナレーションによる補足:</strong> テキストだけでは伝えきれないニュアンスや補足情報をナレーションで加えることで、より深く、そして親しみやすく情報を伝えることができます。</li>
-                            <li><strong>効果音によるアクセント:</strong> 重要なポイントや場面の切り替え時に効果音を入れることで、視聴者の注意を引きつけ、記憶に残りやすくします。</li>
+                            <li><strong>視線誘導アニメーション:</strong> 視聴者に見てほしい部分に自然と目が向くように、テキストや画像にアニメーションを加えています。</li>
+                            <li><strong>効果音による強調:</strong> 重要なポイントやクリック感を演出する場面で効果音を使い、視聴体験にメリハリをつけています。</li>
+                            <li><strong>BGMによる雰囲気作り:</strong> サイトや商品のブランドイメージに合ったBGMを選定し、動画全体の世界観を統一しています。</li>
                         </ul>
                     </div>
                 </div>
