@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
-    <!-- ▼▼▼ 動画の構造化データ ▼▼▼ -->
+    <!-- ▼▼▼ 動画の構造化データ（URL修正） ▼▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -35,7 +35,7 @@
       "description": "単なるイベントの記録映像を、テロップや効果音、テンポの良いカット編集で、誰もが楽しめる「番組」のようなエンターテイメントコンテンツに仕上げた事例です。",
       "thumbnailUrl": "https://i.ytimg.com/vi/z1CZEdZl6VU/maxresdefault.jpg",
       "uploadDate": "2023-11-05T09:00:00+09:00",
-      "duration": "PT3M15S",
+      "duration": "PT3M0S",
       "contentUrl": "https://www.youtube.com/watch?v=z1CZEdZl6VU",
       "embedUrl": "https://www.youtube.com/embed/z1CZEdZl6VU",
       "publisher": {
@@ -78,24 +78,23 @@
         #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
         .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
         .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+
+        /* ▼▼▼ ここのCSSを修正しました ▼▼▼ */
         .portfolio-video-container {
-            position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
-            height: 0;
+            aspect-ratio: 16 / 9; /* 縦横比を16:9に固定 */
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             margin-bottom: 2rem;
         }
         .portfolio-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: 0;
         }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         .back-to-portfolio {
             display: inline-block;
             margin-top: 2rem;
@@ -149,7 +148,7 @@
         
         <section>
             <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：イベント映像を「番組」に</h2>
-            <p class="text-center text-stone-600 mb-8">単なる記録映像を、誰もが楽しめるエンターテイメントへ。</p>
+            <p class="text-center text-stone-600 mb-8">記録映像を、プロの編集がもたらす「3つの魔法」でエンターテイメントに。</p>
 
             <!-- YouTube動画埋め込み -->
             <div class="portfolio-video-container max-w-4xl mx-auto">
@@ -176,6 +175,12 @@
                             <li><strong>魔法2：効果音 & BGM:</strong> 正解音、不正解音、シンキングタイムのBGMは、場の空気感を創り出します。音の力は絶大で、映像に臨場感と緊張感を与え、視聴者をイベントの渦中へと引き込む重要な役割を果たします。</li>
                             <li><strong>魔法3：テンポの良いカット編集:</strong> 長時間撮影された映像から「見せ場」だけを的確に抜き出します。出題者、回答者、そして周りの観客の反応を小気味良いテンポで繋ぎ合わせることで、視聴者の集中力は途切れません。これは、単調な記録を緩急のある「物語」として再構成する技術です。</li>
                         </ul>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">ビジネスへの応用</h4>
+                        <p>
+                            この編集技術は、社内イベントのダイジェスト映像を制作して従業員のエンゲージメントを高めたり、セミナーの様子を魅力的に編集して次回の集客に繋げたりと、様々なビジネスシーンで活用できます。眠っている記録映像を、企業の資産として再活用しませんか？
+                        </p>
                     </div>
                 </div>
             </div>
