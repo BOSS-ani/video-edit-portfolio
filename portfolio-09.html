@@ -26,16 +26,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
-    <!-- ▼▼▼ 動画の構造化データ ▼▼▼ -->
+    <!-- ▼▼▼ 動画の構造化データ（URL修正） ▼▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       "name": "我が家のヒーロー 黒柴BOSS VOL1 - 動画制作の原点",
-      "description": "10年以上前に初めてiMovieで制作した、動画制作の原点となる作品です。写真のスライドショーにBGMとテロップを加えた基本的な編集ながら、ここから全てが始まりました。",
+      "description": "10年以上前に初めてiMovieで制作した、動画制作の原点となる作品です。写真のスライドショーにBGMとテロップを加えた基本的な編集です。",
       "thumbnailUrl": "https://i.ytimg.com/vi/C1XXEY3p78g/maxresdefault.jpg",
       "uploadDate": "2014-01-01T09:00:00+09:00",
-      "duration": "PT3M33S",
+      "duration": "PT3M14S",
       "contentUrl": "https://www.youtube.com/watch?v=C1XXEY3p78g",
       "embedUrl": "https://www.youtube.com/embed/C1XXEY3p78g",
       "publisher": {
@@ -78,24 +78,23 @@
         #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
         .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
         .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+
+        /* ▼▼▼ ここのCSSを修正しました ▼▼▼ */
         .portfolio-video-container {
-            position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
-            height: 0;
+            aspect-ratio: 16 / 9; /* 縦横比を16:9に固定 */
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             margin-bottom: 2rem;
         }
         .portfolio-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: 0;
         }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         .back-to-portfolio {
             display: inline-block;
             margin-top: 2rem;
@@ -149,7 +148,7 @@
         
         <section>
             <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：初めて制作した動画</h2>
-            <p class="text-center text-stone-600 mb-8">ここから全てが始まった、動画制作の「原点」。</p>
+            <p class="text-center text-stone-600 mb-8">ここから全てが始まった、私の動画制作の「原点」。</p>
 
             <!-- YouTube動画埋め込み -->
             <div class="portfolio-video-container max-w-4xl mx-auto">
@@ -176,6 +175,12 @@
                             <li><strong>BGMによる感情の誘導:</strong> 動画の雰囲気を決定づける音楽の力を信じ、写真の温かい雰囲気にマッチするような、心地よいBGMを選定しました。映像と音楽の調和は、今も私の編集の核となっています。</li>
                             <li><strong>テロップによるメッセージの補強:</strong> 写真だけでは伝えきれない想いを、シンプルな言葉でテロップとして添えることで、メッセージをより明確にしました。</li>
                         </ul>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">この作品から始まった想い</h4>
+                        <p>
+                            この一本の動画を完成させた時の達成感と、それを見た家族や友人の笑顔が、私が動画編集という世界に深く魅了されるきっかけとなりました。技術は進化しましたが、「映像を通じて人の心を動かしたい」という想いは、この時から何も変わっていません。この作品は、私のクリエイターとしての初心を思い出させてくれる、大切な宝物です。
+                        </p>
                     </div>
                 </div>
             </div>
