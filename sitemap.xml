@@ -2,27 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bossboss.jp/</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-list.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-01.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-02.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-03.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-04.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-05.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-06.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-07.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-08.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-09.html</loc>
+    <lastmod>2025-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://bossboss.jp/portfolio-10.html</loc>
+    <lastmod>2025-10-07</lastmod>
   </url>
   <url>
     <loc>https://bossboss.jp/privacy-policy.html</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-10-07</lastmod>
   </url>
   <url>
-    <loc>https://fukushima.bossboss.jp/</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://bossboss.jp/service-live-link-card.html</loc>
+    <lastmod>2025-10-07</lastmod>
   </url>
-  <url>
-    <loc>https://fukushima.bossboss.jp/privacy-policy.html</loc>
-    <lastmod>2025-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- 他の重要なページがあればここに追加 -->
 </urlset>
