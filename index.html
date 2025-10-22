@@ -6,10 +6,8 @@
     <title>VIDEO edit office BOSS兄 - ポートフォリオ</title>
     <meta name="description" content="大阪を拠点とするVIDEO edit office BOSS兄（川勝典茂）のポートフォリオサイトです。ウマキんグ公認切り抜きチャンネルの運営実績など、動画編集編集の制作事例をご紹介しています。">
 
-    <!-- Canonical Tag for SEO -->
+    <!-- SEO -->
     <link rel="canonical" href="https://bossboss.jp/">
-
-    <!-- Google Search Console -->
     <meta name="google-site-verification" content="5a9G8fB7c6D5e4F3g2H1i0j-k9L8m7N6p5Q4r3s2t1u" />
 
     <!-- Google Analytics -->
@@ -18,19 +16,20 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-KFG5YFETXC');
     </script>
     
-    <!-- Google AdSense 自動広告コード (HEAD内) -->
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419575231209847" crossorigin="anonymous"></script>
 
+    <!-- Tailwind CSS & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
     <style>
+        /* --- Base Styles --- */
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
             background-color: #FDFBF6;
@@ -39,6 +38,8 @@
             margin: 0;
             padding: 0;
         }
+
+        /* --- Header --- */
         header {
             position: fixed;
             top: 0;
@@ -51,37 +52,147 @@
             border-bottom-right-radius: 15px;
         }
         .header-inner-content { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
-        .main-header-content { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: nowrap; margin-bottom: 0.5rem; }
+        .main-header-content { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: nowrap; }
         .header-icon { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); }
-        .main-title { color: white; font-family: 'Noto Serif JP', serif; font-size: 2.8rem; line-height: 1.1; text-shadow: -2.5px -2.5px 0 #5A2D0E, 2.5px -2.5px 0 #5A2D0E, -2.5px 2.5px 0 #5A2D0E, 2.5px 2.5px 0 #5A2D0E, 0px 0px 12px rgba(0,0,0,0.7); }
+        .main-title { 
+            color: white; 
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.8rem; 
+            line-height: 1.1; 
+            text-shadow: -2.5px -2.5px 0 #5A2D0E, 2.5px -2.5px 0 #5A2D0E, -2.5px 2.5px 0 #5A2D0E, 2.5px 2.5px 0 #5A2D0E, 0px 0px 12px rgba(0,0,0,0.7);
+        }
+
+        /* --- Navigation --- */
         #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
-        .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
+        .nav-link { 
+            transition: background-color 0.3s ease, color 0.3s ease; 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            color: #FFFFFF; 
+            background-color: #A0522D; 
+            font-weight: 500; 
+            font-size: 1rem; 
+            white-space: nowrap; 
+        }
         .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
-        .section-h2 { background: linear-gradient(to right, #FAEBD7, #FDFBF6); padding: 1.2rem 1.8rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); color: #5A2D0E; border-left: 8px solid #CD853F; margin-bottom: 1.8rem; font-size: 2.25rem; }
+        
+        /* --- Section Heading --- */
+        .section-h2 {
+            background: linear-gradient(to right, #FAEBD7, #FDFBF6);
+            padding: 1.2rem 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            color: #5A2D0E;
+            border-left: 8px solid #CD853F;
+            margin-bottom: 1.8rem;
+            font-size: 2.25rem;
+        }
+
+        /* --- Collapsible Accordion --- */
+        .collapsible-header {
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem; background-color: #D2B48C; border-radius: 8px; font-weight: bold; color: #5A2D0E;
+        }
+        .collapsible-content { 
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; 
+            background-color: #FDFBF6; padding: 0 1.5rem; border-radius: 0 0 8px 8px;
+        }
+        .collapsible-content.expanded { padding: 1.5rem; max-height: 3000px; }
+        .toggle-icon { transition: transform 0.3s ease; }
+        .toggle-icon.rotated { transform: rotate(180deg); }
+
+        /* --- Portfolio Card --- */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .portfolio-card { background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.2s ease-in-out; display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; }
+        .portfolio-card { 
+            background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            overflow: hidden; transition: transform 0.2s ease-in-out; display: flex; 
+            flex-direction: column; height: 100%; text-decoration: none; color: inherit; 
+        }
         .portfolio-card:hover { transform: translateY(-5px); }
-        .portfolio-thumbnail-container { width: 100%; padding-bottom: 56.25%; position: relative; background-color: #e0e0e0; }
-        .portfolio-thumbnail-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        /* Thumbnail container style */
+        .portfolio-thumbnail-container {
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            background-color: #e0e0e0; /* Placeholder background */
+        }
+        .portfolio-thumbnail-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the container */
+        }
         .portfolio-content-summary { padding: 1.5rem; flex-grow: 1; }
+        
+        /* --- Main Project Banner --- */
+        .main-project-banner-style {
+            background-color: #A0522D; color: #FFFFFF; padding: 2rem; 
+            border-radius: 10px; margin-bottom: 2rem; text-align: center;
+        }
+        .main-project-banner-style h3 { 
+            color: red; 
+            text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; 
+            font-size: 2.5rem; line-height: 1.5; 
+        }
+        .main-project-banner-style .collapsible-content {
+            background-color: #FAEBD7;
+            color: #5A2D0E;
+            text-align: left;
+        }
+
+        /* --- About/Profile Section --- */
+        .profile-section-content {
+            background-color: #D2B48C; padding: 2rem; border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); display: flex; flex-direction: column;
+            align-items: center; text-align: center;
+        }
+        .profile-image-group { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+        .profile-image {
+            width: 120px; height: 120px; object-fit: cover; border-radius: 50%;
+            border: 4px solid #FDFBF6; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .profile-text-wrapper {
+            border: 3px solid #FFD700; border-radius: 12px; padding: 1.5rem 2rem;
+            background-color: rgba(90, 45, 14, 0.7); color: #FDFBF6;
+        }
+        
+        /* --- Blog Feed --- */
         .blog-feed-container { border-top: 1px solid #e2e8f0; margin-top: 1.5rem; padding-top: 1.5rem; }
-        .blog-feed-title { text-align: center; font-size: 1.125rem; font-weight: 600; color: #5A2D0E; margin-bottom: 1rem; }
+        .blog-feed-title { text-align: center; font-size: 1.25rem; font-weight: 600; color: #5A2D0E; margin-bottom: 1rem; }
         .blog-feed-list { list-style: none; padding: 0; }
         .blog-feed-list li { border-bottom: 1px solid #f3f4f6; }
         .blog-feed-list li:last-child { border-bottom: none; }
-        .blog-feed-list a { display: block; padding: 0.75rem 0.5rem; color: #A0522D; text-decoration: none; transition: background-color 0.2s ease; border-radius: 4px; font-size: 0.9rem; }
+        .blog-feed-list a { display: block; padding: 0.75rem 0.5rem; color: #A0522D; text-decoration: none; transition: background-color 0.2s ease; border-radius: 4px; }
         .blog-feed-list a:hover { background-color: #FAEBD7; }
-        .cta-button { display: inline-block; padding: 0.8rem 2rem; background: linear-gradient(135deg, #FFD700, #CD853F); color: #5A2D0E; font-size: 1.1rem; font-weight: 700; text-align: center; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 2px solid #5A2D0E; }
+        
+        /* --- CTA Button --- */
+        .cta-button { 
+            display: inline-block; padding: 0.8rem 2rem; 
+            background: linear-gradient(135deg, #FFD700, #CD853F); 
+            color: #5A2D0E; font-size: 1.1rem; font-weight: 700; text-align: center; 
+            border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; border: 2px solid #5A2D0E; 
+        }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-        footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center;}
+
+        /* --- Footer --- */
+        footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center; }
+
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            body { padding-top: 130px; }
+            body { padding-top: 160px; /* Adjusted for wrapped nav */ }
             .main-title { font-size: 1.8rem; }
             .header-icon { width: 30px; height: 30px; }
             #navbar ul { flex-wrap: wrap; gap: 0.5rem 0; }
             #navbar li { flex-basis: 33.33%; text-align: center; }
             .nav-link { padding: 0.5rem 0.2rem; font-size: 0.8rem; }
             .section-h2 { font-size: 1.8rem; }
+            .main-project-banner-style h3 { font-size: 1.8rem; }
+            .profile-image-group { flex-direction: column; }
+            .portfolio-grid { grid-template-columns: 1fr; /* Single column on mobile */ }
         }
     </style>
 </head>
@@ -90,9 +201,9 @@
     <header id="main-header">
         <div class="header-inner-content">
             <div class="main-header-content">
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
                 <h1 class="main-title">VIDEO edit office BOSS兄</h1>
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
             </div>
         </div>
         <nav id="navbar">
@@ -102,13 +213,15 @@
                    <li><a href="#portfolio" class="nav-link">制作作品</a></li>
                    <li><a href="#about" class="nav-link">自己紹介</a></li>
                    <li><a href="#price-guide" class="nav-link">料金案内</a></li>
-                   <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li>
+                   <li><a href="#blog" class="nav-link">ブログ</a></li>
+                   <!-- Changed href to point to the separate page -->
+                   <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li> 
                </ul>
            </div>
         </nav>
     </header>
 
-    <main class="container mx-auto py-8 px-4 md:px-8 space-y-12">
+    <main class="container mx-auto py-8 px-4 md:px-8 space-y-12" style="max-width: 900px;">
         
         <div class="flex justify-center my-8 top-banner">
             <a href="service-live-link-card.html" class="block w-full max-w-4xl rounded-lg shadow-lg overflow-hidden">
@@ -119,82 +232,90 @@
         <section id="introduction-pr" class="scroll-mt-24">
             <h2 class="section-h2">『BOSS兄』の推しポイント</h2>
             <div class="space-y-8">
+                <!-- 学習・教育系の動画編集 -->
                 <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                     <h3 class="text-xl font-bold text-center text-stone-800">学習・教育系の動画編集が得意</h3>
                     <p class="text-stone-700 leading-relaxed text-center">
                         『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、視聴者が内容を深く理解できるような学習・教育系の動画編集を得意としています。
                     </p>
+                    <!-- Link Card Grid -->
                     <div class="portfolio-grid">
                         <a href="portfolio-01.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/GQrXptXUO7Y/mqdefault.jpg" alt="オープニング動画"></div>
+                            <div class="portfolio-thumbnail-container">
+                                <img src="https://i.ytimg.com/vi/GQrXptXUO7Y/mqdefault.jpg" alt="オープニング動画 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品1';">
+                            </div>
                             <div class="portfolio-content-summary">
-                                <h3 class="text-lg font-bold text-stone-800">オープニング動画</h3>
-                                <p class="mt-2 text-stone-600">視聴者を惹きつける動画の導入部です。</p>
+                                <h4 class="text-lg font-bold text-stone-800">ウマキング切り抜き動画</h4>
+                                <p class="mt-2 text-stone-600 text-sm">学習効果を高める編集スキルが活かされた代表作品。</p>
                             </div>
                         </a>
                         <a href="portfolio-02.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/mRQQAiD5YU0/mqdefault.jpg" alt="静止画サイトのビデオ化"></div>
+                             <div class="portfolio-thumbnail-container">
+                                <img src="https://i.ytimg.com/vi/mRQQAiD5YU0/mqdefault.jpg" alt="学習・教育系動画 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品2';">
+                            </div>
                             <div class="portfolio-content-summary">
-                                <h3 class="text-lg font-bold text-stone-800">静止画サイトのビデオ化</h3>
-                                <p class="mt-2 text-stone-600">静的な情報を魅力的な動画に変換します。</p>
+                                <h4 class="text-lg font-bold text-stone-800">学習・教育系動画</h4>
+                                <p class="mt-2 text-stone-600 text-sm">視聴者の深い理解を促す編集事例。</p>
                             </div>
                         </a>
                     </div>
-                    <div class="blog-feed-container">
-                        <h4 class="blog-feed-title">ブログ：生涯現役シニアライフを育む！競馬と美食の全国巡り</h4>
-                        <ul class="blog-feed-list" id="hatena-feed-keiba"><li>記事を読み込んでいます...</li></ul>
-                    </div>
                 </div>
+
+                <!-- 静止画サイトのビデオ化 -->
                 <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                     <h3 class="text-xl font-bold text-center text-stone-800">静止画サイトのビデオ化</h3>
                     <p class="text-stone-700 leading-relaxed text-center">
                         既存の静止画サイトや資料を、視聴者の興味を惹きつける動的なビデオコンテンツに変換します。
                     </p>
-                    <div class="portfolio-grid">
-                         <a href="portfolio-03.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/LaGwJuCA1EU/mqdefault.jpg" alt="エンディング動画"></div>
-                            <div class="portfolio-content-summary">
-                                <h3 class="text-lg font-bold text-stone-800">エンディング動画</h3>
-                                <p class="mt-2 text-stone-600">視聴後の満足感を高める締めくくりです。</p>
-                            </div>
-                        </a>
-                        <a href="portfolio-04.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/W5BWFgemIBM/mqdefault.jpg" alt="静止画サイトのビデオ化 2"></div>
-                            <div class="portfolio-content-summary">
-                                <h3 class="text-lg font-bold text-stone-800">静止画サイトのビデオ化 2</h3>
-                                <p class="mt-2 text-stone-600">情報を再構成し、記憶に残りやすくします。</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="blog-feed-container">
-                        <h4 class="blog-feed-title">ブログ：未来の政治図鑑・・・闇を照らす光</h4>
-                        <ul class="blog-feed-list" id="hatena-feed-seiji"><li>記事を読み込んでいます...</li></ul>
-                    </div>
+                     <!-- Link Card Grid -->
+                     <div class="portfolio-grid">
+                        <a href="portfolio-03.html" class="portfolio-card">
+                            <div class="portfolio-thumbnail-container">
+                               <img src="https://i.ytimg.com/vi/LaGwJuCA1EU/mqdefault.jpg" alt="静止画サイトのビデオ化 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品3';">
+                           </div>
+                           <div class="portfolio-content-summary">
+                               <h4 class="text-lg font-bold text-stone-800">静止画サイトのビデオ化</h4>
+                               <p class="mt-2 text-stone-600 text-sm">アニメーションで静的コンテンツを魅力的に変換。</p>
+                           </div>
+                       </a>
+                       <a href="portfolio-04.html" class="portfolio-card">
+                            <div class="portfolio-thumbnail-container">
+                               <img src="https://i.ytimg.com/vi/W5BWFgemIBM/mqdefault.jpg" alt="静止画サイトのビデオ化 2 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品4';">
+                           </div>
+                           <div class="portfolio-content-summary">
+                               <h4 class="text-lg font-bold text-stone-800">静止画サイトのビデオ化 2</h4>
+                               <p class="mt-2 text-stone-600 text-sm">情報を記憶に残りやすい形に再構成。</p>
+                           </div>
+                       </a>
+                   </div>
                 </div>
+
+                <!-- 心に残るビデオレター制作 -->
                 <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                     <h3 class="text-xl font-bold text-center text-stone-800">心に残るビデオレター制作</h3>
                     <p class="text-stone-700 leading-relaxed text-center">
                         大切な人へのメッセージや記念日を彩るビデオレターの制作もお任せください。
                     </p>
-                    <div class="portfolio-grid">
-                        <a href="portfolio-05.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/TKUuvimwCB4/mqdefault.jpg" alt="心に残るビデオレター"></div>
-                            <div class="portfolio-content-summary">
-                                <h3 class="text-lg font-bold text-stone-800">心に残るビデオレター</h3>
-                                <p class="mt-2 text-stone-600">大切な記念日を彩る感動的な動画です。</p>
-                            </div>
-                        </a>
-                        <a href="portfolio-06.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/cqN0IO5C86E/mqdefault.jpg" alt="プレゼン資料のビデオ化"></div>
-                            <div class="portfolio-content-summary">
-                                <h3 class="text-lg font-bold text-stone-800">プレゼン資料のビデオ化</h3>
-                                <p class="mt-2 text-stone-600">単調な資料を印象的な動画に仕上げます。</p>
-                            </div>
-                        </a>
-                    </div>
-                     <div class="blog-feed-container">
-                        <h4 class="blog-feed-title">ブログ：実践的アンチエイジング（エビデンス無き養生）</h4>
-                        <ul class="blog-feed-list" id="hatena-feed-antiaging"><li>記事を読み込んでいます...</li></ul>
+                    <!-- Link Card Grid -->
+                     <div class="portfolio-grid">
+                         <a href="portfolio-05.html" class="portfolio-card">
+                              <div class="portfolio-thumbnail-container">
+                                 <img src="https://i.ytimg.com/vi/TKUuvimwCB4/mqdefault.jpg" alt="心に残るビデオレター サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品5';">
+                             </div>
+                             <div class="portfolio-content-summary">
+                                 <h4 class="text-lg font-bold text-stone-800">心に残るビデオレター</h4>
+                                 <p class="mt-2 text-stone-600 text-sm">大切な記念日を彩る感動的な動画。</p>
+                             </div>
+                         </a>
+                         <a href="portfolio-06.html" class="portfolio-card">
+                              <div class="portfolio-thumbnail-container">
+                                 <img src="https://i.ytimg.com/vi/cqN0IO5C86E/mqdefault.jpg" alt="プレゼン資料のビデオ化 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品6';">
+                             </div>
+                             <div class="portfolio-content-summary">
+                                 <h4 class="text-lg font-bold text-stone-800">プレゼン資料のビデオ化</h4>
+                                 <p class="mt-2 text-stone-600 text-sm">静的なプレゼン資料を心に残るコンテンツへ。</p>
+                             </div>
+                         </a>
                     </div>
                 </div>
             </div>
@@ -207,53 +328,166 @@
         </div>
 
         <section id="portfolio" class="scroll-mt-24">
-            <h2 class="section-h2">その他の制作作品</h2>
-            <div class="portfolio-grid">
-                <a href="portfolio-07.html" class="portfolio-card">
-                    <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/6PoVUnLztzA/mqdefault.jpg" alt="「記録」を「記憶」に変える編集スキル"></div>
+            <h2 class="section-h2">制作作品</h2>
+            <div class="main-project-banner-style">
+                 <h3>メインプロジェクト</h3>
+                 <p class="leading-relaxed text-lg mb-4">『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』は、私の動画編集者としての情熱とスキルを注ぎ込んだメインプロジェクトです...</p>
+                 <div class="space-y-4">
+                     <div class="collapsible-container">
+                         <div class="collapsible-header"><span>channel開設 きっかけ</span><span class="toggle-icon">▼</span></div>
+                         <div class="collapsible-content"><p class="p-4">「ウマキんグの本編動画を視聴し、その熱量に感銘を受けました。自分自身にできることは何か？と考えた時、長年培ってきた動画編集への情熱と、再スタートしたばかりのスキルをウマキんグの応援に活かせないかと強く感じました...」</p></div>
+                     </div>
+                     <div class="collapsible-container">
+                         <div class="collapsible-header"><span>私が実現する channelの特徴</span><span class="toggle-icon">▼</span></div>
+                         <div class="collapsible-content"><p class="p-4">はやい： 「週末のJRA重賞レースのナーツゴンニャ中井さんの見解を、最速で競馬ファンにお届けするため...」<br>みじかい：「長尺の本編動画から、週末のJRA重賞レースのナーツゴンニャ中井さんの見解の『核心』だけを抽出し...」<br>くわしい：「初心者から上級者まで、幅広い競馬ファンがナーツゴンニャ中井さんの見解を深く理解できるよう...」</p></div>
+                     </div>
+                     <div class="collapsible-container">
+                         <div class="collapsible-header"><span>成長実績と私の貢献</span><span class="toggle-icon">▼</span></div>
+                         <div class="collapsible-content"><p class="p-4">2024年12月22日にチャンネル登録者1000名を達成し、その後も順調に成長を続け、現在に至っています...<br>・**テロップと演出の統一化:** チャンネル全体の動画に、私の考案した視認性の高いテロップデザインと効果的な演出を導入しました...<br>・**視聴維持率の向上:** テンポの良い編集と重要な情報の視覚化により、動画の平均視聴維持率が向上しました...<br>・**本編動画への影響:** 私のテロップやアイデアが、ウマキんグ様の本編動画にも採用されるようになりました...</p></div>
+                     </div>
+                      <div class="collapsible-container">
+                         <div class="collapsible-header"><span>主要な制作作品（再生リスト）</span><span class="toggle-icon">▼</span></div>
+                         <div class="collapsible-content"><p class="p-4">チャンネル創成期：基礎と挑戦の記録（2024年10月～12月）...<br>チャンネルⅡ期：分析の深化とファンとの絆（2025年1月～3月）...<br>チャンネルⅢ期：AI活用とコンテンツ革新（2025年4月～6月）...</p></div>
+                     </div>
+                 </div>
+            </div>
+            <!-- Additional Portfolio Items as Cards -->
+            <div class="portfolio-grid mt-8">
+                 <a href="portfolio-07.html" class="portfolio-card">
+                     <div class="portfolio-thumbnail-container">
+                        <img src="https://i.ytimg.com/vi/6PoVUnLztzA/mqdefault.jpg" alt="「記録」を「記憶」に変える編集スキル サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品7';">
+                    </div>
                     <div class="portfolio-content-summary">
-                        <h3 class="text-lg font-bold text-stone-800">「記録」を「記憶」に変える編集スキル</h3>
-                        <p class="mt-2 text-stone-600">プロの編集スキルをインフォグラフィックで解説。</p>
+                        <h4 class="text-lg font-bold text-stone-800">「記録」を「記憶」に変える編集スキル</h4>
+                        <p class="mt-2 text-stone-600 text-sm">プロの編集スキルをインフォグラフィックで解説。</p>
                     </div>
                 </a>
                 <a href="portfolio-08.html" class="portfolio-card">
-                    <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/z1CZEdZl6VU/mqdefault.jpg" alt="イベント映像を「番組」に"></div>
-                    <div class="portfolio-content-summary">
-                        <h3 class="text-lg font-bold text-stone-800">イベント映像を「番組」に</h3>
-                        <p class="mt-2 text-stone-600">プロの編集がもたらす「3つの魔法」を解説。</p>
+                     <div class="portfolio-thumbnail-container">
+                        <img src="https://i.ytimg.com/vi/z1CZEdZl6VU/mqdefault.jpg" alt="イベント映像を「番組」に サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品8';">
                     </div>
-                </a>
-                <a href="portfolio-09.html" class="portfolio-card">
-                    <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/C1XXEY3p78g/mqdefault.jpg" alt="初めて制作した動画"></div>
                     <div class="portfolio-content-summary">
-                        <h3 class="text-lg font-bold text-stone-800">初めて制作した動画</h3>
-                        <p class="mt-2 text-stone-600">10年以上前に制作した動画制作の原点です。</p>
-                    </div>
-                </a>
-                <a href="portfolio-10.html" class="portfolio-card">
-                    <div class="portfolio-thumbnail-container"><img src="https://i.ytimg.com/vi/RfVW3MePsRw/mqdefault.jpg" alt="Appleに通って制作した動画"></div>
-                    <div class="portfolio-content-summary">
-                        <h3 class="text-lg font-bold text-stone-800">Appleに通って制作した動画</h3>
-                        <p class="mt-2 text-stone-600">iMovieの基礎を学んで制作した作品です。</p>
+                        <h4 class="text-lg font-bold text-stone-800">イベント映像を「番組」に</h4>
+                        <p class="mt-2 text-stone-600 text-sm">プロの編集がもたらす「3つの魔法」を解説。</p>
                     </div>
                 </a>
             </div>
         </section>
         
-         <section id="about" class="scroll-mt-24">
+        <section id="about" class="scroll-mt-24">
             <h2 class="section-h2">自己紹介</h2>
-             <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                 <p class="text-stone-700 leading-relaxed">
-                    初めまして！私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました...
-                </p>
-             </div>
+            <div class="profile-section-content">
+                <div class="profile-image-group">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/IMG_5569.PNG" alt="川勝典茂（BOSS兄）プロフィール画像" class="profile-image">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png" alt="イメージ画像" class="profile-image">
+                </div>
+                <div class="profile-text-wrapper">
+                    <p class="mt-4">初めまして！ 私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。</p>
+                    <p>作品は、「制作作品」セクションでご覧いただけます。</p>
+                </div>
+                <!-- About section video links as cards -->
+                 <div class="portfolio-grid w-full max-w-2xl mx-auto mt-6">
+                     <a href="portfolio-09.html" class="portfolio-card">
+                          <div class="portfolio-thumbnail-container">
+                             <img src="https://i.ytimg.com/vi/C1XXEY3p78g/mqdefault.jpg" alt="初めて制作した動画 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品9';">
+                         </div>
+                         <div class="portfolio-content-summary">
+                             <h4 class="text-lg font-bold text-stone-800">初めて制作した動画</h4>
+                             <p class="mt-2 text-stone-600 text-sm">動画制作の原点となった作品です。</p>
+                         </div>
+                     </a>
+                     <a href="portfolio-10.html" class="portfolio-card">
+                         <div class="portfolio-thumbnail-container">
+                            <img src="https://i.ytimg.com/vi/RfVW3MePsRw/mqdefault.jpg" alt="Appleに通って制作した動画 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品10';">
+                        </div>
+                        <div class="portfolio-content-summary">
+                            <h4 class="text-lg font-bold text-stone-800">Appleに通って制作した動画</h4>
+                            <p class="mt-2 text-stone-600 text-sm">iMovieの基礎を学んだ作品。</p>
+                        </div>
+                    </a>
+                 </div>
+                 <!-- Collapsible for Biography -->
+                <div class="w-full max-w-2xl mx-auto space-y-4 mt-6">
+                    <div class="collapsible-container">
+                         <div class="collapsible-header"><span>略歴・資格</span><span class="toggle-icon">▼</span></div>
+                         <div class="collapsible-content">
+                             <ul class="list-disc pl-5 text-sm space-y-1 p-4 text-left">
+                                 <li><strong>2011年:</strong> アロマサロンの業務一環として動画制作に携わる</li>
+                                 <li><strong>2013年:</strong> AEAJ アロマインストラクター資格取得</li>
+                                 <li><strong>2013年:</strong> Appleで動画編集ソフト『iMovie 』編集スキル習得</li>
+                                 <li><strong>2014年:</strong> YouTube動画チャンネル開設</li>
+                                 <li><strong>2024年8月:</strong> Adobe Premiere Proで動画編集スキルアップスタート</li>
+                                 <li><strong>2024年10月:</strong> ウマキんグ切り抜きチャンネル開設</li>
+                                 <li><strong>2024年12月:</strong> ウマキんグ切り抜きチャンネル登録1,000名突破</li>
+                                 <li><strong>2025年2月:</strong> ウマキんグ切り抜きチャンネル登録2,100名達成（2/11現在）</li>
+                             </ul>
+                         </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-         <section id="price-guide" class="scroll-mt-24">
+        <section id="price-guide" class="scroll-mt-24">
             <h2 class="section-h2">料金案内</h2>
-            <div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                 <p class="text-center text-stone-600 mt-8">ご予算やご要望に応じて柔軟にカスタマイズいたしますので、まずはお気軽にお問い合わせください。</p>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                 <div class="collapsible-container">
+                     <div class="collapsible-header"><span>動画制作フロー</span><span class="toggle-icon">▼</span></div>
+                     <div class="collapsible-content"><div class="p-4 space-y-4">
+                        <!-- Flow Steps Here (Omitted for brevity, assuming no changes needed) -->
+                        <p>1. お問い合わせ & ヒアリング...</p>
+                        <p>2. お見積もり & ご契約...</p>
+                        <p>3. 素材のご提供...</p>
+                        <p>4. 動画編集...</p>
+                        <p>5. 初稿のご確認 & 修正...</p>
+                        <p>6. 納品...</p>
+                     </div></div>
+                 </div>
+                 <div class="collapsible-container mt-4">
+                     <div class="collapsible-header"><span>動画制作料金表</span><span class="toggle-icon">▼</span></div>
+                     <div class="collapsible-content">
+                         <div class="grid md:grid-cols-3 gap-8 p-4">
+                             <div class="border p-4 rounded-lg text-center"><h4>ライト</h4><p class="text-2xl font-bold">¥50,000</p><p class="text-sm text-gray-600">スライドショー形式</p></div>
+                             <div class="border-2 border-amber-500 p-4 rounded-lg text-center relative"><span class="absolute top-0 -translate-y-1/2 bg-amber-500 text-white px-2 py-0.5 rounded-full text-sm">おすすめ</span><h4>スタンダード</h4><p class="text-2xl font-bold">¥100,000</p><p class="text-sm text-gray-600">スライドショー＋インタビュー</p></div>
+                             <div class="border p-4 rounded-lg text-center"><h4>プレミア</h4><p class="text-2xl font-bold">¥300,000</p><p class="text-sm text-gray-600">詳細ご相談の上制作</p></div>
+                         </div>
+                     </div>
+                 </div>
+                 <p class="text-center text-stone-600 mt-8">上記はあくまで目安です。ご予算やご要望に応じて柔軟にカスタマイズいたしますので、まずはお気軽にお問い合わせください。</p>
+                 <div class="text-center mt-8">
+                     <a href="https://calendar.app.google/w6johrZkru78NqUd6" target="_blank" rel="noopener noreferrer" class="cta-button">
+                         オンラインでの打ち合わせを予約
+                     </a>
+                 </div>
             </div>
+        </section>
+
+        <section id="blog" class="scroll-mt-24">
+            <h2 class="section-h2">ブログ</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg space-y-6">
+                <div class="blog-feed-container !border-t-0 !pt-0">
+                    <h4 class="blog-feed-title">生涯現役シニアライフを育む！競馬と美食の全国巡り</h4>
+                    <ul class="blog-feed-list" id="hatena-feed-keiba"><li>記事を読み込んでいます...</li></ul>
+                </div>
+                <div class="blog-feed-container">
+                    <h4 class="blog-feed-title">未来の政治図鑑・・・闇を照らす光</h4>
+                    <ul class="blog-feed-list" id="hatena-feed-seiji"><li>記事を読み込んでいます...</li></ul>
+                </div>
+                <div class="blog-feed-container">
+                    <h4 class="blog-feed-title">実践的アンチエイジング（エビデンス無き養生）</h4>
+                    <ul class="blog-feed-list" id="hatena-feed-antiaging"><li>記事を読み込んでいます...</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Removed the collapsible section and kept only the heading which acts as a scroll target -->
+        <section id="privacy-policy" class="scroll-mt-24">
+             <h2 class="section-h2">プライバシーポリシー</h2>
+             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                 <p class="text-stone-700 mb-4">当サイトのプライバシーポリシーについては、以下のページをご確認ください。</p>
+                 <a href="privacy-policy.html" class="cta-button !bg-stone-500 !text-white !border-stone-700 hover:!bg-stone-600">
+                     プライバシーポリシーを読む
+                 </a>
+             </div>
         </section>
         
     </main>
@@ -273,23 +507,36 @@
                 window.addEventListener('resize', setBodyPadding);
             }
 
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // Smooth scroll for internal links
+            document.querySelectorAll('a[href]').forEach(anchor => { // Adjusted selector to include all links
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
                     const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerOffset = document.getElementById('main-header').offsetHeight;
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - headerOffset - 20; // Adjusted for spacing
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
-                    }
+                     // Check if it's linking within the same page (starts with #)
+                    if (targetId && targetId.startsWith('#')) {
+                         e.preventDefault(); // Prevent default only for hash links
+                         const targetElement = document.querySelector(targetId);
+                         if (targetElement) {
+                             const headerOffset = document.getElementById('main-header').offsetHeight;
+                             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                             const offsetPosition = elementPosition - headerOffset - 20;
+                             window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                         }
+                    } 
+                    // Let external links or links to other html pages behave normally
+                });
+            });
+            
+            // Collapsible sections
+            document.querySelectorAll('.collapsible-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+                    content.classList.toggle('expanded');
+                    if(icon) icon.classList.toggle('rotated');
                 });
             });
 
+            // Blog feed fetch
             const fetchAndDisplayFeed = (rssUrl, containerId) => {
                 const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
                 const feedContainer = document.getElementById(containerId);
@@ -299,6 +546,7 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.items && data.items.length > 0) {
+                            // Filter items starting with '*' or '＊' and limit to 5
                             const filteredItems = data.items.filter(item => item.title.startsWith('＊') || item.title.startsWith('*')).slice(0, 5);
                             if (filteredItems.length > 0) {
                                 let html = '';
