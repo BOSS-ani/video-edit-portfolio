@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画一覧 - VIDEO edit office BOSS兄</title>
+    <meta name="description" content="VIDEO edit office BOSS兄が制作した動画の一覧です。カテゴリ別に作品をご覧いただけます。">
+    <!-- No canonical for list page usually, or self-reference if paginated -->
+    <!-- <link rel="canonical" href="https://bossboss.jp/videos.html"> -->
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFG5YFETXC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFG5YFETXC');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419575231209847" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-8419575231209847">
+
+    <!-- Tailwind CSS & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #FDFBF6;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Space for the fixed back button */
+        }
+        /* Fixed Back Button Style */
+        .back-to-top-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            background-color: #A0522D;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+        .back-to-top-button:hover {
+            background-color: #CD853F;
+        }
+
+        /* Video List Specific Styles */
+        .video-section-title {
+            font-size: 1.5rem; font-weight: 700; color: #5A2D0E;
+            margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #D2B48C;
+        }
+        .video-grid {
+            display: grid; gap: 1.5rem; 
+            grid-template-columns: repeat(1, minmax(0, 1fr)); 
+        }
+        @media (min-width: 640px) { .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .video-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+        .video-card {
+            background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            text-decoration: none; color: inherit; display: block; 
+        }
+        .video-card:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }
+        .video-thumbnail-container { width: 100%; padding-bottom: 56.25%; position: relative; background-color: #e0e0e0; }
+        .video-thumbnail-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        .video-info { padding: 0.75rem; }
+        .video-title {
+            font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 0.25rem; 
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis; min-height: 2.4em; /* Approx height for 2 lines */
+        }
+        .video-description {
+            font-size: 0.875rem; color: #666;
+             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis; min-height: 2.1em; /* Approx height for 2 lines */
+        }
+
+        footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center; }
+        
+        /* Responsive adjustments */
+         @media (max-width: 768px) {
+             body { padding-top: 50px; } /* Adjust padding for smaller button */
+             .back-to-top-button { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back to Top Page Button -->
+    <a href="index.html" class="back-to-top-button">トップページへ戻る</a>
+
+    <main class="container mx-auto py-8 px-4 md:px-8 space-y-12" style="max-width: 1100px;"> 
+
+        <!-- Section: Vidsで制作した動画 -->
+        <section>
+            <h2 class="video-section-title">Vidsで制作した動画</h2> 
+            <div class="video-grid">
+                <!-- Placeholder Card 1 -->
+                <a href="#" class="video-card" aria-disabled="true" onclick="return false;">
+                    <div class="video-thumbnail-container">
+                        <img src="https://placehold.co/320x180/e0e0e0/5A2D0E?text=近日公開" alt="Vids制作動画 1">
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Vids制作動画 1</h3>
+                        <p class="video-description">現在準備中です。</p>
+                    </div>
+                </a>
+                <!-- Placeholder Card 2 -->
+                 <a href="#" class="video-card" aria-disabled="true" onclick="return false;">
+                    <div class="video-thumbnail-container">
+                        <img src="https://placehold.co/320x180/e0e0e0/5A2D0E?text=近日公開" alt="Vids制作動画 2"> 
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Vids制作動画 2</h3> 
+                        <p class="video-description">現在準備中です。</p> 
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: 人気動画 -->
+        <section>
+            <h2 class="video-section-title">人気動画</h2>
+            <div class="video-grid">
+                <!-- Placeholder Card 1 -->
+                <a href="#" class="video-card" aria-disabled="true" onclick="return false;">
+                    <div class="video-thumbnail-container">
+                        <img src="https://placehold.co/320x180/e0e0e0/5A2D0E?text=人気動画1" alt="人気動画 1">
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">人気動画 1</h3>
+                        <p class="video-description">現在準備中です。</p>
+                    </div>
+                </a>
+                <!-- Placeholder Card 2 -->
+                 <a href="#" class="video-card" aria-disabled="true" onclick="return false;">
+                    <div class="video-thumbnail-container">
+                        <img src="https://placehold.co/320x180/e0e0e0/5A2D0E?text=人気動画2" alt="人気動画 2"> 
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">人気動画 2</h3> 
+                        <p class="video-description">現在準備中です。</p> 
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: 最新動画 -->
+        <section>
+            <h2 class="video-section-title">最新動画</h2>
+            <div class="video-grid">
+                <!-- Placeholder Card 1 -->
+                <a href="#" class="video-card" aria-disabled="true" onclick="return false;">
+                    <div class="video-thumbnail-container">
+                        <img src="https://placehold.co/320x180/e0e0e0/5A2D0E?text=最新動画1" alt="最新動画 1">
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">最新動画 1</h3>
+                        <p class="video-description">現在準備中です。</p>
+                    </div>
+                </a>
+                <!-- Placeholder Card 2 -->
+                 <a href="#" class="video-card" aria-disabled="true" onclick="return false;">
+                    <div class="video-thumbnail-container">
+                        <img src="https://placehold.co/320x180/e0e0e0/5A2D0E?text=最新動画2" alt="最新動画 2"> 
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">最新動画 2</h3> 
+                        <p class="video-description">現在準備中です。</p> 
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: ウマキんグ切り抜き動画 -->
+        <section>
+            <h2 class="video-section-title">ウマキんグ切り抜き動画</h2>
+             <div class="video-grid">
+                <!-- Video Card 1 (Moved) -->
+                 <a href="portfolio-01.html" class="video-card">
+                    <div class="video-thumbnail-container">
+                        <img src="https://i.ytimg.com/vi/GQrXptXUO7Y/mqdefault.jpg" alt="ウマキング切り抜き動画" onerror="this.onerror=null;this.src='https://placehold.co/320x180/e0e0e0/5A2D0E?text=動画1';">
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">ウマキング切り抜き動画</h3>
+                        <p class="video-description">学習効果を高める編集スキルが活かされた代表作品。</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+         <!-- Section: スキルアップ動画 -->
+        <section>
+            <h2 class="video-section-title">スキルアップ動画</h2>
+             <div class="video-grid">
+                 <!-- Video Card 1 (Moved) -->
+                 <a href="portfolio-02.html" class="video-card">
+                    <div class="video-thumbnail-container">
+                        <img src="https://i.ytimg.com/vi/mRQQAiD5YU0/mqdefault.jpg" alt="学習・教育系動画" onerror="this.onerror=null;this.src='https://placehold.co/320x180/e0e0e0/5A2D0E?text=動画2';">
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">学習・教育系動画</h3>
+                        <p class="video-description">視聴者の深い理解を促す編集事例。</p>
+                    </div>
+                </a>
+                 <!-- Video Card 2 (Moved) -->
+                 <a href="portfolio-03.html" class="video-card">
+                    <div class="video-thumbnail-container">
+                       <img src="https://i.ytimg.com/vi/LaGwJuCA1EU/mqdefault.jpg" alt="静止画サイトのビデオ化" onerror="this.onerror=null;this.src='https://placehold.co/320x180/e0e0e0/5A2D0E?text=動画3';">
+                   </div>
+                   <div class="video-info">
+                       <h3 class="video-title">静止画サイトのビデオ化</h3>
+                       <p class="video-description">アニメーションで静的コンテンツを魅力的に変換。</p>
+                   </div>
+               </a>
+               <!-- Video Card 3 (Moved) -->
+                 <a href="portfolio-04.html" class="video-card">
+                    <div class="video-thumbnail-container">
+                       <img src="https://i.ytimg.com/vi/W5BWFgemIBM/mqdefault.jpg" alt="静止画サイトのビデオ化 2" onerror="this.onerror=null;this.src='https://placehold.co/320x180/e0e0e0/5A2D0E?text=動画4';">
+                   </div>
+                   <div class="video-info">
+                       <h3 class="video-title">静止画サイトのビデオ化 2</h3>
+                       <p class="video-description">情報を記憶に残りやすい形に再構成。</p>
+                   </div>
+                </a>
+                 
+            </div>
+        </section>
+
+         <!-- Section: 『BOSS兄』の推しポイント③ -->
+        <section>
+            <h2 class="video-section-title">『BOSS兄』の推しポイント③ (ビデオレター/プレゼン)</h2>
+            <div class="video-grid">
+                 <!-- Video Card 1 (REMOVED) -->
+                 
+                 <!-- Video Card 2 (REMOVED) -->
+                 
+                 
+            </div>
+        </section>
+
+
+        <!-- Section: メインプロジェクト -->
+                     </div>
+                 </a>
+                <!-- Video Card 6 (Moved) -->
+                <a href="portfolio-07.html" class="video-card">
+                    <div class="video-thumbnail-container">
+                        <img src="https://i.ytimg.com/vi/6PoVUnLztzA/mqdefault.jpg" alt="「記録」を「記憶」に変える編集スキル" onerror="this.onerror=null;this.src='https://placehold.co/320x180/e0e0e0/5A2D0E?text=動画7';">
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">「記録」を「記憶」に変える編集スキル</h3>
+                        <p class="video-description">プロの編集スキルをインフォグラフィックで解説。</p>
+                    </div>
+                </a>
+                <!-- Video Card 7 (Moved) -->
+                 <a href="portfolio-08.html" class="video-card">
+                    <div class="video-thumbnail-container">
+                        <img src="https://i.ytimg.com/vi/z1CZEdZl6VU/mqdefault.jpg" alt="イベント映像を「番組」に" onerror="this.onerror=null;this.src='https://placehold.co/320x180/e0e0e0/5A2D0E?text=動画8';">
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">イベント映像を「番組」に</h3>
+                        <p class="video-description">プロの編集がもたらす「3つの魔法」を解説。</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Adjust body padding dynamically based on button height (optional, simple fixed padding might be enough)
+        document.addEventListener('DOMContentLoaded', () => {
+            const backButton = document.querySelector('.back-to-top-button');
+            if (backButton) {
+                const setBodyPadding = () => { 
+                    requestAnimationFrame(() => {
+                       const buttonHeight = backButton.offsetHeight;
+                       // Add some extra space (e.g., 10px)
+                       document.body.style.paddingTop = (buttonHeight + 20) + 'px'; 
+                    });
+                };
+                 // Adjust padding on load and resize
+                window.addEventListener('load', setBodyPadding);
+                window.addEventListener('resize', setBodyPadding);
+                setTimeout(setBodyPadding, 100); // Initial adjustment
+            }
+        });
+    </script>
+</body>
+</html>
