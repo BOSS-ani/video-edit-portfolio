@@ -88,6 +88,16 @@
             margin-bottom: 1.8rem;
             font-size: 2.25rem;
         }
+        /* --- Sub Heading for PR Videos --- */
+        .sub-section-h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #5A2D0E;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #D2B48C;
+        }
 
         /* --- Collapsible Accordion --- */
         .collapsible-header {
@@ -193,6 +203,7 @@
              /* ▼▼▼ Mobile nav link padding reduced ▼▼▼ */
             .nav-link { padding: 0.4rem 0.2rem; /* Reduced vertical padding */ font-size: 0.8rem; }
             .section-h2 { font-size: 1.8rem; }
+            .sub-section-h3 { font-size: 1.4rem; }
             .main-project-banner-style h3 { font-size: 1.8rem; }
             .profile-image-group { flex-direction: column; }
             .portfolio-grid { grid-template-columns: 1fr; /* Single column on mobile */ }
@@ -216,7 +227,8 @@
         <nav id="navbar">
            <div class="container mx-auto px-4">
                <ul>
-                   <li><a href="#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
+                   <!-- ▼▼▼ Link to videos.html added (if needed, or just remove the section) ▼▼▼ -->
+                   <!-- <li><a href="videos.html" class="nav-link">動画一覧</a></li> -->
                    <li><a href="#portfolio" class="nav-link">制作作品</a></li>
                    <li><a href="#about" class="nav-link">自己紹介</a></li>
                    <li><a href="#price-guide" class="nav-link">料金案内</a></li>
@@ -235,100 +247,54 @@
             </a>
         </div>
 
-        <section id="introduction-pr" class="scroll-mt-24">
-            <h2 class="section-h2">『BOSS兄』の推しポイント</h2>
-            <div class="space-y-8">
-                <!-- 学習・教育系の動画編集 --><div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                    <h3 class="text-xl font-bold text-center text-stone-800">学習・教育系の動画編集が得意</h3>
-                    <p class="text-stone-700 leading-relaxed text-center">
-                        『ウマキんグチャンネル』の動画制作で培ったスキルを活かし、視聴者が内容を深く理解できるような学習・教育系の動画編集を得意としています。
-                    </p>
-                    <!-- Link Card Grid --><div class="portfolio-grid">
-                        <a href="portfolio-01.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container">
-                                <img src="https://i.ytimg.com/vi/GQrXptXUO7Y/mqdefault.jpg" alt="オープニング動画 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品1';">
-                            </div>
-                            <div class="portfolio-content-summary">
-                                <h4 class="text-lg font-bold text-stone-800">ウマキング切り抜き動画</h4>
-                                <p class="mt-2 text-stone-600 text-sm">学習効果を高める編集スキルが活かされた代表作品。</p>
-                            </div>
-                        </a>
-                        <a href="portfolio-02.html" class="portfolio-card">
-                             <div class="portfolio-thumbnail-container">
-                                <img src="https://i.ytimg.com/vi/mRQQAiD5YU0/mqdefault.jpg" alt="学習・教育系動画 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品2';">
-                            </div>
-                            <div class="portfolio-content-summary">
-                                <h4 class="text-lg font-bold text-stone-800">学習・教育系動画</h4>
-                                <p class="mt-2 text-stone-600 text-sm">視聴者の深い理解を促す編集事例。</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 静止画サイトのビデオ化 --><div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                    <h3 class="text-xl font-bold text-center text-stone-800">静止画サイトのビデオ化</h3>
-                    <p class="text-stone-700 leading-relaxed text-center">
-                        既存の静止画サイトや資料を、視聴者の興味を惹きつける動的なビデオコンテンツに変換します。
-                    </p>
-                     <!-- Link Card Grid --><div class="portfolio-grid">
-                        <a href="portfolio-03.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container">
-                               <img src="https://i.ytimg.com/vi/LaGwJuCA1EU/mqdefault.jpg" alt="静止画サイトのビデオ化 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品3';">
-                           </div>
-                           <div class="portfolio-content-summary">
-                               <h4 class="text-lg font-bold text-stone-800">静止画サイトのビデオ化</h4>
-                               <p class="mt-2 text-stone-600 text-sm">アニメーションで静的コンテンツを魅力的に変換。</p>
-                           </div>
-                       </a>
-                       <a href="portfolio-04.html" class="portfolio-card">
-                            <div class="portfolio-thumbnail-container">
-                               <img src="https://i.ytimg.com/vi/W5BWFgemIBM/mqdefault.jpg" alt="静止画サイトのビデオ化 2 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品4';">
-                           </div>
-                           <div class="portfolio-content-summary">
-                               <h4 class="text-lg font-bold text-stone-800">静止画サイトのビデオ化 2</h4>
-                               <p class="mt-2 text-stone-600 text-sm">情報を記憶に残りやすい形に再構成。</p>
-                           </div>
-                       </a>
-                   </div>
-                </div>
-
-                <!-- 心に残るビデオレター制作 --><div class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-                    <h3 class="text-xl font-bold text-center text-stone-800">心に残るビデオレター制作</h3>
-                    <p class="text-stone-700 leading-relaxed text-center">
-                        大切な人へのメッセージや記念日を彩るビデオレターの制作もお任せください。
-                    </p>
-                    <!-- Link Card Grid --><div class="portfolio-grid">
-                         <a href="portfolio-05.html" class="portfolio-card">
-                              <div class="portfolio-thumbnail-container">
-                                 <img src="https://i.ytimg.com/vi/TKUuvimwCB4/mqdefault.jpg" alt="心に残るビデオレター サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品5';">
-                             </div>
-                             <div class="portfolio-content-summary">
-                                 <h4 class="text-lg font-bold text-stone-800">心に残るビデオレター</h4>
-                                 <p class="mt-2 text-stone-600 text-sm">大切な記念日を彩る感動的な動画。</p>
-                             </div>
-                         </a>
-                         <a href="portfolio-06.html" class="portfolio-card">
-                              <div class="portfolio-thumbnail-container">
-                                 <img src="https://i.ytimg.com/vi/cqN0IO5C86E/mqdefault.jpg" alt="プレゼン資料のビデオ化 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品6';">
-                             </div>
-                             <div class="portfolio-content-summary">
-                                 <h4 class="text-lg font-bold text-stone-800">プレゼン資料のビデオ化</h4>
-                                 <p class="mt-2 text-stone-600 text-sm">静的なプレゼン資料を心に残るコンテンツへ。</p>
-                             </div>
-                         </a>
-                    </div>
-                </div>
-            </div>
+        <!-- ▼▼▼ NEW SECTION ADDED ▼▼▼ -->
+<section id="pr-videos" class="scroll-mt-24">
+    <h3 class="sub-section-h3">自己PR・プレゼン動画 (参考)</h3>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <p class="text-center text-stone-700 mb-6">
+            <!-- ★★★ ここの文章を差し替えてください ★★★ -->
+            LIVEリンクカードを、単なる連絡先交換から「最強の営業ツール」へと進化させませんか？<br>あなたのビジネスへの情熱やスキルの強みを凝縮したPR動画を埋め込むことで<br>出会いを即チャンスに変えることができます。以下は、カードに掲載する動画の参考制作事例です。
+            <!-- ★★★ ここまで ★★★ -->
+        </p>
+        <div class="portfolio-grid">
+<!-- ... (rest of the code) ... -->
+                    <a href="portfolio-05.html" class="portfolio-card">
+                         <div class="portfolio-thumbnail-container">
+                            <img src="https://i.ytimg.com/vi/TKUuvimwCB4/mqdefault.jpg" alt="心に残るビデオレター サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品5';">
+                        </div>
+                        <div class="portfolio-content-summary">
+                            <h4 class="text-lg font-bold text-stone-800">心に残るビデオレター</h4>
+                            <p class="mt-2 text-stone-600 text-sm">大切な記念日を彩る感動的な動画。</p>
+                        </div>
+                    </a>
+                    <a href="portfolio-06.html" class="portfolio-card">
+                         <div class="portfolio-thumbnail-container">
+                            <img src="https://i.ytimg.com/vi/cqN0IO5C86E/mqdefault.jpg" alt="プレゼン資料のビデオ化 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品6';">
+                        </div>
+                        <div class="portfolio-content-summary">
+                            <h4 class="text-lg font-bold text-stone-800">プレゼン資料のビデオ化</h4>
+                            <p class="mt-2 text-stone-600 text-sm">静的なプレゼン資料を心に残るコンテンツへ。</p>
+                        </div>
+                    </a>
+               </div>
+           </div>
         </section>
+        <!-- ▲▲▲ NEW SECTION ADDED ▲▲▲ -->
+
+
+        <!-- ▼▼▼ SECTION REMOVED ▼▼▼ -->
+        <!-- 
+        <section id="introduction-pr" class="scroll-mt-24">
+            ... (Section content deleted as requested) ...
+        </section>
+        -->
+        <!-- ▲▲▲ SECTION REMOVED ▲▲▲ -->
 
         <div class="text-center my-12">
             <a href="https://calendar.app.google/w6johrZkru78NqUd6" target="_blank" rel="noopener noreferrer" class="cta-button">
                 打ち合わせ予約・無料相談はこちら
             </a>
         </div>
-
-        <section id="portfolio" class="scroll-mt-24">
-            <h2 class="section-h2">制作作品</h2>
             <div class="main-project-banner-style">
                  <h3>メインプロジェクト</h3>
                  <p class="leading-relaxed text-lg mb-4">『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』は、私の動画編集者としての情熱とスキルを注ぎ込んだメインプロジェクトです...</p>
@@ -351,26 +317,14 @@
                      </div>
                  </div>
             </div>
-            <!-- Additional Portfolio Items as Cards --><div class="portfolio-grid mt-8">
-                 <a href="portfolio-07.html" class="portfolio-card">
-                     <div class="portfolio-thumbnail-container">
-                        <img src="https://i.ytimg.com/vi/6PoVUnLztzA/mqdefault.jpg" alt="「記録」を「記憶」に変える編集スキル サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品7';">
-                    </div>
-                    <div class="portfolio-content-summary">
-                        <h4 class="text-lg font-bold text-stone-800">「記録」を「記憶」に変える編集スキル</h4>
-                        <p class="mt-2 text-stone-600 text-sm">プロの編集スキルをインフォグラフィックで解説。</p>
-                    </div>
-                </a>
-                <a href="portfolio-08.html" class="portfolio-card">
-                     <div class="portfolio-thumbnail-container">
-                        <img src="https://i.ytimg.com/vi/z1CZEdZl6VU/mqdefault.jpg" alt="イベント映像を「番組」に サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品8';">
-                    </div>
-                    <div class="portfolio-content-summary">
-                        <h4 class="text-lg font-bold text-stone-800">イベント映像を「番組」に</h4>
-                        <p class="mt-2 text-stone-600 text-sm">プロの編集がもたらす「3つの魔法」を解説。</p>
-                    </div>
-                </a>
+            <!-- ▼▼▼ CARDS REMOVED FROM HERE ▼▼▼ -->
+            <!-- 
+            <div class="portfolio-grid mt-8">
+                 <a href="portfolio-07.html" class="portfolio-card"> ... </a>
+                 <a href="portfolio-08.html" class="portfolio-card"> ... </a>
             </div>
+            -->
+            <!-- ▲▲▲ CARDS REMOVED FROM HERE ▲▲▲ -->
         </section>
         
         <section id="about" class="scroll-mt-24">
@@ -384,7 +338,7 @@
                     <p class="mt-4">初めまして！ 私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。</p>
                     <p>作品は、「制作作品」セクションでご覧いただけます。</p>
                 </div>
-                <!-- About section video links as cards --><div class="portfolio-grid w-full max-w-2xl mx-auto mt-6">
+                <!-- About section video links as cards (These remain) --><div class="portfolio-grid w-full max-w-2xl mx-auto mt-6">
                      <a href="portfolio-09.html" class="portfolio-card">
                           <div class="portfolio-thumbnail-container">
                              <img src="https://i.ytimg.com/vi/C1XXEY3p78g/mqdefault.jpg" alt="初めて制作した動画 サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品9';">
@@ -652,4 +606,3 @@
     </script>
 </body>
 </html>
-
