@@ -62,11 +62,12 @@
 
         /* --- Navigation --- */
         /* ▼▼▼ Navbar ul gap reduced ▼▼▼ */
-        #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1rem; /* Reduced gap */ }
+        /* ▼▼▼ Further reduced gap and padding for 6 items ▼▼▼ */
+        #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 0.5rem; /* Further Reduced gap */ }
         .nav-link { 
             transition: background-color 0.3s ease, color 0.3s ease; 
             /* ▼▼▼ Nav link vertical padding reduced ▼▼▼ */
-            padding: 0.5rem 1.2rem; /* Reduced vertical padding */
+            padding: 0.5rem 1rem; /* Further Reduced horizontal padding */
             border-radius: 6px; 
             text-decoration: none; 
             color: #FFFFFF; 
@@ -228,14 +229,14 @@
         <nav id="navbar">
            <div class="container mx-auto px-4">
                <ul>
-                   <!-- ▼▼▼ ここのリンク先を修正します ▼▼▼ -->
+                   <!-- ▼▼▼ Menu items updated as requested ▼▼▼ -->
+                   <li><a href="index.html" class="nav-link">TOP</a></li>
                    <li><a href="dougaiciran.html" class="nav-link">動画一覧</a></li>
-                   <!-- ▲▲▲ 修正完了 ▲▲▲ -->
                    <li><a href="#about" class="nav-link">自己紹介</a></li>
-<!-- ... 省略 ... -->
                    <li><a href="#price-guide" class="nav-link">料金案内</a></li>
                    <li><a href="#blog" class="nav-link">ブログ</a></li>
                    <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li> 
+                   <!-- ▲▲▲ Menu items updated ▲▲▲ -->
                </ul>
            </div>
         </nav>
