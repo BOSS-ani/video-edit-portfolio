@@ -25,6 +25,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
+    <!-- ▼▼▼ DotGothic16 Font Link REMOVED ▼▼▼ -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet"> -->
+    
     <style>
         /* --- Base Styles --- */
         body {
@@ -39,12 +42,12 @@
         /* --- Header --- */
         header {
             position: fixed;
-            top: 0;
+            /* ▼▼▼ top position adjusted by JS ▼▼▼ */
+            top: 40px; 
             width: 100%;
-            z-index: 100;
+            z-index: 100; /* Below Ticker */
             background-color: #A0522D;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            /* ▼▼▼ Header padding adjusted slightly ▼▼▼ */
             padding: 0.8rem 0; 
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
@@ -61,12 +64,10 @@
         }
 
         /* --- Navigation --- */
-        /* ▼▼▼ Navbar ul gap reduced ▼▼▼ */
         /* ▼▼▼ Further reduced gap and padding for 6 items ▼▼▼ */
         #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 0.5rem; /* Further Reduced gap */ }
         .nav-link { 
             transition: background-color 0.3s ease, color 0.3s ease; 
-            /* ▼▼▼ Nav link vertical padding reduced ▼▼▼ */
             padding: 0.5rem 1rem; /* Further Reduced horizontal padding */
             border-radius: 6px; 
             text-decoration: none; 
@@ -78,6 +79,48 @@
         }
         .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
         
+        /* --- NEW Marquee Ticker --- */
+        #marquee-ticker {
+            position: fixed;
+            top: 0; /* Positioned at the top */
+            left: 0;
+            width: 100%;
+            z-index: 101; /* Above header */
+            background-color: #000000;
+            overflow: hidden;
+            border-bottom: 2px solid #FFD700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            height: 40px; /* Default height, will be adjusted by JS */
+            display: flex;
+            align-items: center;
+        }
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 30s linear infinite; /* Slower speed */
+            /* ▼▼▼ Font family REMOVED as requested ▼▼▼ */
+            /* font-family: 'DotGothic16', sans-serif; */ 
+            /* ▲▲▲ Font family REMOVED ▲▲▲ */
+            font-size: 1.5rem; /* Will be adjusted by JS */
+            color: #FFA500; /* Orange color */
+            text-shadow: 0 0 5px #FFA500, 0 0 10px #FF8C00; /* Adjusted shadow for orange */
+            animation-play-state: running;
+        }
+        .marquee-content span {
+            animation: blink 2s step-end infinite; /* Slower blink */
+        }
+        #marquee-ticker:hover .marquee-content {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes blink {
+            50% { color: #000; text-shadow: none; } /* Blink to black */
+        }
+
         /* --- Section Heading --- */
         .section-h2 {
             background: linear-gradient(to right, #FAEBD7, #FDFBF6);
@@ -203,6 +246,8 @@
             #navbar li { flex-basis: 33.33%; text-align: center; }
              /* ▼▼▼ Mobile nav link padding reduced ▼▼▼ */
             .nav-link { padding: 0.4rem 0.2rem; /* Reduced vertical padding */ font-size: 0.8rem; }
+            #marquee-ticker { height: 30px; /* Adjust ticker height for mobile */ }
+            .marquee-content { font-size: 1.1rem; /* Adjust ticker font size for mobile */ }
             .section-h2 { font-size: 1.8rem; }
             .sub-section-h3 { font-size: 1.4rem; }
             .main-project-banner-style h3 { font-size: 1.8rem; }
@@ -225,7 +270,6 @@
                 <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
             </div>
         </div>
-<!-- ... 省略 ... -->
         <nav id="navbar">
            <div class="container mx-auto px-4">
                <ul>
@@ -242,6 +286,15 @@
         </nav>
     </header>
 
+    <!-- ▼▼▼ NEW Marquee Ticker Added ▼▼▼ -->
+    <div id="marquee-ticker">
+        <div class="marquee-content">
+            <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    <!-- ▲▲▲ NEW Marquee Ticker Added ▲▲▲ -->
+
     <main class="container mx-auto py-8 px-4 md:px-8 space-y-12" style="max-width: 900px;">
         
         <div class="flex justify-center my-8 top-banner">
@@ -251,16 +304,15 @@
         </div>
 
         <!-- ▼▼▼ NEW SECTION ADDED ▼▼▼ -->
-<section id="pr-videos" class="scroll-mt-24">
-    <h3 class="sub-section-h3">自己PR・プレゼン動画 (参考)</h3>
-    <div class="bg-white p-6 rounded-lg shadow-lg">
-        <p class="text-center text-stone-700 mb-6">
-            <!-- ★★★ ここの文章を差し替えてください ★★★ -->
-            LIVEリンクカードを、単なる連絡先交換から「最強の営業ツール」へと進化させませんか？<br>あなたのビジネスへの情熱やスキルの強みを凝縮したPR動画を埋め込むことで<br>出会いを即チャンスに変えることができます。以下は、カードに掲載する動画の参考制作事例です。
-            <!-- ★★★ ここまで ★★★ -->
-        </p>
-        <div class="portfolio-grid">
-<!-- ... (rest of the code) ... -->
+        <section id="pr-videos" class="scroll-mt-24">
+            <h3 class="sub-section-h3">自己PR・プレゼン動画 (参考)</h3>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="text-center text-stone-700 mb-6">
+                    <!-- ★★★ PR Text Updated ★★★ -->
+                    LIVEリンクカードを、単なる連絡先交換から「最強の営業ツール」へと進化させませんか？<br>あなたのビジネスへの情熱やスキルの強みを凝縮したPR動画を埋め込むことで<br>出会いを即チャンスに変えることができます。以下は、カードに掲載する動画の参考制作事例です。
+                    <!-- ★★★ PR Text Updated ★★★ -->
+                </p>
+                <div class="portfolio-grid">
                     <a href="portfolio-05.html" class="portfolio-card">
                          <div class="portfolio-thumbnail-container">
                             <img src="https://i.ytimg.com/vi/TKUuvimwCB4/mqdefault.jpg" alt="心に残るビデオレター サムネイル" onerror="this.onerror=null;this.src='https://placehold.co/300x169/e0e0e0/5A2D0E?text=作品5';">
@@ -283,21 +335,33 @@
            </div>
         </section>
         <!-- ▲▲▲ NEW SECTION ADDED ▲▲▲ -->
-
-
-        <!-- ▼▼▼ SECTION REMOVED ▼▼▼ -->
-        <!-- 
-        <section id="introduction-pr" class="scroll-mt-24">
-            ... (Section content deleted as requested) ...
+        
+        <!-- ▼▼▼ NEW PR SECTION FOR Benrry Tool ▼▼▼ -->
+        <section id="benrry-tool-pr" class="scroll-mt-24">
+             <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-lg shadow-2xl text-center border-4 border-red-500">
+                <h2 class="text-4xl font-bold text-white mb-3" style="font-family: 'Noto Sans JP', sans-serif;">[CREATIVE AI TOOL]</h2>
+                <p class="text-xl text-red-400 font-semibold mb-6">誰でも使えるAIツール！AIが身近に感じられます</p>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                    「この服、私に似合うかな？」AIがあなたの写真を瞬時にリメイク！<br>
+                    AIバーチャル試着ツール、AIフィギュア制作ツール、AIデザインツールなど、<br>
+                    あなたの想像を現実に変える、さまざまなAIツールをご体験ください。
+                </p>
+                <a href="https://sites.google.com/bossboss.jp/benrry-tool/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank" rel="noopener noreferrer" class="cta-button !bg-red-600 !text-white !border-red-800 hover:!bg-red-700 !shadow-red-500/50">
+                    Tool LIST一覧はこちら
+                </a>
+             </div>
         </section>
-        -->
-        <!-- ▲▲▲ SECTION REMOVED ▲▲▲ -->
+        <!-- ▲▲▲ NEW PR SECTION FOR Benrry Tool ▲▲▲ -->
+
 
         <div class="text-center my-12">
             <a href="https://calendar.app.google/w6johrZkru78NqUd6" target="_blank" rel="noopener noreferrer" class="cta-button">
                 打ち合わせ予約・無料相談はこちら
             </a>
         </div>
+
+        <section id="portfolio" class="scroll-mt-24">
+            <h2 class="section-h2">メインプロジェクト</h2>
             <div class="main-project-banner-style">
                  <h3>メインプロジェクト</h3>
                  <p class="leading-relaxed text-lg mb-4">『超最速・スマホで見やすい ウマキング切り抜き公認応援ch』は、私の動画編集者としての情熱とスキルを注ぎ込んだメインプロジェクトです...</p>
@@ -312,11 +376,11 @@
                      </div>
                      <div class="collapsible-container">
                          <div class="collapsible-header"><span>成長実績と私の貢献</span><span class="toggle-icon">▼</span></div>
-                         <div class="collapsible-content"><p class="p-4">2024年12月22日にチャンネル登録者1000名を達成し、その後も順調に成長を続け、現在に至っています...<br>・**テロップと演出の統一化:** チャンネル全体の動画に、私の考案した視認性の高いテロップデザインと効果的な演出を導入しました...<br>・**視聴維持率の向上:** テンポの良い編集と重要な情報の視覚化により、動画の平均視聴維持率が向上しました...<br>・**本編動画への影響:** 私のテロップやアイデアが、ウマキんグ様の本編動画にも採用されるようになりました...</p></div>
+                         <div class="collapsible-content"><p class="p-4">2024年12月22日にチャンネル登録者1000名を達成し、その後も順調に成長を続け、3324名（2025/11/17現在）に至っています...<br>・**テロップと演出の統一化:** チャンネル全体の動画に、私の考案した視認性の高いテロップデザインと効果的な演出を導入しました...<br>・**視聴維持率の向上:** テンポの良い編集と重要な情報の視覚化により、動画の平均視聴維持率が向上しました...<br>・**本編動画への影響:** 私のテロップやアイデアが、ウマキんグ様の本編動画にも採用されるようになりました...</p></div>
                      </div>
                       <div class="collapsible-container">
-                         <div class="collapsible-header"><span>主要な制作作品（再生リスト）</span><span class="toggle-icon">▼</span></div>
-                         <div class="collapsible-content"><p class="p-4">チャンネル創成期：基礎と挑戦の記録（2024年10月～12月）...<br>チャンネルⅡ期：分析の深化とファンとの絆（2025年1月～3月）...<br>チャンネルⅢ期：AI活用とコンテンツ革新（2025年4月～6月）...</p></div>
+                         <div class="collapsible-header"><span>主要な制作作品</span><span class="toggle-icon">▼</span></div>
+                         <div class="collapsible-content"><p class="p-4">チャンネル創成期：基礎と挑戦の記録（2024年10月～12月）...<br>チャンネルⅡ期：分析の深化とファンとの絆（2025年1月～3月）...<br>チャンネルⅢ期：AI活用とコンテンツ革新（2025年4月～6月）...<br>チャンネルⅣ期：AI活用とコンテンツ革新徹底！（2025年7月～9月）...<br>チャンネルⅤ期：Gemini Liveのライブ配信準備・配信（2025年10月～）...</p></div>
                      </div>
                  </div>
             </div>
@@ -330,6 +394,32 @@
             <!-- ▲▲▲ CARDS REMOVED FROM HERE ▲▲▲ -->
         </section>
         
+        <!-- ▼▼▼ BLOG SECTION MOVED HERE ▼▼▼ -->
+        <section id="blog" class="scroll-mt-24">
+            <h2 class="section-h2">ブログ</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg space-y-6">
+                <div class="blog-feed-container !border-t-0 !pt-0">
+                    <!-- ▼▼▼ Title Changed ▼▼▼ -->
+                    <h4 class="blog-feed-title">生涯現役・AIクリエーターの競馬手帳｜</h4>
+                    <!-- ▲▲▲ Title Changed ▲▲▲ -->
+                    <ul class="blog-feed-list" id="hatena-feed-keiba"><li>記事を読み込んでいます...</li></ul>
+                </div>
+                <!-- ▼▼▼ Removed Blog Feed Containers ▼▼▼ -->
+                <!-- 
+                <div class="blog-feed-container">
+                    <h4 class="blog-feed-title">未来の政治図鑑・・・闇を照らす光</h4>
+                    <ul class="blog-feed-list" id="hatena-feed-seiji"><li>記事を読み込んでいます...</li></ul>
+                </div>
+                <div class="blog-feed-container">
+                    <h4 class="blog-feed-title">実践的アンチエイジング（エビデンス無き養生）</h4>
+                    <ul class="blog-feed-list" id="hatena-feed-antiaging"><li>記事を読み込んでいます...</li></ul>
+                </div>
+                 -->
+                 <!-- ▲▲▲ Removed Blog Feed Containers ▲▲▲ -->
+            </div>
+        </section>
+        <!-- ▲▲▲ BLOG SECTION MOVED HERE ▲▲▲ -->
+
         <section id="about" class="scroll-mt-24">
             <h2 class="section-h2">自己紹介</h2>
             <div class="profile-section-content">
@@ -338,8 +428,8 @@
                     <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/22212851.png" alt="イメージ画像" class="profile-image">
                 </div>
                 <div class="profile-text-wrapper">
-                    <p class="mt-4">初めまして！ 私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ、現在は日々スキルアップに励んでいます。</p>
-                    <p>作品は、「制作作品」セクションでご覧いただけます。</p>
+                    <p class="mt-4">初めまして！ 私は10年以上前に動画制作に興味を持ち、Appleの大阪心斎橋店で動画編集ソフト学習講座に参加し、動画編集スキルを身に付けました。初めて制作した動画は『我が家のヒーローBOSS』です。その後、数本の動画を制作しましたが、日々の業務や家族の介護に追われ、一時は動画制作から離れていました。しかし、再び動画制作を学ぶ機会に恵まれ<br>現在は日々スキルアップに励んでいます。</p>
+                    <p>作品は、「動画一覧」セクションでご覧いただけます。</p>
                 </div>
                 <!-- About section video links as cards (These remain) --><div class="portfolio-grid w-full max-w-2xl mx-auto mt-6">
                      <a href="portfolio-09.html" class="portfolio-card">
@@ -482,30 +572,6 @@
             </div>
         </section>
 
-        <section id="blog" class="scroll-mt-24">
-            <h2 class="section-h2">ブログ</h2>
-            <div class="bg-white p-6 rounded-lg shadow-lg space-y-6">
-                <div class="blog-feed-container !border-t-0 !pt-0">
-                    <!-- ▼▼▼ Title Changed ▼▼▼ -->
-                    <h4 class="blog-feed-title">生涯現役・AIクリエーターの競馬手帳｜</h4>
-                    <!-- ▲▲▲ Title Changed ▲▲▲ -->
-                    <ul class="blog-feed-list" id="hatena-feed-keiba"><li>記事を読み込んでいます...</li></ul>
-                </div>
-                <!-- ▼▼▼ Removed Blog Feed Containers ▼▼▼ -->
-                <!-- 
-                <div class="blog-feed-container">
-                    <h4 class="blog-feed-title">未来の政治図鑑・・・闇を照らす光</h4>
-                    <ul class="blog-feed-list" id="hatena-feed-seiji"><li>記事を読み込んでいます...</li></ul>
-                </div>
-                <div class="blog-feed-container">
-                    <h4 class="blog-feed-title">実践的アンチエイジング（エビデンス無き養生）</h4>
-                    <ul class="blog-feed-list" id="hatena-feed-antiaging"><li>記事を読み込んでいます...</li></ul>
-                </div>
-                 -->
-                 <!-- ▲▲▲ Removed Blog Feed Containers ▲▲▲ -->
-            </div>
-        </section>
-
         <!-- Removed the collapsible section and kept only the heading which acts as a scroll target --><section id="privacy-policy" class="scroll-mt-24">
              <h2 class="section-h2">プライバシーポリシー</h2>
              <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -527,18 +593,48 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.getElementById('main-header');
-            if (header) {
-                // Ensure padding calculation runs after potential layout shifts
-                const setBodyPadding = () => { 
-                    requestAnimationFrame(() => { // Use requestAnimationFrame for smoother updates
-                       document.body.style.paddingTop = header.offsetHeight + 'px'; 
+            const ticker = document.getElementById('marquee-ticker');
+            
+            if (header && ticker) {
+                // Function to set paddings and ticker position
+                const setDynamicPositions = () => { 
+                    requestAnimationFrame(() => { // Use requestAnimationFrame
+                        
+                        // --- Ticker Height Calculation ---
+                        // Get base height from nav and title, whichever is taller
+                        const titleHeight = header.querySelector('.main-header-content') ? header.querySelector('.main-header-content').offsetHeight : 0;
+                        const navHeight = header.querySelector('#navbar') ? header.querySelector('#navbar').offsetHeight : 0;
+                        // Use a fraction of the *combined* header content height for ticker
+                        let tickerHeight = (titleHeight + navHeight) * 0.3; // e.g. 30% of content height
+                        
+                        // Apply constraints
+                        if (tickerHeight < 30) tickerHeight = 30; // Min height 30px
+                        if (tickerHeight > 45) tickerHeight = 45; // Max height 45px
+                        
+                        // Set ticker height and font size
+                        ticker.style.height = `${tickerHeight}px`;
+                        
+                        // Adjust font size relative to ticker height
+                        const fontSize = tickerHeight * 0.6; // 60% of ticker height
+                        const marqueeContent = ticker.querySelector('.marquee-content');
+                        if(marqueeContent) {
+                            marqueeContent.style.fontSize = `${fontSize}px`;
+                        }
+
+                        // Position header *below* ticker
+                        header.style.top = `${tickerHeight}px`;
+
+                        // Set body padding to accommodate both
+                        const headerActualHeight = header.offsetHeight;
+                        document.body.style.paddingTop = (headerActualHeight + tickerHeight) + 'px'; 
                     });
                 };
+                
                 // Run on load and resize
-                window.addEventListener('load', setBodyPadding);
-                window.addEventListener('resize', setBodyPadding);
+                window.addEventListener('load', setDynamicPositions);
+                window.addEventListener('resize', setDynamicPositions);
                  // Also run once after initial content load
-                setBodyPadding(); 
+                setDynamicPositions(); 
             }
 
             // Smooth scroll for internal links
@@ -550,9 +646,12 @@
                          e.preventDefault(); // Prevent default only for hash links
                          const targetElement = document.querySelector(targetId);
                          if (targetElement) {
-                             const headerOffset = document.getElementById('main-header').offsetHeight;
+                             const headerHeight = document.getElementById('main-header').offsetHeight;
+                             const tickerHeight = document.getElementById('marquee-ticker') ? document.getElementById('marquee-ticker').offsetHeight : 0;
+                             const totalOffset = headerHeight + tickerHeight;
+                             
                              const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                             const offsetPosition = elementPosition - headerOffset - 20; // Added offset
+                             const offsetPosition = elementPosition - totalOffset - 20; // Added offset
                              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                          }
                     } 
