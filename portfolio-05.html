@@ -120,6 +120,11 @@
 
         /* --- Styles for Sub-pages (portfolio-XX.html) --- */
         .portfolio-video-container {
+            /* ▼▼▼ max-widthとmarginを追加して中央寄せ ▼▼▼ */
+            max-width: 56rem; /* 900px (max-w-4xl) */
+            margin-left: auto;
+            margin-right: auto;
+            /* ▲▲▲ 修正ここまで ▲▲▲ */
             position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
             overflow: hidden; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); margin-bottom: 2rem;
         }
@@ -167,7 +172,7 @@
         "name": "VIDEO edit office BOSS兄",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg"
+          "url": "https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%E5%85%84.jpg"
         }
       }
     }
@@ -250,15 +255,16 @@
 
 
     <!-- ▼▼▼ ここから下は、portfolio-05.html の元の本文とフッターです ▼▼▼ -->
-    <main class="container mx-auto py-8 px-4 md:px-8">
+    <!-- ▼▼▼ <main>タグにスタイルを追加して中央寄せ ▼▼▼ -->
+    <main class="container mx-auto py-8 px-4 md:px-8" style="max-width: 900px;">
         
         <section>
             <!-- ▼▼▼ h2にsection-h2クラスを追加（スタイル統一のため） ▼▼▼ -->
             <h2 class="section-h2 text-center text-3xl font-bold text-stone-800 mb-4">作品解説：心に残るビデオレター</h2>
             <p class="text-center text-stone-600 mb-8">大切な記念日を彩る感動的な動画制作の事例です。</p>
 
-            <!-- YouTube動画埋め込み -->
-            <div class="portfolio-video-container max-w-4xl mx-auto">
+            <!-- YouTube動画埋め込み (max-w-4xlは削除し、親の<main>の幅に依存) -->
+            <div class="portfolio-video-container mx-auto">
                 <iframe 
                     src="https://www.youtube.com/embed/TKUuvimwCB4" 
                     title="YouTube video player" 
@@ -268,8 +274,8 @@
                 </iframe>
             </div>
             
-            <!-- 作品解説 -->
-            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
+            <!-- 作品解説 (max-w-4xlは削除し、親の<main>の幅に依存) -->
+            <div class="mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
                 <h3 class="text-2xl font-bold text-stone-800 mb-4">この動画のポイント</h3>
                 <div class="text-stone-700 leading-relaxed space-y-4">
                     <p>
