@@ -6,7 +6,340 @@
     <title>【阪神競馬場2025】イメージVTR - bossboss.jp</title>
     
     <!-- SEO Meta Tags -->
+    <meta name="description" content="bossboss.jp ポートフォリオ動<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【阪神競馬場2025】イメージVTR - bossboss.jp</title>
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="bossboss.jp ポートフォリオ動画: Google Vids を使用して制作した、阪神競馬場2025年のイメージVTRです。">
+    <meta name="author" content="bossboss.jp">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Vendor CSS Files (index.htmlと共通) -->
+    <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet"> --> <!-- portfolio-05.htmlにないためコメントアウト -->
+    <!-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> --> <!-- portfolio-05.htmlにないためコメントアウト -->
+    <!-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> --> <!-- portfolio-05.htmlにないためコメントアウト -->
+    
+    <!-- Main CSS File (index.htmlと共通) -->
+    <!-- <link href="assets/css/main.css" rel="stylesheet"> --> <!-- portfolio-05.htmlにないためコメントアウト -->
+    
+    <!-- ▼▼▼ portfolio-05.html からコピーしたスタイル ▼▼▼ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Base Styles --- */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #FDFBF6;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            /* JSで動的に設定されます */
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 40px; /* JSで動的に設定されます */
+            width: 100%;
+            z-index: 100; /* Below Ticker */
+            background-color: #A0522D;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 0.8rem 0; 
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .header-inner-content { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+        .main-header-content { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: nowrap; }
+        .header-icon { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); }
+        .main-title { 
+            color: white; 
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.8rem; 
+            line-height: 1.1; 
+            text-shadow: -2.5px -2.5px 0 #5A2D0E, 2.5px -2.5px 0 #5A2D0E, -2.5px 2.5px 0 #5A2D0E, 2.5px 2.5px 0 #5A2D0E, 0px 0px 12px rgba(0,0,0,0.7);
+        }
+
+        /* --- Navigation --- */
+        #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 0.5rem; }
+        .nav-link { 
+            transition: background-color 0.3s ease, color 0.3s ease; 
+            padding: 0.5rem 1rem; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            color: #FFFFFF; 
+            background-color: #A0522D; 
+            font-weight: 500; 
+            font-size: 1rem; 
+            white-space: nowrap; 
+        }
+        .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+        
+        /* --- Marquee Ticker --- */
+        #marquee-ticker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 101; /* Above header */
+            background-color: #000000;
+            overflow: hidden;
+            border-bottom: 2px solid #FFD700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            height: 40px; /* Default height */
+            display: flex;
+            align-items: center;
+        }
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 30s linear infinite; /* Slower speed */
+            font-size: 1.5rem; /* Default font size */
+            color: #FFA500; /* Orange color */
+            text-shadow: 0 0 5px #FFA500, 0 0 10px #FF8C00;
+            animation-play-state: running;
+        }
+        .marquee-content span {
+            animation: blink 2s step-end infinite; /* Slower blink */
+        }
+        #marquee-ticker:hover .marquee-content {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes blink {
+            50% { color: #000; text-shadow: none; }
+        }
+
+        /* --- Styles for Sub-pages (portfolio-XX.html) --- */
+        .portfolio-video-container {
+            /* ▼▼▼ max-widthとmarginを追加して中央寄せ ▼▼▼ */
+            max-width: 56rem; /* 900px (max-w-4xl) */
+            margin-left: auto;
+            margin-right: auto;
+            /* ▲▲▲ 修正ここまで ▲▲▲ */
+            position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
+            overflow: hidden; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); margin-bottom: 2rem;
+        }
+        .portfolio-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .back-to-portfolio {
+            display: inline-block; margin-top: 2rem; padding: 0.75rem 1.5rem;
+            background-color: #A0522D; color: white; text-decoration: none;
+            border-radius: 8px; font-weight: bold; transition: background-color 0.3s;
+        }
+        .back-to-portfolio:hover { background-color: #CD853F; }
+        .section-h2 {
+            background: linear-gradient(to right, #FAEBD7, #FDFBF6); padding: 1.2rem 1.8rem; border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1); color: #5A2D0E; border-left: 8px solid #CD853F;
+            margin-bottom: 1.8rem; font-size: 2.25rem;
+        }
+        footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center; }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .main-title { font-size: 1.8rem; }
+            .header-icon { width: 30px; height: 30px; }
+            #navbar ul { flex-wrap: wrap; gap: 0.3rem 0; }
+            #navbar li { flex-basis: 33.33%; text-align: center; }
+            .nav-link { padding: 0.4rem 0.2rem; font-size: 0.8rem; }
+            #marquee-ticker { height: 30px; }
+            .marquee-content { font-size: 1.1rem; }
+            .section-h2 { font-size: 1.8rem; }
+        }
+    </style>
+    <!-- ▲▲▲ portfolio-05.html からコピーしたスタイル ▲▲▲ -->
+
+    <!-- 構造化データ (JSON-LD) - 阪神競馬場 (★固有情報を保持) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "【阪神競馬場2025】イメージVTR (Vids制作)",
+      "description": "bossboss.jp ポートフォリオ動画: Google Vids を使用して制作した、阪神競馬場2025年のイメージVTRです。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/fr-S8EYdvKk/maxresdefault.jpg",
+      "uploadDate": "2024-10-02T00:00:00+09:00",
+      "duration": "PT0M30S",
+      "contentUrl": "https://youtu.be/fr-S8EYdvKk",
+      "embedUrl": "https://www.youtube.com/embed/fr-S8EYdvKk",
+      "publisher": {
+        "@type": "Organization",
+        "name": "bossboss.jp",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bossboss.jp/assets/img/favicon.png" 
+        }
+      }
+    }
+    </script>
+    
+    <!-- Google AdSense (Auto Ads) (★固有情報を保持) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9040809459803301"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) (★固有情報を保持) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-16J9G1821N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-16J9G1821N');
+    </script>
+    <!-- Google Search Console Meta Tag (★固有情報を保持) -->
+    <meta name="google-site-verification" content="FKIz6FqX-m0ARf-f-6SbP-1vDR-vSgQK-iWy-Q-rZ3s" />
+</head>
+
+<!-- ▼▼▼ bodyのクラスを削除し、portfolio-05.htmlと共通化 ▼▼▼ -->
+<body>
+
+    <!-- ▼▼▼ portfolio-05.html からコピーしたヘッダー ▼▼▼ -->
+    <header id="main-header">
+        <div class="header-inner-content">
+            <div class="main-header-content">
+                <a href="index.html">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
+                </a>
+                <h1 class="main-title">VIDEO edit office BOSS兄</h1>
+                <a href="index.html">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
+                </a>
+            </div>
+        </div>
+        <nav id="navbar">
+           <div class="container mx-auto px-4">
+               <ul>
+                   <!-- ★ portfolio-04.html のナビ項目に合わせて修正 (料金案内・プライバシーポリシー) -->
+                   <li><a href="index.html" class="nav-link">TOP</a></li>
+                   <li><a href="dougaiciran.html" class="nav-link">動画一覧</a></li>
+                   <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
+                   <li><a href="index.html#pricing" class="nav-link">料金案内</a></li> 
+                   <li><a href="index.html#blog" class="nav-link">ブログ</a></li>
+                   <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li> 
+               </ul>
+           </div>
+        </nav>
+    </header>
+
+    <div id="marquee-ticker">
+        <div class="marquee-content">
+            <!-- ★ portfolio-05.html と同じテキストに修正 -->
+            <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const ticker = document.getElementById('marquee-ticker');
+            
+            if (header && ticker) {
+                const setDynamicPositions = () => { 
+                    requestAnimationFrame(() => { 
+                        const titleHeight = header.querySelector('.main-header-content') ? header.querySelector('.main-header-content').offsetHeight : 0;
+                        const navHeight = header.querySelector('#navbar') ? header.querySelector('#navbar').offsetHeight : 0;
+                        let tickerHeight = (titleHeight + navHeight) * 0.3; 
+                        
+                        if (tickerHeight < 30) tickerHeight = 30; 
+                        if (tickerHeight > 45) tickerHeight = 45; 
+                        
+                        ticker.style.height = `${tickerHeight}px`;
+                        
+                        const fontSize = tickerHeight * 0.6; 
+                        const marqueeContent = ticker.querySelector('.marquee-content');
+                        if(marqueeContent) {
+                            marqueeContent.style.fontSize = `${fontSize}px`;
+                        }
+
+                        header.style.top = `${tickerHeight}px`;
+
+                        const headerActualHeight = header.offsetHeight;
+                        document.body.style.paddingTop = (headerActualHeight + tickerHeight) + 'px'; 
+                    });
+                };
+                
+                window.addEventListener('load', setDynamicPositions);
+                window.addEventListener('resize', setDynamicPositions);
+                setDynamicPositions(); 
+            }
+        });
+    </script>
+    <!-- ▲▲▲ portfolio-05.html からコピーしたヘッダー ▲▲▲ -->
+
+    <!-- Main Content -->
+    <!-- ▼▼▼ mainのクラスを portfolio-05.html と共通化 ▼▼▼ -->
+    <main class="container mx-auto py-8 px-4 md:px-8" style="max-width: 900px;">
+        
+        <div class="container mx-auto">
+            
+            <!-- ▼▼▼ h1のクラスを portfolio-05.html と共通化 ▼▼▼ -->
+            <h1 class="section-h2 text-center text-3xl font-bold text-stone-800 mb-4">
+                【阪神競馬場2025】イメージVTR (Vids制作)
+            </h1>
+
+            <!-- 動画埋め込み -->
+            <section class="mb-8">
+                <!-- ▼▼▼ portfolio-05.html のスタイルを適用 ▼▼▼ -->
+                <div class="portfolio-video-container mx-auto">
+                    <iframe src="https://www.youtube.com/embed/fr-S8EYdvKk" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- ▼▼▼ 動画の説明セクションを portfolio-05.html のスタイルに修正 ▼▼▼ -->
+            <section class="mx-auto bg-white p-6 rounded-lg shadow-lg mt-8 mb-8">
+                <h3 class="text-2xl font-bold text-stone-800 mb-4">動画について</h3>
+                <div class="text-stone-700 leading-relaxed space-y-4">
+                    <p>
+                        Google Vids を活用して制作した、2025年の阪神競馬場をイメージしたプロモーションビデオです。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 戻るボタン -->
+            <section class="text-center">
+                <!-- ▼▼▼ 戻るボタンのクラスを portfolio-05.html と共通化 ▼▼▼ -->
+                <a href="dougaiciran.html" 
+                   class="back-to-portfolio">
+                    &laquo; 動画一覧に戻る
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- (フッターは index.html に準拠するが、このファイルには必須ではないため省略) -->
+
+    <!-- ▼▼▼ portfolio-05.html には無いため、スクリプト読み込みを削除 ▼▼▼ -->
+    <!--
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    -->
+
+    <!-- ▼▼▼ portfolio-05.html と共通のフッターを追加 ▼▼▼ -->
+    <footer>
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 VIDEO edit office BOSS兄. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>画: Google Vids を使用して制作した、阪神競馬場2025年のイメージVTRです。">
     <meta name="author" content="bossboss.jp">
 
     <!-- Tailwind CSS -->
@@ -332,3 +665,4 @@
 
 </body>
 </html>
+
