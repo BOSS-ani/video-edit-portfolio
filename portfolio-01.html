@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ▼ タイトルとdescriptionは各ページ固有のものを設定してください -->
-    <title>作品詳細：オープニング動画 - VIDEO edit office BOSS兄</title>
-    <meta name="description" content="VIDEO edit office BOSS兄の制作事例。「オープニング動画」では、視聴者の心を掴み、期待感を高めるためのスキルを紹介します。">
+    <!-- ▼ ページ固有のタイトルとdescription -->
+    <title>作品詳細：心に残るビデオレター - VIDEO edit office BOSS兄</title>
+    <meta name="description" content="VIDEO edit office BOSS兄の制作事例。「心に残るビデオレター」は、大切な記念日を彩る感動的な動画制作の事例です。">
 
-    <!-- ▼ Canonicalタグは、このページの正しいURLを指定してください -->
-    <link rel="canonical" href="https://bossboss.jp/portfolio-01.html">
+    <!-- ▼ ページ固有のCanonicalタグ -->
+    <link rel="canonical" href="https://bossboss.jp/portfolio-05.html">
     
     <meta name="google-site-verification" content="5a9G8fB7c6D5e4F3g2H1i0j-k9L8m7N6p5Q4r3s2t1u" />
 
@@ -120,6 +120,11 @@
 
         /* --- Styles for Sub-pages (portfolio-XX.html) --- */
         .portfolio-video-container {
+            /* ▼▼▼ max-widthとmarginを追加して中央寄せ ▼▼▼ */
+            max-width: 56rem; /* 900px (max-w-4xl) */
+            margin-left: auto;
+            margin-right: auto;
+            /* ▲▲▲ 修正ここまで ▲▲▲ */
             position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
             overflow: hidden; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); margin-bottom: 2rem;
         }
@@ -150,28 +155,29 @@
         }
     </style>
     
-    <!-- ▼▼▼ 構造化データは古いコードから引き継ぎます ▼▼▼ -->
+    <!-- ▼▼▼ 構造化データ（古いコードから引き継ぎ） ▼▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "name": "オープニング動画 - 最初の5秒で心を掴む",
-      "description": "視聴者の心を掴み、動画本編への期待感を最大限に高めるためのオープニング動画の制作事例です。",
-      "thumbnailUrl": "https://i.ytimg.com/vi/GQrXptXUO7Y/maxresdefault.jpg",
-      "uploadDate": "2023-10-01T09:00:00+09:00",
-      "duration": "PT0M12S",
-      "contentUrl": "https://www.youtube.com/watch?v=GQrXptXUO7Y",
-      "embedUrl": "https://www.youtube.com/embed/GQrXptXUO7Y",
+      "name": "心に残るビデオレター - 感動を形に",
+      "description": "結婚式や記念日など、大切な人への想いを伝えるビデオレターの制作事例です。写真や動画を一本の感動的な物語に編集します。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/TKUuvimwCB4/maxresdefault.jpg",
+      "uploadDate": "2023-10-20T09:00:00+09:00",
+      "duration": "PT1M58S",
+      "contentUrl": "https://www.youtube.com/watch?v=TKUuvimwCB4",
+      "embedUrl": "https://www.youtube.com/embed/TKUuvimwCB4",
       "publisher": {
         "@type": "Organization",
         "name": "VIDEO edit office BOSS兄",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg"
+          "url": "https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%E5%85%84.jpg"
         }
       }
     }
     </script>
+    <!-- ▲▲▲ ここまで ▲▲▲ -->
 </head>
 <body>
 
@@ -248,18 +254,19 @@
     <!-- ▲▲▲ ここまでが新しいヘッダーコードです ▲▲▲ -->
 
 
-    <!-- ▼▼▼ ここから下は、portfolio-01.html の元の本文とフッターです ▼▼▼ -->
-    <main class="container mx-auto py-8 px-4 md:px-8">
+    <!-- ▼▼▼ ここから下は、portfolio-05.html の元の本文とフッターです ▼▼▼ -->
+    <!-- ▼▼▼ <main>タグにスタイルを追加して中央寄せ ▼▼▼ -->
+    <main class="container mx-auto py-8 px-4 md:px-8" style="max-width: 900px;">
         
         <section>
             <!-- ▼▼▼ h2にsection-h2クラスを追加（スタイル統一のため） ▼▼▼ -->
-            <h2 class="section-h2 text-center text-3xl font-bold text-stone-800 mb-4">作品解説：オープニング動画</h2>
-            <p class="text-center text-stone-600 mb-8">最初の5秒で、視聴者の心を掴む。</p>
+            <h2 class="section-h2 text-center text-3xl font-bold text-stone-800 mb-4">作品解説：心に残るビデオレター</h2>
+            <p class="text-center text-stone-600 mb-8">大切な記念日を彩る感動的な動画制作の事例です。</p>
 
-            <!-- YouTube動画埋め込み -->
-            <div class="portfolio-video-container max-w-4xl mx-auto">
+            <!-- YouTube動画埋め込み (max-w-4xlは削除し、親の<main>の幅に依存) -->
+            <div class="portfolio-video-container mx-auto">
                 <iframe 
-                    src="https://www.youtube.com/embed/GQrXptXUO7Y" 
+                    src="https://www.youtube.com/embed/TKUuvimwCB4" 
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -267,26 +274,33 @@
                 </iframe>
             </div>
             
-            <!-- 作品解説 -->
-            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
+            <!-- 作品解説 (max-w-4xlは削除し、親の<main>の幅に依存) -->
+            <div class="mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
                 <h3 class="text-2xl font-bold text-stone-800 mb-4">この動画のポイント</h3>
                 <div class="text-stone-700 leading-relaxed space-y-4">
                     <p>
-                        YouTubeやSNSでは、最初の数秒で視聴者の興味を引けなければ、すぐに離脱されてしまいます。この動画は、視聴者の心を一瞬で掴み、本編への期待感を最大限に高めるための「オープニング」に特化した制作事例です。
+                        言葉だけでは伝えきれない「ありがとう」や「おめでとう」の気持ちを、映像の力で永遠の思い出に変える。それが、私が制作するビデオレターのコンセプトです。この動画は、結婚式や記念日といった特別な日に向けて、お客様からお預かりした大切な写真や動画素材を、一つの感動的な物語として紡ぎ直した制作事例です。
                     </p>
                     <div>
-                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">期待感を高める編集のポイント</h4>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">感動を呼ぶ編集のポイント</h4>
                         <ul class="list-disc list-inside space-y-2">
-                            <li><strong>インパクトのある映像とBGM:</strong> 視聴者が「おっ？」と手を止めるような、視覚的にインパクトのある映像と、それにマッチしたテンポの良いBGMを選定しています。</li>
-                            <li><strong>テロップによる情報伝達:</strong> これから何が始まるのかを、簡潔で分かりやすいテロップで瞬時に伝えます。</li>
-                            <li><strong>ブランドロゴの効果的な表示:</strong> チャンネルや企業のロゴをスタイリッシュに表示することで、ブランドの認知度を高めます。</li>
+                            <li><strong>ストーリー構成:</strong> いただいた素材から、出会いから今日までの軌跡が伝わるような物語を組み立てます。どの写真をどの順番で見せるか、写真一枚一枚の表示時間をどう調整するかが、感動の深さを左右します。</li>
+                            <li><strong>BGMとの調和:</strong> 選曲はビデオレターの魂です。お客様の思い出の曲や、動画の雰囲気に合わせた感動的な音楽を選び、その歌詞やメロディの盛り上がりに合わせて映像が展開するように編集します。</li>
+                            <li><strong>心に響くテロップ:</strong> 写真だけでは伝わらない当時の気持ちや、伝えたいメッセージを、効果的なテロップで挿入します。フォントの選び方や表示するタイミング一つで、言葉の重みは大きく変わります。</li>
                         </ul>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">様々なシーンでのご活用</h4>
+                         <p>
+                            結婚式や誕生日、還暦祝いといった個人的なお祝い事はもちろん、退職される方への感謝のメッセージ、会社の創立記念ムービーなど、ビジネスシーンでもご活用いただけます。あなたの伝えたい想いを、最高の形で映像にしてみませんか？
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="text-center">
-                <a href="index.html#portfolio" class="back-to-portfolio">ポートフォリオ一覧に戻る</a>
+                <!-- ▼▼▼ リンク先をindex.htmlの#pr-videosに変更 ▼▼▼ -->
+                <a href="index.html#pr-videos" class="back-to-portfolio">ポートフォリオ一覧に戻る</a>
             </div>
         </section>
 
