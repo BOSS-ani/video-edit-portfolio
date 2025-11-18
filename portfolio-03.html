@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品詳細：エンディング動画 - VIDEO edit office BOSS兄</title>
-    <meta name="description" content="VIDEO edit office BOSS兄の制作事例。「エンディング動画」では、視聴後に深い余韻と満足感を残すためのスキルを紹介します。">
+    
+    <!-- ▼ ページ固有のタイトルとdescription -->
+    <title>作品詳細：【中山競馬場2025】 - VIDEO edit office BOSS兄</title>
+    <meta name="description" content="Vidsで制作した動画【中山競馬場2025】の紹介。JRA屈指の難コース！急坂を制する血統と馬券術を徹底解説！">
 
-    <!-- Canonical Tag for SEO -->
-    <link rel="canonical" href="https://bossboss.jp/portfolio-03.html">
-
-    <!-- Google Search Console -->
+    <!-- ▼ ページ固有のCanonicalタグ -->
+    <link rel="canonical" href="https://bossboss.jp/portfolio-031.html">
+    
     <meta name="google-site-verification" content="5a9G8fB7c6D5e4F3g2H1i0j-k9L8m7N6p5Q4r3s2t1u" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFG5YFETXC"></script>
+    <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-KFG5YFETXC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -21,23 +21,150 @@
       gtag('config', 'G-KFG5YFETXC');
     </script>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google AdSense --><script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-8419575231209847" crossorigin="anonymous"></script>
+    <!-- AdSense Meta Tag --><meta name="google-adsense-account" content="ca-pub-8419575231209847">
+
+    <!-- Tailwind CSS & Fonts --><script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
-    <!-- ▼▼▼ 動画の構造化データ（URL修正） ▼▼▼ -->
+    <style>
+        /* --- Base Styles --- */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #FDFBF6;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            /* JSで動的に設定されます */
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 40px; /* JSで動的に設定されます */
+            width: 100%;
+            z-index: 100; /* Below Ticker */
+            background-color: #A0522D;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 0.8rem 0; 
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .header-inner-content { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+        .main-header-content { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: nowrap; }
+        .header-icon { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); }
+        .main-title { 
+            color: white; 
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.8rem; 
+            line-height: 1.1; 
+            text-shadow: -2.5px -2.5px 0 #5A2D0E, 2.5px -2.5px 0 #5A2D0E, -2.5px 2.5px 0 #5A2D0E, 2.5px 2.5px 0 #5A2D0E, 0px 0px 12px rgba(0,0,0,0.7);
+        }
+
+        /* --- Navigation --- */
+        #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 0.5rem; }
+        .nav-link { 
+            transition: background-color 0.3s ease, color 0.3s ease; 
+            padding: 0.5rem 1rem; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            color: #FFFFFF; 
+            background-color: #A0522D; 
+            font-weight: 500; 
+            font-size: 1rem; 
+            white-space: nowrap; 
+        }
+        .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
+        
+        /* --- Marquee Ticker --- */
+        #marquee-ticker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 101; /* Above header */
+            background-color: #000000;
+            overflow: hidden;
+            border-bottom: 2px solid #FFD700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            height: 40px; /* Default height */
+            display: flex;
+            align-items: center;
+        }
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 30s linear infinite; /* Slower speed */
+            font-size: 1.5rem; /* Default font size */
+            color: #FFA500; /* Orange color */
+            text-shadow: 0 0 5px #FFA500, 0 0 10px #FF8C00;
+            animation-play-state: running;
+        }
+        .marquee-content span {
+            animation: blink 2s step-end infinite; /* Slower blink */
+        }
+        #marquee-ticker:hover .marquee-content {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes blink {
+            50% { color: #000; text-shadow: none; }
+        }
+
+        /* --- Styles for Sub-pages (portfolio-XX.html) --- */
+        .portfolio-video-container {
+            max-width: 56rem; /* 900px (max-w-4xl) */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
+            overflow: hidden; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); margin-bottom: 2rem;
+        }
+        .portfolio-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .back-to-portfolio {
+            display: inline-block; margin-top: 2rem; padding: 0.75rem 1.5rem;
+            background-color: #A0522D; color: white; text-decoration: none;
+            border-radius: 8px; font-weight: bold; transition: background-color 0.3s;
+        }
+        .back-to-portfolio:hover { background-color: #CD853F; }
+        .section-h2 {
+            background: linear-gradient(to right, #FAEBD7, #FDFBF6); padding: 1.2rem 1.8rem; border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1); color: #5A2D0E; border-left: 8px solid #CD853F;
+            margin-bottom: 1.8rem; font-size: 2.25rem;
+        }
+        footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center; }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .main-title { font-size: 1.8rem; }
+            .header-icon { width: 30px; height: 30px; }
+            #navbar ul { flex-wrap: wrap; gap: 0.3rem 0; }
+            #navbar li { flex-basis: 33.33%; text-align: center; }
+            .nav-link { padding: 0.4rem 0.2rem; font-size: 0.8rem; }
+            #marquee-ticker { height: 30px; }
+            .marquee-content { font-size: 1.1rem; }
+            .section-h2 { font-size: 1.8rem; }
+        }
+    </style>
+    
+    <!-- ▼▼▼ 新しい構造化データ ▼▼▼ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "name": "エンディング動画 - 心に残る余韻を",
-      "description": "動画の最後に視聴者の心に深い余韻と満足感を残し、次のアクションに繋げるためのエンディング動画の制作事例です。",
-      "thumbnailUrl": "https://i.ytimg.com/vi/LaGwJuCA1EU/maxresdefault.jpg",
-      "uploadDate": "2023-10-10T09:00:00+09:00",
-      "duration": "PT5M50S",
-      "contentUrl": "https://www.youtube.com/watch?v=LaGwJuCA1EU",
-      "embedUrl": "https://www.youtube.com/embed/LaGwJuCA1EU",
+      "name": "【中山競馬場2025】期待値の探求",
+      "description": "Vidsで制作した動画。JRA屈指の難コース、中山競馬場を徹底解説！急坂を制する血統と馬券術を学びます。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/hQ3wxQ1u3n4/maxresdefault.jpg",
+      "uploadDate": "2025-11-18T00:00:00+09:00",
+      "duration": "PT1M0S",
+      "contentUrl": "https://www.youtube.com/watch?v=hQ3wxQ1u3n4",
+      "embedUrl": "https://www.youtube.com/embed/hQ3wxQ1u3n4",
       "publisher": {
         "@type": "Organization",
         "name": "VIDEO edit office BOSS兄",
@@ -49,111 +176,94 @@
     }
     </script>
     <!-- ▲▲▲ ここまで ▲▲▲ -->
-    
-    <!-- サイト共通のCSS -->
-    <style>
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            background-color: #FDFBF6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            padding-top: 150px; /* 固定ヘッダー分のスペース */
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background-color: #A0522D;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            padding: 1rem 0;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-        .header-inner-content { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
-        .main-header-content { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: nowrap; margin-bottom: 0.5rem; }
-        .header-icon { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0,0,0,0.6)); }
-        .main-title { color: white; font-family: 'Noto Serif JP', serif; font-size: 2.8rem; line-height: 1.1; text-shadow: -2.5px -2.5px 0 #5A2D0E, 2.5px -2.5px 0 #5A2D0E, -2.5px 2.5px 0 #5A2D0E, 2.5px 2.5px 0 #5A2D0E, 0px 0px 12px rgba(0,0,0,0.7); }
-        #navbar ul { display: flex; justify-content: center; width: 100%; padding: 0; gap: 1.5rem; }
-        .nav-link { transition: background-color 0.3s ease, color 0.3s ease; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; color: #FFFFFF; background-color: #A0522D; font-weight: 500; font-size: 1rem; white-space: nowrap; }
-        .nav-link:hover { background-color: #CD853F; color: #FFFFFF; }
-
-        /* ▼▼▼ ここのCSSを修正しました ▼▼▼ */
-        .portfolio-video-container {
-            width: 100%;
-            aspect-ratio: 16 / 9; /* 縦横比を16:9に固定 */
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            margin-bottom: 2rem;
-        }
-        .portfolio-video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        /* ▲▲▲ ここまで ▲▲▲ */
-
-        .back-to-portfolio {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            background-color: #A0522D;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .back-to-portfolio:hover {
-            background-color: #CD853F;
-        }
-        footer { background-color: #5A2D0E; color: white; margin-top: 3rem; padding: 1.5rem 0; text-align: center;}
-        @media (max-width: 768px) {
-            body { padding-top: 130px; }
-            .main-title { font-size: 1.8rem; }
-            #navbar ul { flex-wrap: wrap; gap: 0.5rem 0; }
-            #navbar li { flex-basis: 33.33%; text-align: center; }
-            .nav-link { padding: 0.5rem 0.2rem; font-size: 0.8rem; }
-        }
-    </style>
 </head>
 <body>
 
-    <!-- 共通ヘッダー -->
+    <!-- ▼▼▼ ここからが新しいヘッダーです ▼▼▼ -->
     <header id="main-header">
         <div class="header-inner-content">
             <div class="main-header-content">
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <a href="index.html">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
+                </a>
                 <h1 class="main-title">VIDEO edit office BOSS兄</h1>
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
+                <a href="index.html">
+                    <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
+                </a>
             </div>
         </div>
         <nav id="navbar">
            <div class="container mx-auto px-4">
                <ul>
-                   <li><a href="index.html#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
-                   <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
+                   <li><a href="index.html" class="nav-link">TOP</a></li>
+                   <li><a href="dougaiciran.html" class="nav-link">動画一覧</a></li>
                    <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
                    <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
-                   <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
+                   <li><a href="index.html#blog" class="nav-link">ブログ</a></li>
+                   <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li> 
                </ul>
            </div>
         </nav>
     </header>
 
-    <!-- メインコンテンツ -->
-    <main class="container mx-auto py-8 px-4 md:px-8">
+    <div id="marquee-ticker">
+        <div class="marquee-content">
+            <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const ticker = document.getElementById('marquee-ticker');
+            
+            if (header && ticker) {
+                const setDynamicPositions = () => { 
+                    requestAnimationFrame(() => { 
+                        const titleHeight = header.querySelector('.main-header-content') ? header.querySelector('.main-header-content').offsetHeight : 0;
+                        const navHeight = header.querySelector('#navbar') ? header.querySelector('#navbar').offsetHeight : 0;
+                        let tickerHeight = (titleHeight + navHeight) * 0.3; 
+                        
+                        if (tickerHeight < 30) tickerHeight = 30; 
+                        if (tickerHeight > 45) tickerHeight = 45; 
+                        
+                        ticker.style.height = `${tickerHeight}px`;
+                        
+                        const fontSize = tickerHeight * 0.6; 
+                        const marqueeContent = ticker.querySelector('.marquee-content');
+                        if(marqueeContent) {
+                            marqueeContent.style.fontSize = `${fontSize}px`;
+                        }
+
+                        header.style.top = `${tickerHeight}px`;
+
+                        const headerActualHeight = header.offsetHeight;
+                        document.body.style.paddingTop = (headerActualHeight + tickerHeight) + 'px'; 
+                    });
+                };
+                
+                window.addEventListener('load', setDynamicPositions);
+                window.addEventListener('resize', setDynamicPositions);
+                setDynamicPositions(); 
+            }
+        });
+    </script>
+    <!-- ▲▲▲ ここまでが新しいヘッダーコードです ▲▲▲ -->
+
+
+    <!-- ▼▼▼ <main>タグにスタイルを追加して中央寄せ ▼▼▼ -->
+    <main class="container mx-auto py-8 px-4 md:px-8" style="max-width: 900px;">
         
         <section>
-            <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：エンディング動画</h2>
-            <p class="text-center text-stone-600 mb-8">視聴後の満足感を最大化し、次のアクションへ繋げる。</p>
+             <!-- ▼▼▼ h2にsection-h2クラスを追加（スタイル統一のため） ▼▼▼ -->
+            <h2 class="section-h2 text-center text-3xl font-bold text-stone-800 mb-4">作品解説：【中山競馬場2025】</h2>
+            <p class="text-center text-stone-600 mb-8">Vidsで制作した動画の解説ページです。</p>
 
             <!-- YouTube動画埋め込み -->
-            <div class="portfolio-video-container max-w-4xl mx-auto">
+            <div class="portfolio-video-container mx-auto">
                 <iframe 
-                    src="https://www.youtube.com/embed/LaGwJuCA1EU" 
+                    src="https://www.youtube.com/embed/hQ3wxQ1u3n4" 
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -162,25 +272,24 @@
             </div>
             
             <!-- 作品解説 -->
-            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
+            <div class="mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
                 <h3 class="text-2xl font-bold text-stone-800 mb-4">この動画のポイント</h3>
                 <div class="text-stone-700 leading-relaxed space-y-4">
                     <p>
-                        動画のエンディングは、単なる「終わり」ではありません。視聴者に深い満足感と余韻を残し、チャンネル登録や次の動画の視聴といった「次へのアクション」を促すための非常に重要な要素です。この動画は、そのためのエッセンスを凝縮した制作事例です。
+                        Vidsで制作した動画「【中山競馬場2025】期待値の探求」のデモページです。
                     </p>
                     <div>
-                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">視聴者の心を掴み続ける編集のポイント</h4>
+                        <h4 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-400 pb-2 mb-3">詳細</h4>
                         <ul class="list-disc list-inside space-y-2">
-                            <li><strong>感動的なBGMと映像の調和:</strong> 動画本編の感動を最高潮に高めるような、壮大で感動的なBGMを選定。その音楽の盛り上がりに合わせて、ハイライトシーンを織り交ぜています。</li>
-                            <li><strong>感謝のメッセージ:</strong> 視聴者への感謝の気持ちを、丁寧で心温まるテロップで伝えます。</li>
-                            <li><strong>明確な行動喚起（CTA）:</strong> チャンネル登録や関連動画へのリンクを、視覚的に分かりやすく配置しています。</li>
+                            <li>JRA屈指の難コース、中山競馬場を徹底解説！</li>
+                            <li>急坂を制する血統と馬券術を学びます。</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="text-center">
-                <a href="index.html#portfolio" class="back-to-portfolio">ポートフォリオ一覧に戻る</a>
+                <a href="dougaiciran.html" class="back-to-portfolio">動画一覧に戻る</a>
             </div>
         </section>
 
@@ -195,4 +304,3 @@
 
 </body>
 </html>
-
