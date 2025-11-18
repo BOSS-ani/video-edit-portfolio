@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!DOCTYPE html>
-<html lang="ja">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- ▼ タイトルとdescriptionは各ページ固有のものを設定してください -->
+    <title>作品詳細：オープニング動画 - VIDEO edit office BOSS兄</title>
+    <meta name="description" content="VIDEO edit office BOSS兄の制作事例。「オープニング動画」では、視聴者の心を掴み、期待感を高めるためのスキルを紹介します。">
+
+    <!-- ▼ Canonicalタグは、このページの正しいURLを指定してください -->
+    <link rel="canonical" href="https://bossboss.jp/portfolio-01.html">
+    
+    <meta name="google-site-verification" content="5a9G8fB7c6D5e4F3g2H1i0j-k9L8m7N6p5Q4r3s2t1u" />
+
+    <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-KFG5YFETXC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFG5YFETXC');
+    </script>
     
     <!-- Google AdSense --><script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-8419575231209847" crossorigin="anonymous"></script>
     <!-- AdSense Meta Tag --><meta name="google-adsense-account" content="ca-pub-8419575231209847">
@@ -134,13 +149,36 @@
             .section-h2 { font-size: 1.8rem; }
         }
     </style>
+    
+    <!-- ▼▼▼ 構造化データは古いコードから引き継ぎます ▼▼▼ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "オープニング動画 - 最初の5秒で心を掴む",
+      "description": "視聴者の心を掴み、動画本編への期待感を最大限に高めるためのオープニング動画の制作事例です。",
+      "thumbnailUrl": "https://i.ytimg.com/vi/GQrXptXUO7Y/maxresdefault.jpg",
+      "uploadDate": "2023-10-01T09:00:00+09:00",
+      "duration": "PT0M12S",
+      "contentUrl": "https://www.youtube.com/watch?v=GQrXptXUO7Y",
+      "embedUrl": "https://www.youtube.com/embed/GQrXptXUO7Y",
+      "publisher": {
+        "@type": "Organization",
+        "name": "VIDEO edit office BOSS兄",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg"
+        }
+      }
+    }
+    </script>
 </head>
 <body>
 
+    <!-- ▼▼▼ ここからが新しいヘッダーです ▼▼▼ -->
     <header id="main-header">
         <div class="header-inner-content">
             <div class="main-header-content">
-                <!-- ▼▼▼ Link to index.html ▼▼▼ -->
                 <a href="index.html">
                     <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/A0522D/FFF?text=B';" alt="BOSS兄アイコン" class="header-icon">
                 </a>
@@ -153,59 +191,49 @@
         <nav id="navbar">
            <div class="container mx-auto px-4">
                <ul>
-                   <!-- ▼▼▼ Menu links updated to point to index.html sections ▼▼▼ -->
                    <li><a href="index.html" class="nav-link">TOP</a></li>
                    <li><a href="dougaiciran.html" class="nav-link">動画一覧</a></li>
                    <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
                    <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
                    <li><a href="index.html#blog" class="nav-link">ブログ</a></li>
                    <li><a href="privacy-policy.html" class="nav-link">プライバシーポリシー</a></li> 
-                   <!-- ▲▲▲ Menu links updated ▲▲▲ -->
                </ul>
            </div>
         </nav>
     </header>
 
-    <!-- ▼▼▼ NEW Marquee Ticker Added ▼▼▼ -->
     <div id="marquee-ticker">
         <div class="marquee-content">
             <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span>大好評！21世紀の名刺です★★★LIVEリンクカード★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
         </div>
     </div>
-    <!-- ▲▲▲ NEW Marquee Ticker Added ▲▲▲ -->
-
-    <!-- ▼▼▼ This script is ESSENTIAL for the new header/ticker to work ▼▼▼ -->
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.getElementById('main-header');
             const ticker = document.getElementById('marquee-ticker');
             
             if (header && ticker) {
-                // Function to set paddings and ticker position
                 const setDynamicPositions = () => { 
-                    requestAnimationFrame(() => { // Use requestAnimationFrame
-                        
-                        // --- Ticker Height Calculation ---
+                    requestAnimationFrame(() => { 
                         const titleHeight = header.querySelector('.main-header-content') ? header.querySelector('.main-header-content').offsetHeight : 0;
                         const navHeight = header.querySelector('#navbar') ? header.querySelector('#navbar').offsetHeight : 0;
-                        let tickerHeight = (titleHeight + navHeight) * 0.3; // 30% of content height
+                        let tickerHeight = (titleHeight + navHeight) * 0.3; 
                         
-                        if (tickerHeight < 30) tickerHeight = 30; // Min height 30px
-                        if (tickerHeight > 45) tickerHeight = 45; // Max height 45px
+                        if (tickerHeight < 30) tickerHeight = 30; 
+                        if (tickerHeight > 45) tickerHeight = 45; 
                         
                         ticker.style.height = `${tickerHeight}px`;
                         
-                        const fontSize = tickerHeight * 0.6; // 60% of ticker height
+                        const fontSize = tickerHeight * 0.6; 
                         const marqueeContent = ticker.querySelector('.marquee-content');
                         if(marqueeContent) {
                             marqueeContent.style.fontSize = `${fontSize}px`;
                         }
 
-                        // Position header *below* ticker
                         header.style.top = `${tickerHeight}px`;
 
-                        // Set body padding to accommodate both
                         const headerActualHeight = header.offsetHeight;
                         document.body.style.paddingTop = (headerActualHeight + tickerHeight) + 'px'; 
                     });
@@ -215,41 +243,17 @@
                 window.addEventListener('resize', setDynamicPositions);
                 setDynamicPositions(); 
             }
-
-            // NOTE: Smooth scroll logic is removed as it's not needed for sub-pages.
-            // Links will navigate directly to the index.html sections.
         });
     </script>
-    <!-- ▲▲▲ End of essential script ▲▲▲ -->
-<body>
+    <!-- ▲▲▲ ここまでが新しいヘッダーコードです ▲▲▲ -->
 
-    <!-- 共通ヘッダー -->
-    <header id="main-header">
-        <div class="header-inner-content">
-            <div class="main-header-content">
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
-                <h1 class="main-title">VIDEO edit office BOSS兄</h1>
-                <img src="https://raw.githubusercontent.com/BOSS-ani/video-edit-portfolio/main/BOSS%E5%85%84.jpg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/000/FFF?text=BOSS';" alt="BOSS兄アイコン" class="header-icon">
-            </div>
-        </div>
-        <nav id="navbar">
-           <div class="container mx-auto px-4">
-               <ul>
-                   <li><a href="index.html#introduction-pr" class="nav-link">『BOSS兄』の推し</a></li>
-                   <li><a href="index.html#portfolio" class="nav-link">制作作品</a></li>
-                   <li><a href="index.html#about" class="nav-link">自己紹介</a></li>
-                   <li><a href="index.html#price-guide" class="nav-link">料金案内</a></li>
-                   <li><a href="index.html#privacy" class="nav-link">プライバシーポリシー</a></li>
-               </ul>
-           </div>
-        </nav>
-    </header>
 
-    <!-- メインコンテンツ -->
+    <!-- ▼▼▼ ここから下は、portfolio-01.html の元の本文とフッターです ▼▼▼ -->
     <main class="container mx-auto py-8 px-4 md:px-8">
         
         <section>
-            <h2 class="text-3xl font-bold text-center text-stone-800 mb-4">作品解説：オープニング動画</h2>
+            <!-- ▼▼▼ h2にsection-h2クラスを追加（スタイル統一のため） ▼▼▼ -->
+            <h2 class="section-h2 text-center text-3xl font-bold text-stone-800 mb-4">作品解説：オープニング動画</h2>
             <p class="text-center text-stone-600 mb-8">最初の5秒で、視聴者の心を掴む。</p>
 
             <!-- YouTube動画埋め込み -->
@@ -297,6 +301,3 @@
 
 </body>
 </html>
-
-
-
